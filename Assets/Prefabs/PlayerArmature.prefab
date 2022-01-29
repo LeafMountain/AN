@@ -1120,8 +1120,8 @@ MonoBehaviour:
   hand: {fileID: 8580048208085960331}
   supplies: 0
   energy: 100
-  lootRange: 2
-  lootSpeed: 5
+  lootRange: 3
+  lootSpeed: 10
   actorMask:
     serializedVersion: 2
     m_Bits: 128

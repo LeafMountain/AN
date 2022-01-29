@@ -150,4 +150,6 @@ MonoBehaviour:
   currentHealth: 0
   destructable: 1
   lootCount: 5
-  loot: {fileID: 7650388707656519696, guid: d3e61761456dfe846b6a4494132981cd, type: 3}
+  loot:
+  - {fileID: 1988317821691493275, guid: d3e61761456dfe846b6a4494132981cd, type: 3}
+  - {fileID: 1988317821691493275, guid: 777716fdba52b804ea7e126d962d3bde, type: 3}

@@ -1,5 +1,4 @@
-using System;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections;
 using DG.Tweening;
 using Mirror;
 using UnityEngine;
@@ -27,6 +26,16 @@ public class Player : Actor
         gun.transform.localPosition = Vector3.zero;
         gun.transform.localRotation = Quaternion.identity;
         NetworkServer.Spawn(gun.gameObject);
+        StartCoroutine(EnergyTick());
+    }
+
+    public IEnumerator EnergyTick()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3f);
+            energy -= 1;
+        }
     }
 
     public void FixedUpdate()
@@ -38,10 +47,10 @@ public class Player : Actor
             {
                 var actor = colliders[i].GetComponent<Actor>();
                 var storeable = actor.GetComponent<Storeable>();
-                // lootTween?.Kill();
                 float distance = Vector3.Distance(transform.position + Vector3.up, actor.transform.position);
-                if (distance < .2f)
+                if (distance < 1f)
                 {
+                    storeable.PickUp(this);
                     NetworkServer.Destroy(storeable.gameObject);
                     Destroy(storeable.gameObject);
                 }
@@ -49,7 +58,6 @@ public class Player : Actor
                 {
                     actor.GetComponent<Rigidbody>().isKinematic = true;
                     storeable.transform.position += (transform.position + Vector3.up - actor.transform.position).normalized * lootSpeed * Time.fixedDeltaTime;
-                    // lootTween = storeable.transform.DOMove(transform.position + Vector3.up, .1f).SetEase(Ease.Linear);
                 }
             }
         }

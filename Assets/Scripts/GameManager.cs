@@ -7,7 +7,7 @@ using UnityEngine;
 public class GameManager : NetworkBehaviour 
 {
     private static GameManager gameManager;
-    public static GameManager Instance => gameManager ??= FindObjectOfType<GameManager>();
+    public static GameManager Instance => gameManager ? gameManager : gameManager = FindObjectOfType<GameManager>(true);
 
     public Camera characterCamera;
     public CinemachineVirtualCamera characterVirtualCamera;
@@ -16,6 +16,7 @@ public class GameManager : NetworkBehaviour
 
     private void Start()
     {
+        gameManager = this;
         Events.AddListener(Flag.DamageRecieved, OnDamageRecieved);
         Events.AddListener(Flag.Storeable, OnStoreableUpdated);
     }

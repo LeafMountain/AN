@@ -12,7 +12,7 @@ public class DamageReciever : NetworkBehaviour
     public bool destructable = true;
 
     public int lootCount = 1;
-    public GameObject loot;
+    public Loot[] loot;
     private float lootSpawnForce = 5f;
 
     public override void OnStartServer()
@@ -39,8 +39,8 @@ public class DamageReciever : NetworkBehaviour
                 for (int i = 0; i < lootCount; i++)
                 {
                     NetworkServer.Destroy(gameObject);
-                    GameObject spawnedLoot = Instantiate(loot, transform.position, transform.rotation);
-                    NetworkServer.Spawn(spawnedLoot);
+                    Loot spawnedLoot = Instantiate(loot[Random.Range(0, loot.Length)], transform.position, transform.rotation);
+                    NetworkServer.Spawn(spawnedLoot.gameObject);
                     Vector3 insideUnitSphere = Random.insideUnitSphere;
                     insideUnitSphere.y = Mathf.Abs(insideUnitSphere.y);
                     spawnedLoot.GetComponent<Rigidbody>().AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
