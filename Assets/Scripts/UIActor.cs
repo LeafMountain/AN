@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class UIActor : MonoBehaviour
 {
     public Slider healthBar;
+    public Slider energyBar;
+
+    public Actor actor;
 
     public void Init(Actor actor, bool show = false)
     {
@@ -13,11 +16,34 @@ public class UIActor : MonoBehaviour
         DamageReciever damageReciever = actor.GetComponent<DamageReciever>();
         UpdateHealth(damageReciever);
         gameObject.SetActive(show);
+        this.actor = actor;
+
+        if (energyBar && actor is EnergyPylon)
+        {
+            gameObject.SetActive(true);
+            healthBar.gameObject.SetActive(false); 
+            energyBar.gameObject.SetActive(true); 
+        }
+    }
+
+    public void OnEnable()
+    {
+        if (energyBar && actor is EnergyPylon)
+        {
+            gameObject.SetActive(true);
+            healthBar.gameObject.SetActive(false); 
+            energyBar.gameObject.SetActive(true); 
+        }
     }
 
     private void LateUpdate()
     {
         transform.rotation = Camera.main.transform.rotation;
+
+        if (energyBar && actor is EnergyPylon energyPylon)
+        {
+            energyBar.value = (float)energyPylon.currentCharge / energyPylon.maxCharge;
+        }
     }
 
     private void OnDamageRecieved(object origin, EventArgs eventargs)

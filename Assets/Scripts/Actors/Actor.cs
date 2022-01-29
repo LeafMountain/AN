@@ -1,6 +1,7 @@
 using Mirror;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class Actor : NetworkBehaviour 
 {
     public UIActor ui;

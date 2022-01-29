@@ -11,6 +11,7 @@ public class Player : Actor
     public Transform hand;
 
     public int supplies = 0;
+    public int maxEnergy = 100;
     public int energy = 100;
     public float lootRange = 2f;
     public float lootSpeed = 5f;
@@ -61,5 +62,11 @@ public class Player : Actor
                 }
             }
         }
+    }
+
+    public void AddEnergy(int value)
+    {
+        energy += value;
+        energy = Mathf.Clamp(energy, 0, maxEnergy);
     }
 }

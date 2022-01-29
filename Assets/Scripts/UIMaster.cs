@@ -34,11 +34,11 @@ public class UIMaster : MonoBehaviour
     private void OnStorableUpdated(object origin, EventArgs eventargs)
     {
         energyTweener?.Kill();
-        energyTweener = energyBar.fillImage.DOFillAmount(GameManager.Instance.localPlayer.energy / 20f, .3f).SetEase(Ease.OutBounce);
+        energyTweener = energyBar.fillImage.DOFillAmount(GameManager.Instance.localPlayer.energy / 100f, .3f).SetEase(Ease.OutBounce);
         energyBar.countText.text = GameManager.Instance.localPlayer.energy.ToString();
 
         supplyTweener?.Kill();
-        supplyTweener = supplyBar.fillImage.DOFillAmount(GameManager.Instance.localPlayer.supplies / 100f, .3f).SetEase(Ease.OutBounce);
+        supplyTweener = supplyBar.fillImage.DOFillAmount(GameManager.Instance.localPlayer.supplies / 50f, .3f).SetEase(Ease.OutBounce);
         supplyBar.countText.text = GameManager.Instance.localPlayer.supplies.ToString();
     }
 }
