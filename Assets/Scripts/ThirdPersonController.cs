@@ -356,7 +356,7 @@ namespace StarterAssets
 
         public float _amplitude = 20;
         public float _time = 1f;
-
+        
         [Command] private void ServerFire() => Fire();
         private void Fire()
         {
@@ -366,10 +366,10 @@ namespace StarterAssets
                 return;
             }
 
-            if (_input.fire)
+            if (Mouse.current.leftButton.isPressed)
             {
-                isFiring = true;
-                _input.fire = false;
+                // isFiring = true;
+                // _input.fire = false;
 
                 gun.Fire();
             }

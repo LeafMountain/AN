@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using DG.Tweening;
 using EventManager;
 using Sirenix.OdinInspector;
@@ -9,15 +10,27 @@ public class Gun : Actor
     public Transform muzzlePoint;
     public Bullet bulletPrefab;
     public float bulletSpeed = 10f;
+    public float bulletsPerSecond = 10f;
+
+    private bool onCooldown;
 
     [Button("Fire")]
     public void Fire()
     {
+        if(onCooldown) return;
+        
         var bullet = Instantiate(bulletPrefab, muzzlePoint.transform.position, muzzlePoint.transform.rotation);
         bullet.Init(this, bulletSpeed);
         Events.AddListener(Flag.BulletImpact, bullet, OnBulletHit);
         muzzlePoint.DOPunchScale(new Vector3(0f, 0f, -.1f), .1f);
+        StartFireRateCooldown(1f / bulletsPerSecond);
+    }
 
+    private async void StartFireRateCooldown(float cooldown)
+    {
+        onCooldown = true;
+        await Task.Delay((int)(cooldown * 1000));
+        onCooldown = false;
     }
 
     private void OnBulletHit(object origin, EventArgs eventargs)

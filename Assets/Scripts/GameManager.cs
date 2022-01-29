@@ -53,7 +53,7 @@ public class GameManager : NetworkBehaviour
         var damageArgs = eventargs as DamageRecievedArgs;
         if (damageArgs.destroyed)
         {
-            characterVirtualCamera.Shake(.7f, 10f);
+            characterVirtualCamera.Shake(.7f, 7f);
         }
     }
     

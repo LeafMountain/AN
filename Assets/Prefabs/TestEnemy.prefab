@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  actor: {fileID: 0}
+  actor: {fileID: 5369694548086817998}
   maxHealth: 10
   currentHealth: 0
   destructable: 1
@@ -150,8 +150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  ui: {fileID: 0}
+  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
   aggroRange: 10
   speed: 2
   destination: {x: 0, y: 0, z: 0}
   destinationReached: 0
+  damageReciever: {fileID: 2087559380658844317}
+  aggroTimer: 0

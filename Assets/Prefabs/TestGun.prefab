@@ -396,9 +396,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf57dd20e6f0512459be7945f640db67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  ui: {fileID: 0}
   muzzlePoint: {fileID: 968106332079249584}
   bulletPrefab: {fileID: 1321357796030983280, guid: 19472f2c79da8d348b7fc371e793e1c5, type: 3}
   bulletSpeed: 30
+  bulletsPerSecond: 8
 --- !u!1 &7896732618981710497
 GameObject:
   m_ObjectHideFlags: 0

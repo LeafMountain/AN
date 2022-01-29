@@ -50,6 +50,7 @@ namespace StarterAssets
 		public void OnFire(InputValue value)
 		{
 			FireInput(value.isPressed);	
+			// FireInput(Mouse.current.leftButton.isPressed);
 		}
 #else
 	// old input sys if we do decide to have it (most likely wont)...
