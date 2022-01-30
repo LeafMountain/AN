@@ -163,9 +163,9 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   destinationReached: 0
   aggroTimer: 0
-  stateLight: {fileID: 620378561829509566}
+  stateLight: {fileID: 6161121730438581375}
   idleColor: {r: 0, g: 0.90171766, b: 1, a: 1}
-  aggroColor: {r: 1, g: 0.60045624, b: 0, a: 1}
+  aggroColor: {r: 1, g: 0.89088523, b: 0, a: 1}
   attackColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &612143000120872704
 MonoBehaviour:
@@ -361,7 +361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 06e2e0d69df1fc146807e8388da57da0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -583,7 +583,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 06e2e0d69df1fc146807e8388da57da0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -708,7 +708,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 06e2e0d69df1fc146807e8388da57da0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
