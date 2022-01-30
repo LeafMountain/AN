@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
-using System.Security.Cryptography.X509Certificates;
-using UnityEngine;
 using EventManager;
+using Mirror;
+using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : NetworkBehaviour 
 {
     public class BulletImpactArgs : EventArgs
     {
@@ -29,6 +29,8 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(isServer == false) return;
+        
         if(isDestroying) return;
         
         Vector3 step = Vector3.forward * speed * Time.fixedDeltaTime;
@@ -80,5 +82,6 @@ public class Bullet : MonoBehaviour
         isDestroying = true;
         if(lifetimeTimer != null) StopCoroutine(lifetimeTimer);
         Destroy(gameObject, 2f);
+        NetworkServer.Destroy(gameObject);
     }
 }

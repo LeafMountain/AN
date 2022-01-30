@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using DG.Tweening;
 using EventManager;
+using Mirror;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -24,6 +25,7 @@ public class Gun : Actor
         Events.AddListener(Flag.BulletImpact, bullet, OnBulletHit);
         muzzlePoint.DOPunchScale(new Vector3(0f, 0f, -.1f), .1f);
         StartFireRateCooldown(1f / bulletsPerSecond);
+        NetworkServer.Spawn(bullet.gameObject);
     }
 
     private async void StartFireRateCooldown(float cooldown)

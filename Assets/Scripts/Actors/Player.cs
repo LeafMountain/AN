@@ -1,15 +1,13 @@
+using System;
 using System.Collections;
+using System.Threading.Tasks;
 using DG.Tweening;
+using EventManager;
 using Mirror;
 using UnityEngine;
 
-public class Player : Actor
+public class Player : Character
 {
-    [SerializeField] private DamageReciever damageReciever;
-
-    public Gun gun;
-    public Transform hand;
-
     public int supplies = 0;
     public int maxEnergy = 100;
     public int energy = 100;
@@ -20,14 +18,32 @@ public class Player : Actor
     public LayerMask actorMask;
     private Tweener lootTween;
 
+    private bool dead = false;
+
     public override void OnStartServer()
     {
         base.OnStartServer();
-        gun = Instantiate(GameManager.Instance.defaultGun, hand);
-        gun.transform.localPosition = Vector3.zero;
-        gun.transform.localRotation = Quaternion.identity;
-        NetworkServer.Spawn(gun.gameObject);
         StartCoroutine(EnergyTick());
+
+        Events.AddListener(Flag.DamageRecieved, this, OnDamageReveived);
+    }
+
+    private async void OnDamageReveived(object origin, EventArgs eventargs)
+    {
+        if(dead) return;
+        var damageArgs = eventargs as DamageRecievedArgs;
+        if (damageArgs.destroyed)
+        {
+            dead = true;
+            await Task.Delay(5000);
+            Reset();
+            Respawn();
+        }
+    }
+
+    private void Respawn()
+    {
+        transform.position = Vector3.zero;
     }
 
     public IEnumerator EnergyTick()
@@ -43,23 +59,28 @@ public class Player : Actor
     {
         if (isServer)
         {
-            int hits = Physics.OverlapSphereNonAlloc(transform.position, lootRange, colliders, actorMask);
-            for (int i = 0; i < hits; i++)
+            LootMagnet();
+        }
+    }
+
+    private void LootMagnet()
+    {
+        int hits = Physics.OverlapSphereNonAlloc(transform.position, lootRange, colliders, actorMask);
+        for (int i = 0; i < hits; i++)
+        {
+            var actor = colliders[i].GetComponent<Actor>();
+            var storeable = actor.GetComponent<Storeable>();
+            float distance = Vector3.Distance(transform.position + Vector3.up, actor.transform.position);
+            if (distance < 1f)
             {
-                var actor = colliders[i].GetComponent<Actor>();
-                var storeable = actor.GetComponent<Storeable>();
-                float distance = Vector3.Distance(transform.position + Vector3.up, actor.transform.position);
-                if (distance < 1f)
-                {
-                    storeable.PickUp(this);
-                    NetworkServer.Destroy(storeable.gameObject);
-                    Destroy(storeable.gameObject);
-                }
-                else
-                {
-                    actor.GetComponent<Rigidbody>().isKinematic = true;
-                    storeable.transform.position += (transform.position + Vector3.up - actor.transform.position).normalized * lootSpeed * Time.fixedDeltaTime;
-                }
+                storeable.PickUp(this);
+                NetworkServer.Destroy(storeable.gameObject);
+                Destroy(storeable.gameObject);
+            }
+            else
+            {
+                actor.GetComponent<Rigidbody>().isKinematic = true;
+                storeable.transform.position += (transform.position + Vector3.up - actor.transform.position).normalized * lootSpeed * Time.fixedDeltaTime;
             }
         }
     }
@@ -68,5 +89,15 @@ public class Player : Actor
     {
         energy += value;
         energy = Mathf.Clamp(energy, 0, maxEnergy);
+    }
+
+    protected override void Reset()
+    {
+        base.Reset();
+
+        damageReciever.Reset();
+        supplies = 0;
+        energy = 100;
+        dead = false;
     }
 }

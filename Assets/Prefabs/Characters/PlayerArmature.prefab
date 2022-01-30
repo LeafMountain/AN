@@ -874,7 +874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8580048208085960331}
   m_Layer: 0
-  m_Name: Inventory
+  m_Name: WeaponAttach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1115,10 +1115,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  ui: {fileID: 0}
+  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
   damageReciever: {fileID: 4579446627781232342}
-  gun: {fileID: 0}
-  hand: {fileID: 8580048208085960331}
+  weapon: {fileID: 0}
+  weaponAttach: {fileID: 8580048208085960331}
   supplies: 0
   maxEnergy: 100
   energy: 100
@@ -1348,13 +1348,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  actor: {fileID: 0}
+  actor: {fileID: 4416926081852918490}
   maxHealth: 10
   currentHealth: 0
-  destructable: 1
-  lootCount: 1
-  loot:
-  - {fileID: 0}
+  autoDestroy: 0
+  lootCount: 0
+  loot: []
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0

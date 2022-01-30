@@ -6,7 +6,7 @@ using Mirror;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Enemy : Actor
+public class Enemy : Character
 {
     public float aggroRange = 10f;
     public float speed = 2f;
@@ -15,9 +15,6 @@ public class Enemy : Actor
 
     public Vector3 destination;
     public bool destinationReached;
-    public DamageReciever damageReciever;
-    public Gun gun;
-    public Transform gunAttachPoint;
 
     public float aggroTimer;
     public Renderer stateLight;
@@ -25,6 +22,8 @@ public class Enemy : Actor
     public Color idleColor;
     public Color aggroColor;
     public Color attackColor;
+
+    private Actor target;
 
     protected override void Start()
     {
@@ -35,11 +34,8 @@ public class Enemy : Actor
     public override void OnStartServer()
     {
         base.OnStartServer();
+
         SetDestination(transform.position);
-        gun = Instantiate(GameManager.Instance.enemyGun, gunAttachPoint);
-        gun.transform.localPosition = Vector3.zero;
-        gun.transform.localRotation = Quaternion.identity;
-        NetworkServer.Spawn(gun.gameObject); 
     }
 
     [Server]
@@ -48,13 +44,15 @@ public class Enemy : Actor
         if (GameManager.Instance.localPlayer == false) return;
         Vector3 playerPosition = GameManager.Instance.localPlayer.transform.position + Vector3.up;
         float playerDistance = Vector3.Distance(playerPosition, transform.position);
+        bool playerAlive = !GameManager.Instance.localPlayer.damageReciever.IsDead;
 
-        if (playerDistance < stoppingRange)
+        if (playerAlive && playerDistance < stoppingRange)
         {
             OnWithinStoppingRange();
         }
-        else if (aggroTimer > 0 || playerDistance < aggroRange)
+        else if (playerAlive && aggroTimer > 0 || playerDistance < aggroRange)
         {
+            target = GameManager.Instance.localPlayer;
             OnPlayerWithinRange();
         }
         else
@@ -67,22 +65,27 @@ public class Enemy : Actor
         if (destinationReached == false)
         {
             Vector3 direction = (destination - transform.position).normalized;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), Time.fixedDeltaTime * turnSpeed);
+            TurnTowardsDirection(direction);
             transform.Translate(transform.forward * speed * Time.fixedDeltaTime);
         }
     }
 
+    private void TurnTowardsDirection(Vector3 direction)
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), Time.fixedDeltaTime * turnSpeed);
+    }
+
     private void OnWithinStoppingRange()
     {
-        // Charge up
-        // Attack
+        Vector3 direction = (target.GetCenterOfMass() - transform.position).normalized;
+        TurnTowardsDirection(direction);
         SetStateColor(attackColor);
-        gun.Fire();
+        weapon.Fire();
     }
 
     private void SetStateColor(Color color)
     {
-        if(stateLight == null) return;
+        if (stateLight == null) return;
         for (var i = 0; i < stateLight.sharedMaterials.Length; i++)
         {
             stateLight.sharedMaterials[i].SetColor("_Emission", color);

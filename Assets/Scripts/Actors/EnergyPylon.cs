@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -13,7 +12,7 @@ public class EnergyPylon : Actor
 
     public float absorbRange = 5f;
     public float rechargeRange = 5f;
-    public Light light;
+    // public Light light;
     public Tweener tweener;
 
     protected override void Start()

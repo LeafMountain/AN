@@ -13,7 +13,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
     [RequireComponent(typeof(PlayerInput))]
 #endif
-    public class ThirdPersonController : Player 
+    public class ThirdPersonController : Player
     {
         [Header("Player")] [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
@@ -124,14 +124,19 @@ namespace StarterAssets
             _fallTimeoutDelta = FallTimeout;
         }
 
-        private void Update()
+        protected override void Update()
         {
-            _hasAnimator = TryGetComponent(out _animator);
+            base.Update();
+            
+            if (hasAuthority)
+            {
+                _hasAnimator = TryGetComponent(out _animator);
 
-            // JumpAndGravity();
-            GroundedCheck();
-            Move();
-            Fire();
+                JumpAndGravity();
+                GroundedCheck();
+                Move();
+                Fire();
+            }
         }
 
         private void LateUpdate()
@@ -185,7 +190,7 @@ namespace StarterAssets
 
         private void CharacterRotation()
         {
-            if(TryGetMouseHit(out var mouseHit))
+            if (TryGetMouseHit(out var mouseHit))
             {
                 Vector3 lookPosition = mouseHit.point;
                 lookPosition.y = transform.position.y;
@@ -195,18 +200,20 @@ namespace StarterAssets
 
         private void GunRotation()
         {
-            if(TryGetMouseHit(out var mouseHit) == false) return;
+            if (weapon == null) return;
+
+            if (TryGetMouseHit(out var mouseHit) == false) return;
             if (mouseHit.transform.TryGetComponent(out DamageReciever damageReciever))
             {
-                gun.transform.LookAt(mouseHit.transform);
+                weapon.transform.LookAt(mouseHit.transform);
             }
             else
             {
-                gun.transform.LookAt(mouseHit.point); 
-                var gunRotation = gun.transform.rotation.eulerAngles;
+                weapon.transform.LookAt(mouseHit.point);
+                var gunRotation = weapon.transform.rotation.eulerAngles;
                 if (gunRotation.x < 200f) gunRotation.x += 360f;
                 gunRotation.x = Mathf.Clamp(gunRotation.x, 300f, 370f);
-                gun.transform.rotation = Quaternion.Euler(gunRotation);
+                weapon.transform.rotation = Quaternion.Euler(gunRotation);
             }
         }
 
@@ -254,7 +261,7 @@ namespace StarterAssets
                 moveAnimationVelocity *= targetSpeed;
                 _animator.SetFloat("HorizontalSpeed", moveAnimationVelocity.x);
                 _animator.SetFloat("Speed", moveAnimationVelocity.z);
-                
+
                 // _animator.SetFloat(_animIDSpeed, _animationBlend);
                 _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
             }
@@ -340,23 +347,21 @@ namespace StarterAssets
 
         public float _amplitude = 20;
         public float _time = 1f;
-        
-        [Command] private void ServerFire() => Fire();
+
+        [Command]
+        private void ServerFire() => Fire();
+
         private void Fire()
         {
+            if (Mouse.current.leftButton.isPressed == false) return;
+
             if (isServer == false)
             {
                 ServerFire();
                 return;
             }
 
-            if (Mouse.current.leftButton.isPressed)
-            {
-                // isFiring = true;
-                // _input.fire = false;
-
-                gun.Fire();
-            }
+            weapon.Fire();
         }
 
         private void OnDrawGizmosSelected()

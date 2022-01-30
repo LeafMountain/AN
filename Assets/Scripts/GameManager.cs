@@ -11,10 +11,10 @@ public class GameManager : NetworkBehaviour
 
     public Camera characterCamera;
     public CinemachineVirtualCamera characterVirtualCamera;
-    public Gun defaultGun;
+    public GameObject defaultGun;
     public Gun enemyGun;
     public Player localPlayer;
-
+    
     private void Start()
     {
         gameManager = this;

@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Mirror;
@@ -22,7 +20,7 @@ public class EnemySpawner : Actor
 
     private async void SpawnTick()
     {
-        while (true)
+        while (Application.isPlaying)
         {
             await Task.Delay((int)spawnRate * 1000);
             

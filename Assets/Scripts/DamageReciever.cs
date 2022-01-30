@@ -2,6 +2,7 @@ using System;
 using EventManager;
 using Mirror;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class DamageReciever : NetworkBehaviour
@@ -9,11 +10,12 @@ public class DamageReciever : NetworkBehaviour
     public Actor actor;
     public int maxHealth = 10;
     [SyncVar] public int currentHealth = 0;
-    public bool destructable = true;
+    [FormerlySerializedAs("destructable")] public bool autoDestroy = true;
 
     public int lootCount = 1;
     public Loot[] loot;
     private float lootSpawnForce = 5f;
+    public bool IsDead => currentHealth == 0; 
 
     public override void OnStartServer()
     {
@@ -34,7 +36,7 @@ public class DamageReciever : NetworkBehaviour
 
         if (isServer)
         {
-            if (destructable && currentHealth == 0)
+            if (autoDestroy && currentHealth == 0)
             {
                 for (int i = 0; i < lootCount; i++)
                 {
@@ -47,6 +49,11 @@ public class DamageReciever : NetworkBehaviour
                 }
             }
         }
+    }
+
+    public void Reset()
+    {
+        currentHealth = maxHealth;
     }
 }
 
