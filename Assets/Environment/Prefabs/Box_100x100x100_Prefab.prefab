@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4043535580645081189}
   - component: {fileID: 6023149417776915991}
   - component: {fileID: 6551133711322391046}
-  - component: {fileID: 3819216377085006909}
   - component: {fileID: 1451930691546475949}
+  - component: {fileID: 6812069998141422151}
   m_Layer: 0
   m_Name: Box_100x100x100_Prefab
   m_TagString: Untagged
@@ -32,9 +32,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3418225732042694151
 MeshFilter:
@@ -55,6 +56,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -110,27 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4d0307c265da34b937f4d8da85fa0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
   damageReciever: {fileID: 1451930691546475949}
---- !u!114 &3819216377085006909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899428459418414007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: e5f4daf24146ee040b5a2d7a73b30aa0
-  hasSpawned: 0
 --- !u!114 &1451930691546475949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,12 +126,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   actor: {fileID: 6551133711322391046}
   maxHealth: 10
-  currentHealth: 0
-  destructable: 1
+  currentHealth:
+    m_InternalValue: 0
+  autoDestroy: 1
   lootCount: 5
   loot:
   - {fileID: 1988317821691493275, guid: d3e61761456dfe846b6a4494132981cd, type: 3}
+--- !u!114 &6812069998141422151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899428459418414007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1

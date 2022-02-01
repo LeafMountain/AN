@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using EventManager;
-using Mirror;
+using Unity.Netcode;
 using UnityEngine;
 
 public class Bullet : NetworkBehaviour 
@@ -29,7 +29,7 @@ public class Bullet : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        if(isServer == false) return;
+        if(IsServer == false) return;
         
         if(isDestroying) return;
         
@@ -81,7 +81,7 @@ public class Bullet : NetworkBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         isDestroying = true;
         if(lifetimeTimer != null) StopCoroutine(lifetimeTimer);
-        Destroy(gameObject, 2f);
-        NetworkServer.Destroy(gameObject);
+        // Destroy(gameObject, 2f);
+        GetComponent<NetworkObject>().Despawn();
     }
 }

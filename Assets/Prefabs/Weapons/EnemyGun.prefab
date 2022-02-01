@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: -0.4161347, y: -0, z: -0, w: 0.90930307}
   m_LocalPosition: {x: 0, y: -0.002, z: -0.174}
   m_LocalScale: {x: 0.122276284, y: 0.113456495, z: 0.22325994}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7299599121788336864}
   m_RootOrder: 2
@@ -52,6 +53,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -124,6 +126,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.102, z: 0}
   m_LocalScale: {x: 0.16394, y: 0.152115, z: 0.47462893}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7299599121788336864}
   m_RootOrder: 0
@@ -147,6 +150,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -219,6 +223,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.056}
   m_LocalScale: {x: 0.09127359, y: 0.10158591, z: 0.12365983}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 964781283903784593}
   m_RootOrder: 0
@@ -242,6 +247,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -298,7 +304,7 @@ GameObject:
   - component: {fileID: 7299599121788336878}
   - component: {fileID: 7299599121788336877}
   - component: {fileID: 6106379811252213988}
-  - component: {fileID: 7953739906614111397}
+  - component: {fileID: 8013470184453814588}
   m_Layer: 0
   m_Name: EnemyGun
   m_TagString: Untagged
@@ -316,6 +322,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.93, y: 1.14, z: 4.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7299599120596237050}
   - {fileID: 964781283903784593}
@@ -342,6 +349,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -397,14 +405,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf57dd20e6f0512459be7945f640db67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   ui: {fileID: 0}
   muzzlePoint: {fileID: 964781283903784593}
   bulletPrefab: {fileID: 1321357796030983280, guid: 19472f2c79da8d348b7fc371e793e1c5, type: 3}
   bulletSpeed: 20
   bulletsPerSecond: 6
---- !u!114 &7953739906614111397
+--- !u!114 &8013470184453814588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -413,14 +419,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7299599121788336876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: fa85fb8c690fb5646b361c503105baf7
-  hasSpawned: 0
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &7897665137400677504
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +452,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.102, z: 0.2372}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7299599120721382921}
   m_Father: {fileID: 7299599121788336864}

@@ -1,7 +1,7 @@
 using System;
 using Cinemachine;
 using EventManager;
-using Mirror;
+using Unity.Netcode;
 using UnityEngine;
 
 public class GameManager : NetworkBehaviour 
@@ -12,7 +12,6 @@ public class GameManager : NetworkBehaviour
     public Camera characterCamera;
     public CinemachineVirtualCamera characterVirtualCamera;
     public GameObject defaultGun;
-    public Gun enemyGun;
     public Player localPlayer;
     
     private void Start()
@@ -26,7 +25,7 @@ public class GameManager : NetworkBehaviour
     {
         var storeableArgs = eventargs as Storeable.StoreableEventArgs;
 
-        if (isServer)
+        if (NetworkManager.Singleton.IsServer)
         {
             switch (storeableArgs.storeable.itemType)
             {
@@ -45,13 +44,20 @@ public class GameManager : NetworkBehaviour
                     throw new ArgumentOutOfRangeException();
             }
 
-            NetworkServer.Destroy(storeableArgs.storeable.gameObject);
+            storeableArgs.storeable.GetComponent<NetworkObject>().Despawn();
         }
     }
 
     private void OnDamageRecieved(object origin, EventArgs eventargs)
     {
         var damageArgs = eventargs as DamageRecievedArgs;
+        if (damageArgs.destroyed == false)
+        {
+            if (damageArgs.instigator == localPlayer)
+            {
+                characterVirtualCamera.Shake(.2f, 4f);
+            }
+        }
         if (damageArgs.destroyed)
         {
             characterVirtualCamera.Shake(.7f, 7f);

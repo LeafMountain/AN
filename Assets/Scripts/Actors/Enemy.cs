@@ -2,7 +2,6 @@ using System;
 using System.Threading.Tasks;
 using DG.Tweening;
 using EventManager;
-using Mirror;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -31,16 +30,16 @@ public class Enemy : Character
         Events.AddListener(Flag.DamageRecieved, this, OnDamaged);
     }
 
-    public override void OnStartServer()
+    public override void OnNetworkSpawn()
     {
-        base.OnStartServer();
-
+        base.OnNetworkSpawn();
         SetDestination(transform.position);
     }
 
-    [Server]
     private void FixedUpdate()
     {
+        if(IsServer == false) return;
+        
         if (GameManager.Instance.localPlayer == false) return;
         Vector3 playerPosition = GameManager.Instance.localPlayer.transform.position + Vector3.up;
         float playerDistance = Vector3.Distance(playerPosition, transform.position);
@@ -134,7 +133,7 @@ public class Enemy : Character
 
     private void OnDamaged(object origin, EventArgs eventargs)
     {
-        if (damageReciever.currentHealth > 0)
+        if (damageReciever.currentHealth.Value > 0)
         {
             transform.DOPunchScale(Vector3.one * .1f, .2f);
         }

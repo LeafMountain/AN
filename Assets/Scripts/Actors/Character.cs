@@ -1,28 +1,32 @@
-using Mirror;
+using Unity.Netcode;
 using UnityEngine;
 
 public class Character : Actor
 {
     public DamageReciever damageReciever;
-
-    [SyncVar(hook = nameof(OnGunEquipped))]
     public Gun weapon;
-
     public Transform weaponAttach;
 
-    public override void OnStartServer()
+    public override void OnNetworkSpawn()
     {
-        base.OnStartServer();
+        base.OnNetworkSpawn();
 
-        GameObject spawned = Instantiate(GameManager.Instance.defaultGun);
-        NetworkServer.Spawn(spawned, connectionToClient);
-        weapon = spawned.GetComponent<Gun>();
+        if (IsServer)
+        {
+            GameObject spawned = Instantiate(GameManager.Instance.defaultGun);
+            spawned.GetComponent<NetworkObject>().SpawnWithOwnership(OwnerClientId);
+            EquipGun_ClientRpc(spawned.GetComponent<Gun>());
+        }
     }
 
-    public override void OnStartClient()
+    [ClientRpc]
+    public void EquipGun_ClientRpc(NetworkBehaviourReference weapon)
     {
-        base.OnStartClient();
-        if (weapon) OnGunEquipped(null, weapon);
+        if (weapon.TryGet(out Gun gun))
+        {
+            this.weapon = gun;
+            OnGunEquipped(null, gun);
+        }
     }
 
     public void OnGunEquipped(Gun oldValue, Gun newValue)
@@ -35,12 +39,18 @@ public class Character : Actor
             }
         }
 
-        newValue.transform.parent = weaponAttach;
-        newValue.transform.localPosition = Vector3.zero;
-        newValue.transform.localRotation = Quaternion.identity;
+        newValue.transform.parent = transform;
+        newValue.transform.position = weaponAttach.transform.position;
+        newValue.transform.rotation = weaponAttach.transform.rotation;
         foreach (Collider collider in newValue.GetComponentsInChildren<Collider>())
         {
             collider.enabled = false;
         }
+    }
+
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        weapon.GetComponent<NetworkObject>().Despawn();
     }
 }

@@ -2,8 +2,8 @@ using System;
 using System.Threading.Tasks;
 using DG.Tweening;
 using EventManager;
-using Mirror;
 using Sirenix.OdinInspector;
+using Unity.Netcode;
 using UnityEngine;
 
 public class Gun : Actor 
@@ -25,7 +25,8 @@ public class Gun : Actor
         Events.AddListener(Flag.BulletImpact, bullet, OnBulletHit);
         muzzlePoint.DOPunchScale(new Vector3(0f, 0f, -.1f), .1f);
         StartFireRateCooldown(1f / bulletsPerSecond);
-        NetworkServer.Spawn(bullet.gameObject);
+        bullet.GetComponent<NetworkObject>().Spawn(); 
+        // NetworkServer.Spawn(bullet.gameObject);
     }
 
     private async void StartFireRateCooldown(float cooldown)
@@ -45,13 +46,11 @@ public class Gun : Actor
                 break;
             case Bullet.BulletImpactArgs.EventType.Impact:
                 // Do damage
-                GameManager.Instance.characterVirtualCamera.Shake(.2f, 5f);
+                // GameManager.Instance.characterVirtualCamera.Shake(.2f, 5f);
                 // Debug.Log($"Bullet hit {impactArgs.hit.transform.name}");
                 break;
             case Bullet.BulletImpactArgs.EventType.NoImpact:
                 break;
-            default:
-                throw new ArgumentOutOfRangeException();
         }
     }
 }

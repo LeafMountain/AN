@@ -15,7 +15,7 @@ public class DestructableBox : Actor
 
     private void OnDamaged(object origin, EventArgs eventargs)
     {
-        if (damageReciever.currentHealth > 0)
+        if (damageReciever.currentHealth.Value > 0)
         {
             transform.DOPunchScale(Vector3.one * .1f, .2f);
         }

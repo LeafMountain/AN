@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Threading.Tasks;
+using Cinemachine;
 using DG.Tweening;
 using EventManager;
-using Mirror;
+using StarterAssets;
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : Character
 {
@@ -20,9 +23,26 @@ public class Player : Character
 
     private bool dead = false;
 
-    public override void OnStartServer()
+    public RaycastHit MouseHit;
+    public GameObject debugMousePositionObject;
+
+    public override void OnNetworkSpawn()
     {
-        base.OnStartServer();
+        base.OnNetworkSpawn();
+
+        if (IsOwner)
+        {
+            var player = ANNetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+            GameManager.Instance.localPlayer = player.GetComponent<Player>();
+            var controller = player.GetComponent<ThirdPersonController>();
+            var input = player.GetComponent<PlayerInput>();
+            var cameraFollower = FindObjectOfType<CinemachineVirtualCamera>();
+            cameraFollower.Follow = controller.CinemachineCameraTarget.transform;
+
+            controller.enabled = true;
+            input.enabled = true;
+        }
+
         StartCoroutine(EnergyTick());
 
         Events.AddListener(Flag.DamageRecieved, this, OnDamageReveived);
@@ -30,7 +50,7 @@ public class Player : Character
 
     private async void OnDamageReveived(object origin, EventArgs eventargs)
     {
-        if(dead) return;
+        if (dead) return;
         var damageArgs = eventargs as DamageRecievedArgs;
         if (damageArgs.destroyed)
         {
@@ -57,9 +77,19 @@ public class Player : Character
 
     public void FixedUpdate()
     {
-        if (isServer)
+        if (IsServer)
         {
             LootMagnet();
+        }
+    }
+
+    protected override void Update()
+    {
+        UpdateMouseHit();
+        if (debugMousePositionObject)
+        {
+            debugMousePositionObject.transform.position = MouseHit.point;
+            debugMousePositionObject.transform.forward = MouseHit.normal;
         }
     }
 
@@ -73,9 +103,9 @@ public class Player : Character
             float distance = Vector3.Distance(transform.position + Vector3.up, actor.transform.position);
             if (distance < 1f)
             {
+                NetworkObject networkObject = storeable.GetComponent<NetworkObject>();
                 storeable.PickUp(this);
-                NetworkServer.Destroy(storeable.gameObject);
-                Destroy(storeable.gameObject);
+                // networkObject.Despawn();
             }
             else
             {
@@ -99,5 +129,13 @@ public class Player : Character
         supplies = 0;
         energy = 100;
         dead = false;
+    }
+
+    private void UpdateMouseHit()
+    {
+        // Vector2 mousePosition = Mouse.current.position.ReadValue();
+        var mousePosition = Input.mousePosition;
+        Ray cameraRay = GameManager.Instance.characterCamera.ScreenPointToRay(mousePosition);
+        Physics.Raycast(cameraRay, out MouseHit);
     }
 }

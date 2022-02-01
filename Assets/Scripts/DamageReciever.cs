@@ -1,6 +1,6 @@
 using System;
 using EventManager;
-using Mirror;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -9,43 +9,48 @@ public class DamageReciever : NetworkBehaviour
 {
     public Actor actor;
     public int maxHealth = 10;
-    [SyncVar] public int currentHealth = 0;
+    public NetworkVariable<int> currentHealth;
     [FormerlySerializedAs("destructable")] public bool autoDestroy = true;
 
     public int lootCount = 1;
     public Loot[] loot;
     private float lootSpawnForce = 5f;
-    public bool IsDead => currentHealth == 0; 
+    public bool IsDead => currentHealth.Value == 0;
 
-    public override void OnStartServer()
+    public override void OnNetworkSpawn()
     {
-        base.OnStartServer();
-        currentHealth = maxHealth;
+        base.OnNetworkSpawn();
+        if (IsServer)
+        {
+            currentHealth.Value = maxHealth;
+        }
     }
 
     public virtual void DoDamage(Bullet bullet)
     {
-        currentHealth--;
+        currentHealth.Value--;
         Events.TriggerEvent(Flag.DamageRecieved, actor, new DamageRecievedArgs()
         {
             reciever = actor,
             damage = 1,
             instigator = bullet.owner,
-            destroyed = currentHealth == 0,
+            destroyed = currentHealth.Value == 0,
         });
 
-        if (isServer)
+        if (IsServer)
         {
-            if (autoDestroy && currentHealth == 0)
-            {
+            if (autoDestroy && currentHealth.Value == 0)
+            { 
+                gameObject.GetComponent<NetworkObject>().Despawn();
+                
                 for (int i = 0; i < lootCount; i++)
                 {
-                    NetworkServer.Destroy(gameObject);
                     Loot spawnedLoot = Instantiate(loot[Random.Range(0, loot.Length)], transform.position, transform.rotation);
-                    NetworkServer.Spawn(spawnedLoot.gameObject);
                     Vector3 insideUnitSphere = Random.insideUnitSphere;
                     insideUnitSphere.y = Mathf.Abs(insideUnitSphere.y);
                     spawnedLoot.GetComponent<Rigidbody>().AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
+                    
+                    spawnedLoot.GetComponent<NetworkObject>().Spawn();
                 }
             }
         }
@@ -53,7 +58,7 @@ public class DamageReciever : NetworkBehaviour
 
     public void Reset()
     {
-        currentHealth = maxHealth;
+        currentHealth.Value = maxHealth;
     }
 }
 

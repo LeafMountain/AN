@@ -1,5 +1,6 @@
-using Mirror;
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -15,54 +16,22 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : Player
     {
-        [Header("Player")] [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
-
-        [Tooltip("Sprint speed of the character in m/s")]
         public float SprintSpeed = 5.335f;
-
-        [Tooltip("How fast the character turns to face movement direction")] [Range(0.0f, 0.3f)]
         public float RotationSmoothTime = 0.12f;
-
-        [Tooltip("Acceleration and deceleration")]
         public float SpeedChangeRate = 10.0f;
-
-        [Space(10)] [Tooltip("The height the player can jump")]
         public float JumpHeight = 1.2f;
-
-        [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
         public float Gravity = -15.0f;
-
-        [Space(10)] [Tooltip("Time required to pass before being able to jump again. Set to 0f to instantly jump again")]
         public float JumpTimeout = 0.50f;
-
-        [Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
         public float FallTimeout = 0.15f;
-
-        [Header("Player Grounded")] [Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
         public bool Grounded = true;
-
-        [Tooltip("Useful for rough ground")] public float GroundedOffset = -0.14f;
-
-        [Tooltip("The radius of the grounded check. Should match the radius of the CharacterController")]
+        public float GroundedOffset = -0.14f;
         public float GroundedRadius = 0.28f;
-
-        [Tooltip("What layers the character uses as ground")]
         public LayerMask GroundLayers;
-
-        [Header("Cinemachine")] [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
         public GameObject CinemachineCameraTarget;
-
-        [Tooltip("How far in degrees can you move the camera up")]
         public float TopClamp = 70.0f;
-
-        [Tooltip("How far in degrees can you move the camera down")]
         public float BottomClamp = -30.0f;
-
-        [Tooltip("Additional degress to override the camera. Useful for fine tuning camera position when locked")]
         public float CameraAngleOverride = 0.0f;
-
-        [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
         // cinemachine
@@ -128,21 +97,23 @@ namespace StarterAssets
         {
             base.Update();
             
-            if (hasAuthority)
+            if (IsOwner)
             {
                 _hasAnimator = TryGetComponent(out _animator);
+                
+                // InputFix();
 
                 JumpAndGravity();
                 GroundedCheck();
                 Move();
                 Fire();
             }
+            CharacterRotation();
         }
 
         private void LateUpdate()
         {
             // CameraRotation();
-            CharacterRotation();
             GunRotation();
         }
 
@@ -190,9 +161,9 @@ namespace StarterAssets
 
         private void CharacterRotation()
         {
-            if (TryGetMouseHit(out var mouseHit))
+            if(MouseHit.transform)
             {
-                Vector3 lookPosition = mouseHit.point;
+                Vector3 lookPosition = MouseHit.point;
                 lookPosition.y = transform.position.y;
                 transform.rotation = Quaternion.LookRotation(lookPosition - transform.position);
             }
@@ -202,14 +173,14 @@ namespace StarterAssets
         {
             if (weapon == null) return;
 
-            if (TryGetMouseHit(out var mouseHit) == false) return;
-            if (mouseHit.transform.TryGetComponent(out DamageReciever damageReciever))
+            if (MouseHit.transform == null) return;
+            if (MouseHit.transform.TryGetComponent(out DamageReciever damageReciever))
             {
-                weapon.transform.LookAt(mouseHit.transform);
+                weapon.transform.LookAt(MouseHit.transform);
             }
             else
             {
-                weapon.transform.LookAt(mouseHit.point);
+                weapon.transform.LookAt(MouseHit.point);
                 var gunRotation = weapon.transform.rotation.eulerAngles;
                 if (gunRotation.x < 200f) gunRotation.x += 360f;
                 gunRotation.x = Mathf.Clamp(gunRotation.x, 300f, 370f);
@@ -217,11 +188,16 @@ namespace StarterAssets
             }
         }
 
-        public bool TryGetMouseHit(out RaycastHit mouseHit)
+        private void InputFix()
         {
-            Vector2 mousePosition = Mouse.current.position.ReadValue();
-            var cameraRay = GameManager.Instance.characterCamera.ScreenPointToRay(mousePosition);
-            return Physics.Raycast(cameraRay, out mouseHit);
+            _input.sprint = Keyboard.current.shiftKey.isPressed;
+            
+            float x = 0, y = 0;
+            x += Keyboard.current.dKey.isPressed ? 1 : 0;
+            x += Keyboard.current.aKey.isPressed ? -1 : 0;
+            y += Keyboard.current.wKey.isPressed ? 1 : 0;
+            y += Keyboard.current.sKey.isPressed ? -1 : 0;
+            _input.move = new Vector2(x, y);
         }
 
         private void Move()
@@ -348,16 +324,16 @@ namespace StarterAssets
         public float _amplitude = 20;
         public float _time = 1f;
 
-        [Command]
-        private void ServerFire() => Fire();
+        [ServerRpc]
+        private void ServerFire_ServerRpc() => Fire();
 
         private void Fire()
         {
             if (Mouse.current.leftButton.isPressed == false) return;
 
-            if (isServer == false)
+            if (IsServer == false)
             {
-                ServerFire();
+                ServerFire_ServerRpc();
                 return;
             }
 

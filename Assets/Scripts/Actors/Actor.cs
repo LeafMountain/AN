@@ -1,4 +1,4 @@
-using Mirror;
+using Unity.Netcode;
 using UnityEngine;
 
 [DisallowMultipleComponent]
