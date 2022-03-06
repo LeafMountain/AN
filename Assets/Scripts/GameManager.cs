@@ -63,6 +63,24 @@ public class GameManager : NetworkBehaviour
             characterVirtualCamera.Shake(.7f, 7f);
         }
     }
+
+    public static GameObject Spawn(GameObject original, Transform parent = null)
+    {
+        return Instantiate(original, parent);
+    }
     
+    public static GameObject Spawn(GameObject original, Vector3 position, Quaternion rotation, Transform parent = null)
+    {
+        return Instantiate(original, position, rotation, parent);
+    }
     
+    public static T Spawn<T>(T original) where T : MonoBehaviour
+    {
+        return Instantiate(original);
+    }
+    
+    public static T Spawn<T>(T original, Vector3 position, Quaternion rotation, Transform parent = null) where T : MonoBehaviour
+    {
+        return Instantiate(original, position, rotation, parent);
+    }
 }

@@ -5,34 +5,55 @@ using EventManager;
 using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Gun : Actor 
+public class Gun : Actor
 {
     public Transform muzzlePoint;
-    public Bullet bulletPrefab;
+    [FormerlySerializedAs("bulletPrefab")] public Bullet projectilePrefab;
     public float bulletSpeed = 10f;
     public float bulletsPerSecond = 10f;
 
+    // Runtime
+    [Header("Runtime")] public bool aiming;
     private bool onCooldown;
+
+    protected Vector3 aimPosition;
+
+    public virtual void Aim(Vector3 aimPosition)
+    {
+        aiming = true;
+        this.aimPosition = aimPosition;
+    }
 
     [Button("Fire")]
     public void Fire()
     {
-        if(onCooldown) return;
-        
-        var bullet = Instantiate(bulletPrefab, muzzlePoint.transform.position, muzzlePoint.transform.rotation);
-        bullet.Init(this, bulletSpeed);
-        Events.AddListener(Flag.BulletImpact, bullet, OnBulletHit);
-        muzzlePoint.DOPunchScale(new Vector3(0f, 0f, -.1f), .1f);
+        if (onCooldown) return;
         StartFireRateCooldown(1f / bulletsPerSecond);
-        bullet.GetComponent<NetworkObject>().Spawn(); 
-        // NetworkServer.Spawn(bullet.gameObject);
+        
+        Fire_Internal();
+    }
+
+    protected virtual void Fire_Internal()
+    {
+        SpawnBullet();
+        muzzlePoint.DOPunchScale(new Vector3(0f, 0f, -.1f), .1f);
+    }
+
+    protected Bullet SpawnBullet()
+    {
+        Bullet bullet = Instantiate(projectilePrefab, muzzlePoint.transform.position, muzzlePoint.transform.rotation);
+        bullet.Init(this, bulletSpeed, aimPosition);
+        Events.AddListener(Flag.BulletImpact, bullet, OnBulletHit);
+        bullet.GetComponent<NetworkObject>().Spawn();
+        return bullet;
     }
 
     private async void StartFireRateCooldown(float cooldown)
     {
         onCooldown = true;
-        await Task.Delay((int)(cooldown * 1000));
+        await Task.Delay((int) (cooldown * 1000));
         onCooldown = false;
     }
 
@@ -52,5 +73,10 @@ public class Gun : Actor
             case Bullet.BulletImpactArgs.EventType.NoImpact:
                 break;
         }
+    }
+
+    public virtual void StopAim()
+    {
+        aiming = false;
     }
 }

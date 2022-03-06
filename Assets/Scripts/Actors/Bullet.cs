@@ -4,7 +4,7 @@ using EventManager;
 using Unity.Netcode;
 using UnityEngine;
 
-public class Bullet : NetworkBehaviour 
+public class Bullet : NetworkBehaviour
 {
     public class BulletImpactArgs : EventArgs
     {
@@ -21,18 +21,28 @@ public class Bullet : NetworkBehaviour
     }
 
     public Gun owner;
-    private float speed = 1f;
+    protected float speed = 1f;
     private IEnumerator lifetimeTimer;
     private bool isDestroying;
-    
-    public ParticleSystem impactEffect;
 
-    private void FixedUpdate()
+    public ParticleSystem impactEffect;
+    protected Vector3 targetPosition;
+    
+    public void Init(Gun owner, float speed, Vector3 targetPosition, float lifetime = 30f)
     {
-        if(IsServer == false) return;
-        
-        if(isDestroying) return;
-        
+        this.owner = owner;
+        this.speed = speed;
+        lifetimeTimer = LifetimeTimer(lifetime);
+        this.targetPosition = targetPosition;
+        StartCoroutine(lifetimeTimer);
+    }
+
+    protected virtual void FixedUpdate()
+    {
+        if (IsServer == false) return;
+
+        if (isDestroying) return;
+
         Vector3 step = Vector3.forward * speed * Time.fixedDeltaTime;
         float stepDistance = step.magnitude;
         transform.Translate(step, Space.Self);
@@ -47,21 +57,24 @@ public class Bullet : NetworkBehaviour
                     hit = hit,
                     eventType = BulletImpactArgs.EventType.Impact
                 });
-                if (hit.transform.TryGetComponent(out DamageReciever damageReciever))
-                    damageReciever.DoDamage(this);
                 
-                Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                DestroyBullet();
+                if (hit.transform.TryGetComponent(out DamageReciever damageReciever))
+                {}
+                    // damageReciever.DoDamage(this);
+
+                // Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                // DestroyBullet();
+                
+                OnCollision(hit.point, hit.normal, damageReciever);
             }
         }
     }
 
-    public void Init(Gun owner, float speed, float lifetime = 30f)
+    protected virtual void OnCollision(Vector3 position, Vector3 normal, DamageReciever damageReciever)
     {
-        this.owner = owner;
-        this.speed = speed;
-        lifetimeTimer = LifetimeTimer(lifetime);
-        StartCoroutine(lifetimeTimer);
+        if (damageReciever) damageReciever.DoDamage(this);
+        Instantiate(impactEffect, position, Quaternion.LookRotation(normal));
+        DestroyBullet();
     }
 
     private IEnumerator LifetimeTimer(float lifetime)
@@ -77,10 +90,10 @@ public class Bullet : NetworkBehaviour
 
     private void DestroyBullet()
     {
-        if(isDestroying) return;
+        if (isDestroying) return;
         GetComponent<MeshRenderer>().enabled = false;
         isDestroying = true;
-        if(lifetimeTimer != null) StopCoroutine(lifetimeTimer);
+        if (lifetimeTimer != null) StopCoroutine(lifetimeTimer);
         // Destroy(gameObject, 2f);
         GetComponent<NetworkObject>().Despawn();
     }

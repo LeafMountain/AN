@@ -107,6 +107,7 @@ namespace StarterAssets
                 GroundedCheck();
                 Move();
                 Fire();
+                Aim();
             }
             CharacterRotation();
         }
@@ -338,6 +339,17 @@ namespace StarterAssets
             }
 
             weapon.Fire();
+        }
+
+        private void Aim()
+        {
+            if (Mouse.current.rightButton.isPressed == false)
+            {
+                weapon.StopAim(); 
+                return;
+            }
+            
+            weapon.Aim(MouseHit.point);
         }
 
         private void OnDrawGizmosSelected()
