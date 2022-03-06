@@ -1,9 +1,3 @@
-using System;
-using Cinemachine;
-using EventManager;
-using Unity.Netcode;
-using UnityEngine;
-
 public class GameManager : NetworkBehaviour 
 {
     private static GameManager gameManager;

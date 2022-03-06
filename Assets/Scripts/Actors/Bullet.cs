@@ -1,9 +1,3 @@
-using System;
-using System.Collections;
-using EventManager;
-using Unity.Netcode;
-using UnityEngine;
-
 public class Bullet : NetworkBehaviour
 {
     public class BulletImpactArgs : EventArgs

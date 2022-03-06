@@ -1,12 +1,3 @@
-using System;
-using System.Threading.Tasks;
-using DG.Tweening;
-using EventManager;
-using Sirenix.OdinInspector;
-using Unity.Netcode;
-using UnityEngine;
-using UnityEngine.Serialization;
-
 public class Gun : Actor
 {
     public Transform muzzlePoint;

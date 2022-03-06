@@ -1,6 +1,3 @@
-using Unity.Netcode;
-using UnityEngine;
-using UnityEngine.InputSystem;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
