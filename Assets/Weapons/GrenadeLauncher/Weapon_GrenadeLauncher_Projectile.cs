@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Weapon_GrenadeLauncher_Projectile : Bullet 
 {
     protected override void FixedUpdate()
