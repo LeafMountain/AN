@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class Character : Actor
 {
-    public DamageReciever damageReciever;
+    public DamageReciever damageReceiver;
     public Gun weapon;
     public Transform weaponAttach;
+    public Animator animator;
+
+    private Vector3 positionLastFrame;
+    public Vector3 Velocity { get; private set; }
 
     public override void OnNetworkSpawn()
     {
@@ -13,11 +17,43 @@ public class Character : Actor
 
         if (IsServer)
         {
-            GameObject spawned = Instantiate(GameManager.Instance.defaultGun);
+            var spawned = GameManager.Spawn(GameManager.Instance.defaultGun);
             spawned.GetComponent<NetworkObject>().SpawnWithOwnership(OwnerClientId);
             EquipGun_ClientRpc(spawned.GetComponent<Gun>());
         }
     }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    protected virtual void LateUpdate()
+    {
+        UpdateVelocity();
+        UpdateAnimatorValues();
+    }
+
+    protected virtual void FixedUpdate()
+    {
+    }
+
+    private void UpdateVelocity()
+    {
+        Vector3 position = transform.position;
+        Velocity = position - positionLastFrame;
+        positionLastFrame = position;
+    }
+
+    private void UpdateAnimatorValues()
+    {
+        if(animator == null) return;
+
+        Vector3 localVelocity = transform.InverseTransformDirection(Velocity) / Time.deltaTime;
+        animator.SetFloat("HorizontalSpeed", localVelocity.x);
+        animator.SetFloat("Speed", localVelocity.z);
+    }
+
 
     [ClientRpc]
     public void EquipGun_ClientRpc(NetworkBehaviourReference weapon)

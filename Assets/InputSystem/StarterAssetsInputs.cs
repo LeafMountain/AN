@@ -1,8 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-using UnityEngine.InputSystem;
-#endif
 
 namespace StarterAssets
 {
@@ -14,6 +11,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool fire;
+		public bool fireAlt;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -24,7 +22,6 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 #endif
 
-#if ENABLE_INPUT_SYSTEM 
 		public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
@@ -32,10 +29,10 @@ namespace StarterAssets
 
 		public void OnLook(InputValue value)
 		{
-			// if(cursorInputForLook)
-			// {
-			// 	LookInput(value.Get<Vector2>());
-			// }
+			if(cursorInputForLook)
+			{
+				LookInput(value.Get<Vector2>());
+			}
 		}
 
 		public void OnJump(InputValue value)
@@ -51,11 +48,14 @@ namespace StarterAssets
 		public void OnFire(InputValue value)
 		{
 			FireInput(value.isPressed);	
-			// FireInput(Mouse.current.leftButton.isPressed);
 		}
-#else
-	// old input sys if we do decide to have it (most likely wont)...
-#endif
+
+		public void OnFireAlt(InputValue value)
+		{
+			FireAltInput(value.isPressed);
+		}
+		
+		// ------
 		
 		public void MoveInput(Vector2 newMoveDirection)
 		{
@@ -81,19 +81,18 @@ namespace StarterAssets
 		{
 			fire = newFireState;
 		}
+		
+		public void FireAltInput(bool newFireState)
+		{
+			fire = newFireState;
+		}
 
 #if !UNITY_IOS || !UNITY_ANDROID
 
 		private void OnApplicationFocus(bool hasFocus)
 		{
-			SetCursorState(cursorLocked);
+			GameManager.LockCursor(cursorLocked);
 		}
-
-		private void SetCursorState(bool newState)
-		{
-			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
-		}
-
 #endif
 
 	}

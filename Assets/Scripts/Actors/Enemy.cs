@@ -1,9 +1,5 @@
-using System;
 using System.Threading.Tasks;
-using DG.Tweening;
-using EventManager;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Enemy : Character
 {
@@ -24,26 +20,22 @@ public class Enemy : Character
 
     private Actor target;
 
-    protected override void Start()
-    {
-        base.Start();
-        Events.AddListener(Flag.DamageRecieved, this, OnDamaged);
-    }
-
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
         SetDestination(transform.position);
     }
 
-    private void FixedUpdate()
+    protected override void FixedUpdate()
     {
+        base.FixedUpdate();
+        
         if(IsServer == false) return;
         
         if (GameManager.Instance.localPlayer == false) return;
         Vector3 playerPosition = GameManager.Instance.localPlayer.transform.position + Vector3.up;
         float playerDistance = Vector3.Distance(playerPosition, transform.position);
-        bool playerAlive = !GameManager.Instance.localPlayer.damageReciever.IsDead;
+        bool playerAlive = GameManager.Instance.localPlayer.damageReceiver.IsDead == false;
 
         if (playerAlive && playerDistance < stoppingRange)
         {
@@ -131,17 +123,17 @@ public class Enemy : Character
         this.destination = destination;
     }
 
-    private void OnDamaged(object origin, EventArgs eventargs)
-    {
-        if (damageReciever.currentHealth.Value > 0)
-        {
-            transform.DOPunchScale(Vector3.one * .1f, .2f);
-        }
-        else
-        {
-            transform.DOScale(Vector3.one * 2f, .1f).onComplete += () => Destroy(gameObject);
-        }
-    }
+    // private void OnDamaged(object origin, EventArgs eventargs)
+    // {
+    //     if (damageReceiver.currentHealth.Value > 0)
+    //     {
+    //         transform.DOPunchScale(Vector3.one * .1f, .2f);
+    //     }
+    //     else
+    //     {
+    //         transform.DOScale(Vector3.one * 2f, .1f).onComplete += () => Destroy(gameObject);
+    //     }
+    // }
 
     private void OnDrawGizmos()
     {

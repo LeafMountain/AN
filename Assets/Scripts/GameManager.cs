@@ -1,18 +1,33 @@
+using System;
+using EventManager;
+using Unity.Netcode;
+using UnityEngine;
+
 public class GameManager : NetworkBehaviour 
 {
     private static GameManager gameManager;
     public static GameManager Instance => gameManager ? gameManager : gameManager = FindObjectOfType<GameManager>(true);
 
+    public Camera characterCameraPrefab;
+    
     public Camera characterCamera;
-    public CinemachineVirtualCamera characterVirtualCamera;
     public GameObject defaultGun;
     public Player localPlayer;
-    
+
+    private void Awake()
+    {
+        if(gameManager) return;
+        
+        gameManager = this;
+        characterCamera = Spawn(characterCameraPrefab);
+    }
+
     private void Start()
     {
-        gameManager = this;
         Events.AddListener(Flag.DamageRecieved, OnDamageRecieved);
         Events.AddListener(Flag.Storeable, OnStoreableUpdated);
+        
+        LockCursor(true);
     }
 
     private void OnStoreableUpdated(object origin, EventArgs eventargs)
@@ -49,12 +64,12 @@ public class GameManager : NetworkBehaviour
         {
             if (damageArgs.instigator == localPlayer)
             {
-                characterVirtualCamera.Shake(.2f, 4f);
+                CameraController.Shake(.2f, 4f);
             }
         }
         if (damageArgs.destroyed)
         {
-            characterVirtualCamera.Shake(.7f, 7f);
+            CameraController.Shake(.7f, 7f);
         }
     }
 
@@ -68,7 +83,7 @@ public class GameManager : NetworkBehaviour
         return Instantiate(original, position, rotation, parent);
     }
     
-    public static T Spawn<T>(T original) where T : MonoBehaviour
+    public static T Spawn<T>(T original) where T : Component 
     {
         return Instantiate(original);
     }
@@ -76,5 +91,11 @@ public class GameManager : NetworkBehaviour
     public static T Spawn<T>(T original, Vector3 position, Quaternion rotation, Transform parent = null) where T : MonoBehaviour
     {
         return Instantiate(original, position, rotation, parent);
+    }
+
+    public static void LockCursor(bool value)
+    {
+        Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !value;
     }
 }

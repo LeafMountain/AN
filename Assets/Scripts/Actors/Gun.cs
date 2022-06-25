@@ -1,3 +1,12 @@
+using System;
+using System.Threading.Tasks;
+using DG.Tweening;
+using EventManager;
+using Sirenix.OdinInspector;
+using Unity.Netcode;
+using UnityEngine;
+using UnityEngine.Serialization;
+
 public class Gun : Actor
 {
     public Transform muzzlePoint;
@@ -15,6 +24,7 @@ public class Gun : Actor
     {
         aiming = true;
         this.aimPosition = aimPosition;
+        CameraController.SetFOV(25);
     }
 
     [Button("Fire")]
@@ -69,5 +79,6 @@ public class Gun : Actor
     public virtual void StopAim()
     {
         aiming = false;
+        CameraController.SetFOV(40);
     }
 }

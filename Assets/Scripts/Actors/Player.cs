@@ -75,8 +75,10 @@ public class Player : Character
         }
     }
 
-    public void FixedUpdate()
+    protected override void FixedUpdate()
     {
+        base.FixedUpdate();
+        
         if (IsServer)
         {
             LootMagnet();
@@ -85,6 +87,8 @@ public class Player : Character
 
     protected override void Update()
     {
+        base.Update();
+        
         UpdateMouseHit();
         if (debugMousePositionObject)
         {
@@ -125,7 +129,7 @@ public class Player : Character
     {
         base.Reset();
 
-        damageReciever.Reset();
+        damageReceiver.Reset();
         supplies = 0;
         energy = 100;
         dead = false;

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
+[RequireComponent(typeof(Actor))]
 public class DamageReciever : NetworkBehaviour
 {
     public Actor actor;
@@ -16,6 +17,11 @@ public class DamageReciever : NetworkBehaviour
     public Loot[] loot;
     private float lootSpawnForce = 5f;
     public bool IsDead => currentHealth.Value == 0;
+
+    private void OnValidate()
+    {
+        actor = GetComponent<Actor>();
+    }
 
     public override void OnNetworkSpawn()
     {
@@ -32,6 +38,7 @@ public class DamageReciever : NetworkBehaviour
         Events.TriggerEvent(Flag.DamageRecieved, actor, new DamageRecievedArgs()
         {
             reciever = actor,
+            damageReceiver= this,
             damage = 1,
             instigator = bullet.owner,
             destroyed = currentHealth.Value == 0,
@@ -65,6 +72,7 @@ public class DamageReciever : NetworkBehaviour
 public class DamageRecievedArgs : EventArgs
 {
     public Actor reciever;
+    public DamageReciever damageReceiver;
     public int damage;
     public Actor instigator;
     public bool destroyed;

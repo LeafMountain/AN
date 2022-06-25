@@ -1,3 +1,6 @@
+using Unity.Netcode;
+using UnityEngine;
+using UnityEngine.InputSystem;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -93,25 +96,30 @@ namespace StarterAssets
         protected override void Update()
         {
             base.Update();
-            
+
             if (IsOwner)
             {
                 _hasAnimator = TryGetComponent(out _animator);
-                
+
                 // InputFix();
 
                 JumpAndGravity();
                 GroundedCheck();
                 Move();
                 Fire();
-                Aim();
+                // Aim();
+                FireAlt();
             }
+
             CharacterRotation();
         }
 
-        private void LateUpdate()
+
+        protected override void LateUpdate()
         {
-            // CameraRotation();
+            base.LateUpdate();
+            
+            CameraRotation();
             GunRotation();
         }
 
@@ -159,7 +167,7 @@ namespace StarterAssets
 
         private void CharacterRotation()
         {
-            if(MouseHit.transform)
+            if (MouseHit.transform)
             {
                 Vector3 lookPosition = MouseHit.point;
                 lookPosition.y = transform.position.y;
@@ -171,25 +179,33 @@ namespace StarterAssets
         {
             if (weapon == null) return;
 
-            if (MouseHit.transform == null) return;
-            if (MouseHit.transform.TryGetComponent(out DamageReciever damageReciever))
+            Vector3 lookAtPoint = Vector3.zero;
+
+            if (MouseHit.transform == null)
             {
-                weapon.transform.LookAt(MouseHit.transform);
+                lookAtPoint = CameraController.Instance.camera.transform.forward * 50f;
             }
+            // if (MouseHit.transform.TryGetComponent(out DamageReciever damageReciever))
+            // {
+            // weapon.transform.LookAt(MouseHit.transform);
+            // }
+
             else
             {
-                weapon.transform.LookAt(MouseHit.point);
-                var gunRotation = weapon.transform.rotation.eulerAngles;
-                if (gunRotation.x < 200f) gunRotation.x += 360f;
-                gunRotation.x = Mathf.Clamp(gunRotation.x, 300f, 370f);
-                weapon.transform.rotation = Quaternion.Euler(gunRotation);
+                lookAtPoint = MouseHit.point;
             }
+
+            weapon.transform.LookAt(lookAtPoint);
+            var gunRotation = weapon.transform.rotation.eulerAngles;
+            if (gunRotation.x < 200f) gunRotation.x += 360f;
+            gunRotation.x = Mathf.Clamp(gunRotation.x, 300f, 370f);
+            weapon.transform.rotation = Quaternion.Euler(gunRotation);
         }
 
         private void InputFix()
         {
             _input.sprint = Keyboard.current.shiftKey.isPressed;
-            
+
             float x = 0, y = 0;
             x += Keyboard.current.dKey.isPressed ? 1 : 0;
             x += Keyboard.current.aKey.isPressed ? -1 : 0;
@@ -230,14 +246,15 @@ namespace StarterAssets
 
             if (_hasAnimator)
             {
-                Vector3 moveAnimationVelocity = new Vector3(_input.move.x, 0f, _input.move.y);
+                Vector3 moveAnimationVelocity = new(_input.move.x, 0f, _input.move.y);
                 moveAnimationVelocity = transform.InverseTransformDirection(moveAnimationVelocity);
                 moveAnimationVelocity *= targetSpeed;
-                _animator.SetFloat("HorizontalSpeed", moveAnimationVelocity.x);
-                _animator.SetFloat("Speed", moveAnimationVelocity.z);
+
+                // _animator.SetFloat("HorizontalSpeed", moveAnimationVelocity.x);
+                // _animator.SetFloat("Speed", moveAnimationVelocity.z);
 
                 // _animator.SetFloat(_animIDSpeed, _animationBlend);
-                _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+                // _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
             }
         }
 
@@ -338,14 +355,14 @@ namespace StarterAssets
             weapon.Fire();
         }
 
-        private void Aim()
+        private void FireAlt()
         {
             if (Mouse.current.rightButton.isPressed == false)
             {
-                weapon.StopAim(); 
+                weapon.StopAim();
                 return;
             }
-            
+
             weapon.Aim(MouseHit.point);
         }
 

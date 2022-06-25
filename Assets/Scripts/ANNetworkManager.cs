@@ -9,7 +9,8 @@ public class ANNetworkManager : Unity.Netcode.NetworkManager
 
     private void Start()
     {
-        // StartHost();
+        if(autoHost)
+            StartHost();
     }
 
     private void he()
@@ -28,7 +29,6 @@ public class ANNetworkManager : Unity.Netcode.NetworkManager
     [ContextMenu("Test shake camera")]
     public void TestShakeCamera()
     {
-        var cameraFollower = FindObjectOfType<CinemachineVirtualCamera>();
-        cameraFollower.Shake(1f, 5);
+        CameraController.Shake(1f, 5);
     }
 }
