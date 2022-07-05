@@ -549,7 +549,7 @@ MonoBehaviour:
   stripCapacity: 16
   particlePerStripCount: 16
   needsComputeBounds: 0
-  boundsSettingMode: 1
+  boundsMode: 1
   m_Space: 0
 --- !u!114 &8926484042661614569
 MonoBehaviour:
@@ -1048,7 +1048,7 @@ MonoBehaviour:
   useAlphaClipping: 1
   generateMotionVector: 0
   excludeFromTAA: 0
-  materialOffset: 0
+  sortingPriority: 0
   m_SubOutputs:
   - {fileID: 8926484042661614904}
   cullMode: 0
@@ -1057,14 +1057,17 @@ MonoBehaviour:
   colorMapping: 0
   uvMode: 1
   useSoftParticle: 0
-  sortPriority: 0
+  vfxSystemSortPriority: 0
   sort: 0
+  sortMode: 0
+  revertSorting: 0
   indirectDraw: 0
   computeCulling: 0
   frustumCulling: 0
   castShadows: 0
   useExposureWeight: 0
   flipbookLayout: 0
+  needsOwnSort: 0
   shaderGraph: {fileID: 0}
   materialSettings:
     m_PropertyNames: []
@@ -1146,7 +1149,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"8a51867cd75a2a7438c127fd7ae830e3","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"57bb5846aaf6f144d99efd4f8439bb63","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: baseColorMap
