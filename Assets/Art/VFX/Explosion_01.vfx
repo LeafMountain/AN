@@ -224,24 +224,6 @@ MonoBehaviour:
     - model: {fileID: 8926484042661615334}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661615339}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615341}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615344}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 0}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615351}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615356}
-      id: 0
-      isStickyNote: 0
   - title: Smoke Puffs
     position:
       serializedVersion: 2

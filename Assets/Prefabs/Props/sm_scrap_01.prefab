@@ -72,7 +72,7 @@ MonoBehaviour:
   lootCount: 5
   loot:
   - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  destructionEffect: {fileID: 8656419031392417013, guid: 6f41616644a080e40aa9b4457edc1d01, type: 3}
+  destructionEffect: {fileID: 8656419031392417013, guid: 8dcdaf810ed03f94b860a1f17ddc0701, type: 3}
 --- !u!114 &4748271819546457627
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8656419031392417019}
   - component: {fileID: 8656419031392417012}
   m_Layer: 0
-  m_Name: RobotHitFX_01
+  m_Name: ScrapHitFX_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8656419031392417013}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 7fd7806a07b944644a5c17bab9ee0298, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 03833a64e3458ac49baa60ff356c9547, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
