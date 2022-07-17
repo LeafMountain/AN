@@ -20,14 +20,19 @@ namespace EffectSystem
         public static void PlayEffect(EffectData effectData, GameObject target, GameObject instigator,
             Vector3 position = default, Quaternion rotation = default, AudioSource audioSource = default)
         {
-            foreach (var effect in effectData.effects)
+            var rootEffectData = effectData;
+            while (rootEffectData != null)
             {
-                var effectArgs = EffectArgs.Create<SpawnEffect.SpawnEffectArgs>();
-                effectArgs.impactPosition = position;
-                effectArgs.impactRotation = rotation;
-                effectArgs.target = target;
-                effectArgs.instigator = instigator;
-                effect.DoEffect(effectArgs);
+                foreach (var effect in rootEffectData.effects)
+                {
+                    var effectArgs = EffectArgs.Create<SpawnEffect.SpawnEffectArgs>();
+                    effectArgs.impactPosition = position;
+                    effectArgs.impactRotation = rotation;
+                    effectArgs.target = target;
+                    effectArgs.instigator = instigator;
+                    effect.DoEffect(effectArgs);
+                }
+                rootEffectData = rootEffectData.parentEffectData;
             }
         }
     }

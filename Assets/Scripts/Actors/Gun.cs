@@ -9,7 +9,10 @@ using UnityEngine.Serialization;
 
 public class Gun : Actor
 {
-    public Transform muzzlePoint;
+    private int currentMuzzleIndex = 0;
+    public Transform[] muzzlePoints;
+    public Transform muzzlePoint => muzzlePoints[currentMuzzleIndex = (currentMuzzleIndex + 1) % muzzlePoints.Length];
+        
     [FormerlySerializedAs("bulletPrefab")] public Bullet projectilePrefab;
     public float bulletSpeed = 10f;
     public float bulletsPerSecond = 10f;

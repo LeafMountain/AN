@@ -1,3 +1,4 @@
+using System;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -68,7 +69,6 @@ namespace StarterAssets
         private bool _hasAnimator;
         private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
-
         private void Awake()
         {
             // get a reference to our main camera
@@ -109,6 +109,7 @@ namespace StarterAssets
                 Fire();
                 // Aim();
                 FireAlt();
+                Interact();
             }
 
             CharacterRotation();
@@ -364,6 +365,26 @@ namespace StarterAssets
             }
 
             weapon.Aim(MouseHit.point);
+        }
+
+        private void OnAnimatorIK(int layerIndex)
+        {
+            animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
+            animator.SetIKPosition(AvatarIKGoal.RightHand, weaponAttach.transform.position);
+            animator.SetIKRotation(AvatarIKGoal.RightHand, weaponAttach.transform.rotation);
+        }
+
+        private void Interact()
+        {
+            if(_input.interact == false) return;
+            
+            if (lookTarget.TryGetComponent(out IInteractable interactable))
+            {
+                Debug.Log(interactable.GetPrompt());
+                interactable.Interact(this); 
+            }
+
+            _input.interact = false;
         }
 
         private void OnDrawGizmosSelected()

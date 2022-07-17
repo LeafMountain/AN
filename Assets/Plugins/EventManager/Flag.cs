@@ -6,6 +6,7 @@
 
         BulletImpact,
         DamageRecieved,
-        Storeable
+        Storeable,
+        LookTarget,
     }
 }

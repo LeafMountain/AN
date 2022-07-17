@@ -37,6 +37,12 @@ MonoBehaviour:
     - Name: gameObject
       Entry: 10
       Data: 0
+    - Name: autoDestroy
+      Entry: 5
+      Data: true
+    - Name: destroyDelayDuration
+      Entry: 4
+      Data: 2
     - Name: 
       Entry: 8
       Data: 

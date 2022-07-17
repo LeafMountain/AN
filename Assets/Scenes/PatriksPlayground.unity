@@ -8395,8 +8395,119 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6480215433290678588, guid: 34c640761403b9e4190d79b45eccae90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6138177918355914574}
+    - targetCorrespondingSourceObject: {fileID: 6480215433290678588, guid: 34c640761403b9e4190d79b45eccae90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6138177918355914573}
+    - targetCorrespondingSourceObject: {fileID: 6480215433290678588, guid: 34c640761403b9e4190d79b45eccae90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6138177918355914572}
+    - targetCorrespondingSourceObject: {fileID: 6480215433290678588, guid: 34c640761403b9e4190d79b45eccae90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6138177918355914576}
+    - targetCorrespondingSourceObject: {fileID: 6480215433290678588, guid: 34c640761403b9e4190d79b45eccae90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6138177918355914575}
   m_SourcePrefab: {fileID: 100100000, guid: 34c640761403b9e4190d79b45eccae90, type: 3}
+--- !u!1 &6138177918355914571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6480215433290678588, guid: 34c640761403b9e4190d79b45eccae90, type: 3}
+  m_PrefabInstance: {fileID: 6138177918355914570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6138177918355914572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138177918355914571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3776562903
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &6138177918355914573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138177918355914571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
+--- !u!114 &6138177918355914574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138177918355914571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89e74ec3a67809418a334f9233c45c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 0
+  actor: {fileID: 6138177918355914573}
+--- !u!65 &6138177918355914575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138177918355914571}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.28779453, y: 0.48667598, z: 0.38729024}
+  m_Center: {x: 0, y: 0.24333799, z: 0}
+--- !u!54 &6138177918355914576
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138177918355914571}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &6216716585716356756
 PrefabInstance:
   m_ObjectHideFlags: 0

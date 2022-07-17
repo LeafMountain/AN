@@ -37,6 +37,12 @@ MonoBehaviour:
     - Name: gameObject
       Entry: 10
       Data: 0
+    - Name: autoDestroy
+      Entry: 5
+      Data: true
+    - Name: destroyDelayDuration
+      Entry: 4
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -46,3 +52,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  parentEffectData: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}

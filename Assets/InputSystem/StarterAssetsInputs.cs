@@ -12,6 +12,7 @@ namespace StarterAssets
 		public bool sprint;
 		public bool fire;
 		public bool fireAlt;
+		public bool interact;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -35,57 +36,21 @@ namespace StarterAssets
 			}
 		}
 
-		public void OnJump(InputValue value)
-		{
-			JumpInput(value.isPressed);
-		}
+		public void OnJump(InputValue value) => JumpInput(value.isPressed);
+		public void OnSprint(InputValue value) => SprintInput(value.isPressed);
+		public void OnFire(InputValue value) => FireInput(value.isPressed);
+		public void OnFireAlt(InputValue value) => FireAltInput(value.isPressed);
+		public void OnInteract(InputValue value) => InteractInput(value.isPressed);
 
-		public void OnSprint(InputValue value)
-		{
-			SprintInput(value.isPressed);
-		}
-
-		public void OnFire(InputValue value)
-		{
-			FireInput(value.isPressed);	
-		}
-
-		public void OnFireAlt(InputValue value)
-		{
-			FireAltInput(value.isPressed);
-		}
-		
 		// ------
 		
-		public void MoveInput(Vector2 newMoveDirection)
-		{
-			move = newMoveDirection;
-		} 
-
-		public void LookInput(Vector2 newLookDirection)
-		{
-			look = newLookDirection;
-		}
-
-		public void JumpInput(bool newJumpState)
-		{
-			jump = newJumpState;
-		}
-
-		public void SprintInput(bool newSprintState)
-		{
-			sprint = newSprintState;
-		}
-
-		public void FireInput(bool newFireState)
-		{
-			fire = newFireState;
-		}
-		
-		public void FireAltInput(bool newFireState)
-		{
-			fire = newFireState;
-		}
+		public void MoveInput(Vector2 newMoveDirection) => move = newMoveDirection;
+		public void LookInput(Vector2 newLookDirection) => look = newLookDirection;
+		public void JumpInput(bool newJumpState) => jump = newJumpState;
+		public void SprintInput(bool newSprintState) => sprint = newSprintState;
+		public void FireInput(bool newFireState) => fire = newFireState;
+		public void FireAltInput(bool newFireState) => fireAlt = newFireState;
+		public void InteractInput(bool newInputState) => interact = newInputState;
 
 #if !UNITY_IOS || !UNITY_ANDROID
 

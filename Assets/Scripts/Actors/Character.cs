@@ -32,6 +32,9 @@ public class Character : Actor
     {
         UpdateVelocity();
         UpdateAnimatorValues();
+
+        weapon.transform.position = weaponAttach.transform.position;
+        weapon.transform.rotation = weaponAttach.transform.rotation;
     }
 
     protected virtual void FixedUpdate()
@@ -47,13 +50,12 @@ public class Character : Actor
 
     private void UpdateAnimatorValues()
     {
-        if(animator == null) return;
+        if (animator == null) return;
 
         Vector3 localVelocity = transform.InverseTransformDirection(Velocity) / Time.deltaTime;
         animator.SetFloat("HorizontalSpeed", localVelocity.x);
         animator.SetFloat("Speed", localVelocity.z);
     }
-
 
     [ClientRpc]
     public void EquipGun_ClientRpc(NetworkBehaviourReference weapon)

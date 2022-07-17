@@ -14,8 +14,8 @@ public class Player : Character
     public int supplies = 0;
     public int maxEnergy = 100;
     public int energy = 100;
-    public float lootRange = 2f;
-    public float lootSpeed = 5f;
+    // public float lootRange = 2f;
+    // public float lootSpeed = 5f;
 
     private Collider[] colliders = new Collider[10];
     public LayerMask actorMask;
@@ -25,6 +25,8 @@ public class Player : Character
 
     public RaycastHit MouseHit;
     public GameObject debugMousePositionObject;
+
+    public GameObject lookTarget;
 
     public override void OnNetworkSpawn()
     {
@@ -78,11 +80,7 @@ public class Player : Character
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        
-        if (IsServer)
-        {
-            LootMagnet();
-        }
+        InteractUpdate();
     }
 
     protected override void Update()
@@ -97,7 +95,19 @@ public class Player : Character
         }
     }
 
-    private void LootMagnet()
+    private void InteractUpdate()
+    {
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit) == false)
+        {
+            lookTarget = null;
+            return;
+        } 
+        
+        Events.TriggerEvent(Flag.LookTarget, hit.transform.gameObject);
+        lookTarget = hit.transform.gameObject;
+    }
+
+    /*private void LootMagnet()
     {
         int hits = Physics.OverlapSphereNonAlloc(transform.position, lootRange, colliders, actorMask);
         for (int i = 0; i < hits; i++)
@@ -108,7 +118,7 @@ public class Player : Character
             if (distance < 1f)
             {
                 NetworkObject networkObject = storeable.GetComponent<NetworkObject>();
-                storeable.PickUp(this);
+                storeable.Interact(this);
                 // networkObject.Despawn();
             }
             else
@@ -117,7 +127,7 @@ public class Player : Character
                 storeable.transform.position += (transform.position + Vector3.up - actor.transform.position).normalized * lootSpeed * Time.fixedDeltaTime;
             }
         }
-    }
+    }*/
 
     public void AddEnergy(int value)
     {
@@ -141,5 +151,13 @@ public class Player : Character
         var mousePosition = Input.mousePosition;
         Ray cameraRay = GameManager.Instance.characterCamera.ScreenPointToRay(mousePosition);
         Physics.Raycast(cameraRay, out MouseHit);
+    }
+
+    public void SwitchWeapon(int index)
+    {
+        if (weapon)
+        {
+            GameManager.Despawn(weapon.gameObject); 
+        }
     }
 }

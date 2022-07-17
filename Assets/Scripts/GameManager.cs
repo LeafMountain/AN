@@ -2,6 +2,7 @@ using System;
 using EventManager;
 using Unity.Netcode;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class GameManager : NetworkBehaviour 
 {
@@ -13,6 +14,8 @@ public class GameManager : NetworkBehaviour
     public Camera characterCamera;
     public GameObject defaultGun;
     public Player localPlayer;
+
+    public Gun[] guns;
 
     private void Awake()
     {
@@ -97,5 +100,17 @@ public class GameManager : NetworkBehaviour
     {
         Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;
         Cursor.visible = !value;
+    }
+
+    public static void Despawn(GameObject gameObject, float delay = 0)
+    {
+        if (delay == 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject, delay); 
+        }
     }
 }
