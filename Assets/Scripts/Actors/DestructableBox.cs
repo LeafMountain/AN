@@ -2,10 +2,11 @@ using System;
 using DG.Tweening;
 using EventManager;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DestructableBox : Actor
 {
-    public DamageReciever damageReciever;
+    [FormerlySerializedAs("damageReciever")] public DamageReceiver damageReceiver;
 
     protected override void Start()
     {
@@ -15,7 +16,7 @@ public class DestructableBox : Actor
 
     private void OnDamaged(object origin, EventArgs eventargs)
     {
-        if (damageReciever.currentHealth.Value > 0)
+        if (damageReceiver.currentHealth.Value > 0)
         {
             transform.DOPunchScale(Vector3.one * .1f, .2f);
         }

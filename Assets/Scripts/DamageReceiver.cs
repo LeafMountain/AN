@@ -1,12 +1,14 @@
 using System;
+using EffectSystem;
 using EventManager;
 using Unity.Mathematics;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Actor))]
-public class DamageReciever : NetworkBehaviour
+public class DamageReceiver : NetworkBehaviour
 {
     public Actor actor;
     public int maxHealth = 10;
@@ -17,7 +19,9 @@ public class DamageReciever : NetworkBehaviour
     public Loot[] loot;
     private float lootSpawnForce = 5f;
     public bool IsDead => currentHealth.Value == 0;
-    public GameObject destructionEffect;
+    
+    public EffectData destructionEffect;
+    public EffectData hitEffect;
 
     private void OnValidate()
     {
@@ -47,7 +51,7 @@ public class DamageReciever : NetworkBehaviour
 
         if (destructionEffect)
         {
-            Instantiate(destructionEffect, bullet.transform.position, Quaternion.LookRotation(-bullet.transform.forward));
+            hitEffect.PlayEffect(gameObject, gameObject, bullet.transform.position, Quaternion.LookRotation(-bullet.transform.forward));
         }
 
         if (IsServer)
@@ -62,13 +66,12 @@ public class DamageReciever : NetworkBehaviour
                     Vector3 insideUnitSphere = Random.insideUnitSphere;
                     insideUnitSphere.y = Mathf.Abs(insideUnitSphere.y);
                     spawnedLoot.GetComponent<Rigidbody>().AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
-
                     spawnedLoot.GetComponent<NetworkObject>().Spawn();
                 }
 
                 if (destructionEffect != null)
                 {
-                    Instantiate(destructionEffect, transform.position, quaternion.identity);
+                    destructionEffect.PlayEffect(gameObject, gameObject, transform.position, transform.rotation);
                 }
             }
         }
@@ -83,7 +86,7 @@ public class DamageReciever : NetworkBehaviour
 public class DamageRecievedArgs : EventArgs
 {
     public Actor reciever;
-    public DamageReciever damageReceiver;
+    public DamageReceiver damageReceiver;
     public int damage;
     public Actor instigator;
     public bool destroyed;

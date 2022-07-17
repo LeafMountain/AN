@@ -13,8 +13,8 @@ public class UIActor : MonoBehaviour
     public void Init(Actor actor, bool show = false)
     {
         Events.AddListener(Flag.DamageRecieved, actor, OnDamageRecieved);
-        DamageReciever damageReciever = actor.GetComponent<DamageReciever>();
-        UpdateHealth(damageReciever);
+        DamageReceiver damageReceiver = actor.GetComponent<DamageReceiver>();
+        UpdateHealth(damageReceiver);
         gameObject.SetActive(show);
         this.actor = actor;
 
@@ -49,15 +49,15 @@ public class UIActor : MonoBehaviour
     private void OnDamageRecieved(object origin, EventArgs eventargs)
     {
         var damageArgs = eventargs as DamageRecievedArgs;
-        UpdateHealth(damageArgs.reciever.GetComponent<DamageReciever>());
+        UpdateHealth(damageArgs.reciever.GetComponent<DamageReceiver>());
     }
 
-    public void UpdateHealth(DamageReciever damageReciever)
+    public void UpdateHealth(DamageReceiver damageReceiver)
     {
-        if(damageReciever == null) return;
+        if(damageReceiver == null) return;
         
-        var maxHealth = damageReciever.maxHealth;
-        var currentHealth = damageReciever.currentHealth;
+        var maxHealth = damageReceiver.maxHealth;
+        var currentHealth = damageReceiver.currentHealth;
         gameObject.SetActive(true);
         healthBar.gameObject.SetActive(true);
         healthBar.value = (float)currentHealth.Value / maxHealth;

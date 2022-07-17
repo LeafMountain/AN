@@ -8,9 +8,9 @@ public class Weapon_GrenadeLauncher_Projectile : Bullet
         transform.Translate((targetPosition - transform.position).normalized * Time.fixedDeltaTime * speed);
     }
 
-    protected override void OnCollision(Vector3 position, Vector3 normal, DamageReciever damageReciever)
+    protected override void OnCollision(Vector3 position, Vector3 normal, DamageReceiver damageReceiver)
     {
-        base.OnCollision(position, normal, damageReciever);
+        base.OnCollision(position, normal, damageReceiver);
         print("BOOM");
     }
 }

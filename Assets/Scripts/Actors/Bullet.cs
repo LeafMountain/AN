@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using EffectSystem;
 using EventManager;
 using Unity.Netcode;
 using UnityEngine;
@@ -25,7 +26,7 @@ public class Bullet : NetworkBehaviour
     private IEnumerator lifetimeTimer;
     private bool isDestroying;
 
-    public ParticleSystem impactEffect;
+    public EffectData impactEffect;
     protected Vector3 targetPosition;
     
     public void Init(Gun owner, float speed, Vector3 targetPosition, float lifetime = 30f)
@@ -58,7 +59,7 @@ public class Bullet : NetworkBehaviour
                     eventType = BulletImpactArgs.EventType.Impact
                 });
                 
-                if (hit.transform.TryGetComponent(out DamageReciever damageReciever))
+                if (hit.transform.TryGetComponent(out DamageReceiver damageReciever))
                 {}
                     // damageReciever.DoDamage(this);
 
@@ -70,10 +71,10 @@ public class Bullet : NetworkBehaviour
         }
     }
 
-    protected virtual void OnCollision(Vector3 position, Vector3 normal, DamageReciever damageReciever)
+    protected virtual void OnCollision(Vector3 position, Vector3 normal, DamageReceiver damageReceiver)
     {
-        if (damageReciever) damageReciever.DoDamage(this);
-        Instantiate(impactEffect, position, Quaternion.LookRotation(normal));
+        if (damageReceiver) damageReceiver.DoDamage(this);
+        impactEffect.PlayEffect(gameObject, gameObject, position, Quaternion.LookRotation(normal));
         DestroyBullet();
     }
 
@@ -91,7 +92,11 @@ public class Bullet : NetworkBehaviour
     private void DestroyBullet()
     {
         if (isDestroying) return;
-        GetComponent<MeshRenderer>().enabled = false;
+        if(TryGetComponent<MeshRenderer>(out var meshRenderer))
+        {
+            meshRenderer.enabled = false;
+        }
+        
         isDestroying = true;
         if (lifetimeTimer != null) StopCoroutine(lifetimeTimer);
         // Destroy(gameObject, 2f);

@@ -36,18 +36,23 @@ public class Actor : NetworkBehaviour
         Vector3 centerOfMass = GetComponent<Collider>().bounds.center;
         return centerOfMass;
     }
+
+    private Tweener tweener;
     
     protected virtual void OnDamaged(object origin, EventArgs eventargs)
     {
-        var args = eventargs as DamageRecievedArgs;
-        if (args.damageReceiver.currentHealth.Value > 0)
-        {
-            transform.DOPunchScale(Vector3.one * .1f, .2f);
-        }
-        else
-        {
-            transform.DOScale(Vector3.one * 2f, .1f).onComplete += () => Destroy(gameObject);
-        }
+        // var args = eventargs as DamageRecievedArgs;
+        // if (args.damageReceiver.currentHealth.Value > 0)
+        // {
+        //     tweener.Rewind(false);
+        //     tweener?.Kill();
+        //     tweener = transform.DOPunchScale(Vector3.one * .1f, .2f);
+        // }
+        // else
+        // {
+        //     tweener?.Kill();
+        //     tweener = transform.DOScale(Vector3.one * 2f, .1f);
+        //     tweener.onComplete += () => Destroy(gameObject);
+        // }
     }
-    
 }

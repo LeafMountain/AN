@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Character : Actor
 {
-    public DamageReciever damageReceiver;
+    public DamageReceiver damageReceiver;
     public Gun weapon;
     public Transform weaponAttach;
     public Animator animator;
