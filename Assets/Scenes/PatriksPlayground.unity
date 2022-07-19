@@ -1111,18 +1111,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 68706021080737385, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 140017936255656095, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 575289528192412159, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 2343305691272338659, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3433400915
@@ -1131,18 +1119,6 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 3600856739
       objectReference: {fileID: 0}
-    - target: {fileID: 4741072733558199199, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: hitEffect
-      value: 
-      objectReference: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-    - target: {fileID: 4741072733558199199, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741072733558199199, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: destructionEffect
-      value: 
-      objectReference: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
     - target: {fileID: 4806851517530982289, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2643836172
@@ -1154,10 +1130,6 @@ PrefabInstance:
     - target: {fileID: 5671970072109988043, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 257974521
-      objectReference: {fileID: 0}
-    - target: {fileID: 5767365157829964297, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5879119567983608326, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: m_Name
@@ -1225,18 +1197,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 68706021080737385, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 140017936255656095, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 575289528192412159, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 2343305691272338659, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3945112394
@@ -1244,10 +1204,6 @@ PrefabInstance:
     - target: {fileID: 2553597045798158435, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3410087392
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741072733558199199, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4806851517530982289, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -1260,10 +1216,6 @@ PrefabInstance:
     - target: {fileID: 5671970072109988043, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3573285775
-      objectReference: {fileID: 0}
-    - target: {fileID: 5767365157829964297, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5879119567983608326, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: m_Name
@@ -1787,18 +1739,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 68706021080737385, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 140017936255656095, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 575289528192412159, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 2343305691272338659, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2919920021
@@ -1806,10 +1746,6 @@ PrefabInstance:
     - target: {fileID: 2553597045798158435, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2529031105
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741072733558199199, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4806851517530982289, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -1822,10 +1758,6 @@ PrefabInstance:
     - target: {fileID: 5671970072109988043, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2646445937
-      objectReference: {fileID: 0}
-    - target: {fileID: 5767365157829964297, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
-      propertyPath: maxHealth
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5879119567983608326, guid: 72452e4cdffe913409aad1952ff48bf4, type: 3}
       propertyPath: m_Name
