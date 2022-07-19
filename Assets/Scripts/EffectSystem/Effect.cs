@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -16,13 +15,37 @@ namespace EffectSystem
         {
             Target,
             Instigator,
-            Impact
+            Impact,
         }
 
         [SerializeField] protected Mode spawnMode;
+        [SerializeField] protected Actor.MapPoint.PointType pointType;
 
         public virtual void DoEffect<T>(T extraArgs) where T : EffectArgs
         {
+        }
+
+        public virtual (Vector3 point, Quaternion rotation) GetLocation(EffectArgs extraArgs)
+        {
+            switch (spawnMode)
+            {
+                case Mode.Target:
+                {
+                    var actor = extraArgs.target.GetComponent<Actor>();
+                    return actor.GetPointAndRotation(pointType);
+                }
+                case Mode.Instigator:
+                {
+                    var actor = extraArgs.instigator.GetComponent<Actor>();
+                    return actor.GetPointAndRotation(pointType);
+                }
+                case Mode.Impact:
+                    return (extraArgs.target.GetComponent<DamageReceiver>().lastHitPoint,
+                        Quaternion.LookRotation(extraArgs.target.GetComponent<DamageReceiver>().lastHitNormal) *
+                        Quaternion.Euler(Vector3.right * 90f));
+            }
+
+            return (default, default);
         }
     }
 
@@ -53,7 +76,6 @@ namespace EffectSystem
         public class SpawnEffectArgs : EffectArgs
         {
             public Vector3 impactPosition;
-            public Vector3 impactNormal;
             public Quaternion impactRotation;
 
             protected override void Reset()
@@ -61,11 +83,11 @@ namespace EffectSystem
                 base.Reset();
                 impactPosition = default;
                 impactRotation = default;
-                impactNormal = default;
             }
         }
 
         [SerializeField] private GameObject gameObject;
+        [SerializeField] private VisualEffectAsset visualEffect;
         [SerializeField] private bool autoDestroy;
 
         [SerializeField, ShowIf(nameof(autoDestroy))]
@@ -75,21 +97,40 @@ namespace EffectSystem
         {
             var spawnArgs = extraArgs as SpawnEffectArgs;
             GameObject spawned = null;
+            if (visualEffect != null)
+            {
+                spawned = new GameObject(this.visualEffect.name);
+                var visualEffect = spawned.AddComponent<VisualEffect>();
+                visualEffect.visualEffectAsset = this.visualEffect;
+            }
+            else
+            {
+                spawned = GameManager.Spawn(gameObject);
+            }
 
             switch (spawnMode)
             {
                 case Mode.Target:
-                    spawned = Object.Instantiate(gameObject, extraArgs.target.transform.position,
-                        extraArgs.target.transform.rotation);
+                {
+                    var (point, rotation) = GetLocation(extraArgs);
+                    spawned.transform.position = point;
+                    spawned.transform.rotation = rotation;
                     break;
+                }
 
                 case Mode.Instigator:
-                    spawned = Object.Instantiate(gameObject, extraArgs.instigator.transform.position,
-                        extraArgs.instigator.transform.rotation);
+                {
+                    var (point, rotation) = GetLocation(extraArgs);
+                    spawned.transform.position = point;
+                    spawned.transform.rotation = rotation;
+                    // spawned.transform.position = extraArgs.instigator.transform.position;
+                    // spawned.transform.rotation = extraArgs.instigator.transform.rotation;
                     break;
+                }
 
                 case Mode.Impact:
-                    spawned = Object.Instantiate(gameObject, spawnArgs.impactPosition, spawnArgs.impactRotation);
+                    spawned.transform.position = spawnArgs.impactPosition;
+                    spawned.transform.rotation = spawnArgs.impactRotation * Quaternion.Euler(Vector3.right * 90f);
                     break;
             }
 
@@ -163,6 +204,24 @@ namespace EffectSystem
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+    }
+
+    [Serializable]
+    public class AudioEffect : Effect
+    {
+        [SerializeField] private AudioClip audioClip;
+        [SerializeField, MinMaxSlider(0f, 2f)] private Vector2 pitch = Vector2.one;
+        [SerializeField, MinMaxSlider(0f, 2f)] private Vector2 volume = Vector2.one;
+
+        public override void DoEffect<T>(T extraArgs)
+        {
+            var audioSourceGo = new GameObject();
+            var audioSource = audioSourceGo.AddComponent<AudioSource>();
+            audioSource.transform.position = GetLocation(extraArgs).point;
+            audioSource.PlayOneShot(audioClip);
+            audioSource.pitch = UnityEngine.Random.Range(pitch.x, pitch.y);
+            audioSource.volume = UnityEngine.Random.Range(volume.x, volume.y);
         }
     }
 }

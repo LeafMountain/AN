@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using Unity.Mathematics;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -32,6 +34,7 @@ public class Character : Actor
     {
         UpdateVelocity();
         UpdateAnimatorValues();
+        UpdateWeaponPosition();
 
         weapon.transform.position = weaponAttach.transform.position;
         weapon.transform.rotation = weaponAttach.transform.rotation;
@@ -39,6 +42,27 @@ public class Character : Actor
 
     protected virtual void FixedUpdate()
     {
+    }
+
+    public Vector3 weaponOffset = Vector3.forward;
+
+    private void UpdateWeaponPosition()
+    {
+        weaponPushback -= Time.deltaTime * 2f;
+        weaponPushback = math.clamp(weaponPushback, 0, float.MaxValue);
+
+        var pushback = weaponAttach.TransformVector(Vector3.back) * weaponPushback;
+        
+        weaponAttach.forward = CameraController.Instance.camera.transform.forward;
+        weaponAttach.position = transform.position + CameraController.Instance.camera.transform.forward + transform.TransformVector(weaponOffset) + pushback;
+    }
+
+    private float weaponPushback = 0f;
+    public float maxPushback = .2f;
+    
+    public void AddWeaponPushback()
+    {
+        weaponPushback = maxPushback;
     }
 
     private void UpdateVelocity()

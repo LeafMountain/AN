@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2373234067fc5d64a9f23e60e7fe93f1, type: 3}
-  m_Name: scrap_hitEffect
+  m_Name: generic_gunFiringEffect
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 8656419031392417013, guid: 8dcdaf810ed03f94b860a1f17ddc0701, type: 3}
-    - {fileID: 8300000, guid: dc6bf93b4cedbb5409d6c9fe82196017, type: 3}
+    - {fileID: 919132149155446097, guid: 99d22a2f138f8b345aff46f92418819f, type: 3}
+    - {fileID: 8300000, guid: 32d1b5074a0138d4b89225c30c6f56ad, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -28,13 +28,16 @@ MonoBehaviour:
       Data: 0|EffectSystem.Effect[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 2
     - Name: 
       Entry: 7
       Data: 1|EffectSystem.SpawnEffect, Assembly-CSharp
     - Name: spawnMode
       Entry: 3
       Data: 2
+    - Name: pointType
+      Entry: 3
+      Data: 0
     - Name: gameObject
       Entry: 10
       Data: 0
@@ -49,40 +52,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|EffectSystem.CameraEffect, Assembly-CSharp
+      Data: 2|EffectSystem.AudioEffect, Assembly-CSharp
     - Name: spawnMode
       Entry: 3
-      Data: 0
-    - Name: shakeTime
-      Entry: 4
-      Data: 0
-    - Name: shakeAmplitude
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 3|EffectSystem.TweenEffect, Assembly-CSharp
-    - Name: spawnMode
+      Data: 1
+    - Name: pointType
       Entry: 3
-      Data: 0
-    - Name: duration
-      Entry: 4
-      Data: 0.2
-    - Name: strength
-      Entry: 4
-      Data: 0.1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 4|EffectSystem.AudioEffect, Assembly-CSharp
-    - Name: spawnMode
-      Entry: 3
-      Data: 0
+      Data: 1
     - Name: audioClip
       Entry: 10
       Data: 1
@@ -91,10 +67,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.9387181
+      Data: 0.9481099
     - Name: 
       Entry: 4
-      Data: 1.08898807
+      Data: 1.06081247
     - Name: 
       Entry: 8
       Data: 

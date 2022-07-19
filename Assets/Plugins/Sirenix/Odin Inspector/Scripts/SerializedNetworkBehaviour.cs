@@ -4,7 +4,10 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-#if !UNITY_2019_1_OR_NEWER
+// #if !UNITY_2019_1_OR_NEWER
+
+using Unity.Netcode;
+
 #pragma warning disable 0618
 
 namespace Sirenix.OdinInspector
@@ -64,4 +67,4 @@ namespace Sirenix.OdinInspector
     }
 }
 
-#endif // UNITY_2019_1_OR_NEWER
+// #endif // UNITY_2019_1_OR_NEWER

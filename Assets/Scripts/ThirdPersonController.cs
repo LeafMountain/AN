@@ -354,6 +354,7 @@ namespace StarterAssets
             }
 
             weapon.Fire();
+            AddWeaponPushback();
         }
 
         private void FireAlt()
@@ -370,8 +371,17 @@ namespace StarterAssets
         private void OnAnimatorIK(int layerIndex)
         {
             animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
+            animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1f);
             animator.SetIKPosition(AvatarIKGoal.RightHand, weaponAttach.transform.position);
             animator.SetIKRotation(AvatarIKGoal.RightHand, weaponAttach.transform.rotation);
+            
+            animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1f);
+            animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
+            animator.SetIKPosition(AvatarIKGoal.LeftHand, weaponAttach.transform.position);
+            animator.SetIKRotation(AvatarIKGoal.LeftHand, weaponAttach.transform.rotation * Quaternion.Euler(Vector3.up * 90));
+            
+            animator.SetLookAtWeight(1f);
+            animator.SetLookAtPosition(weaponAttach.transform.position + Vector3.up * .5f);
         }
 
         private void Interact()

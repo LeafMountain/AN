@@ -1,19 +1,19 @@
 using System;
 using System.Threading.Tasks;
 using DG.Tweening;
+using EffectSystem;
 using EventManager;
 using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Gun : Actor
 {
     private int currentMuzzleIndex = 0;
     public Transform[] muzzlePoints;
     public Transform muzzlePoint => muzzlePoints[currentMuzzleIndex = (currentMuzzleIndex + 1) % muzzlePoints.Length];
-        
-    [FormerlySerializedAs("bulletPrefab")] public Bullet projectilePrefab;
+    public EffectData fireEffect;
+    public Bullet projectilePrefab;
     public float bulletSpeed = 10f;
     public float bulletsPerSecond = 10f;
 
@@ -37,6 +37,7 @@ public class Gun : Actor
         StartFireRateCooldown(1f / bulletsPerSecond);
         
         Fire_Internal();
+        fireEffect.PlayEffect(gameObject, gameObject);
     }
 
     protected virtual void Fire_Internal()

@@ -22,6 +22,8 @@ public class DamageReceiver : NetworkBehaviour
     
     public EffectData destructionEffect;
     public EffectData hitEffect;
+    public Vector3 lastHitPoint;
+    public Vector3 lastHitNormal;
 
     private void OnValidate()
     {
@@ -53,6 +55,9 @@ public class DamageReceiver : NetworkBehaviour
         {
             hitEffect.PlayEffect(gameObject, gameObject, bullet.transform.position, Quaternion.LookRotation(-bullet.transform.forward));
         }
+
+        lastHitPoint = bullet.transform.position;
+        lastHitNormal = -bullet.transform.forward;
 
         if (IsServer)
         {
