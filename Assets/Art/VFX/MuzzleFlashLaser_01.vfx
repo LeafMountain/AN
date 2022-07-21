@@ -123,10 +123,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: -0
+    x: 0
     y: -575
     width: 5046
-    height: 2188
+    height: 2186
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5999,7 +5999,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.0,"y":90.0,"z":0.0}'
+      m_SerializableObject: '{"x":0.0,"y":0.0,"z":0.0}'
     m_Space: 2147483647
   m_Property:
     name: Angle
@@ -7269,7 +7269,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.0,"y":90.0,"z":0.0}'
+      m_SerializableObject: '{"x":0.0,"y":0.0,"z":0.0}'
     m_Space: 2147483647
   m_Property:
     name: Angle

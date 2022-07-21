@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2373234067fc5d64a9f23e60e7fe93f1, type: 3}
-  m_Name: generic_gunFiringEffect
+  m_Name: laser_gunFiringEffect
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 919132149155446097, guid: 99d22a2f138f8b345aff46f92418819f, type: 3}
+    - {fileID: 8926484042661614526, guid: 508b55b0eaeed2b4a848d64b4bf5248d, type: 3}
     - {fileID: 8300000, guid: 32d1b5074a0138d4b89225c30c6f56ad, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -34,11 +34,14 @@ MonoBehaviour:
       Data: 1|EffectSystem.SpawnEffect, Assembly-CSharp
     - Name: spawnMode
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: pointType
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: gameObject
+      Entry: 6
+      Data: 
+    - Name: visualEffect
       Entry: 10
       Data: 0
     - Name: autoDestroy
