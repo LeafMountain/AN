@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2373234067fc5d64a9f23e60e7fe93f1, type: 3}
-  m_Name: laser_gunFiringEffect
+  m_Name: laser_gun01FiringEffect
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 8926484042661614526, guid: 508b55b0eaeed2b4a848d64b4bf5248d, type: 3}
-    - {fileID: 8300000, guid: 04384cdd070b18a4d876ef0165b36553, type: 3}
+    - {fileID: 8300000, guid: e984b2c5be03a9c47ad4178bfec6d4fc, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -70,10 +70,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.9481099
+      Data: 0.88583
     - Name: 
       Entry: 4
-      Data: 1.06081247
+      Data: 1.15789473
     - Name: 
       Entry: 8
       Data: 

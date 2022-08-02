@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2373234067fc5d64a9f23e60e7fe93f1, type: 3}
-  m_Name: scrap_destructionEffect
+  m_Name: laser_gun03FiringEffect
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 8656419031392417013, guid: 54a0bcb8f39ed9c43aac886e3a6df65f, type: 3}
-    - {fileID: 8300000, guid: 4c85a07d31fa2b34c91e2876d96846d5, type: 3}
+    - {fileID: 8926484042661614526, guid: 508b55b0eaeed2b4a848d64b4bf5248d, type: 3}
+    - {fileID: 8300000, guid: e984b2c5be03a9c47ad4178bfec6d4fc, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -28,22 +28,22 @@ MonoBehaviour:
       Data: 0|EffectSystem.Effect[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 2
     - Name: 
       Entry: 7
       Data: 1|EffectSystem.SpawnEffect, Assembly-CSharp
     - Name: spawnMode
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: pointType
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: gameObject
-      Entry: 10
-      Data: 0
-    - Name: visualEffect
       Entry: 6
       Data: 
+    - Name: visualEffect
+      Entry: 10
+      Data: 0
     - Name: autoDestroy
       Entry: 5
       Data: true
@@ -55,49 +55,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|EffectSystem.CameraEffect, Assembly-CSharp
+      Data: 2|EffectSystem.AudioEffect, Assembly-CSharp
     - Name: spawnMode
       Entry: 3
-      Data: 0
-    - Name: pointType
-      Entry: 3
-      Data: 0
-    - Name: shakeTime
-      Entry: 4
-      Data: 0.4
-    - Name: shakeAmplitude
-      Entry: 4
       Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 3|EffectSystem.TweenEffect, Assembly-CSharp
-    - Name: spawnMode
-      Entry: 3
-      Data: 0
     - Name: pointType
       Entry: 3
-      Data: 0
-    - Name: duration
-      Entry: 4
-      Data: 0.2
-    - Name: strength
-      Entry: 4
-      Data: 0.1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 4|EffectSystem.AudioEffect, Assembly-CSharp
-    - Name: spawnMode
-      Entry: 3
-      Data: 0
-    - Name: pointType
-      Entry: 3
-      Data: 0
+      Data: 1
     - Name: audioClip
       Entry: 10
       Data: 1
@@ -106,10 +70,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.9117409
+      Data: 0.88583
     - Name: 
       Entry: 4
-      Data: 1.13846159
+      Data: 1.15789473
     - Name: 
       Entry: 8
       Data: 
@@ -118,10 +82,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 1.02186239
+      Data: 1
     - Name: 
       Entry: 4
-      Data: 1.02186239
+      Data: 1
     - Name: 
       Entry: 8
       Data: 

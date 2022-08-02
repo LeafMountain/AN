@@ -17,6 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 8656419031392417013, guid: ba3ad6851b750b5469208d9a35fc2242, type: 3}
+    - {fileID: 8300000, guid: c385e2ef7dd061c40857b9a33f415435, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -27,16 +28,22 @@ MonoBehaviour:
       Data: 0|EffectSystem.Effect[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 1|EffectSystem.SpawnEffect, Assembly-CSharp
     - Name: spawnMode
       Entry: 3
       Data: 2
+    - Name: pointType
+      Entry: 3
+      Data: 0
     - Name: gameObject
       Entry: 10
       Data: 0
+    - Name: visualEffect
+      Entry: 6
+      Data: 
     - Name: autoDestroy
       Entry: 5
       Data: true
@@ -50,6 +57,9 @@ MonoBehaviour:
       Entry: 7
       Data: 2|EffectSystem.CameraEffect, Assembly-CSharp
     - Name: spawnMode
+      Entry: 3
+      Data: 0
+    - Name: pointType
       Entry: 3
       Data: 0
     - Name: shakeTime
@@ -67,12 +77,54 @@ MonoBehaviour:
     - Name: spawnMode
       Entry: 3
       Data: 0
+    - Name: pointType
+      Entry: 3
+      Data: 0
     - Name: duration
       Entry: 4
       Data: 0.2
     - Name: strength
       Entry: 4
       Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|EffectSystem.AudioEffect, Assembly-CSharp
+    - Name: spawnMode
+      Entry: 3
+      Data: 2
+    - Name: pointType
+      Entry: 3
+      Data: 0
+    - Name: audioClip
+      Entry: 10
+      Data: 1
+    - Name: pitch
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.7951417
+    - Name: 
+      Entry: 4
+      Data: 1.20323884
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: volume
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 

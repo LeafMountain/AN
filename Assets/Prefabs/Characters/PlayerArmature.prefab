@@ -2069,7 +2069,7 @@ MonoBehaviour:
   debugMousePositionObject: {fileID: 0}
   lookTarget: {fileID: 0}
   MoveSpeed: 3
-  SprintSpeed: 5.335
+  SprintSpeed: 7
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
   JumpHeight: 1.2
