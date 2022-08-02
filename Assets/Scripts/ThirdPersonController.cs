@@ -1,10 +1,11 @@
-using System;
+using System.Threading.Tasks;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
+
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
@@ -119,7 +120,7 @@ namespace StarterAssets
         protected override void LateUpdate()
         {
             base.LateUpdate();
-            
+
             CameraRotation();
             GunRotation();
         }
@@ -136,8 +137,10 @@ namespace StarterAssets
         private void GroundedCheck()
         {
             // set sphere position, with offset
-            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
-            Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
+            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
+                transform.position.z);
+            Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
+                QueryTriggerInteraction.Ignore);
 
             // update animator if using character
             if (_hasAnimator)
@@ -163,7 +166,8 @@ namespace StarterAssets
             _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
             // Cinemachine will follow this target
-            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride, _cinemachineTargetYaw, 0.0f);
+            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
+                _cinemachineTargetYaw, 0.0f);
         }
 
         private void CharacterRotation()
@@ -223,9 +227,11 @@ namespace StarterAssets
             float speedOffset = 0.1f;
             float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
 
-            if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
+            if (currentHorizontalSpeed < targetSpeed - speedOffset ||
+                currentHorizontalSpeed > targetSpeed + speedOffset)
             {
-                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
+                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude,
+                    Time.deltaTime * SpeedChangeRate);
                 _speed = Mathf.Round(_speed * 1000f) / 1000f;
             }
             else
@@ -238,12 +244,14 @@ namespace StarterAssets
 
             if (_input.move != Vector2.zero)
             {
-                _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
+                _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
+                                  _mainCamera.transform.eulerAngles.y;
             }
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
-            _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+            _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
+                             new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
             if (_hasAnimator)
             {
@@ -340,6 +348,30 @@ namespace StarterAssets
         public float _amplitude = 20;
         public float _time = 1f;
 
+        private bool aimMode;
+        private float aimModeCooldown;
+
+        private void ToggleAim(bool value)
+        {
+            AimModeCooldown();
+        }
+
+        private async void AimModeCooldown()
+        {
+            aimModeCooldown = Time.time + 2f;
+
+            if (aimMode) return;
+            aimMode = true;
+            while (true)
+            {
+                await Task.Yield();
+                if (aimModeCooldown < Time.time)
+                    break;
+            }
+
+            aimMode = false;
+        }
+
         [ServerRpc]
         private void ServerFire_ServerRpc() => Fire();
 
@@ -353,6 +385,7 @@ namespace StarterAssets
                 return;
             }
 
+            AimModeCooldown();
             weapon.Fire();
             AddWeaponPushback();
         }
@@ -365,33 +398,46 @@ namespace StarterAssets
                 return;
             }
 
+            AimModeCooldown();
             weapon.Aim(MouseHit.point);
         }
 
         private void OnAnimatorIK(int layerIndex)
         {
-            animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
-            animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1f);
-            animator.SetIKPosition(AvatarIKGoal.RightHand, weaponAttach.transform.position);
-            animator.SetIKRotation(AvatarIKGoal.RightHand, weaponAttach.transform.rotation);
-            
-            animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1f);
-            animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
-            animator.SetIKPosition(AvatarIKGoal.LeftHand, weaponAttach.transform.position);
-            animator.SetIKRotation(AvatarIKGoal.LeftHand, weaponAttach.transform.rotation * Quaternion.Euler(Vector3.up * 90));
-            
-            animator.SetLookAtWeight(1f);
-            animator.SetLookAtPosition(weaponAttach.transform.position + Vector3.up * .5f);
+            if (aimMode)
+            {
+                animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
+                animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1f);
+                animator.SetIKPosition(AvatarIKGoal.RightHand, weaponAttach.transform.position);
+                animator.SetIKRotation(AvatarIKGoal.RightHand, weaponAttach.transform.rotation);
+
+                animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1f);
+                animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
+                animator.SetIKPosition(AvatarIKGoal.LeftHand, weaponAttach.transform.position);
+                animator.SetIKRotation(AvatarIKGoal.LeftHand,
+                    weaponAttach.transform.rotation * Quaternion.Euler(Vector3.up * 90));
+
+                animator.SetLookAtWeight(1f);
+                animator.SetLookAtPosition(weaponAttach.transform.position + Vector3.up * .5f);
+            }
+            else
+            {
+                
+                animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0f);
+                animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 0f);
+                animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0f);
+                animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 0f);
+            }
         }
 
         private void Interact()
         {
-            if(_input.interact == false) return;
-            
+            if (_input.interact == false) return;
+
             if (lookTarget.TryGetComponent(out IInteractable interactable))
             {
                 Debug.Log(interactable.GetPrompt());
-                interactable.Interact(this); 
+                interactable.Interact(this);
             }
 
             _input.interact = false;
@@ -406,7 +452,9 @@ namespace StarterAssets
             else Gizmos.color = transparentRed;
 
             // when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
-            Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+            Gizmos.DrawSphere(
+                new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z),
+                GroundedRadius);
         }
     }
 }

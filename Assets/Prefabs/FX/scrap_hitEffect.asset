@@ -17,7 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 8656419031392417013, guid: 8dcdaf810ed03f94b860a1f17ddc0701, type: 3}
-    - {fileID: 8300000, guid: dc6bf93b4cedbb5409d6c9fe82196017, type: 3}
+    - {fileID: 8300000, guid: ac5b41f6e4d2ec141ade541bd19d193c, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -35,9 +35,15 @@ MonoBehaviour:
     - Name: spawnMode
       Entry: 3
       Data: 2
+    - Name: pointType
+      Entry: 3
+      Data: 0
     - Name: gameObject
       Entry: 10
       Data: 0
+    - Name: visualEffect
+      Entry: 6
+      Data: 
     - Name: autoDestroy
       Entry: 5
       Data: true
@@ -51,6 +57,9 @@ MonoBehaviour:
       Entry: 7
       Data: 2|EffectSystem.CameraEffect, Assembly-CSharp
     - Name: spawnMode
+      Entry: 3
+      Data: 0
+    - Name: pointType
       Entry: 3
       Data: 0
     - Name: shakeTime
@@ -68,6 +77,9 @@ MonoBehaviour:
     - Name: spawnMode
       Entry: 3
       Data: 0
+    - Name: pointType
+      Entry: 3
+      Data: 0
     - Name: duration
       Entry: 4
       Data: 0.2
@@ -81,6 +93,9 @@ MonoBehaviour:
       Entry: 7
       Data: 4|EffectSystem.AudioEffect, Assembly-CSharp
     - Name: spawnMode
+      Entry: 3
+      Data: 0
+    - Name: pointType
       Entry: 3
       Data: 0
     - Name: audioClip

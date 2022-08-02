@@ -2,7 +2,6 @@ using System;
 using EventManager;
 using Unity.Netcode;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 public class GameManager : NetworkBehaviour 
 {
@@ -17,6 +16,9 @@ public class GameManager : NetworkBehaviour
 
     public Gun[] guns;
 
+    public AudioSource audioInstancePrefab;
+    public bool autoLockCursor;
+
     private void Awake()
     {
         if(gameManager) return;
@@ -30,7 +32,7 @@ public class GameManager : NetworkBehaviour
         Events.AddListener(Flag.DamageRecieved, OnDamageRecieved);
         Events.AddListener(Flag.Storeable, OnStoreableUpdated);
         
-        LockCursor(true);
+        LockCursor(autoLockCursor);
     }
 
     private void OnStoreableUpdated(object origin, EventArgs eventargs)

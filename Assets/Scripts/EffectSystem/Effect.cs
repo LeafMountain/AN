@@ -4,7 +4,6 @@ using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.VFX;
-using Object = UnityEngine.Object;
 
 namespace EffectSystem
 {
@@ -216,12 +215,13 @@ namespace EffectSystem
 
         public override void DoEffect<T>(T extraArgs)
         {
-            var audioSourceGo = new GameObject();
-            var audioSource = audioSourceGo.AddComponent<AudioSource>();
+            // var audioSourceGo = new GameObject();
+            var audioSource = GameManager.Spawn(GameManager.Instance.audioInstancePrefab);
             audioSource.transform.position = GetLocation(extraArgs).point;
             audioSource.PlayOneShot(audioClip);
             audioSource.pitch = UnityEngine.Random.Range(pitch.x, pitch.y);
             audioSource.volume = UnityEngine.Random.Range(volume.x, volume.y);
+            GameManager.Despawn(audioSource.gameObject, audioClip.length); 
         }
     }
 }

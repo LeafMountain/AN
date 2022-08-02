@@ -83,19 +83,7 @@ public class Actor : NetworkBehaviour
     
     protected virtual void OnDamaged(object origin, EventArgs eventargs)
     {
-        // var args = eventargs as DamageRecievedArgs;
-        // if (args.damageReceiver.currentHealth.Value > 0)
-        // {
-        //     tweener.Rewind(false);
-        //     tweener?.Kill();
-        //     tweener = transform.DOPunchScale(Vector3.one * .1f, .2f);
-        // }
-        // else
-        // {
-        //     tweener?.Kill();
-        //     tweener = transform.DOScale(Vector3.one * 2f, .1f);
-        //     tweener.onComplete += () => Destroy(gameObject);
-        // }
+
     }
 
     private void OnDrawGizmosSelected()

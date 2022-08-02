@@ -74,7 +74,7 @@ QualitySettings:
     realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
     useLegacyDetailDistribution: 1
-    vSyncCount: 1
+    vSyncCount: 0
     lodBias: 1
     maximumLODLevel: 0
     enableLODCrossFade: 1
@@ -148,8 +148,5 @@ QualitySettings:
     terrainMaxTrees: 50
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
-    PS4: 1
-    Server: 1
-    Standalone: 1
-    Windows Store Apps: 1
-    XboxOne: 1
+    Server: 0
+    Standalone: 0

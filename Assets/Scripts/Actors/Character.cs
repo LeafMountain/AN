@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using Unity.Mathematics;
 using Unity.Netcode;
 using UnityEngine;
@@ -10,9 +9,20 @@ public class Character : Actor
     public Transform weaponAttach;
     public Animator animator;
 
+    public SkinnedMeshRenderer leg;
+
     private Vector3 positionLastFrame;
     public Vector3 Velocity { get; private set; }
 
+    public SkinnedMeshRenderer testPart;
+
+    protected override void Start()
+    {
+        base.Start(); 
+        
+        animator.Rebind();
+    }
+    
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();

@@ -80,6 +80,8 @@ MonoBehaviour:
   - {fileID: 1988317821691493275, guid: d3e61761456dfe846b6a4494132981cd, type: 3}
   destructionEffect: {fileID: 11400000, guid: c1ca2590b3cfcda48b1e265d4c4dce6e, type: 2}
   hitEffect: {fileID: 11400000, guid: cc9430d3c69e928479267e72e00cdd5a, type: 2}
+  lastHitPoint: {x: 0, y: 0, z: 0}
+  lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &5369694548086817998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,10 +95,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
+  actorMapping: []
   damageReceiver: {fileID: 2087559380658844317}
   weapon: {fileID: 0}
   weaponAttach: {fileID: 4824640952515064876}
   animator: {fileID: 0}
+  leg: {fileID: 0}
+  testPart: {fileID: 0}
+  weaponOffset: {x: 0, y: 0, z: 1}
+  maxPushback: 0.2
   aggroRange: 10
   speed: 2
   turnSpeed: 5
