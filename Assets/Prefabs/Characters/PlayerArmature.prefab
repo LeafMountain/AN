@@ -2068,7 +2068,7 @@ MonoBehaviour:
     m_Bits: 128
   debugMousePositionObject: {fileID: 0}
   lookTarget: {fileID: 0}
-  MoveSpeed: 3
+  MoveSpeed: 4
   SprintSpeed: 7
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10

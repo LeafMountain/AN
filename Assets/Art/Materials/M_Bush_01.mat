@@ -340,5 +340,5 @@ Material:
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _UnlitColor: {r: 0.22532548, g: 0.5660378, b: 0, a: 1}
     - _UnlitColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Wind_Speed: {r: 1, g: 0, b: 0, a: 0}
+    - _Wind_Speed: {r: 2, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
