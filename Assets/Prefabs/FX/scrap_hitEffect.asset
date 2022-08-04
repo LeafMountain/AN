@@ -17,7 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 8656419031392417013, guid: 8dcdaf810ed03f94b860a1f17ddc0701, type: 3}
-    - {fileID: 8300000, guid: ac5b41f6e4d2ec141ade541bd19d193c, type: 3}
+    - {fileID: 8300000, guid: e09d7d47df76ed3479f949cb13e759d7, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -118,10 +118,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0.8145749
     - Name: 
       Entry: 4
-      Data: 1
+      Data: 0.8145749
     - Name: 
       Entry: 8
       Data: 
