@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -1770,10 +1770,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 16}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6afdfeffbe71ffff9076ffff7e86ffffc29cffff0afbffff
+      m_ExpandedIDs: 0afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2212,9 +2212,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.5266274, y: -1.2643373, z: 8.071918}
+    m_Target: {x: 1.0905402, y: 1.4327089, z: 4.605147}
     speed: 2
-    m_Value: {x: -0.5266274, y: -1.2643373, z: 8.071918}
+    m_Value: {x: 1.0905402, y: 1.4327089, z: 4.605147}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2260,20 +2260,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.26531768, y: -0.5268139, z: 0.13421425, w: 0.7994805}
+    m_Target: {x: 0.15817885, y: -0.7162834, z: 0.12511794, w: 0.6718573}
     speed: 2
-    m_Value: {x: 0.26464254, y: -0.52547336, z: 0.13387272, w: 0.7974461}
+    m_Value: {x: 0.15677479, y: -0.7146408, z: 0.12372132, w: 0.6703756}
   m_Size:
-    m_Target: 3.389534
+    m_Target: 2.3437088
     speed: 2
-    m_Value: 3.389534
+    m_Value: 2.31731
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.4802595
-    m_SpeedNormalized: 0.7399998
+    m_Speed: 1.0005
+    m_SpeedNormalized: 0.49999997
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -2514,23 +2514,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Props
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Props
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\UnityProjects\AN
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 67}
-    m_SelectedIDs: 6aa50000
-    m_LastClickedID: 42346
-    m_ExpandedIDs: 000000009aa400009ca400009ea40000a0a40000a2a40000a4a40000a6a40000a8a40000aaa40000aca40000b0a40000
+    scrollPos: {x: 0, y: 31}
+    m_SelectedIDs: fca40000
+    m_LastClickedID: 42236
+    m_ExpandedIDs: 00000000fca40000fea4000000a5000002a5000004a5000006a5000008a500000aa500000ca500000ea5000010a500009ea50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2558,7 +2558,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009aa400009ca400009ea40000a0a40000a2a40000a4a40000a6a40000a8a40000aaa40000aca40000aea40000b0a40000
+    m_ExpandedIDs: 00000000fca40000fea4000000a5000002a5000004a5000006a5000008a500000aa500000ca500000ea5000010a50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
