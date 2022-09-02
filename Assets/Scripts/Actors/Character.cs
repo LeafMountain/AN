@@ -1,12 +1,10 @@
-using Unity.Mathematics;
-using Unity.Netcode;
+using Core;
 using UnityEngine;
 
 public class Character : Actor
 {
     public DamageReceiver damageReceiver;
-    public Gun weapon;
-    public Transform weaponAttach;
+    public Equipment equipment;
     public Animator animator;
 
     public SkinnedMeshRenderer leg;
@@ -16,22 +14,28 @@ public class Character : Actor
 
     public SkinnedMeshRenderer testPart;
 
+    public UIActor ui;
+
+    protected virtual void OnValidate()
+    {
+        equipment = GetComponent<Equipment>();
+    }
+
     protected override void Start()
     {
-        base.Start(); 
-        
-        animator.Rebind();
-    }
-    
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
+        base.Start();
 
-        if (IsServer)
+        if (animator)
         {
-            var spawned = GameManager.Spawn(GameManager.Instance.defaultGun);
-            spawned.GetComponent<NetworkObject>().SpawnWithOwnership(OwnerClientId);
-            EquipGun_ClientRpc(spawned.GetComponent<Gun>());
+            animator.Rebind();
+        }
+
+        if (ui)
+        {
+            Vector3 position = GetCenterOfMass() + Vector3.up * 1.5f;
+            Quaternion rotation = transform.rotation;
+            ui = GameManager.Spawn(ui, position, rotation, transform);
+            ui.Init(this);
         }
     }
 
@@ -44,36 +48,14 @@ public class Character : Actor
     {
         UpdateVelocity();
         UpdateAnimatorValues();
-        UpdateWeaponPosition();
 
-        weapon.transform.position = weaponAttach.transform.position;
-        weapon.transform.rotation = weaponAttach.transform.rotation;
     }
 
     protected virtual void FixedUpdate()
     {
     }
 
-    public Vector3 weaponOffset = Vector3.forward;
 
-    private void UpdateWeaponPosition()
-    {
-        weaponPushback -= Time.deltaTime * 2f;
-        weaponPushback = math.clamp(weaponPushback, 0, float.MaxValue);
-
-        var pushback = weaponAttach.TransformVector(Vector3.back) * weaponPushback;
-        
-        weaponAttach.forward = CameraController.Instance.camera.transform.forward;
-        weaponAttach.position = transform.position + CameraController.Instance.camera.transform.forward + transform.TransformVector(weaponOffset) + pushback;
-    }
-
-    private float weaponPushback = 0f;
-    public float maxPushback = .2f;
-    
-    public void AddWeaponPushback()
-    {
-        weaponPushback = maxPushback;
-    }
 
     private void UpdateVelocity()
     {
@@ -91,38 +73,5 @@ public class Character : Actor
         animator.SetFloat("Speed", localVelocity.z);
     }
 
-    [ClientRpc]
-    public void EquipGun_ClientRpc(NetworkBehaviourReference weapon)
-    {
-        if (weapon.TryGet(out Gun gun))
-        {
-            this.weapon = gun;
-            OnGunEquipped(null, gun);
-        }
-    }
 
-    public void OnGunEquipped(Gun oldValue, Gun newValue)
-    {
-        if (oldValue)
-        {
-            foreach (Collider collider in oldValue.GetComponentsInChildren<Collider>())
-            {
-                collider.enabled = true;
-            }
-        }
-
-        newValue.transform.parent = transform;
-        newValue.transform.position = weaponAttach.transform.position;
-        newValue.transform.rotation = weaponAttach.transform.rotation;
-        foreach (Collider collider in newValue.GetComponentsInChildren<Collider>())
-        {
-            collider.enabled = false;
-        }
-    }
-
-    public override void OnDestroy()
-    {
-        base.OnDestroy();
-        weapon.GetComponent<NetworkObject>().Despawn();
-    }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Core;
 using DG.Tweening;
 using EffectSystem;
 using EventManager;
@@ -22,13 +23,6 @@ public class Gun : Actor
     private bool onCooldown;
 
     protected Vector3 aimPosition;
-
-    public virtual void Aim(Vector3 aimPosition)
-    {
-        aiming = true;
-        this.aimPosition = aimPosition;
-        CameraController.SetFOV(25);
-    }
 
     [Button("Fire")]
     public void Fire()
@@ -80,6 +74,13 @@ public class Gun : Actor
         }
     }
 
+    public virtual void Aim(Vector3 aimPosition)
+    {
+        aiming = true;
+        this.aimPosition = aimPosition;
+        CameraController.SetFOV(25);
+    }
+    
     public virtual void StopAim()
     {
         aiming = false;

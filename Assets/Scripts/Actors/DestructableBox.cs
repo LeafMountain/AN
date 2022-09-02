@@ -1,4 +1,5 @@
 using System;
+using Core;
 using DG.Tweening;
 using EventManager;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class DestructableBox : Actor
         Events.AddListener(Flag.DamageRecieved, this, OnDamaged);
     }
 
-    private void OnDamaged(object origin, EventArgs eventargs)
+    protected override void OnDamaged(object origin, EventArgs eventargs)
     {
         if (damageReceiver.currentHealth.Value > 0)
         {

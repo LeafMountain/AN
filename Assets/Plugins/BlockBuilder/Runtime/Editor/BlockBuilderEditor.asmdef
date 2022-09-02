@@ -1,0 +1,18 @@
+{
+  "name": "BlockBuilderEditor",
+  "rootNamespace": "",
+  "references": [
+    "GUID:222e708f01e292046972a4d48d98e4bf"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

@@ -111,9 +111,34 @@ namespace StarterAssets
                 // Aim();
                 FireAlt();
                 Interact();
+                ChangeWeapon();
             }
 
             CharacterRotation();
+        }
+
+        private void ChangeWeapon()
+        {
+            if (_input.one)
+            {
+                equipment.SetSlot(0);
+                _input.one = false;
+            }
+            else if (_input.two)
+            {
+                equipment.SetSlot(1);
+                _input.two = false;
+            }
+            else if (_input.three)
+            {
+                equipment.SetSlot(2);
+                _input.three = false;
+            }
+            else if (_input.four)
+            {
+                equipment.SetSlot(3);
+                _input.four = false;
+            }
         }
 
 
@@ -182,7 +207,7 @@ namespace StarterAssets
 
         private void GunRotation()
         {
-            if (weapon == null) return;
+            if (equipment.HasWeapon() == false) return;
 
             Vector3 lookAtPoint = Vector3.zero;
 
@@ -200,11 +225,7 @@ namespace StarterAssets
                 lookAtPoint = MouseHit.point;
             }
 
-            weapon.transform.LookAt(lookAtPoint);
-            var gunRotation = weapon.transform.rotation.eulerAngles;
-            if (gunRotation.x < 200f) gunRotation.x += 360f;
-            gunRotation.x = Mathf.Clamp(gunRotation.x, 300f, 370f);
-            weapon.transform.rotation = Quaternion.Euler(gunRotation);
+            equipment.AimAt(lookAtPoint);
         }
 
         private void InputFix()
@@ -386,20 +407,19 @@ namespace StarterAssets
             }
 
             AimModeCooldown();
-            weapon.Fire();
-            AddWeaponPushback();
+            equipment.UseWeapon();
         }
 
         private void FireAlt()
         {
             if (Mouse.current.rightButton.isPressed == false)
             {
-                weapon.StopAim();
+                equipment.StopAim();
                 return;
             }
 
             AimModeCooldown();
-            weapon.Aim(MouseHit.point);
+            equipment.Aim(MouseHit.point);
         }
 
         private void OnAnimatorIK(int layerIndex)
@@ -408,21 +428,20 @@ namespace StarterAssets
             {
                 animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
                 animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1f);
-                animator.SetIKPosition(AvatarIKGoal.RightHand, weaponAttach.transform.position);
-                animator.SetIKRotation(AvatarIKGoal.RightHand, weaponAttach.transform.rotation);
+                animator.SetIKPosition(AvatarIKGoal.RightHand, equipment.weaponAttach.transform.position);
+                animator.SetIKRotation(AvatarIKGoal.RightHand, equipment.weaponAttach.transform.rotation);
 
                 animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1f);
                 animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
-                animator.SetIKPosition(AvatarIKGoal.LeftHand, weaponAttach.transform.position);
+                animator.SetIKPosition(AvatarIKGoal.LeftHand, equipment.weaponAttach.transform.position);
                 animator.SetIKRotation(AvatarIKGoal.LeftHand,
-                    weaponAttach.transform.rotation * Quaternion.Euler(Vector3.up * 90));
+                    equipment.weaponAttach.transform.rotation * Quaternion.Euler(Vector3.up * 90));
 
                 animator.SetLookAtWeight(1f);
-                animator.SetLookAtPosition(weaponAttach.transform.position + Vector3.up * .5f);
+                animator.SetLookAtPosition(equipment.weaponAttach.transform.position + Vector3.up * .5f);
             }
             else
             {
-                
                 animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0f);
                 animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 0f);
                 animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0f);
@@ -433,12 +452,14 @@ namespace StarterAssets
         private void Interact()
         {
             if (_input.interact == false) return;
+            GetComponent<Interactor>().Interact();
 
-            if (lookTarget.TryGetComponent(out IInteractable interactable))
-            {
-                Debug.Log(interactable.GetPrompt());
-                interactable.Interact(this);
-            }
+
+            // if (lookTarget.TryGetComponent(out IInteractable interactable))
+            // {
+            //     Debug.Log(interactable.GetPrompt());
+            //     interactable.Interact(this);
+            // }
 
             _input.interact = false;
         }

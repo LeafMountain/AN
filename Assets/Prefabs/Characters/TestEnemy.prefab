@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5369694548086817998}
   - component: {fileID: 6462137057200573041}
   - component: {fileID: 7741756331971462726}
+  - component: {fileID: 6088840253948059756}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -94,16 +95,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fda93bca225e0340adb3d66cf87a829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
   actorMapping: []
   damageReceiver: {fileID: 2087559380658844317}
-  weapon: {fileID: 0}
-  weaponAttach: {fileID: 4824640952515064876}
+  equipment: {fileID: 0}
   animator: {fileID: 0}
   leg: {fileID: 0}
   testPart: {fileID: 0}
-  weaponOffset: {x: 0, y: 0, z: 1}
-  maxPushback: 0.2
+  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
   aggroRange: 10
   speed: 2
   turnSpeed: 5
@@ -157,6 +155,22 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
+--- !u!114 &6088840253948059756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334851988840510599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11c30a2b98062548bd6d09a312e12ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actor: {fileID: 5369694548086817998}
+  weaponAttach: {fileID: 4824640952515064876}
+  weapon: {fileID: 0}
+  maxPushback: 0.2
 --- !u!1 &2970342652481465386
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e400a4c7afd913a46af3b53474132b5d, type: 3}
+  m_Name: DebugBlockSet
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  blocksPerTile: 1
+  forbiddenConnections: []
+  blockPrototypes:
+  - blockPrefab: {fileID: 4658103063946490171, guid: beea5b5a956dda547becd820a56a30b2, type: 3}
+    rotation: 0
+    sideIDs:
+    - {x: 0, y: 0, z: -1}
+    - {x: 0, y: 0, z: -1}
+    - {x: 0, y: 0, z: -1}
+    - {x: 0, y: 0, z: -1}
+    - {x: 0, y: 0, z: -1}
+    - {x: 0, y: 0, z: -1}
+  - blockPrefab: {fileID: 919132149155446097, guid: 36e36818f05a0064984000b7ec31a5d5, type: 3}
+    rotation: 0
+    sideIDs:
+    - {x: 8, y: -5.1, z: 5.7}
+    - {x: 9, y: -5.7, z: -5.8}
+    - {x: 39, y: -6.4, z: 3.9}
+    - {x: 39, y: -6.4, z: -3.9}
+    - {x: 0, y: 0, z: 1}
+    - {x: 0, y: 0, z: 1}
+  - blockPrefab: {fileID: 919132149155446097, guid: 36e36818f05a0064984000b7ec31a5d5, type: 3}
+    rotation: 1
+    sideIDs:
+    - {x: 9, y: -5.7, z: -5.8}
+    - {x: 39, y: -6.4, z: 3.9}
+    - {x: 39, y: -6.4, z: -3.9}
+    - {x: 8, y: -5.1, z: 5.7}
+    - {x: 0, y: 0, z: 1}
+    - {x: 0, y: 0, z: 1}
+  - blockPrefab: {fileID: 919132149155446097, guid: 36e36818f05a0064984000b7ec31a5d5, type: 3}
+    rotation: 2
+    sideIDs:
+    - {x: 39, y: -6.4, z: 3.9}
+    - {x: 39, y: -6.4, z: -3.9}
+    - {x: 8, y: -5.1, z: 5.7}
+    - {x: 9, y: -5.7, z: -5.8}
+    - {x: 0, y: 0, z: 1}
+    - {x: 0, y: 0, z: 1}
+  - blockPrefab: {fileID: 919132149155446097, guid: 36e36818f05a0064984000b7ec31a5d5, type: 3}
+    rotation: 3
+    sideIDs:
+    - {x: 39, y: -6.4, z: -3.9}
+    - {x: 8, y: -5.1, z: 5.7}
+    - {x: 9, y: -5.7, z: -5.8}
+    - {x: 39, y: -6.4, z: 3.9}
+    - {x: 0, y: 0, z: 1}
+    - {x: 0, y: 0, z: 1}

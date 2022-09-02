@@ -72,25 +72,44 @@ public class GameManager : NetworkBehaviour
                 CameraController.Shake(.2f, 4f);
             }
         }
-        if (damageArgs.destroyed)
-        {
-            CameraController.Shake(.7f, 7f);
-        }
+        // if (damageArgs.destroyed)
+        // {
+        //     CameraController.Shake(.7f, 7f);
+        // }
     }
 
     public static GameObject Spawn(GameObject original, Transform parent = null)
     {
-        return Instantiate(original, parent);
+        var spawned = Instantiate(original, parent);
+        if (NetworkManager.Singleton.IsServer && spawned.TryGetComponent<NetworkObject>(out var networkObject) && networkObject.IsSpawned == false)
+        {
+            networkObject.Spawn(); 
+        }
+
+        return spawned;
     }
     
     public static GameObject Spawn(GameObject original, Vector3 position, Quaternion rotation, Transform parent = null)
     {
-        return Instantiate(original, position, rotation, parent);
+        var spawned = Instantiate(original, position, rotation, parent);
+        if (spawned.TryGetComponent<NetworkObject>(out var networkObject) && networkObject.IsSpawned == false)
+        {
+            networkObject.Spawn(); 
+        }
+
+        return spawned;
     }
     
     public static T Spawn<T>(T original) where T : Component 
     {
-        return Instantiate(original);
+        var spawned = Instantiate(original);
+        if (spawned.TryGetComponent<NetworkObject>(out var networkObject) && networkObject.IsSpawned == false)
+        {
+            networkObject.Spawn(); 
+        }
+        return spawned;
+        
+        // return Instantiate(original);
     }
     
     public static T Spawn<T>(T original, Vector3 position, Quaternion rotation, Transform parent = null) where T : MonoBehaviour

@@ -5,7 +5,6 @@ using Cinemachine;
 using DG.Tweening;
 using EventManager;
 using StarterAssets;
-using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,8 +13,6 @@ public class Player : Character
     public int supplies = 0;
     public int maxEnergy = 100;
     public int energy = 100;
-    // public float lootRange = 2f;
-    // public float lootSpeed = 5f;
 
     private Collider[] colliders = new Collider[10];
     public LayerMask actorMask;
@@ -25,8 +22,13 @@ public class Player : Character
 
     public RaycastHit MouseHit;
     public GameObject debugMousePositionObject;
+    public Interactor interactor;
 
-    public GameObject lookTarget;
+    protected override void OnValidate()
+    {
+        base.OnValidate();
+        interactor = GetComponent<Interactor>();
+    }
 
     public override void OnNetworkSpawn()
     {
@@ -86,7 +88,7 @@ public class Player : Character
     protected override void Update()
     {
         base.Update();
-        
+
         UpdateMouseHit();
         if (debugMousePositionObject)
         {
@@ -95,16 +97,19 @@ public class Player : Character
         }
     }
 
+    public LayerMask lookLayerMask;
+
     private void InteractUpdate()
     {
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit) == false)
-        {
-            lookTarget = null;
-            return;
-        } 
+        // Camera cam = Camera.main;
+        // Actor lookActor = GetLookHit(cam, lookLayerMask);
         
-        Events.TriggerEvent(Flag.LookTarget, hit.transform.gameObject);
-        lookTarget = hit.transform.gameObject;
+        // Ray lookRay = new Ray(camTransform.position, camTransform.forward);
+        // if (Physics.Raycast(lookRay, out var hit) == false || Physics.SphereCast(lookRay, 1f, out hit))
+        // {
+        //     lookTarget = null;
+        //     return;
+        // }
     }
 
     /*private void LootMagnet()
@@ -151,13 +156,5 @@ public class Player : Character
         var mousePosition = Input.mousePosition;
         Ray cameraRay = GameManager.Instance.characterCamera.ScreenPointToRay(mousePosition);
         Physics.Raycast(cameraRay, out MouseHit);
-    }
-
-    public void SwitchWeapon(int index)
-    {
-        if (weapon)
-        {
-            GameManager.Despawn(weapon.gameObject); 
-        }
     }
 }

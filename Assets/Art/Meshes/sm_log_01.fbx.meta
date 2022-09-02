@@ -3,9 +3,19 @@ guid: 974a8d769973d804aa6576f3410ef59b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert18
+    second: {fileID: 2100000, guid: e7fd02f1ef7bdeb47b13279eef748502, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_inner_wood_01
+    second: {fileID: 2100000, guid: 93a8b782265acbd46b47dc45bd41545e, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

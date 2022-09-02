@@ -1963,6 +1963,8 @@ GameObject:
   - component: {fileID: -8549961671861637582}
   - component: {fileID: 7495099517695300608}
   - component: {fileID: -8049917369622431502}
+  - component: {fileID: 866026571846608312}
+  - component: {fileID: 1217204799411287553}
   m_Layer: 6
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1990,7 +1992,7 @@ Transform:
   - {fileID: 272993188807782130}
   - {fileID: 2043114594328782317}
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6982812146204527121
 Animator:
@@ -2050,16 +2052,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
   actorMapping: []
   damageReceiver: {fileID: 4579446627781232342}
-  weapon: {fileID: 0}
-  weaponAttach: {fileID: 8580048208085960331}
+  equipment: {fileID: 866026571846608312}
   animator: {fileID: 6982812146204527121}
   leg: {fileID: 0}
   testPart: {fileID: 0}
-  weaponOffset: {x: 0.2, y: 1.3, z: 0}
-  maxPushback: 0.2
+  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
   supplies: 0
   maxEnergy: 100
   energy: 100
@@ -2067,7 +2066,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   debugMousePositionObject: {fileID: 0}
-  lookTarget: {fileID: 0}
+  interactor: {fileID: 1217204799411287553}
+  lookLayerMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
   MoveSpeed: 4
   SprintSpeed: 7
   RotationSmoothTime: 0.12
@@ -2305,6 +2307,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth:
     m_InternalValue: 0
+--- !u!114 &866026571846608312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11c30a2b98062548bd6d09a312e12ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actor: {fileID: 4416926081852918490}
+  weaponAttach: {fileID: 8580048208085960331}
+  weapon: {fileID: 0}
+  weaponOffset: {x: 0, y: 0, z: 1}
+  maxPushback: 0.2
+--- !u!114 &1217204799411287553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae9bf8ff1c57b40a82952f3128de3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actor: {fileID: 4416926081852918490}
+  interactLayerMask:
+    serializedVersion: 2
+    m_Bits: 2147484663
 --- !u!1 &4508265742461398381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,7 +2418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1399466725589410734
 Transform:
   m_ObjectHideFlags: 0
@@ -4783,7 +4818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9177958408077477837, guid: 03cbd84a68f97a246858080dc5d65a26, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3166986940191187922, guid: 03cbd84a68f97a246858080dc5d65a26, type: 3}

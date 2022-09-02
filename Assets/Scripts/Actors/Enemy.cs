@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Core;
 using UnityEngine;
 
 public class Enemy : Character
@@ -71,7 +72,7 @@ public class Enemy : Character
         Vector3 direction = (target.GetCenterOfMass() - transform.position).normalized;
         TurnTowardsDirection(direction);
         SetStateColor(attackColor);
-        weapon.Fire();
+        equipment.UseWeapon();
     }
 
     private void SetStateColor(Color color)

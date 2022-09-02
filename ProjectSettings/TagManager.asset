@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+  - PathfindingNode
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - TEST
   m_SortingLayers:
   - name: Default
     uniqueID: 0

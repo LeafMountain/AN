@@ -1,3 +1,4 @@
+using Core;
 using UnityEngine;
 
 public class Loot : Actor
@@ -10,7 +11,7 @@ public class Loot : Actor
     protected override void Start()
     {
         base.Start();
-        SetColor(color);
+        // SetColor(color);
     }
 
     [ContextMenu("Set Color")]

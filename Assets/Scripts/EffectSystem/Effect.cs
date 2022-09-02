@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using BlockBuilder;
+using Core;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.VFX;
+using Object = UnityEngine.Object;
 
 namespace EffectSystem
 {
@@ -221,7 +224,46 @@ namespace EffectSystem
             audioSource.PlayOneShot(audioClip);
             audioSource.pitch = UnityEngine.Random.Range(pitch.x, pitch.y);
             audioSource.volume = UnityEngine.Random.Range(volume.x, volume.y);
-            GameManager.Despawn(audioSource.gameObject, audioClip.length); 
+            GameManager.Despawn(audioSource.gameObject, audioClip.length);
+        }
+    }
+
+    [Serializable]
+    public class BuildBlockEffect : Effect
+    {
+        // [SerializeField] private AudioClip audioClip;
+        // [SerializeField, MinMaxSlider(0f, 2f)] private Vector2 pitch = Vector2.one;
+        // [SerializeField, MinMaxSlider(0f, 2f)] private Vector2 volume = Vector2.one;
+        [SerializeField] private bool remove;
+
+        public override void DoEffect<T>(T extraArgs)
+        {
+            var spawnArgs = extraArgs as SpawnEffect.SpawnEffectArgs;
+
+            var gridHolder = Object.FindObjectOfType<BlockGridHolder>();
+            var impactNormal = (spawnArgs.impactRotation * Vector3.forward).normalized;
+
+            if (remove)
+            {
+                gridHolder.RemoveBlock(spawnArgs.impactPosition + impactNormal);
+            }
+            else
+            {
+                gridHolder.PlaceBlock(spawnArgs.impactPosition + impactNormal, 0);
+            }
+
+            gridHolder.Run();
+
+            // spawned.transform.position = spawnArgs.impactPosition;
+            // spawned.transform.rotation = spawnArgs.impactRotation * Quaternion.Euler(Vector3.right * 90f);
+
+            // var audioSourceGo = new GameObject();
+            // var audioSource = GameManager.Spawn(GameManager.Instance.audioInstancePrefab);
+            // audioSource.transform.position = GetLocation(extraArgs).point;
+            // audioSource.PlayOneShot(audioClip);
+            // audioSource.pitch = UnityEngine.Random.Range(pitch.x, pitch.y);
+            // audioSource.volume = UnityEngine.Random.Range(volume.x, volume.y);
+            // GameManager.Despawn(audioSource.gameObject, audioClip.length); 
         }
     }
 }

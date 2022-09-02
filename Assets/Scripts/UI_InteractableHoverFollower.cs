@@ -29,7 +29,7 @@ public class UI_InteractableHoverFollower : MonoBehaviour
 
     private void LateUpdate()
     {
-        var target = GameManager.Instance.localPlayer.lookTarget;
+        var target = GameManager.Instance.localPlayer.interactor.Target;
 
         if (target)
         {

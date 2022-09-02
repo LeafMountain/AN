@@ -1,8 +1,8 @@
 using System;
+using Core;
 using EventManager;
 using InventorySystem;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Storeable : MonoBehaviour, IInteractable 
 {
