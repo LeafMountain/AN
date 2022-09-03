@@ -219,13 +219,7 @@ namespace EffectSystem
 
         public override void DoEffect<T>(T extraArgs)
         {
-            // var audioSourceGo = new GameObject();
-            var audioSource = GameManager.Spawn(GameManager.Instance.audioInstancePrefab);
-            audioSource.transform.position = GetLocation(extraArgs).point;
-            audioSource.PlayOneShot(audioClip);
-            audioSource.pitch = UnityEngine.Random.Range(pitch.x, pitch.y);
-            audioSource.volume = UnityEngine.Random.Range(volume.x, volume.y);
-            GameManager.Despawn(audioSource.gameObject, audioClip.length);
+            GameManager.PlayAudioInWorld(audioClip, GetLocation(extraArgs).point, pitch, volume);
         }
     }
 
@@ -264,7 +258,7 @@ namespace EffectSystem
         public override void DoEffect<T>(T extraArgs)
         {
             var spawnArgs = extraArgs as SpawnEffect.SpawnEffectArgs;
-            // var impactNormal = (spawnArgs.impactRotation * Vector3.forward).normalized;
+            var impactNormal = (spawnArgs.impactRotation * Vector3.forward).normalized;
             var impactPosition = spawnArgs.impactPosition;
 
             var colliders = Physics.OverlapSphere(impactPosition, radius);
@@ -273,7 +267,10 @@ namespace EffectSystem
                 foreach (var collider in colliders)
                 {
                     if(collider.attachedRigidbody == null) continue;
-                    collider.attachedRigidbody.AddForceAtPosition(Vector3.one * force, impactPosition, mode);
+                    var forceVector = collider.transform.position - impactPosition;
+                    forceVector = forceVector.normalized;
+                    forceVector *= force;
+                    collider.attachedRigidbody.AddForceAtPosition(forceVector, impactPosition, mode);
                 }
             }
         }

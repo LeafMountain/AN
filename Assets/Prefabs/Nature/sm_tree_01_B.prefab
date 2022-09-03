@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6456762211819901327, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
       propertyPath: m_RootOrder
-      value: 636
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6456762211819901327, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,9 +70,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5967506627786476341, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7042036032478996200}
-    - targetCorrespondingSourceObject: {fileID: 5967506627786476341, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7538450030709882507}
     - targetCorrespondingSourceObject: {fileID: 5967506627786476341, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
       insertIndex: -1
@@ -92,29 +89,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5967506627786476341, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
   m_PrefabInstance: {fileID: 821369023339499667}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &7042036032478996200
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6464566998858308518}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.47
-  m_Height: 10
-  m_Direction: 1
-  m_Center: {x: 0.07205939, y: 4.52, z: 0}
 --- !u!2083052967 &7538450030709882507
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -218,15 +192,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: {fileID: 972978939}
+  _actor: {fileID: 972978939}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
   autoDestroy: 1
   lootCount: 0
   loot: []
-  destructionEffect: {fileID: 11400000, guid: fc7f6f57422345b4a9e0c6b21312cf63, type: 2}
-  hitEffect: {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  destructionEffects:
+  - {fileID: 11400000, guid: fc7f6f57422345b4a9e0c6b21312cf63, type: 2}
+  - {fileID: 11400000, guid: b96b02b81d502ac4f9cc9d36c9c27012, type: 2}
+  hitEffects:
+  - {fileID: 11400000, guid: b621e6aeb2e21654cb129a81f870d92e, type: 2}
   lastHitPoint: {x: 0, y: 0, z: 0}
   lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &972978937

@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 78224757268477748a81f28c9c13522c, type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 78224757268477748a81f28c9c13522c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -89,7 +89,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130482820171867708}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c93c43548ccaab543a5494dba1947bdc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: {fileID: 1299217236}
+  _actor: {fileID: 1299217236}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
@@ -140,8 +140,11 @@ MonoBehaviour:
   - {fileID: -8189711974418603179, guid: 57d533633b046524391203dbc201c145, type: 3}
   - {fileID: 6223182722504063918, guid: 056ec9037e416a448912df90002ae599, type: 3}
   - {fileID: 8085218828732791185, guid: 8abf03ae8da2e0a42b880709cd9beae3, type: 3}
-  destructionEffect: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffect: {fileID: 0}
+  destructionEffects:
+  - {fileID: 11400000, guid: c1ca2590b3cfcda48b1e265d4c4dce6e, type: 2}
+  - {fileID: 11400000, guid: b96b02b81d502ac4f9cc9d36c9c27012, type: 2}
+  hitEffects:
+  - {fileID: 11400000, guid: b621e6aeb2e21654cb129a81f870d92e, type: 2}
   lastHitPoint: {x: 0, y: 0, z: 0}
   lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &1299217234

@@ -2,14 +2,15 @@ using System;
 using EventManager;
 using Unity.Netcode;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class GameManager : NetworkBehaviour 
+public class GameManager : NetworkBehaviour
 {
     private static GameManager gameManager;
     public static GameManager Instance => gameManager ? gameManager : gameManager = FindObjectOfType<GameManager>(true);
 
     public Camera characterCameraPrefab;
-    
+
     public Camera characterCamera;
     public GameObject defaultGun;
     public Player localPlayer;
@@ -21,8 +22,8 @@ public class GameManager : NetworkBehaviour
 
     private void Awake()
     {
-        if(gameManager) return;
-        
+        if (gameManager) return;
+
         gameManager = this;
         characterCamera = Spawn(characterCameraPrefab);
     }
@@ -31,7 +32,7 @@ public class GameManager : NetworkBehaviour
     {
         Events.AddListener(Flag.DamageRecieved, OnDamageRecieved);
         Events.AddListener(Flag.Storeable, OnStoreableUpdated);
-        
+
         LockCursor(autoLockCursor);
     }
 
@@ -46,14 +47,14 @@ public class GameManager : NetworkBehaviour
                 case Storeable.ItemType.Supply:
                     localPlayer.supplies += 1;
                     break;
-                
+
                 case Storeable.ItemType.Battery:
                     localPlayer.energy += 1;
                     break;
-                
+
                 case Storeable.ItemType.None:
                     break;
-                
+
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -81,38 +82,41 @@ public class GameManager : NetworkBehaviour
     public static GameObject Spawn(GameObject original, Transform parent = null)
     {
         var spawned = Instantiate(original, parent);
-        if (NetworkManager.Singleton.IsServer && spawned.TryGetComponent<NetworkObject>(out var networkObject) && networkObject.IsSpawned == false)
+        if (NetworkManager.Singleton.IsServer && spawned.TryGetComponent<NetworkObject>(out var networkObject) &&
+            networkObject.IsSpawned == false)
         {
-            networkObject.Spawn(); 
+            networkObject.Spawn();
         }
 
         return spawned;
     }
-    
+
     public static GameObject Spawn(GameObject original, Vector3 position, Quaternion rotation, Transform parent = null)
     {
         var spawned = Instantiate(original, position, rotation, parent);
         if (spawned.TryGetComponent<NetworkObject>(out var networkObject) && networkObject.IsSpawned == false)
         {
-            networkObject.Spawn(); 
+            networkObject.Spawn();
         }
 
         return spawned;
     }
-    
-    public static T Spawn<T>(T original) where T : Component 
+
+    public static T Spawn<T>(T original) where T : Component
     {
         var spawned = Instantiate(original);
         if (spawned.TryGetComponent<NetworkObject>(out var networkObject) && networkObject.IsSpawned == false)
         {
-            networkObject.Spawn(); 
+            networkObject.Spawn();
         }
+
         return spawned;
-        
+
         // return Instantiate(original);
     }
-    
-    public static T Spawn<T>(T original, Vector3 position, Quaternion rotation, Transform parent = null) where T : MonoBehaviour
+
+    public static T Spawn<T>(T original, Vector3 position, Quaternion rotation, Transform parent = null)
+        where T : MonoBehaviour
     {
         return Instantiate(original, position, rotation, parent);
     }
@@ -131,7 +135,40 @@ public class GameManager : NetworkBehaviour
         }
         else
         {
-            Destroy(gameObject, delay); 
+            Destroy(gameObject, delay);
         }
+    }
+
+    // Generic audio hit
+    [Serializable]
+    public struct HitAudioProfile
+    {
+        public PhysicMaterial physicsMaterial;
+        public AudioClip[] audioClips;
+        public Vector2 pitchRange;
+        public Vector2 volumeRange;
+    }
+
+    [SerializeField] private HitAudioProfile[] hitAudioProfiles;
+
+    public static void PlayAudioByMaterial(PhysicMaterial colliderMaterial, Vector3 position)
+    {
+        foreach (var instanceHitAudioProfile in Instance.hitAudioProfiles)
+        {
+            if (instanceHitAudioProfile.physicsMaterial != colliderMaterial) continue;
+            var audioIndex = Random.Range(0, instanceHitAudioProfile.audioClips.Length - 1);
+            PlayAudioInWorld(instanceHitAudioProfile.audioClips[audioIndex], position, instanceHitAudioProfile.pitchRange, instanceHitAudioProfile.volumeRange);
+            break;
+        }
+    }
+
+    public static void PlayAudioInWorld(AudioClip audioClip, Vector3 position, Vector2 pitchRange, Vector2 volumeRange)
+    {
+        var audioSource = GameManager.Spawn(GameManager.Instance.audioInstancePrefab);
+        audioSource.transform.position = position; 
+        audioSource.PlayOneShot(audioClip);
+        audioSource.pitch = UnityEngine.Random.Range(pitchRange.x, pitchRange.y);
+        audioSource.volume = UnityEngine.Random.Range(volumeRange.x, volumeRange.y);
+        GameManager.Despawn(audioSource.gameObject, audioClip.length);
     }
 }

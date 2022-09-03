@@ -67,6 +67,9 @@ public class Bullet : NetworkBehaviour
                 // Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
                 // DestroyBullet();
 
+                // Generic hit audio
+                GameManager.PlayAudioByMaterial(hit.collider.sharedMaterial, hit.point);
+
                 OnCollision(hit.point, hit.normal, damageReciever);
             }
         }
@@ -74,11 +77,16 @@ public class Bullet : NetworkBehaviour
 
     protected virtual void OnCollision(Vector3 position, Vector3 normal, DamageReceiver damageReceiver)
     {
-        if (damageReceiver) damageReceiver.DoDamage(this);
-        for (var i = 0; i < impactEffects.Length; i++)
+        if (damageReceiver)
         {
-            impactEffects[i].PlayEffect(gameObject, gameObject, position, Quaternion.LookRotation(normal));
+            damageReceiver.DoDamage(this);
         }
+
+        foreach (var effect in impactEffects)
+        {
+            effect.PlayEffect(gameObject, gameObject, position, Quaternion.LookRotation(normal));
+        }
+
 
         DestroyBullet();
     }

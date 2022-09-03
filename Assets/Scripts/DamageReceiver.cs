@@ -22,8 +22,8 @@ public class DamageReceiver : NetworkActorComponent
     public bool IsDead => currentHealth.Value == 0;
 
     [NonSerialized, OdinSerialize] public Effect[] customDestructionEffects = Array.Empty<Effect>();
-    public EffectData destructionEffect;
-    public EffectData hitEffect;
+    public EffectData[] destructionEffects;
+    public EffectData[] hitEffects;
     public Vector3 lastHitPoint;
     public Vector3 lastHitNormal;
 
@@ -65,9 +65,12 @@ public class DamageReceiver : NetworkActorComponent
                     spawnedLoot.GetComponent<NetworkObject>().Spawn();
                 }
 
-                if (destructionEffect != null)
+                if (destructionEffects.Any())
                 {
-                    destructionEffect.PlayEffect(gameObject, gameObject, transform.position, transform.rotation);
+                    foreach (var destructionEffect in destructionEffects)
+                    {
+                        destructionEffect.PlayEffect(gameObject, gameObject, transform.position, transform.rotation);
+                    }
                 }
             }
         }
@@ -91,10 +94,13 @@ public class DamageReceiver : NetworkActorComponent
                 Quaternion.LookRotation(-bullet.transform.forward));
         }
 
-        if (destructionEffect)
+        if (hitEffects.Any())
         {
-            hitEffect.PlayEffect(gameObject, gameObject, bullet.transform.position,
-                Quaternion.LookRotation(-bullet.transform.forward));
+            foreach (var hitEffect in hitEffects)
+            {
+                hitEffect.PlayEffect(gameObject, gameObject, bullet.transform.position,
+                    Quaternion.LookRotation(-bullet.transform.forward));
+            }
         }
 
         lastHitPoint = bullet.transform.position;
@@ -117,9 +123,12 @@ public class DamageReceiver : NetworkActorComponent
                     spawnedLoot.GetComponent<NetworkObject>().Spawn();
                 }
 
-                if (destructionEffect != null)
+                if (destructionEffects.Any())
                 {
-                    destructionEffect.PlayEffect(gameObject, gameObject, transform.position, transform.rotation);
+                    foreach (var destructionEffect in destructionEffects)
+                    {
+                        destructionEffect.PlayEffect(gameObject, gameObject, transform.position, transform.rotation);
+                    }
                 }
             }
         }

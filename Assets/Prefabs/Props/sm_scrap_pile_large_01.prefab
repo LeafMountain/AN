@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
+  actorMapping: []
 --- !u!114 &4741072733558199199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: {fileID: 8603059600156986554}
+  _actor: {fileID: 8603059600156986554}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
@@ -121,8 +121,12 @@ MonoBehaviour:
   lootCount: 5
   loot:
   - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  destructionEffect: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffect: {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  destructionEffects:
+  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
+  hitEffects:
+  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  lastHitPoint: {x: 0, y: 0, z: 0}
+  lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &5671970072109988043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +150,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2585570049646809184}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5e57290e8069fe5459acf459d47cdcd0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -261,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
+  actorMapping: []
 --- !u!114 &68706021080737385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: {fileID: 8943355880620381999}
+  _actor: {fileID: 8943355880620381999}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
@@ -282,8 +286,12 @@ MonoBehaviour:
   lootCount: 5
   loot:
   - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  destructionEffect: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffect: {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  destructionEffects:
+  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
+  hitEffects:
+  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  lastHitPoint: {x: 0, y: 0, z: 0}
+  lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &4931945247084792514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +315,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4084926826598809041}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5e57290e8069fe5459acf459d47cdcd0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -422,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
+  actorMapping: []
 --- !u!114 &140017936255656095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: {fileID: 8709106047216168907}
+  _actor: {fileID: 8709106047216168907}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
@@ -443,8 +451,12 @@ MonoBehaviour:
   lootCount: 5
   loot:
   - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  destructionEffect: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffect: {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  destructionEffects:
+  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
+  hitEffects:
+  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  lastHitPoint: {x: 0, y: 0, z: 0}
+  lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &2343305691272338659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +480,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5012892471793625150}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5e57290e8069fe5459acf459d47cdcd0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -619,7 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
+  actorMapping: []
 --- !u!114 &5767365157829964297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: {fileID: 6636290156380702822}
+  _actor: {fileID: 6636290156380702822}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
@@ -640,8 +652,12 @@ MonoBehaviour:
   lootCount: 5
   loot:
   - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  destructionEffect: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffect: {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  destructionEffects:
+  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
+  hitEffects:
+  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  lastHitPoint: {x: 0, y: 0, z: 0}
+  lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &2553597045798158435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +681,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6100367018032052112}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5e57290e8069fe5459acf459d47cdcd0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -780,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 6333107169778547784, guid: 7fd3d0ef1c8554341ade5f64fde6a240, type: 3}
+  actorMapping: []
 --- !u!114 &575289528192412159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: {fileID: 2872822408837618437}
+  _actor: {fileID: 2872822408837618437}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
@@ -801,8 +817,12 @@ MonoBehaviour:
   lootCount: 5
   loot:
   - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  destructionEffect: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffect: {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  destructionEffects:
+  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
+  hitEffects:
+  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  lastHitPoint: {x: 0, y: 0, z: 0}
+  lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &4806851517530982289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,7 +846,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6852939227973699995}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5e57290e8069fe5459acf459d47cdcd0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
