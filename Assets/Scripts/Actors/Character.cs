@@ -15,6 +15,7 @@ public class Character : Actor
     public SkinnedMeshRenderer testPart;
 
     public UIActor ui;
+    public bool destinationReached;
 
     protected virtual void OnValidate()
     {
@@ -55,8 +56,6 @@ public class Character : Actor
     {
     }
 
-
-
     private void UpdateVelocity()
     {
         Vector3 position = transform.position;
@@ -73,5 +72,8 @@ public class Character : Actor
         animator.SetFloat("Speed", localVelocity.z);
     }
 
-
+    public virtual void SetDestination(Vector3 position)
+    {
+        return; 
+    }
 }

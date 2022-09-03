@@ -1,10 +1,16 @@
+using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
 
 namespace Core
 {
+    public interface IActorComponent
+    {
+        public void OnParentInitialized();
+    }
+    
     [RequireComponent(typeof(Actor))]
-    public class ActorComponent : MonoBehaviour
+    public abstract class ActorComponent : SerializedMonoBehaviour, IActorComponent
     {
         [SerializeField]
         private Actor _actor;
@@ -14,10 +20,14 @@ namespace Core
         {
             _actor = GetComponent<Actor>();
         }
+
+        public virtual void OnParentInitialized()
+        {
+        }
     }
     
     [RequireComponent(typeof(Actor))]
-    public class NetworkActorComponent : NetworkBehaviour 
+    public abstract class NetworkActorComponent : NetworkBehaviour, IActorComponent
     {
         [SerializeField]
         private Actor _actor;
@@ -29,6 +39,10 @@ namespace Core
         }
 
         protected virtual void Start()
+        {
+        }
+
+        public virtual void OnParentInitialized()
         {
         }
     }

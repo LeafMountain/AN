@@ -26,9 +26,9 @@ public class Bullet : NetworkBehaviour
     private IEnumerator lifetimeTimer;
     private bool isDestroying;
 
-    public EffectData impactEffect;
+    public EffectData[] impactEffects = Array.Empty<EffectData>();
     protected Vector3 targetPosition;
-    
+
     public void Init(Gun owner, float speed, Vector3 targetPosition, float lifetime = 30f)
     {
         this.owner = owner;
@@ -58,14 +58,15 @@ public class Bullet : NetworkBehaviour
                     hit = hit,
                     eventType = BulletImpactArgs.EventType.Impact
                 });
-                
+
                 if (hit.transform.TryGetComponent(out DamageReceiver damageReciever))
-                {}
-                    // damageReciever.DoDamage(this);
+                {
+                }
+                // damageReciever.DoDamage(this);
 
                 // Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
                 // DestroyBullet();
-                
+
                 OnCollision(hit.point, hit.normal, damageReciever);
             }
         }
@@ -74,7 +75,11 @@ public class Bullet : NetworkBehaviour
     protected virtual void OnCollision(Vector3 position, Vector3 normal, DamageReceiver damageReceiver)
     {
         if (damageReceiver) damageReceiver.DoDamage(this);
-        impactEffect.PlayEffect(gameObject, gameObject, position, Quaternion.LookRotation(normal));
+        for (var i = 0; i < impactEffects.Length; i++)
+        {
+            impactEffects[i].PlayEffect(gameObject, gameObject, position, Quaternion.LookRotation(normal));
+        }
+
         DestroyBullet();
     }
 
@@ -92,11 +97,11 @@ public class Bullet : NetworkBehaviour
     private void DestroyBullet()
     {
         if (isDestroying) return;
-        if(TryGetComponent<MeshRenderer>(out var meshRenderer))
+        if (TryGetComponent<MeshRenderer>(out var meshRenderer))
         {
             meshRenderer.enabled = false;
         }
-        
+
         isDestroying = true;
         if (lifetimeTimer != null) StopCoroutine(lifetimeTimer);
         // Destroy(gameObject, 2f);

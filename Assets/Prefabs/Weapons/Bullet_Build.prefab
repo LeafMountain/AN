@@ -232,7 +232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  impactEffect: {fileID: 11400000, guid: 7cb65c8a32135934586d229a1c34eef4, type: 2}
+  impactEffects:
+  - {fileID: 11400000, guid: 7cb65c8a32135934586d229a1c34eef4, type: 2}
 --- !u!114 &4764790040372939371
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using DG.Tweening;
 using EventManager;
 using Sirenix.OdinInspector;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace Core
 {
-    [DisallowMultipleComponent]
+    [DisallowMultipleComponent, RequireComponent(typeof(NetworkObject))]
     public class Actor : NetworkBehaviour 
     {
         [Serializable]
@@ -55,6 +56,14 @@ namespace Core
         protected virtual void Start()
         {
             Events.AddListener(Flag.DamageRecieved, this, OnDamaged);
+            var actorComponents = GetComponents<IActorComponent>();
+            if (actorComponents.Any())
+            {
+                foreach (var actorComponent in actorComponents)
+                {
+                    actorComponent.OnParentInitialized();
+                }
+            }
         }
 
         protected virtual void Update()
@@ -78,7 +87,6 @@ namespace Core
         {
 
         }
-
 
         private void OnDrawGizmosSelected()
         {

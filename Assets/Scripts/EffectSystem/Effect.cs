@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using BlockBuilder;
 using Core;
 using DG.Tweening;
@@ -231,9 +232,6 @@ namespace EffectSystem
     [Serializable]
     public class BuildBlockEffect : Effect
     {
-        // [SerializeField] private AudioClip audioClip;
-        // [SerializeField, MinMaxSlider(0f, 2f)] private Vector2 pitch = Vector2.one;
-        // [SerializeField, MinMaxSlider(0f, 2f)] private Vector2 volume = Vector2.one;
         [SerializeField] private bool remove;
 
         public override void DoEffect<T>(T extraArgs)
@@ -253,17 +251,31 @@ namespace EffectSystem
             }
 
             gridHolder.Run();
+        }
+    }
+    
+    [Serializable]
+    public class PhysicsEffect : Effect
+    {
+        [SerializeField] private float force;
+        [SerializeField] private float radius;
+        [SerializeField] private ForceMode mode;
 
-            // spawned.transform.position = spawnArgs.impactPosition;
-            // spawned.transform.rotation = spawnArgs.impactRotation * Quaternion.Euler(Vector3.right * 90f);
+        public override void DoEffect<T>(T extraArgs)
+        {
+            var spawnArgs = extraArgs as SpawnEffect.SpawnEffectArgs;
+            // var impactNormal = (spawnArgs.impactRotation * Vector3.forward).normalized;
+            var impactPosition = spawnArgs.impactPosition;
 
-            // var audioSourceGo = new GameObject();
-            // var audioSource = GameManager.Spawn(GameManager.Instance.audioInstancePrefab);
-            // audioSource.transform.position = GetLocation(extraArgs).point;
-            // audioSource.PlayOneShot(audioClip);
-            // audioSource.pitch = UnityEngine.Random.Range(pitch.x, pitch.y);
-            // audioSource.volume = UnityEngine.Random.Range(volume.x, volume.y);
-            // GameManager.Despawn(audioSource.gameObject, audioClip.length); 
+            var colliders = Physics.OverlapSphere(impactPosition, radius);
+            if (colliders.Any())
+            {
+                foreach (var collider in colliders)
+                {
+                    if(collider.attachedRigidbody == null) continue;
+                    collider.attachedRigidbody.AddForceAtPosition(Vector3.one * force, impactPosition, mode);
+                }
+            }
         }
     }
 }

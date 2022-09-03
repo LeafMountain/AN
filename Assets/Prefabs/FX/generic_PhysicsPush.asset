@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2373234067fc5d64a9f23e60e7fe93f1, type: 3}
-  m_Name: generic_buildEffect
+  m_Name: generic_PhysicsPush
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -29,16 +29,22 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|EffectSystem.BuildBlockEffect, Assembly-CSharp
+      Data: 1|EffectSystem.PhysicsEffect, Assembly-CSharp
     - Name: spawnMode
       Entry: 3
       Data: 2
     - Name: pointType
       Entry: 3
       Data: 0
-    - Name: remove
-      Entry: 5
-      Data: false
+    - Name: force
+      Entry: 4
+      Data: 10
+    - Name: radius
+      Entry: 4
+      Data: 10
+    - Name: mode
+      Entry: 3
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -48,4 +54,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  parentEffectData: {fileID: 11400000, guid: 1e81569cee0479c4d985e2176a4a1381, type: 2}
+  parentEffectData: {fileID: 0}

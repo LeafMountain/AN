@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Core;
 using UnityEngine;
 
+[RequireComponent(typeof(DamageReceiver), typeof(AI))]
 public class Enemy : Character
 {
     public float aggroRange = 10f;
@@ -10,7 +11,7 @@ public class Enemy : Character
     public float stoppingRange = 2f;
 
     public Vector3 destination;
-    public bool destinationReached;
+    // public bool destinationReached;
 
     public float aggroTimer;
     public Renderer stateLight;
@@ -19,7 +20,16 @@ public class Enemy : Character
     public Color aggroColor;
     public Color attackColor;
 
+    [SerializeField] 
+    private AI ai;
+
     private Actor target;
+
+    protected override void OnValidate()
+    {
+        base.OnValidate();
+        ai = GetComponent<AI>();
+    }
 
     public override void OnNetworkSpawn()
     {
@@ -32,6 +42,17 @@ public class Enemy : Character
         base.FixedUpdate();
         
         if(IsServer == false) return;
+        
+        // Move
+        destinationReached = (Vector3.Distance(transform.position, destination) < stoppingRange);
+        if (destinationReached == false)
+        {
+            Vector3 direction = (destination - transform.position).normalized;
+            TurnTowardsDirection(direction);
+            transform.Translate(transform.forward * (speed * Time.fixedDeltaTime));
+        }
+        
+        return;
         
         if (GameManager.Instance.localPlayer == false) return;
         Vector3 playerPosition = GameManager.Instance.localPlayer.transform.position + Vector3.up;
@@ -50,15 +71,6 @@ public class Enemy : Character
         else
         {
             OnIdle();
-        }
-
-        // Move
-        destinationReached = (Vector3.Distance(transform.position, destination) < stoppingRange);
-        if (destinationReached == false)
-        {
-            Vector3 direction = (destination - transform.position).normalized;
-            TurnTowardsDirection(direction);
-            transform.Translate(transform.forward * speed * Time.fixedDeltaTime);
         }
     }
 
@@ -118,23 +130,11 @@ public class Enemy : Character
         SetStateColor(aggroColor);
     }
 
-    public void SetDestination(Vector3 destination)
+    public override void SetDestination(Vector3 destination)
     {
         destinationReached = false;
         this.destination = destination;
     }
-
-    // private void OnDamaged(object origin, EventArgs eventargs)
-    // {
-    //     if (damageReceiver.currentHealth.Value > 0)
-    //     {
-    //         transform.DOPunchScale(Vector3.one * .1f, .2f);
-    //     }
-    //     else
-    //     {
-    //         transform.DOScale(Vector3.one * 2f, .1f).onComplete += () => Destroy(gameObject);
-    //     }
-    // }
 
     private void OnDrawGizmos()
     {
