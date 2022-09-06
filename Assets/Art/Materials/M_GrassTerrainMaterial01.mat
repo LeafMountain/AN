@@ -14,7 +14,6 @@ Material:
   m_ValidKeywords:
   - USE_BMP
   - USE_CS
-  - USE_RT
   - USE_SS
   m_InvalidKeywords:
   - USE_S
@@ -215,7 +214,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GrassCut: 1
+    - _GrassCut: 0.9
     - _GrassSaturation: 2.5
     - _GrassShading: 0
     - _GrassThinness: 0.93
@@ -247,7 +246,7 @@ Material:
     - _RTEffect: 1
     - _RimMax: 1
     - _RimMin: 0.7
-    - _RimPower: 0.36
+    - _RimPower: 0.3
     - _ShadowFuziness: 1
     - _ShadowMax: 0
     - _SmoothnessTextureChannel: 0
@@ -276,15 +275,15 @@ Material:
     - _UseBiplanar: 0
     - _UseCS: 1
     - _UsePR: 0
-    - _UseRT: 1
+    - _UseRT: 0
     - _UseShadow: 1
     - _UseShadowCast: 0
     - _UseSuperStack: 1
     - _UseTP: 0
     - _UseVR: 0
     - _UseWC: 0
-    - _WindForce: 2
-    - _WindMovement: 0.5
+    - _WindForce: 0.1
+    - _WindMovement: 0.1
     - _WorldRotation: 0
     - _WorldScale: 10
     - _ZTestDepthEqualForOpaque: 4
