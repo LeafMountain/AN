@@ -234,7 +234,7 @@ Material:
     - _NoisePower: 0.05
     - _NumberOfStacks: 17
     - _OcclusionStrength: 1
-    - _OffsetValue: -7.72
+    - _OffsetValue: -8.7
     - _Parallax: 0.02
     - _PrioA: 1
     - _PrioB: 1

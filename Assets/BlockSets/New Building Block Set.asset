@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   blocksPerTile: 1
-  forbiddenConnections: []
-  blockPrototypes: []
+  forbiddenConnections:
+  - blockPrefab: {fileID: 0}
+    incompatibleBlock: {fileID: 0}
+  blockPrototypes:
+  - blockPrefab: {fileID: 919132149155446097, guid: 9d55c9d6ec334f14a8393a883ff2ed1f, type: 3}
+    rotation: 0
+    sideIDs: []
