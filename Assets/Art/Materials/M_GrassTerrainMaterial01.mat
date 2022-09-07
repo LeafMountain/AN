@@ -13,7 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - USE_BMP
-  - USE_CS
+  - USE_BP
   - USE_SS
   m_InvalidKeywords:
   - USE_S
@@ -214,11 +214,11 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GrassCut: 0.9
+    - _GrassCut: 0.18
     - _GrassSaturation: 2.5
     - _GrassShading: 0
-    - _GrassThinness: 0.93
-    - _GrassThinnessIntersection: 0.092
+    - _GrassThinness: 1
+    - _GrassThinnessIntersection: 0.054
     - _Metallic: 0
     - _Metallic0: 0
     - _Metallic1: 0
@@ -234,7 +234,7 @@ Material:
     - _NoisePower: 0.05
     - _NumberOfStacks: 17
     - _OcclusionStrength: 1
-    - _OffsetValue: -8.7
+    - _OffsetValue: 2.53
     - _Parallax: 0.02
     - _PrioA: 1
     - _PrioB: 1
@@ -245,8 +245,8 @@ Material:
     - _ProceduralStrength: 1.5
     - _RTEffect: 1
     - _RimMax: 1
-    - _RimMin: 0.7
-    - _RimPower: 0.3
+    - _RimMin: 0.8
+    - _RimPower: 0.5
     - _ShadowFuziness: 1
     - _ShadowMax: 0
     - _SmoothnessTextureChannel: 0
@@ -264,7 +264,7 @@ Material:
     - _StencilWriteMaskMV: 32
     - _SurfaceType: 0
     - _TextureScale: 0.25
-    - _TilingN1: 100
+    - _TilingN1: 300
     - _TilingN2: 0.05
     - _TilingN3: 50
     - _TransparentCullMode: 2
@@ -272,8 +272,8 @@ Material:
     - _UVSec: 0
     - _UseAmbientLight: 0
     - _UseBetterModelPrecision: 1
-    - _UseBiplanar: 0
-    - _UseCS: 1
+    - _UseBiplanar: 1
+    - _UseCS: 0
     - _UsePR: 0
     - _UseRT: 0
     - _UseShadow: 1
@@ -293,15 +293,15 @@ Material:
     - _ZWrite: 1
     - __NumberOfStacks: 17
     m_Colors:
-    - _Color: {r: 0.07208972, g: 0.5660378, b: 0.09698377, a: 1}
+    - _Color: {r: 0.19686209, g: 0.519, b: 0.3404585, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 1, g: 0.88, b: 0.75, a: 1}
-    - _OffsetVector: {r: 0, g: 10.5, b: 0, a: 0}
+    - _GroundColor: {r: 1, g: 0.44054025, b: 0, a: 1}
+    - _OffsetVector: {r: 0, g: 0, b: 0, a: 0}
     - _PJShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _ProjectedShadowColor: {r: 0.475, g: 0.31540003, b: 0.18240003, a: 1}
-    - _RimColor: {r: 0, g: 0.207, b: 0.181125, a: 1}
-    - _SelfShadowColor: {r: 0.475, g: 0.43963078, b: 0.3705, a: 1}
+    - _RimColor: {r: 0, g: 0.1981132, b: 0.15384854, a: 1}
+    - _SelfShadowColor: {r: 0, g: 0.3589828, b: 1, a: 1}
     - _Specular0: {r: 1, g: 1, b: 1, a: 1}
     - _Specular1: {r: 1, g: 1, b: 1, a: 1}
     - _Specular2: {r: 1, g: 1, b: 1, a: 1}

@@ -849,7 +849,12 @@ ENDHLSL
 				builtinData.bakeDiffuseLighting = _RimColor.rgb * pow(abs(rimLight), _RimPower) * 10;
 				//surfaceData.ambientOcclusion = 0;
 				//surfaceData.normalWS = i.normal;
-
+				surfaceData.normalWS = float3(input.color.g, input.color.b, input.color.a).xyz;
+				surfaceData.perceptualSmoothness = 0;
+				surfaceData.subsurfaceMask = 0;
+				surfaceData.anisotropy = 0;
+				surfaceData.specularColor = 0;
+				surfaceData.specularOcclusion = 0;
 				// Write back the data to the output structures
 				//ZERO_INITIALIZE(BuiltinData, builtinData); //Use this for other passes
 				ENCODE_INTO_GBUFFER(surfaceData, builtinData, posInput.positionSS, outGBuffer);
