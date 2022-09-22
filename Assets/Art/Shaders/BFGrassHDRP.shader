@@ -57,6 +57,7 @@ Shader "BruteForceHDRP/InteractiveGrassHDRP"
 		[Toggle(USE_RT)] _UseRT("Use RenderTexture Effect", Float) = 1
 		[Toggle(USE_SC)] _UseShadowCast("Use Shadow Casting", Float) = 1
 		[Toggle(USE_VR)] _UseVR("Use For VR", Float) = 0
+		[Toggle(USE_VP)] _UseVP("Use with Vertex Painting", Float) = 0
 
 		[Header(Procedural Tiling)]
 		[Space]
@@ -251,6 +252,7 @@ ENDHLSL
 			#pragma shader_feature USE_TP
 			#pragma shader_feature USE_SS
 			#pragma shader_feature USE_CS
+			#pragma shader_feature USE_VP
 			//#pragma ATTRIBUTES_NEED_TANGENT
 			//enable GPU instancing support
 			#pragma multi_compile_instancing
@@ -500,6 +502,11 @@ ENDHLSL
 					float3 p0_prev = 0.0 + _GrassCut;
 					float3 p1_prev = 0.0 + _GrassCut;
 					float3 p2_prev = 0.0 + _GrassCut;
+#ifdef USE_VP
+					p0_prev.z = v0.color.g;
+					p1_prev.z = v1.color.g;
+					p2_prev.z = v2.color.g;
+#endif
 
 					p0_prev.y = GetAbsolutePositionWS(TransformObjectToWorld(p0)).y;
 
@@ -572,6 +579,11 @@ ENDHLSL
 							p0_prev.y = GetAbsolutePositionWS(TransformObjectToWorld(p0)).y; 
 							float3 p1_prev = p0_prev;
 							float3 p2_prev = p0_prev;
+#ifdef USE_VP
+							p0_prev.z = v0.color.g;
+							p1_prev.z = v1.color.g;
+							p2_prev.z = v2.color.g;
+#endif
 
 							float3 n0 = v0.normalOS;
 							float3 n1 = v1.normalOS;
@@ -671,8 +683,12 @@ ENDHLSL
 				half4 colGround = _GroundTex.Sample(my_linear_repeat_sampler, mainUV + dis.xy * 0.05);
 
 				float3 noise = _Noise.Sample(my_linear_repeat_sampler, mainUV * _TilingN2 + dis.xy) * _NoisePower;
+#ifdef USE_VP
+				half3 NoGrass = input.color.b;
+#else
 				half3 NoGrass = _NoGrassTex.Sample(my_linear_repeat_sampler, mainUV + dis.xy * 0.05);
 				NoGrass.r = saturate(NoGrass.r + ripplesG);
+#endif
 
 				half alpha = step(1 - ((col.x + col.y + col.z + grassPattern.x) * _GrassThinness) * ((2 - input.color.r) * NoGrass.r * grassPattern.x) * saturate(ripples + 1) * saturate(ripples + 1), ((1 - input.color.r) * (ripples + 1)) * (NoGrass.r * grassPattern.x) * _GrassThinness - dis.x * 5);
 				alpha = lerp(alpha, alpha + (grassPattern.x * NoGrass.r * (1 - input.color.r)) * _GrassThinnessIntersection, 1 - (NoGrass.r) * (ripples * NoGrass.r + 0.75));
@@ -769,6 +785,7 @@ ENDHLSL
 #pragma shader_feature USE_SC
 #pragma shader_feature USE_WC
 #pragma shader_feature USE_VR
+#pragma shader_feature USE_VP
 #pragma shader_feature USE_TP
 #pragma shader_feature USE_SS
 #pragma shader_feature USE_CS
@@ -785,6 +802,9 @@ ENDHLSL
 #ifdef USE_VR
 			UNITY_VERTEX_INPUT_INSTANCE_ID
 #endif
+#ifdef USE_VP
+				float2 color : COLOR;
+#endif
 		};
 
 		struct v2g
@@ -796,6 +816,9 @@ ENDHLSL
 #ifdef USE_VR
 			UNITY_VERTEX_INPUT_INSTANCE_ID
 #endif
+#ifdef USE_VP
+				float2 color : COLOR;
+#endif
 		};
 
 		struct g2f
@@ -803,8 +826,8 @@ ENDHLSL
 			float2 uv : TEXCOORD0;
 			float4 pos : SV_POSITION;
 			float3 worldPos : TEXCOORD1;
-			half1 color : TEXCOORD2;
-			float3 normal : TEXCOORD3;
+			float2 color : COLOR;
+			float3 normal : TEXCOORD2;
 #ifdef USE_VR
 			UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
@@ -889,6 +912,9 @@ ENDHLSL
 			o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
 			o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 			o.normal = v.normal;
+#ifdef USE_VP
+			o.color = v.color;
+#endif
 			return o;
 		}
 
@@ -924,7 +950,12 @@ ENDHLSL
 #endif
 				o.uv = input[i].uv;
 				o.pos = input[i].pos;
+#ifdef USE_VP
+				o.color.r = 0.0 + _GrassCut;
+				o.color.g = input[i].color.g;
+#else
 				o.color = 0.0 + _GrassCut;
+#endif
 				o.normal = normalize(mul(UNITY_MATRIX_I_M, float4(input[i].normal, 0.0)).xyz);
 				o.worldPos = GetAbsolutePositionWS(TransformObjectToWorld(input[i].objPos.xyz)).xyz;
 				
@@ -979,8 +1010,14 @@ ENDHLSL
 
 					objSpace = float4((input[ii].objPos  + NewNormal * _OffsetValue * i* _OffsetMult + offsetNormal* _OffsetMult) - (NewNormal * _OffsetValue* _OffsetMult / numInstance) * (InstanceID + 1) - offsetNormalI* _OffsetMult);
 					
+					//o.color = max(0.0101, (i / (_NumberOfStacks - _GrassCut)) - ((1 / numInstance) / _NumberOfStacks) * (InstanceID));
+#ifdef USE_VP
+					o.color.r = max(0.0101, (i / (_NumberOfStacks - _GrassCut)) - ((1 / numInstance) / _NumberOfStacks) * (InstanceID));
+					o.color.g = input[ii].color.g;
+#else
 					o.color = max(0.0101, (i / (_NumberOfStacks - _GrassCut)) - ((1 / numInstance) / _NumberOfStacks) * (InstanceID));
-							
+#endif
+
 					o.uv = input[ii].uv;
 					objSpace.w = 1;
 					o.pos = mul(UNITY_MATRIX_MVP, objSpace);
@@ -1055,8 +1092,13 @@ ENDHLSL
 				float3 grassPattern = tex2D(_GrassTex, mainUV * _TilingN1 + dis.xy);
 #endif
 				half4 col = _MainTex.Sample(my_linear_repeat_sampler, mainUV + dis.xy * 0.09);
+#ifdef USE_VP
+				half3 NoGrass = i.color.g;
+				NoGrass.r = saturate(NoGrass.r + ripplesG);
+#else
 				half3 NoGrass = _NoGrassTex.Sample(my_linear_repeat_sampler, mainUV + dis.xy * 0.05);
 				NoGrass.r = saturate(NoGrass.r + ripplesG);
+#endif
 
 				half alpha = step(1 - ((col.x + col.y + col.z + grassPattern.x) * _GrassThinness) * ((2 - i.color.r) * NoGrass.r * grassPattern.x) * saturate(ripples + 1) * saturate(ripples + 1), ((1 - i.color.r) * (ripples + 1)) * (NoGrass.r * grassPattern.x) * _GrassThinness - dis.x * 5);
 				alpha = lerp(alpha, alpha + (grassPattern.x * NoGrass.r * (1 - i.color.r)) * _GrassThinnessIntersection, 1 - (NoGrass.r) * (ripples * NoGrass.r + 0.75));
@@ -1131,6 +1173,7 @@ ENDHLSL
 #pragma shader_feature USE_WC
 #pragma shader_feature USE_PR
 #pragma shader_feature USE_VR
+#pragma shader_feature USE_VP
 #pragma shader_feature USE_TP
 #pragma shader_feature USE_CS
 
@@ -1161,6 +1204,9 @@ ENDHLSL
 #ifdef USE_VR
 			UNITY_VERTEX_INPUT_INSTANCE_ID
 #endif
+#ifdef USE_VP
+				float2 color : COLOR;
+#endif
 		};
 
 		struct v2g
@@ -1173,6 +1219,9 @@ ENDHLSL
 #ifdef USE_VR
 			UNITY_VERTEX_INPUT_INSTANCE_ID
 #endif
+#ifdef USE_VP
+				float2 color : COLOR;
+#endif
 		};
 
 		struct g2f
@@ -1180,9 +1229,9 @@ ENDHLSL
 			float2 uv : TEXCOORD0;
 			float4 pos : SV_POSITION;
 			float3 worldPos : TEXCOORD1;
-			half1 color : TEXCOORD2;
-			float3 normal : TEXCOORD3;
-			float4 shadowCoord : TEXCOORD4;
+			float2 color : COLOR;
+			float3 normal : TEXCOORD2;
+			float4 shadowCoord : TEXCOORD3;
 #ifdef USE_VR
 			UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
@@ -1268,6 +1317,9 @@ ENDHLSL
 			o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 			o.shadowCoord = mul(UNITY_MATRIX_MVP, o.pos);
 			o.normal = v.normal;
+#ifdef USE_VP
+			o.color = v.color;
+#endif
 			return o;
 		}
 
@@ -1294,7 +1346,12 @@ ENDHLSL
 #endif
 				o.uv = input[i].uv;
 				o.pos = input[i].pos;
+#ifdef USE_VP
+				o.color.r = 0.0 + _GrassCut;
+				o.color.g = input[i].color.g;
+#else
 				o.color = 0.0 + _GrassCut;
+#endif
 				o.normal = normalize(mul(UNITY_MATRIX_I_M, float4(input[i].normal, 0.0)).xyz);
 				o.worldPos = GetAbsolutePositionWS(TransformObjectToWorld(input[i].objPos));
 				o.shadowCoord = input[i].shadowCoord;
@@ -1340,6 +1397,12 @@ ENDHLSL
 
 					objSpace = float4(input[ii].objPos + NewNormal* _OffsetMult * _OffsetValue * i + offsetNormal* _OffsetMult);
 					o.color = (i / (_NumberOfStacks - _GrassCut));
+#ifdef USE_VP
+					o.color.r = (i / (_NumberOfStacks - _GrassCut));;
+					o.color.g = input[ii].color.g;
+#else
+					o.color = (i / (_NumberOfStacks - _GrassCut));
+#endif
 					o.uv = input[ii].uv;
 					o.pos = mul(UNITY_MATRIX_MVP, objSpace);
 					o.shadowCoord = P;
@@ -1417,9 +1480,13 @@ ENDHLSL
 				float3 grassPattern = tex2D(_GrassTex, mainUV * _TilingN1 + dis.xy);
 #endif
 				half4 col = _MainTex.Sample(my_linear_repeat_sampler, mainUV + dis.xy * 0.09);
+#ifdef USE_VP
+				half3 NoGrass = i.color.g;
+				NoGrass.r = saturate(NoGrass.r + ripplesG);
+#else
 				half3 NoGrass = _NoGrassTex.Sample(my_linear_repeat_sampler, mainUV + dis.xy * 0.05);
 				NoGrass.r = saturate(NoGrass.r + ripplesG);
-
+#endif
 				half alpha = step(1 - ((col.x + col.y + col.z + grassPattern.x) * _GrassThinness) * ((2 - i.color.r) * NoGrass.r * grassPattern.x) * saturate(ripples + 1) * saturate(ripples + 1), ((1 - i.color.r) * (ripples + 1)) * (NoGrass.r * grassPattern.x) * _GrassThinness - dis.x * 5);
 				alpha = lerp(alpha, alpha + (grassPattern.x * NoGrass.r * (1 - i.color.r)) * _GrassThinnessIntersection, 1 - (NoGrass.r) * (ripples * NoGrass.r + 0.75));
 

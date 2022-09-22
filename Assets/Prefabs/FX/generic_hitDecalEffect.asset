@@ -34,15 +34,21 @@ MonoBehaviour:
     - Name: spawnMode
       Entry: 3
       Data: 2
+    - Name: pointType
+      Entry: 3
+      Data: 0
     - Name: gameObject
       Entry: 10
       Data: 0
+    - Name: visualEffect
+      Entry: 6
+      Data: 
     - Name: autoDestroy
       Entry: 5
       Data: true
     - Name: destroyDelayDuration
       Entry: 4
-      Data: 2
+      Data: 15
     - Name: 
       Entry: 8
       Data: 
@@ -50,6 +56,9 @@ MonoBehaviour:
       Entry: 7
       Data: 2|EffectSystem.CameraEffect, Assembly-CSharp
     - Name: spawnMode
+      Entry: 3
+      Data: 0
+    - Name: pointType
       Entry: 3
       Data: 0
     - Name: shakeTime
@@ -65,6 +74,9 @@ MonoBehaviour:
       Entry: 7
       Data: 3|EffectSystem.TweenEffect, Assembly-CSharp
     - Name: spawnMode
+      Entry: 3
+      Data: 0
+    - Name: pointType
       Entry: 3
       Data: 0
     - Name: duration
