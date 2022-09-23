@@ -18,6 +18,7 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 4623923328199862340, guid: 0d009162a217c68498f7ea42af51e12e, type: 3}
     - {fileID: 4718997008083380116, guid: b66a6217aed9e8c489d37fa90930f227, type: 3}
+    - {fileID: 8300000, guid: 05f0d23707ca9714694a8b17f5145374, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -28,7 +29,7 @@ MonoBehaviour:
       Data: 0|EffectSystem.Effect[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|EffectSystem.SpawnEffect, Assembly-CSharp
@@ -74,6 +75,45 @@ MonoBehaviour:
     - Name: destroyDelayDuration
       Entry: 4
       Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|EffectSystem.AudioEffect, Assembly-CSharp
+    - Name: spawnMode
+      Entry: 3
+      Data: 0
+    - Name: pointType
+      Entry: 3
+      Data: 0
+    - Name: audioClip
+      Entry: 10
+      Data: 2
+    - Name: pitch
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.776204
+    - Name: 
+      Entry: 4
+      Data: 1.17658174
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: volume
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.74598676
+    - Name: 
+      Entry: 4
+      Data: 0.8517469
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 

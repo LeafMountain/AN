@@ -141,7 +141,7 @@ MonoBehaviour:
   - {fileID: 6223182722504063918, guid: 056ec9037e416a448912df90002ae599, type: 3}
   - {fileID: 8085218828732791185, guid: 8abf03ae8da2e0a42b880709cd9beae3, type: 3}
   destructionEffects:
-  - {fileID: 11400000, guid: c1ca2590b3cfcda48b1e265d4c4dce6e, type: 2}
+  - {fileID: 11400000, guid: 5f8d51c8e65b41145a076dde2c93b987, type: 2}
   - {fileID: 11400000, guid: b96b02b81d502ac4f9cc9d36c9c27012, type: 2}
   hitEffects:
   - {fileID: 11400000, guid: b621e6aeb2e21654cb129a81f870d92e, type: 2}
