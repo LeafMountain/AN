@@ -10143,10 +10143,9 @@ GameObject:
   m_Component:
   - component: {fileID: 918807815}
   - component: {fileID: 918807818}
-  - component: {fileID: 918807817}
   - component: {fileID: 918807819}
   m_Layer: 0
-  m_Name: GrassTerrain
+  m_Name: Level_01_Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10160,33 +10159,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918807814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1420096317}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!154 &918807817
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918807814}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: e35e982e73e6a824f93353bfc3d9d977, type: 2}
-  m_EnableTreeColliders: 0
 --- !u!218 &918807818
 Terrain:
   m_ObjectHideFlags: 0
@@ -15851,7 +15830,7 @@ GameObject:
   - component: {fileID: 1420096316}
   - component: {fileID: 1420096315}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: Level_01_Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
