@@ -17,6 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 8300000, guid: b700eebddcd1bec49b9f9a62e4022aae, type: 3}
+    - {fileID: 8300000, guid: 1246fa92f8c11d342817caf3fe0c34e3, type: 3}
     - {fileID: 2683091412525791944, guid: 39db2fa0668f1a448a610381d6c68dd1, type: 3}
     - {fileID: 6326821444451418496, guid: 57d533633b046524391203dbc201c145, type: 3}
     - {fileID: 7421644106472357201, guid: 056ec9037e416a448912df90002ae599, type: 3}
@@ -31,7 +32,7 @@ MonoBehaviour:
       Data: 0|EffectSystem.Effect[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 6
     - Name: 
       Entry: 7
       Data: 1|EffectSystem.AudioEffect, Assembly-CSharp
@@ -61,10 +62,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.7082153
+      Data: 0.9197356
     - Name: 
       Entry: 4
-      Data: 0.9499528
+      Data: 1.259679
     - Name: 
       Entry: 8
       Data: 
@@ -73,25 +74,40 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|EffectSystem.SpawnEffect, Assembly-CSharp
+      Data: 2|EffectSystem.AudioEffect, Assembly-CSharp
     - Name: spawnMode
       Entry: 3
       Data: 0
     - Name: pointType
       Entry: 3
       Data: 0
-    - Name: gameObject
+    - Name: audioClip
       Entry: 10
       Data: 1
-    - Name: visualEffect
-      Entry: 6
-      Data: 
-    - Name: autoDestroy
-      Entry: 5
-      Data: false
-    - Name: destroyDelayDuration
+    - Name: pitch
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
       Entry: 4
-      Data: 0
+      Data: 0.8720667
+    - Name: 
+      Entry: 4
+      Data: 1.12187743
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: volume
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.978046954
+    - Name: 
+      Entry: 4
+      Data: 1.18243754
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -168,9 +184,33 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 6|EffectSystem.SpawnEffect, Assembly-CSharp
+    - Name: spawnMode
+      Entry: 3
+      Data: 0
+    - Name: pointType
+      Entry: 3
+      Data: 0
+    - Name: gameObject
+      Entry: 10
+      Data: 5
+    - Name: visualEffect
+      Entry: 6
+      Data: 
+    - Name: autoDestroy
+      Entry: 5
+      Data: false
+    - Name: destroyDelayDuration
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
-  parentEffectData: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
+  parentEffectData: {fileID: 0}

@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 974a8d769973d804aa6576f3410ef59b, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974a8d769973d804aa6576f3410ef59b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6187706
+      value: 15.10877
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974a8d769973d804aa6576f3410ef59b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.245
+      value: 15.545
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974a8d769973d804aa6576f3410ef59b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.791273
+      value: -42.76873
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974a8d769973d804aa6576f3410ef59b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974a8d769973d804aa6576f3410ef59b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974a8d769973d804aa6576f3410ef59b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -142,12 +142,12 @@ MonoBehaviour:
   currentHealth:
     m_InternalValue: 0
   autoDestroy: 1
-  lootCount: 5
-  loot:
-  - {fileID: 1988317821691493275, guid: d3e61761456dfe846b6a4494132981cd, type: 3}
-  - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  destructionEffect: {fileID: 0}
-  hitEffect: {fileID: 0}
+  lootCount: 1
+  loot: []
+  destructionEffects:
+  - {fileID: 11400000, guid: fc7f6f57422345b4a9e0c6b21312cf63, type: 2}
+  hitEffects:
+  - {fileID: 11400000, guid: 7fab49fa238a21d48b11c588b1b427d0, type: 2}
   lastHitPoint: {x: 0, y: 0, z: 0}
   lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &617393235

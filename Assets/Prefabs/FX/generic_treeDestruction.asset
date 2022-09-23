@@ -123,4 +123,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  parentEffectData: {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
+  parentEffectData: {fileID: 0}

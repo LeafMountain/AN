@@ -18,23 +18,23 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e7fd02f1ef7bdeb47b13279eef748502, type: 2}
     - target: {fileID: 5967506627786476341, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
       propertyPath: m_Name
-      value: sm_tree_01_B
+      value: sm_tree_01 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6456762211819901327, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6456762211819901327, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.314
+      value: 17.031008
       objectReference: {fileID: 0}
     - target: {fileID: 6456762211819901327, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.007265568
+      value: 12.292734
       objectReference: {fileID: 0}
     - target: {fileID: 6456762211819901327, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.874
+      value: -43.474686
       objectReference: {fileID: 0}
     - target: {fileID: 6456762211819901327, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -84,6 +84,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 972978937}
   m_SourcePrefab: {fileID: 100100000, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
+--- !u!114 &3272351198746317390 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2742600732077195997, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
+  m_PrefabInstance: {fileID: 821369023339499667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464566998858308518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6464566998858308518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5967506627786476341, guid: 9c77b98a7a77aa64baaea4793dc356ee, type: 3}
@@ -192,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actor: {fileID: 972978939}
+  _actor: {fileID: 3272351198746317390}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
