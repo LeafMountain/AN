@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2268088
+      value: 13.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.007245064
+      value: 12.292755
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.726151
+      value: -50.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -71,6 +71,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7778293411759598964}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1209520665}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1209520667}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1209520666}
   m_SourcePrefab: {fileID: 100100000, guid: 49313122824303b4fb4a1893adad3f9c, type: 3}
 --- !u!1 &4623923328199862340 stripped
 GameObject:
@@ -98,3 +107,57 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1860793, y: 0.99556595, z: 1.1878514}
   m_Center: {x: 0.017325848, y: 0.3986481, z: 0.013659626}
+--- !u!114 &1209520665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623923328199862340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &1209520667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623923328199862340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actorMapping: []
+--- !u!114 &1209520666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623923328199862340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actor: {fileID: 1209520667}
+  maxHealth: 10
+  currentHealth:
+    m_InternalValue: 0
+  autoDestroy: 1
+  lootCount: 1
+  loot: []
+  destructionEffects:
+  - {fileID: 11400000, guid: fc7f6f57422345b4a9e0c6b21312cf63, type: 2}
+  hitEffects:
+  - {fileID: 11400000, guid: 7fab49fa238a21d48b11c588b1b427d0, type: 2}
+  lastHitPoint: {x: 0, y: 0, z: 0}
+  lastHitNormal: {x: 0, y: 0, z: 0}
