@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2373234067fc5d64a9f23e60e7fe93f1, type: 3}
+  m_Name: firearm_gun02CFiringEffect
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8926484042661614526, guid: 6832905e41a079948ab1a4ad078fa3f9, type: 3}
+    - {fileID: 8300000, guid: b3cb9d1c304012d439392185574747ec, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: effects
+      Entry: 7
+      Data: 0|EffectSystem.Effect[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|EffectSystem.SpawnEffect, Assembly-CSharp
+    - Name: spawnMode
+      Entry: 3
+      Data: 1
+    - Name: pointType
+      Entry: 3
+      Data: 1
+    - Name: gameObject
+      Entry: 6
+      Data: 
+    - Name: visualEffect
+      Entry: 10
+      Data: 0
+    - Name: autoDestroy
+      Entry: 5
+      Data: true
+    - Name: destroyDelayDuration
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|EffectSystem.AudioEffect, Assembly-CSharp
+    - Name: spawnMode
+      Entry: 3
+      Data: 1
+    - Name: pointType
+      Entry: 3
+      Data: 1
+    - Name: audioClip
+      Entry: 10
+      Data: 1
+    - Name: pitch
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.6785425
+    - Name: 
+      Entry: 4
+      Data: 1.15789473
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: volume
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.5554656
+    - Name: 
+      Entry: 4
+      Data: 0.6008097
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  parentEffectData: {fileID: 0}

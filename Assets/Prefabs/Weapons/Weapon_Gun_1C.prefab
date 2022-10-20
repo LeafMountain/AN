@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6103161407755912901}
   - component: {fileID: -5170264553230711549}
   m_Layer: 0
-  m_Name: Weapon_GunLaser QuadPipe
+  m_Name: Weapon_Gun_1C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
