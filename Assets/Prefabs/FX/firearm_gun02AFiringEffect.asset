@@ -36,8 +36,8 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: pointType
-      Entry: 3
-      Data: 1
+      Entry: 1
+      Data: MuzzleSpawn
     - Name: gameObject
       Entry: 6
       Data: 
@@ -46,7 +46,7 @@ MonoBehaviour:
       Data: 0
     - Name: autoDestroy
       Entry: 5
-      Data: true
+      Data: false
     - Name: destroyDelayDuration
       Entry: 4
       Data: 2
@@ -60,8 +60,8 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: pointType
-      Entry: 3
-      Data: 1
+      Entry: 1
+      Data: MuzzleSpawn
     - Name: audioClip
       Entry: 10
       Data: 1

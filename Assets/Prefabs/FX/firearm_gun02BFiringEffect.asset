@@ -17,6 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 8926484042661614526, guid: 6832905e41a079948ab1a4ad078fa3f9, type: 3}
+    - {fileID: 0}
     - {fileID: 8926484042661614526, guid: 1094404722ff3d94694a04035bd54b87, type: 3}
     - {fileID: 8300000, guid: 00334f625e38389418c073e6b5ec2198, type: 3}
     SerializedBytesString: 
@@ -37,8 +38,8 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: pointType
-      Entry: 3
-      Data: 1
+      Entry: 1
+      Data: MuzzleSpawn
     - Name: gameObject
       Entry: 6
       Data: 
@@ -61,14 +62,14 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: pointType
-      Entry: 3
-      Data: 0
+      Entry: 1
+      Data: FXSpawn_01
     - Name: gameObject
-      Entry: 6
-      Data: 
-    - Name: visualEffect
       Entry: 10
       Data: 1
+    - Name: visualEffect
+      Entry: 10
+      Data: 2
     - Name: autoDestroy
       Entry: 5
       Data: true
@@ -85,11 +86,11 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: pointType
-      Entry: 3
-      Data: 1
+      Entry: 1
+      Data: MuzzleSpawn
     - Name: audioClip
       Entry: 10
-      Data: 2
+      Data: 3
     - Name: pitch
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule

@@ -34,7 +34,7 @@ Transform:
   - {fileID: 5202039814772860667}
   - {fileID: 968106332079249584}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7296273790010811596
 BoxCollider:
@@ -69,9 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf57dd20e6f0512459be7945f640db67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 0}
   actorMapping:
-  - pointType: 1
+  - pointType: MuzzleSpawn
     manual: 0
     transform: {fileID: 968106332079249584}
     point: {x: 0, y: 0, z: 0}
@@ -109,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 968106332079249584}
   m_Layer: 0
-  m_Name: Muzzle
+  m_Name: MuzzleSpawn_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6225453397962828401}
   m_Layer: 0
-  m_Name: Muzzle02
+  m_Name: MuzzleSpawn_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ Transform:
   - {fileID: 5976659223073238}
   - {fileID: 2006187900559841182}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7296273790010811596
 BoxCollider:
@@ -103,7 +103,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf57dd20e6f0512459be7945f640db67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actorMapping: []
+  actorMapping:
+  - pointType: MuzzleSpawn
+    manual: 0
+    transform: {fileID: 968106332079249584}
+    point: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+  - pointType: MuzzleSpawn
+    manual: 0
+    transform: {fileID: 6225453397962828401}
+    point: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+  - pointType: MuzzleSpawn
+    manual: 0
+    transform: {fileID: 5976659223073238}
+    point: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+  - pointType: MuzzleSpawn
+    manual: 0
+    transform: {fileID: 2006187900559841182}
+    point: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
   muzzlePoints:
   - {fileID: 968106332079249584}
   - {fileID: 6225453397962828401}
@@ -140,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5976659223073238}
   m_Layer: 0
-  m_Name: Muzzle03
+  m_Name: MuzzleSpawn_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 968106332079249584}
   m_Layer: 0
-  m_Name: Muzzle01
+  m_Name: MuzzleSpawn_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2006187900559841182}
   m_Layer: 0
-  m_Name: Muzzle04
+  m_Name: MuzzleSpawn_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
