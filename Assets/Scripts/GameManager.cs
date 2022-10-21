@@ -31,37 +31,37 @@ public class GameManager : NetworkBehaviour
     private void Start()
     {
         Events.AddListener(Flag.DamageRecieved, OnDamageRecieved);
-        Events.AddListener(Flag.Storeable, OnStoreableUpdated);
+        // Events.AddListener(Flag.Storeable, OnStoreableUpdated);
 
         LockCursor(autoLockCursor);
     }
 
-    private void OnStoreableUpdated(object origin, EventArgs eventargs)
-    {
-        var storeableArgs = eventargs as Storeable.StoreableEventArgs;
-
-        if (NetworkManager.Singleton.IsServer)
-        {
-            switch (storeableArgs.storeable.itemType)
-            {
-                case Storeable.ItemType.Supply:
-                    localPlayer.supplies += 1;
-                    break;
-
-                case Storeable.ItemType.Battery:
-                    localPlayer.energy += 1;
-                    break;
-
-                case Storeable.ItemType.None:
-                    break;
-
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            storeableArgs.storeable.GetComponent<NetworkObject>().Despawn();
-        }
-    }
+    // private void OnStoreableUpdated(object origin, EventArgs eventargs)
+    // {
+    //     var storeableArgs = eventargs as Storeable.StoreableEventArgs;
+    //
+    //     if (NetworkManager.Singleton.IsServer)
+    //     {
+    //         switch (storeableArgs.storeable.itemType)
+    //         {
+    //             case Storeable.ItemType.Supply:
+    //                 localPlayer.supplies += 1;
+    //                 break;
+    //
+    //             case Storeable.ItemType.Battery:
+    //                 localPlayer.energy += 1;
+    //                 break;
+    //
+    //             case Storeable.ItemType.None:
+    //                 break;
+    //
+    //             default:
+    //                 throw new ArgumentOutOfRangeException();
+    //         }
+    //
+    //         storeableArgs.storeable.GetComponent<NetworkObject>().Despawn();
+    //     }
+    // }
 
     private void OnDamageRecieved(object origin, EventArgs eventargs)
     {

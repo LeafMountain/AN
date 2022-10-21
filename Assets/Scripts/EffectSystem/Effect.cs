@@ -22,7 +22,7 @@ namespace EffectSystem
         }
 
         [SerializeField] protected Mode spawnMode;
-        [SerializeField] protected Actor.MapPoint.PointType pointType;
+        [SerializeField] protected string pointType;
 
         public virtual void DoEffect<T>(T extraArgs) where T : EffectArgs
         {

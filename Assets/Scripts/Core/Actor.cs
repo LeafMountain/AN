@@ -14,13 +14,13 @@ namespace Core
         [Serializable]
         public struct MapPoint
         {
-            public enum PointType
-            {
-                None,
-                Muzzle
-            }
+            // public enum PointType
+            // {
+                // None,
+                // Muzzle
+            // }
 
-            public PointType pointType;
+            public string pointType;
         
 
             public bool manual;
@@ -34,12 +34,12 @@ namespace Core
     
         public MapPoint[] actorMapping;
 
-        public MapPoint GetPoint(MapPoint.PointType pointType)
+        public MapPoint GetPoint(string pointType)
         {
             return Array.Find(actorMapping, point => point.pointType == pointType);
         }
 
-        public (Vector3 position, Quaternion rotation) GetPointAndRotation(MapPoint.PointType pointType)
+        public (Vector3 position, Quaternion rotation) GetPointAndRotation(string pointType)
         {
             var value = GetPoint(pointType);
             if (value.manual == false)
