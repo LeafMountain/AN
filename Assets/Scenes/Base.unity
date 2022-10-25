@@ -1153,10 +1153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0.1, y: 0.5, z: 0.3}
-  ShoulderOffset: {x: 1.1, y: -0.4, z: 0}
+  ShoulderOffset: {x: 0.3, y: -0.4, z: 0}
   VerticalArmLength: 1
   CameraSide: 1
-  CameraDistance: 8
+  CameraDistance: 6
   CameraCollisionFilter:
     serializedVersion: 2
     m_Bits: 1
@@ -4715,7 +4715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7773893
+      value: 1.7946428
       objectReference: {fileID: 0}
     - target: {fileID: 2070925442191277753, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_NoiseProfile
@@ -6259,19 +6259,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5a7a3c72de6bfe4193efd80a182ac5e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.81957
+      value: 0.7644421
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5a7a3c72de6bfe4193efd80a182ac5e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.52360296
+      value: -0.4710104
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5a7a3c72de6bfe4193efd80a182ac5e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.15287687
+      value: 0.3326301
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5a7a3c72de6bfe4193efd80a182ac5e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.17542413
+      value: 0.28833112
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5a7a3c72de6bfe4193efd80a182ac5e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
