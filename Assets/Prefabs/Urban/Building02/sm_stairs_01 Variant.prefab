@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1d89618941e3e4f4aae7643dbda2f0eb, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d89618941e3e4f4aae7643dbda2f0eb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 46df5cf5e99ee714fa70ab810c875b63, type: 2}
     - target: {fileID: 919132149155446097, guid: 1d89618941e3e4f4aae7643dbda2f0eb, type: 3}
       propertyPath: m_Name
-      value: sm_stairs_01
+      value: sm_stairs_01 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
