@@ -1,4 +1,5 @@
 trackSelection = true
+refreshSearchWindowsInPlayMode = false
 fetchPreview = true
 defaultFlags = 0
 keepOpen = false
@@ -18,8 +19,8 @@ scopes = {
 	"OpenInspectorPreview.3172962C" = "0"
 	"currentGroup.3172962C" = "all"
 	"picker_window_position_offset.74AD8FDB" = "791;457;320;550"
-	"picker_search_text.74AD8FDB" = "gun"
-	"last_search.74AD8FDB" = "gun"
+	"picker_search_text.74AD8FDB" = "gun "
+	"last_search.74AD8FDB" = "gun "
 	"OpenInspectorPreview.74AD8FDB" = "0"
 	"currentGroup.74AD8FDB" = "all"
 }
@@ -64,6 +65,11 @@ providers = {
 		priority = 50
 		defaultAction = null
 	}
+	profilermarkers = {
+		active = false
+		priority = 100
+		defaultAction = null
+	}
 }
 objectSelectors = {
 }
@@ -73,9 +79,12 @@ searchItemFavorites = [
 ]
 savedSearchesSortOrder = 0
 showSavedSearchPanel = false
+hideTabs = false
 expandedQueries = [
 ]
 queryBuilder = false
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"
 disabledIndexers = ""
+minIndexVariations = 2
+findProviderIndexHelper = true
