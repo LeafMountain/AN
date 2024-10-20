@@ -1,31 +1,49 @@
 using Core;
 using EventManager;
+using InventorySystem;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
 
 public class Interactor : ActorComponent
 {
-    private Actor target;
-    public Actor Target
-    {
-        get => target;
-        set => target = value;
-    }
+    public Actor Target { get; set; }
 
     [SerializeField] private LayerMask interactLayerMask;
 
+    public PlayerInventory Inventory;
+
     public void Interact()
     {
-        if(target == null) return;
-        
-        var interactables = target.GetComponents<IInteractable>();
-        for (var i = 0; i < interactables.Length; i++)
+        if (Target == null) return;
+
+        if (Target.TryGetComponent(out Storeable storeable))
+        {
+            GameManager.ItemManager.Deposit(Inventory, storeable.GetItemData());
+            return;
+        }
+
+        IInteractable[] interactables = Target.GetComponents<IInteractable>();
+        for (int i = 0; i < interactables.Length; i++)
         {
             interactables[i].Interact(Parent);
         }
-        
-        Events.TriggerEvent(Flag.LookTarget, target);
+
+        Events.TriggerEvent(Flag.LookTarget, Target);
+    }
+
+    public void Drop()
+    {
+        if (Inventory.Items.Count > 0)
+        {
+            int itemId = Inventory.Items[0];
+            Inventory.Items.RemoveAt(0);
+            
+            Vector3 spawnPosition = transform.position + transform.forward * 2f;
+            Quaternion spawnRotation = transform.rotation;
+            
+            GameManager.ItemManager.PlaceItem(itemId, spawnPosition, spawnRotation);
+        }
     }
 
     public void Update()
@@ -73,7 +91,7 @@ public class Interactor : ActorComponent
             commands.Dispose();
         }
 
-        if (batchedHit.collider == null || batchedHit.collider.TryGetComponent(out actor) == false)
+        if (batchedHit.rigidbody == null || batchedHit.rigidbody.TryGetComponent(out actor) == false)
         {
             return null;
         }

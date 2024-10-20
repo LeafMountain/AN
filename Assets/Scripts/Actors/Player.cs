@@ -5,6 +5,7 @@ using Cinemachine;
 using DG.Tweening;
 using EventManager;
 using StarterAssets;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,11 +37,12 @@ public class Player : Character
 
         if (IsOwner)
         {
-            var player = ANNetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+            // NetworkObject player = ANNetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
+            NetworkObject player = this.NetworkObject;
             GameManager.Instance.localPlayer = player.GetComponent<Player>();
-            var controller = player.GetComponent<ThirdPersonController>();
-            var input = player.GetComponent<PlayerInput>();
-            var cameraFollower = FindObjectOfType<CinemachineVirtualCamera>();
+            ThirdPersonController controller = player.GetComponent<ThirdPersonController>();
+            PlayerInput input = player.GetComponent<PlayerInput>();
+            CinemachineVirtualCamera cameraFollower = FindFirstObjectByType<CinemachineVirtualCamera>();
             cameraFollower.Follow = controller.CinemachineCameraTarget.transform;
 
             controller.enabled = true;

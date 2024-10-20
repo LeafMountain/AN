@@ -108,7 +108,7 @@ namespace EffectSystem
             }
             else
             {
-                spawned = GameManager.Spawn(gameObject);
+                spawned = GameManager.Spawner.Spawn(gameObject);
             }
 
             switch (spawnMode)
@@ -160,7 +160,7 @@ namespace EffectSystem
 
         public override void DoEffect<T>(T extraArgs)
         {
-            CameraController.Shake(shakeTime, shakeAmplitude);
+            GameManager.CameraController.Shake(shakeTime, shakeAmplitude);
         }
     }
 

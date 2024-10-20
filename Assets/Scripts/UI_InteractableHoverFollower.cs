@@ -33,7 +33,7 @@ public class UI_InteractableHoverFollower : MonoBehaviour
 
         if (target)
         {
-            transform.position = CameraController.Instance.camera.WorldToScreenPoint(target.transform.position);
+            transform.position = GameManager.CameraController.camera.WorldToScreenPoint(target.transform.position);
         }
     }
 }

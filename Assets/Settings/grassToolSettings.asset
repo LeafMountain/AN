@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 020d4e8bfadde4a4b8a1266c49d01f22, type: 3}
   m_Name: grassToolSettings
-  m_EditorClassIdentifier: Assembly-CSharp::SO_GrassToolSettings
+  m_EditorClassIdentifier: 
   layerBlocking:
   - 1
   - 1
@@ -24,8 +24,8 @@ MonoBehaviour:
   layerFading: 0100000000000000
   VertexColorSettings: 0
   VertexFade: 0
-  sizeWidth: 1
-  sizeLength: 1
+  sizeWidth: 0.077
+  sizeLength: 0.125
   adjustWidth: 0
   adjustLength: 0
   adjustWidthMax: 2
@@ -44,10 +44,10 @@ MonoBehaviour:
   paintMask:
     serializedVersion: 2
     m_Bits: 1
-  brushSize: 4
+  brushSize: 1
   brushFalloffSize: 0.8
   Flow: 0
   density: 1
-  normalLimit: 1
-  grassAmountToGenerate: 100000
+  normalLimit: 0.1
+  grassAmountToGenerate: 10000
   generationDensity: 1

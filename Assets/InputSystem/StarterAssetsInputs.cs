@@ -13,6 +13,8 @@ namespace StarterAssets
 		public bool fire;
 		public bool fireAlt;
 		public bool interact;
+		public bool drop;
+		
 		public bool one;
 		public bool two;
 		public bool three;
@@ -45,6 +47,7 @@ namespace StarterAssets
 		public void OnFire(InputValue value) => FireInput(value.isPressed);
 		public void OnFireAlt(InputValue value) => FireAltInput(value.isPressed);
 		public void OnInteract(InputValue value) => InteractInput(value.isPressed);
+		public void OnDrop(InputValue value) => DropInput(value.isPressed);
 		public void OnOne(InputValue value) => OneInput(value.isPressed);
 		public void OnTwo(InputValue value) => TwoInput(value.isPressed);
 		public void OnThree(InputValue value) => ThreeInput(value.isPressed);
@@ -59,6 +62,7 @@ namespace StarterAssets
 		public void FireInput(bool newFireState) => fire = newFireState;
 		public void FireAltInput(bool newFireState) => fireAlt = newFireState;
 		public void InteractInput(bool newInputState) => interact = newInputState;
+		public void DropInput(bool newInputState) => drop = newInputState;
 		public void OneInput(bool newInputState) => one= newInputState;
 		public void TwoInput(bool newInputState) => two= newInputState;
 		public void ThreeInput(bool newInputState) => three= newInputState;

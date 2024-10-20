@@ -1,13 +1,37 @@
 using System;
+using Core;
 using EventManager;
+using InventorySystem;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class GameManager : NetworkBehaviour
 {
     private static GameManager gameManager;
-    public static GameManager Instance => gameManager ? gameManager : gameManager = FindObjectOfType<GameManager>(true);
+    public static GameManager Instance => gameManager ? gameManager : gameManager = FindFirstObjectByType<GameManager>();
+    
+    [FormerlySerializedAs("inventoryManager")]
+    [Header("Managers")]
+    [SerializeField]
+    private ItemManager itemManager;
+    public static ItemManager ItemManager => Instance.itemManager;
+    
+    [SerializeField]
+    private Database database;
+    public static Database Database => Instance.database;
+    
+    [SerializeField]
+    private CameraController cameraController;
+    public static CameraController CameraController => Instance.cameraController;
+    
+    [SerializeField]
+    private Spawner spawner;
+    public static Spawner Spawner => Instance.spawner;
+    
+    
+    [Header("Settings")]
 
     public Camera characterCameraPrefab;
 
@@ -20,6 +44,8 @@ public class GameManager : NetworkBehaviour
     public AudioSource audioInstancePrefab;
     public bool autoLockCursor;
 
+
+
     private void Awake()
     {
         if (gameManager) return;
@@ -30,38 +56,11 @@ public class GameManager : NetworkBehaviour
 
     private void Start()
     {
+        database.Init();
+        
         Events.AddListener(Flag.DamageRecieved, OnDamageRecieved);
-        // Events.AddListener(Flag.Storeable, OnStoreableUpdated);
-
         LockCursor(autoLockCursor);
     }
-
-    // private void OnStoreableUpdated(object origin, EventArgs eventargs)
-    // {
-    //     var storeableArgs = eventargs as Storeable.StoreableEventArgs;
-    //
-    //     if (NetworkManager.Singleton.IsServer)
-    //     {
-    //         switch (storeableArgs.storeable.itemType)
-    //         {
-    //             case Storeable.ItemType.Supply:
-    //                 localPlayer.supplies += 1;
-    //                 break;
-    //
-    //             case Storeable.ItemType.Battery:
-    //                 localPlayer.energy += 1;
-    //                 break;
-    //
-    //             case Storeable.ItemType.None:
-    //                 break;
-    //
-    //             default:
-    //                 throw new ArgumentOutOfRangeException();
-    //         }
-    //
-    //         storeableArgs.storeable.GetComponent<NetworkObject>().Despawn();
-    //     }
-    // }
 
     private void OnDamageRecieved(object origin, EventArgs eventargs)
     {
@@ -79,17 +78,6 @@ public class GameManager : NetworkBehaviour
         // }
     }
 
-    public static GameObject Spawn(GameObject original, Transform parent = null)
-    {
-        var spawned = Instantiate(original, parent);
-        if (NetworkManager.Singleton.IsServer && spawned.TryGetComponent<NetworkObject>(out var networkObject) &&
-            networkObject.IsSpawned == false)
-        {
-            networkObject.Spawn();
-        }
-
-        return spawned;
-    }
 
     public static GameObject Spawn(GameObject original, Vector3 position, Quaternion rotation, Transform parent = null)
     {
@@ -143,7 +131,7 @@ public class GameManager : NetworkBehaviour
     [Serializable]
     public struct HitAudioProfile
     {
-        public PhysicMaterial physicsMaterial;
+        public PhysicsMaterial physicsMaterial;
         public AudioClip[] audioClips;
         public Vector2 pitchRange;
         public Vector2 volumeRange;
@@ -151,7 +139,7 @@ public class GameManager : NetworkBehaviour
 
     [SerializeField] private HitAudioProfile[] hitAudioProfiles;
 
-    public static void PlayAudioByMaterial(PhysicMaterial colliderMaterial, Vector3 position)
+    public static void PlayAudioByMaterial(PhysicsMaterial colliderMaterial, Vector3 position)
     {
         foreach (var instanceHitAudioProfile in Instance.hitAudioProfiles)
         {

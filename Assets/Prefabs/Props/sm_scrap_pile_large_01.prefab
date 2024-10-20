@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2585570049646809184}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.47919554, y: 0, z: -0.4690138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6547394611839916220}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5805852875763823946
 MeshFilter:
@@ -62,6 +62,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -100,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   actorMapping: []
 --- !u!114 &4741072733558199199
 MonoBehaviour:
@@ -113,14 +117,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   _actor: {fileID: 8603059600156986554}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
   autoDestroy: 1
-  lootCount: 5
+  lootCount: 1
   loot:
   - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
+  lootIds: d10f621a
   destructionEffects:
   - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
   hitEffects:
@@ -140,9 +146,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 951099334
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!64 &6587173854043144097
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -194,13 +209,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4084926826598809041}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.6474103, y: -0.06938022, z: 0.4909381}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6547394611839916220}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4955281976627350731
 MeshFilter:
@@ -227,6 +242,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -265,6 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   actorMapping: []
 --- !u!114 &68706021080737385
 MonoBehaviour:
@@ -278,14 +297,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   _actor: {fileID: 8943355880620381999}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
   autoDestroy: 1
-  lootCount: 5
+  lootCount: 1
   loot:
   - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
+  lootIds: d10f621a
   destructionEffects:
   - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
   hitEffects:
@@ -305,9 +326,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 951099334
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!64 &5220944178036256923
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -359,13 +389,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5012892471793625150}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.4860791, y: 0.20408823, z: 0.96576965}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6547394611839916220}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8758468007293544058
 MeshFilter:
@@ -392,6 +422,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -430,6 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   actorMapping: []
 --- !u!114 &140017936255656095
 MonoBehaviour:
@@ -443,14 +477,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   _actor: {fileID: 8709106047216168907}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
   autoDestroy: 1
-  lootCount: 5
+  lootCount: 1
   loot:
   - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
+  lootIds: d10f621a
   destructionEffects:
   - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
   hitEffects:
@@ -470,9 +506,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 951099334
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!64 &1815770211330228806
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -518,6 +563,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5879119567983608326}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.38923648, z: 0, w: 0.9211379}
   m_LocalPosition: {x: 11.897211, y: -0.53, z: -4.06908}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -529,7 +575,6 @@ Transform:
   - {fileID: 6578515575928919280}
   - {fileID: 8932014178104119811}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45.814, z: 0}
 --- !u!1 &6100367018032052112
 GameObject:
@@ -542,9 +587,9 @@ GameObject:
   - component: {fileID: 2414671671830139393}
   - component: {fileID: 2397833614915187010}
   - component: {fileID: 6933132792415153429}
+  - component: {fileID: 2553597045798158435}
   - component: {fileID: 6636290156380702822}
   - component: {fileID: 5767365157829964297}
-  - component: {fileID: 2553597045798158435}
   - component: {fileID: 2778943957600948749}
   m_Layer: 0
   m_Name: Scrap_Pile_Large_Piece_01
@@ -560,13 +605,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6100367018032052112}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.34763, y: -0.06938022, z: 0.46103498}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6547394611839916220}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2397833614915187010
 MeshFilter:
@@ -593,6 +638,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -619,45 +667,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6636290156380702822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100367018032052112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actorMapping: []
---- !u!114 &5767365157829964297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100367018032052112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actor: {fileID: 6636290156380702822}
-  maxHealth: 10
-  currentHealth:
-    m_InternalValue: 0
-  autoDestroy: 1
-  lootCount: 5
-  loot:
-  - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  destructionEffects:
-  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffects:
-  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
-  lastHitPoint: {x: 0, y: 0, z: 0}
-  lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &2553597045798158435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,9 +680,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 951099334
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
+--- !u!114 &6636290156380702822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100367018032052112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  actorMapping: []
+--- !u!114 &5767365157829964297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100367018032052112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  _actor: {fileID: 6636290156380702822}
+  maxHealth: 10
+  currentHealth:
+    m_InternalValue: 0
+  autoDestroy: 1
+  lootCount: 1
+  loot:
+  - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
+  lootIds: d10f621a
+  destructionEffects:
+  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
+  hitEffects:
+  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
+  lastHitPoint: {x: 0, y: 0, z: 0}
+  lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!64 &2778943957600948749
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -725,13 +785,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6852939227973699995}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.9549541, y: 0.0681933, z: 0.68828243}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6547394611839916220}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5393905463522374718
 MeshFilter:
@@ -758,6 +818,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -796,6 +859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   actorMapping: []
 --- !u!114 &575289528192412159
 MonoBehaviour:
@@ -809,14 +873,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   _actor: {fileID: 2872822408837618437}
   maxHealth: 10
   currentHealth:
     m_InternalValue: 0
   autoDestroy: 1
-  lootCount: 5
+  lootCount: 1
   loot:
   - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
+  lootIds: d10f621a
   destructionEffects:
   - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
   hitEffects:
@@ -836,9 +902,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 951099334
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!64 &2951404976382793113
 MeshCollider:
   m_ObjectHideFlags: 0

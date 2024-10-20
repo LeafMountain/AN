@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using InventorySystem;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -111,6 +112,7 @@ namespace StarterAssets
                 // Aim();
                 FireAlt();
                 Interact();
+                Drop();
                 ChangeWeapon();
             }
 
@@ -213,7 +215,7 @@ namespace StarterAssets
 
             if (MouseHit.transform == null)
             {
-                lookAtPoint = CameraController.Instance.camera.transform.forward * 50f;
+                lookAtPoint = GameManager.CameraController.camera.transform.forward * 50f;
             }
             // if (MouseHit.transform.TryGetComponent(out DamageReciever damageReciever))
             // {
@@ -453,15 +455,14 @@ namespace StarterAssets
         {
             if (_input.interact == false) return;
             GetComponent<Interactor>().Interact();
-
-
-            // if (lookTarget.TryGetComponent(out IInteractable interactable))
-            // {
-            //     Debug.Log(interactable.GetPrompt());
-            //     interactable.Interact(this);
-            // }
-
             _input.interact = false;
+        }
+
+        private void Drop()
+        {
+            if (_input.drop == false) return;
+            interactor.Drop();
+            _input.drop = false;
         }
 
         private void OnDrawGizmosSelected()

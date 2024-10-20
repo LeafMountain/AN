@@ -78,12 +78,12 @@ public class Gun : Actor
     {
         aiming = true;
         this.aimPosition = aimPosition;
-        CameraController.SetFOV(25);
+        GameManager.CameraController.SetFOV(25);
     }
     
     public virtual void StopAim()
     {
         aiming = false;
-        CameraController.SetFOV(40);
+        GameManager.CameraController.SetFOV(40);
     }
 }

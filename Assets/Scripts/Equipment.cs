@@ -25,7 +25,7 @@ public class Equipment : NetworkActorComponent
 
         var pushback = weaponAttach.TransformVector(Vector3.back) * weaponPushback;
 
-        weaponAttach.forward = CameraController.Instance.camera.transform.forward;
+        weaponAttach.forward = GameManager.CameraController.camera.transform.forward;
         // weaponAttach.position = transform.position + CameraController.Instance.camera.transform.forward + transform.TransformVector(weaponOffset) + pushback;
     }
 

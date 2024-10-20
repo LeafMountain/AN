@@ -1,14 +1,11 @@
 using System.Threading.Tasks;
 using Cinemachine;
+using DG.Tweening;
 using UnityEngine;
 
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 public class CameraController : MonoBehaviour 
 {
-    public static CameraController Instance { get; private set; }
-
-    private void Awake() { Instance = this; }
-
     public CinemachineVirtualCamera cinemachineVirtualCamera;
     public Camera camera => Camera.main;
 
@@ -17,15 +14,19 @@ public class CameraController : MonoBehaviour
         if (cinemachineVirtualCamera == null) cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
     }
 
-
-    public static void SetFOV(float value)
+    public void SetFOV(float value)
     {
-        Instance.cinemachineVirtualCamera.m_Lens.FieldOfView = value;
+        DOTween.Kill("camera_fov");
+        DOTween.To(() => cinemachineVirtualCamera.m_Lens.FieldOfView, 
+            x => cinemachineVirtualCamera.m_Lens.FieldOfView = x, 
+            value, 
+            .2f).SetId("camera_fov");
+        // Instance.cinemachineVirtualCamera.m_Lens.FieldOfView = value;
     }
 
-    public static async void Shake(float time, float amplitude)
+    public async void Shake(float time, float amplitude)
     {
-        var basicMultiChannelPerlin = Instance.cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        var basicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         basicMultiChannelPerlin.m_AmplitudeGain = amplitude;
         float timer = time;
         

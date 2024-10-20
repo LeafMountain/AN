@@ -29,6 +29,6 @@ public class ANNetworkManager : Unity.Netcode.NetworkManager
     [ContextMenu("Test shake camera")]
     public void TestShakeCamera()
     {
-        CameraController.Shake(1f, 5);
+        GameManager.CameraController.Shake(1f, 5);
     }
 }

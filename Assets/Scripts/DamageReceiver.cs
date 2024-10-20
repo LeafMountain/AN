@@ -7,7 +7,6 @@ using Sirenix.Serialization;
 using Unity.Mathematics;
 using Unity.Netcode;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Actor))]
 public class DamageReceiver : NetworkActorComponent
@@ -18,6 +17,7 @@ public class DamageReceiver : NetworkActorComponent
 
     public int lootCount = 1;
     public Loot[] loot;
+    public int[] lootIds;
     private float lootSpawnForce = 5f;
     public bool IsDead => currentHealth.Value == 0;
 
@@ -52,17 +52,16 @@ public class DamageReceiver : NetworkActorComponent
         {
             if (autoDestroy && currentHealth.Value == 0)
             {
-                gameObject.GetComponent<NetworkObject>().Despawn();
-
                 for (int i = 0; i < lootCount; i++)
                 {
-                    Loot spawnedLoot = Instantiate(loot[Random.Range(0, loot.Length)], transform.position,
-                        transform.rotation);
-                    Vector3 insideUnitSphere = Random.insideUnitSphere;
-                    insideUnitSphere.y = Mathf.Abs(insideUnitSphere.y);
-                    spawnedLoot.GetComponent<Rigidbody>()
-                        .AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
-                    spawnedLoot.GetComponent<NetworkObject>().Spawn();
+                    // Loot spawnedLoot = Instantiate(loot[Random.Range(0, loot.Length)], transform.position, transform.rotation);
+                    // Vector3 insideUnitSphere = Random.insideUnitSphere;
+                    // insideUnitSphere.y = Mathf.Abs(insideUnitSphere.y);
+                    // spawnedLoot.GetComponent<Rigidbody>().AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
+                    // spawnedLoot.GetComponent<NetworkObject>().Spawn();
+
+                    int itemAccessId = GameManager.ItemManager.CreateItem("test_item");
+                    GameManager.ItemManager.PlaceItem(itemAccessId, transform.position + Vector3.up, transform.rotation);
                 }
 
                 if (destructionEffects.Any())
@@ -72,6 +71,8 @@ public class DamageReceiver : NetworkActorComponent
                         destructionEffect.PlayEffect(gameObject, gameObject, transform.position, transform.rotation);
                     }
                 }
+                
+                gameObject.GetComponent<NetworkObject>().Despawn();
             }
         }
     }
@@ -110,17 +111,20 @@ public class DamageReceiver : NetworkActorComponent
         {
             if (autoDestroy && currentHealth.Value == 0)
             {
-                gameObject.GetComponent<NetworkObject>().Despawn();
+                NetworkObject.Despawn();
 
                 for (int i = 0; i < lootCount; i++)
                 {
-                    Loot spawnedLoot = Instantiate(loot[Random.Range(0, loot.Length)], transform.position,
-                        transform.rotation);
-                    Vector3 insideUnitSphere = Random.insideUnitSphere;
-                    insideUnitSphere.y = Mathf.Abs(insideUnitSphere.y);
-                    spawnedLoot.GetComponent<Rigidbody>()
-                        .AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
-                    spawnedLoot.GetComponent<NetworkObject>().Spawn();
+                    // Loot spawnedLoot = Instantiate(loot[Random.Range(0, loot.Length)], transform.position,
+                    //     transform.rotation);
+                    // Vector3 insideUnitSphere = Random.insideUnitSphere;
+                    // insideUnitSphere.y = Mathf.Abs(insideUnitSphere.y);
+                    // spawnedLoot.GetComponent<Rigidbody>()
+                    //     .AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
+                    // spawnedLoot.GetComponent<NetworkObject>().Spawn();
+
+                    int itemAccessId = GameManager.ItemManager.CreateItem("test_item");
+                    GameManager.ItemManager.PlaceItem(itemAccessId, transform.position + Vector3.up, transform.rotation);
                 }
 
                 if (destructionEffects.Any())
