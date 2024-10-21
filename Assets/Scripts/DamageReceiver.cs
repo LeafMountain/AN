@@ -3,6 +3,7 @@ using System.Linq;
 using Core;
 using EffectSystem;
 using EventManager;
+using InventorySystem;
 using Sirenix.Serialization;
 using Unity.Mathematics;
 using Unity.Netcode;
@@ -60,7 +61,7 @@ public class DamageReceiver : NetworkActorComponent
                     // spawnedLoot.GetComponent<Rigidbody>().AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
                     // spawnedLoot.GetComponent<NetworkObject>().Spawn();
 
-                    int itemAccessId = GameManager.ItemManager.CreateItem("test_item");
+                    ItemAccessor itemAccessId = GameManager.ItemManager.CreateItem("test_item");
                     GameManager.ItemManager.PlaceItem(itemAccessId, transform.position + Vector3.up, transform.rotation);
                 }
 
@@ -123,7 +124,7 @@ public class DamageReceiver : NetworkActorComponent
                     //     .AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
                     // spawnedLoot.GetComponent<NetworkObject>().Spawn();
 
-                    int itemAccessId = GameManager.ItemManager.CreateItem("test_item");
+                    ItemAccessor itemAccessId = GameManager.ItemManager.CreateItem("test_item");
                     GameManager.ItemManager.PlaceItem(itemAccessId, transform.position + Vector3.up, transform.rotation);
                 }
 

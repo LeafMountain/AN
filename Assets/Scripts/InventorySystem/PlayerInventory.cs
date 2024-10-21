@@ -6,18 +6,18 @@ namespace InventorySystem
 {
     public class PlayerInventory : NetworkActorComponent, IItemContainer
     {
-        public readonly NetworkList<int> Items = new();
+        public readonly NetworkList<ItemAccessor> Items = new();
 
         protected void Awake()
         {
             Items.OnListChanged += ItemsOnOnListChanged;
         }
 
-        private void ItemsOnOnListChanged(NetworkListEvent<int> changeevent)
+        private void ItemsOnOnListChanged(NetworkListEvent<ItemAccessor> changeevent)
         {
             switch (changeevent.Type)
             {
-                case NetworkListEvent<int>.EventType.Add:
+                case NetworkListEvent<ItemAccessor>.EventType.Add:
                 {
                     Item? item = GameManager.ItemManager.GetItem(changeevent.Value);
                     if (item.HasValue)
@@ -28,8 +28,8 @@ namespace InventorySystem
 
                     break;
                 }
-                case NetworkListEvent<int>.EventType.Remove:
-                case NetworkListEvent<int>.EventType.RemoveAt:
+                case NetworkListEvent<ItemAccessor>.EventType.Remove:
+                case NetworkListEvent<ItemAccessor>.EventType.RemoveAt:
                 {
                     Item? item = GameManager.ItemManager.GetItem(changeevent.PreviousValue);
                     if (item.HasValue)
@@ -43,12 +43,12 @@ namespace InventorySystem
             }
         }
 
-        public void DepositImplementation(int itemAccessId)
+        public void DepositImplementation(ItemAccessor itemAccessId)
         {
             Items.Add(itemAccessId);
         }
 
-        public void WithdrawImplementation(int itemAccessId)
+        public void WithdrawImplementation(ItemAccessor itemAccessId)
         {
             Items.Remove(itemAccessId);
         }

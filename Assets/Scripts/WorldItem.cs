@@ -6,18 +6,18 @@ using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
 
-public class Storeable : NetworkBehaviour, IInteractable, IItemContainer
+public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer
 {
     public class StoreableEventArgs : EventArgs
     {
-        public Storeable storeable;
+        public WorldItem worldItem;
         public Actor actor;
         public Actor owner;
         public PlayerInventory inventory { get; set; }
     }
 
     public Actor actor;
-    public readonly NetworkVariable<int> item = new();
+    public readonly NetworkVariable<ItemAccessor> item = new();
     private GameObject spawnedVisual;
     
     private void Awake()
@@ -35,26 +35,19 @@ public class Storeable : NetworkBehaviour, IInteractable, IItemContainer
         DestroyVisuals();
     }
 
-    private void OnItemValueChanged(int previousvalue, int newvalue)
+    private void OnItemValueChanged(ItemAccessor previousvalue, ItemAccessor newvalue)
     {
         SpawnVisuals();
     }
 
     [Button]
-    public void SetItemData(Item item)
-    {
-        this.item.Value = item.accessId;
-    }
-
-    public int GetItemData()
-    {
-        return item.Value;
-    }
+    public void SetItemData(Item item) => this.item.Value = item.accessId;
+    public ItemAccessor GetItemData() => item.Value;
 
     private void SpawnVisuals()
     {
         DestroyVisuals();
-        if (item.Value != 0)
+        if (item.Value.IsValid())
         {
             Item? item = GameManager.ItemManager.GetItem(this.item.Value);
             ItemData itemData = GameManager.Database.GetItem(item.Value.databaseId);
@@ -85,7 +78,7 @@ public class Storeable : NetworkBehaviour, IInteractable, IItemContainer
 
         Events.TriggerEvent(Flag.Storeable, actor, new StoreableEventArgs
         {
-            storeable = this,
+            worldItem = this,
             actor = actor,
             owner = actor,
             inventory = inventory
@@ -99,14 +92,14 @@ public class Storeable : NetworkBehaviour, IInteractable, IItemContainer
         return "Pick Up";
     }
 
-    public void DepositImplementation(int itemAccessId)
+    public void DepositImplementation(ItemAccessor itemAccessId)
     {
         this.item.Value = itemAccessId;
     }
 
-    public void WithdrawImplementation(int itemAccessId)
+    public void WithdrawImplementation(ItemAccessor itemAccessId)
     {
-        this.item.Value = 0;
+        this.item.Value = ItemAccessor.Empty;
         GameManager.Spawner.Despawn(this);
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace InventorySystem
 {
@@ -11,17 +10,16 @@ namespace InventorySystem
         public readonly NetworkList<Item> Items = new();
         public readonly NetworkList<Inventory1> Inventories = new();
         
-        public Dictionary<int, IItemContainer> itemContainers = new();
+        public Dictionary<ItemAccessor, IItemContainer> itemContainers = new();
 
-        public int CreateItem(string slug)
+        public ItemAccessor CreateItem(string slug)
         {
             Item item = Item.Create(slug);
-            item.accessId = Random.Range(int.MinValue, int.MaxValue);
             Items.Add(item);
             return item.accessId;
         }
 
-        public Item? GetItem(int id)
+        public Item? GetItem(ItemAccessor id)
         {
             foreach (Item item in Items)
             {
@@ -34,7 +32,7 @@ namespace InventorySystem
             return default;
         }
 
-        public void PlaceItem(int itemAccessId, Vector3 spawnPosition, Quaternion spawnRotation)
+        public void PlaceItem(ItemAccessor itemAccessId, Vector3 spawnPosition, Quaternion spawnRotation)
         {
             Item? item = GetItem(itemAccessId);
             if (item.HasValue == false)
@@ -51,7 +49,7 @@ namespace InventorySystem
             GameManager.Spawner.SpawnItem(item.Value, spawnPosition, spawnRotation);
         }
 
-        public void PickUpItem(int itemAccessId)
+        public void PickUpItem(ItemAccessor itemAccessId)
         {
             Item? item = GetItem(itemAccessId);
             if (item.HasValue == false)
@@ -63,7 +61,7 @@ namespace InventorySystem
             // GameManager.Spawner.Despawn(item.Value);
         }
 
-        public void Deposit(IItemContainer itemContainer, int itemAccessId)
+        public void Deposit(IItemContainer itemContainer, ItemAccessor itemAccessId)
         {
             if (itemContainers.TryGetValue(itemAccessId, out IItemContainer previousItemContainer))
             {
@@ -74,7 +72,7 @@ namespace InventorySystem
             itemContainers[itemAccessId] = itemContainer;
         }
 
-        public void Withdraw(IItemContainer itemContainer, int itemAccessId)
+        public void Withdraw(IItemContainer itemContainer, ItemAccessor itemAccessId)
         {
             itemContainer.WithdrawImplementation(itemAccessId);     
             itemContainers.Remove(itemAccessId);
@@ -83,25 +81,26 @@ namespace InventorySystem
 
     public interface IItemContainer
     {
-        public void DepositImplementation(int itemAccessId);
-        public void WithdrawImplementation(int itemAccessId);
+        public void DepositImplementation(ItemAccessor itemAccessId);
+        public void WithdrawImplementation(ItemAccessor itemAccessId);
     }
 
     [Serializable, GenerateSerializationForType(typeof(Item))]
     public struct Item : IEquatable<Item>, INetworkSerializable
     {
-        public int accessId;
+        public ItemAccessor accessId;
         public int databaseId;
 
         public bool Equals(Item other) => accessId == other.accessId;
         public override bool Equals(object obj) => obj is Item other && Equals(other);
-        public override int GetHashCode() => accessId;
+        public override int GetHashCode() => accessId.GetHashCode();
 
         public static Item Create(string slug)
         {
             return new Item
             {
-                databaseId = GameManager.Database.StringToID(slug)
+                databaseId = GameManager.Database.StringToID(slug),
+                accessId = ItemAccessor.Create(),
             };
         }
 

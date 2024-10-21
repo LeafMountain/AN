@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using InventorySystem;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -321,6 +320,8 @@ namespace StarterAssets
                     {
                         _animator.SetBool(_animIDJump, true);
                     }
+                    
+                    GameManager.ItemManager.PlaceItem(GameManager.ItemManager.CreateItem("test_item"), transform.position + transform.forward * 2, transform.rotation);
                 }
 
                 // jump timeout

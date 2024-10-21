@@ -17,7 +17,7 @@ public class Interactor : ActorComponent
     {
         if (Target == null) return;
 
-        if (Target.TryGetComponent(out Storeable storeable))
+        if (Target.TryGetComponent(out WorldItem storeable))
         {
             GameManager.ItemManager.Deposit(Inventory, storeable.GetItemData());
             return;
@@ -36,12 +36,18 @@ public class Interactor : ActorComponent
     {
         if (Inventory.Items.Count > 0)
         {
-            int itemId = Inventory.Items[0];
+            ItemAccessor itemId = Inventory.Items[0];
             Inventory.Items.RemoveAt(0);
-            
+
+            if (Target && Target.TryGetComponent(out WorldInventory worldInventory))
+            {
+                GameManager.ItemManager.Deposit(worldInventory, itemId);
+                return;
+            }
+
             Vector3 spawnPosition = transform.position + transform.forward * 2f;
             Quaternion spawnRotation = transform.rotation;
-            
+
             GameManager.ItemManager.PlaceItem(itemId, spawnPosition, spawnRotation);
         }
     }
@@ -91,11 +97,15 @@ public class Interactor : ActorComponent
             commands.Dispose();
         }
 
-        if (batchedHit.rigidbody == null || batchedHit.rigidbody.TryGetComponent(out actor) == false)
+        if (batchedHit.rigidbody != null && batchedHit.rigidbody.TryGetComponent(out actor))
         {
-            return null;
+            return actor;
+        }
+        else if (batchedHit.collider != null && batchedHit.collider.TryGetComponent(out actor))
+        {
+            return actor;
         }
 
-        return actor;
+        return null;
     }
 }

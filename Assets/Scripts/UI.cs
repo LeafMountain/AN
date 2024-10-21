@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIMaster : MonoBehaviour
+public class UI : MonoBehaviour
 {
     [Serializable]
     public class ProgressBar
