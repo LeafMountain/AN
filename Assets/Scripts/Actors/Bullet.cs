@@ -68,7 +68,7 @@ public class Bullet : NetworkBehaviour
                 // DestroyBullet();
 
                 // Generic hit audio
-                GameManager.PlayAudioByMaterial(hit.collider.sharedMaterial, hit.point);
+                GameManager.Audio.PlayAudioByMaterial(hit.collider.sharedMaterial, hit.point);
 
                 OnCollision(hit.point, hit.normal, damageReciever);
             }

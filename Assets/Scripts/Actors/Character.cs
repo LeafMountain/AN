@@ -35,14 +35,9 @@ public class Character : Actor
         {
             Vector3 position = GetCenterOfMass() + Vector3.up * 1.5f;
             Quaternion rotation = transform.rotation;
-            ui = GameManager.Spawn(ui, position, rotation, transform);
+            ui = GameManager.Spawner.Spawn(ui, position, rotation, transform);
             ui.Init(this);
         }
-    }
-
-    protected override void Update()
-    {
-        base.Update();
     }
 
     protected virtual void LateUpdate()

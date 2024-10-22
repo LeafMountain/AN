@@ -2054,7 +2054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2767078265
+  GlobalObjectIdHash: 3044279502
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -2112,7 +2112,7 @@ MonoBehaviour:
   GroundedRadius: 0.28
   GroundLayers:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 1537
   CinemachineCameraTarget: {fileID: 8338988566280778634}
   TopClamp: 89
   BottomClamp: -89
@@ -2156,6 +2156,7 @@ MonoBehaviour:
   fire: 0
   fireAlt: 0
   interact: 0
+  drop: 0
   one: 0
   two: 0
   three: 0
@@ -2336,7 +2337,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   _actor: {fileID: 4416926081852918490}
-  size: 0
 --- !u!114 &866026571846608312
 MonoBehaviour:
   m_ObjectHideFlags: 0

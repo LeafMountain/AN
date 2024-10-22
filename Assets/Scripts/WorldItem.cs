@@ -84,7 +84,7 @@ public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer
             inventory = inventory
         });
 
-        GameManager.Despawn(gameObject);
+        GameManager.Spawner.Despawn(gameObject);
     }
 
     public string GetPrompt()

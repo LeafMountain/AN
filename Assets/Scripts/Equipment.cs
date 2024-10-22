@@ -130,7 +130,7 @@ public class Equipment : NetworkActorComponent
             weapon.GetComponent<NetworkObject>().Despawn(); 
         }
         
-        var spawned = GameManager.Spawn(GameManager.Instance.guns[index]);
+        Gun spawned = GameManager.Spawner.Spawn(GameManager.Instance.guns[index]);
         spawned.GetComponent<NetworkObject>().ChangeOwnership(OwnerClientId);
         EquipGun_ClientRpc(spawned.GetComponent<Gun>());
     }

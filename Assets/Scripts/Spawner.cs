@@ -26,6 +26,34 @@ public class Spawner : NetworkBehaviour
         return spawned;
     }
     
+    public GameObject Spawn(GameObject original, Vector3 position, Quaternion rotation, Transform parent = null)
+    {
+        var spawned = Instantiate(original, position, rotation, parent);
+        if (spawned.TryGetComponent<NetworkObject>(out var networkObject) && networkObject.IsSpawned == false)
+        {
+            networkObject.Spawn();
+        }
+
+        return spawned;
+    }
+
+    public T Spawn<T>(T original) where T : Component
+    {
+        var spawned = Instantiate(original);
+        if (spawned.TryGetComponent<NetworkObject>(out var networkObject) && networkObject.IsSpawned == false)
+        {
+            networkObject.Spawn();
+        }
+
+        return spawned;
+    }
+
+    public T Spawn<T>(T original, Vector3 position, Quaternion rotation, Transform parent = null)
+        where T : MonoBehaviour
+    {
+        return Instantiate(original, position, rotation, parent);
+    }
+    
     public void Despawn(Actor target)
     {
         target.NetworkObject.Despawn();
@@ -39,5 +67,17 @@ public class Spawner : NetworkBehaviour
     public void Despawn(NetworkObject target)
     {
         target.Despawn();
+    }
+    
+    public void Despawn(GameObject gameObject, float delay = 0)
+    {
+        if (delay == 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject, delay);
+        }
     }
 }

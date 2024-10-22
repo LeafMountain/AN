@@ -147,7 +147,7 @@ namespace EffectSystem
                         destroyDuration = particleSystem.main.duration;
                 }
 
-                GameManager.Despawn(spawned, destroyDuration);
+                GameManager.Spawner.Despawn(spawned, destroyDuration);
             }
         }
     }
@@ -219,14 +219,14 @@ namespace EffectSystem
 
         public override void DoEffect<T>(T extraArgs)
         {
-            GameManager.PlayAudioInWorld(audioClip, GetLocation(extraArgs).point, pitch, volume);
+            GameManager.Audio.PlayAudioInWorld(audioClip, GetLocation(extraArgs).point, pitch, volume);
         }
     }
 
     [Serializable]
     public class BuildBlockEffect : Effect
     {
-        [SerializeField] private bool remove;
+        [SerializeField] bool remove;
 
         public override void DoEffect<T>(T extraArgs)
         {

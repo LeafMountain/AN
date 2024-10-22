@@ -31,8 +31,8 @@ public class UI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(GameManager.Instance.localPlayer)
-            OnStorableUpdated(null, null);
+        // if(GameManager.Instance.localPlayer)
+            // OnStorableUpdated(null, null);
     }
 
     private void OnStorableUpdated(object origin, EventArgs eventargs)
