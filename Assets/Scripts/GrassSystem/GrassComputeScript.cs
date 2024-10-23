@@ -499,6 +499,12 @@ public class GrassComputeScript : MonoBehaviour
         }
 
     }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    public void Init()
+    {
+        Reset();
+    }
 }
 
 [System.Serializable]
