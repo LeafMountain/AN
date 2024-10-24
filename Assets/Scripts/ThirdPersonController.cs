@@ -321,7 +321,7 @@ namespace StarterAssets
                         _animator.SetBool(_animIDJump, true);
                     }
                     
-                    GameManager.ItemManager.PlaceItem(GameManager.ItemManager.CreateItem("test_item"), transform.position + transform.forward * 2, transform.rotation);
+                    //GameManager.ItemManager.PlaceItem(GameManager.ItemManager.CreateItem("test_item"), transform.position + transform.forward * 2, transform.rotation);
                 }
 
                 // jump timeout

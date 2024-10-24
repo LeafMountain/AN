@@ -37,6 +37,7 @@ public class Player : Character
 
         if (IsOwner)
         {
+            transform.position = GameManager.Instance.customSpawnLocation;
             // NetworkObject player = ANNetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
             NetworkObject player = this.NetworkObject;
             GameManager.Instance.localPlayer = player.GetComponent<Player>();
