@@ -29,6 +29,8 @@ public class GameManager : NetworkBehaviour
     [SerializeField]
     private Spawner spawner;
     public static Spawner Spawner => Instance.spawner;
+
+    public static Vector3 customSpawnLocation;
     
     
     [Header("Settings")]
