@@ -1,8 +1,0 @@
-AudioPluginMicrosoftAcoustics.dll
-AudioPluginTritonSpatializer.dll
-HrtfDsp.dll
-Triton.dll
-libAudioPluginMicrosoftAcoustics.so
-libAudioPluginTritonSpatializer.so
-libHrtfDsp.so
-libTriton.so
