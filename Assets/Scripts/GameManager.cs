@@ -30,7 +30,7 @@ public class GameManager : NetworkBehaviour
     private Spawner spawner;
     public static Spawner Spawner => Instance.spawner;
 
-    public static Vector3 customSpawnLocation;
+    public Vector3 customSpawnLocation;
     
     
     [Header("Settings")]
