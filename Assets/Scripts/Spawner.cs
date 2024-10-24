@@ -49,7 +49,7 @@ public class Spawner : NetworkBehaviour
     }
 
     public T Spawn<T>(T original, Vector3 position, Quaternion rotation, Transform parent = null)
-        where T : MonoBehaviour
+        where T : Object
     {
         return Instantiate(original, position, rotation, parent);
     }

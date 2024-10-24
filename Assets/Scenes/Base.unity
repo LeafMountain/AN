@@ -3362,19 +3362,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5a7a3c72de6bfe4193efd80a182ac5e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.30687752
+      value: 0.68198186
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5a7a3c72de6bfe4193efd80a182ac5e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.2709783
+      value: -0.48876262
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5a7a3c72de6bfe4193efd80a182ac5e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7767297
+      value: -0.48206538
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5a7a3c72de6bfe4193efd80a182ac5e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.47863138
+      value: -0.25223967
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5a7a3c72de6bfe4193efd80a182ac5e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3775,6 +3775,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   itemPrefab: {fileID: 3909616993216559093, guid: 65a26f402ee13724aa7ede2b2cd6d7b4, type: 3}
+--- !u!114 &2033135371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7664201242323328123, guid: abe1d8200f28af748886063e6650b759, type: 3}
+  m_PrefabInstance: {fileID: 4421265373652095731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033135363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f5ee15d4b349c0b14a426a5bec7d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2039002134
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,6 +4502,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4421265374560320006, guid: abe1d8200f28af748886063e6650b759, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 2033135371}
     - target: {fileID: 4421265374560320006, guid: abe1d8200f28af748886063e6650b759, type: 3}
       propertyPath: spawner
       value: 
