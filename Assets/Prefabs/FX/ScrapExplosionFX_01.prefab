@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8656419031392417019}
   - component: {fileID: 8656419031392417012}
   m_Layer: 0
-  m_Name: ScrapExplosionFX_01 1
+  m_Name: ScrapExplosionFX_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
