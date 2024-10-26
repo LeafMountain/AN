@@ -6,10 +6,17 @@ using UnityEngine;
 public class Spawner : NetworkBehaviour {
     public NetworkObject itemPrefab;
 
+    [Rpc(SendTo.Server)]
+    private void SpawnItemRpc(Item item, Vector3 position, Quaternion rotation) => SpawnItem(item, position, rotation);
     public void SpawnItem(Item item, Vector3 position, Quaternion rotation) {
+        if (IsServer == false) {
+            SpawnItemRpc(item, position, rotation);
+            return;
+        }
+        
         NetworkObject spawnedItem = Instantiate(itemPrefab, position, rotation);
-        // spawnedItem.GetComponent<Storeable>().SetItemData(item);
-        InventoryHandle inventoryHandle = spawnedItem.GetComponent<IItemContainer>().InventoryHandle;
+        InventoryHandle inventoryHandle = GameManager.ItemManager.CreateInventory();
+        spawnedItem.GetComponent<IItemContainer>().InventoryHandle = inventoryHandle;
         GameManager.ItemManager.Deposit(inventoryHandle, item.Handle);
         spawnedItem.Spawn();
     }

@@ -2,7 +2,6 @@ using System;
 using Core;
 using EventManager;
 using InventorySystem;
-using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -17,42 +16,59 @@ public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer {
     }
 
     public Actor actor;
-    public readonly NetworkVariable<ItemHandle> item = new();
-    private GameObject spawnedVisual;
+    GameObject spawnedVisual;
 
-    private void Awake() {
-        item.OnValueChanged += OnItemValueChanged;
-        InventoryHandle = GameManager.ItemManager.CreateInventory();
-    }
+    public override void OnNetworkSpawn() {
+        if (HasAuthority) {
+            if (InventoryHandle.IsValid() == false) {
+                InventoryHandle = GameManager.ItemManager.CreateInventory();
+            }
+        }
 
-    private void OnEnable() {
+        GameManager.ItemManager.AddCallback(InventoryHandle, OnInventoryCallback);
         SpawnVisuals();
     }
 
-    private void OnDisable() {
+    void OnInventoryCallback(object sender, InventoryEventArgs args) {
+        if (args.operation == InventoryEventArgs.Operation.Deposited) {
+            SpawnVisuals();
+        }
+        else if (args.operation == InventoryEventArgs.Operation.Withdrawn) {
+            DestroyVisuals();
+            GameManager.Spawner.Despawn(this);
+        }
+    }
+
+    void OnEnable() {
+        if (InventoryHandle.IsValid()) {
+            SpawnVisuals();
+        }
+    }
+
+    void OnDisable() {
         DestroyVisuals();
     }
 
-    private void OnItemValueChanged(ItemHandle previousvalue, ItemHandle newvalue) {
-        SpawnVisuals();
+    public override void OnDestroy() {
+        if (Application.isPlaying == false) return;
+        GameManager.ItemManager.RemoveCallback(InventoryHandle, OnInventoryCallback);
+        GameManager.ItemManager.ReturnInventory(InventoryHandle);
     }
 
-    [Button]
-    public void SetItemData(Item item) => this.item.Value = item.Handle;
+    public ItemHandle GetItemHandle() => GameManager.ItemManager.GetItems(InventoryHandle)[0];
 
-    public ItemHandle GetItemData() => item.Value;
-
-    private void SpawnVisuals() {
+    void SpawnVisuals() {
         DestroyVisuals();
-        if (item.Value.IsValid()) {
-            Item? item = GameManager.ItemManager.GetItem(this.item.Value);
+        ItemHandle itemHandle = GetItemHandle();
+        if (itemHandle.IsValid()) {
+            Item? item = GameManager.ItemManager.GetItem(itemHandle);
             ItemData itemData = GameManager.Database.GetItem(item.Value.databaseId);
             itemData.graphics.InstantiateAsync(transform.position, transform.rotation, transform).Completed +=
                 handle => spawnedVisual = handle.Result;
         }
     }
 
-    private void DestroyVisuals() {
+    void DestroyVisuals() {
         if (spawnedVisual) {
 #if UNITY_EDITOR
             if (Application.isPlaying == false) {
@@ -81,14 +97,5 @@ public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer {
 
     public string GetPrompt() {
         return "Pick Up";
-    }
-
-    public void DepositImplementation(ItemHandle itemAccessId) {
-        this.item.Value = itemAccessId;
-    }
-
-    public void WithdrawImplementation(ItemHandle itemAccessId) {
-        this.item.Value = ItemHandle.Empty;
-        GameManager.Spawner.Despawn(this);
     }
 }

@@ -9,8 +9,8 @@ public class ANNetworkManager : Unity.Netcode.NetworkManager
 
     private void Start()
     {
-        if(autoHost)
-            StartHost();
+        // if(autoHost)
+            // StartHost();
     }
 
     private void he()
@@ -30,5 +30,14 @@ public class ANNetworkManager : Unity.Netcode.NetworkManager
     public void TestShakeCamera()
     {
         GameManager.CameraController.Shake(1f, 5);
+    }
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.F9)) {
+            StartHost();
+        }
+        else if (Input.GetKeyDown(KeyCode.F10)) {
+            StartClient();
+        }
     }
 }

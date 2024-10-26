@@ -22,6 +22,7 @@ namespace InventorySystem
         public bool Equals(InventoryHandle other) => id == other.id;
         public override bool Equals(object obj) => obj is InventoryHandle other && Equals(other);
         public override int GetHashCode() => id;
-        
+
+        public bool IsValid() => id != 0;
     }
 }

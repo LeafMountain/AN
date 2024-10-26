@@ -36,9 +36,9 @@ public class Equipment : NetworkActorComponent
         
         SetSlot(0);
 
-        // var spawned = GameManager.Spawn(GameManager.Instance.defaultGun);
-        // spawned.GetComponent<NetworkObject>().ChangeOwnership(OwnerClientId);
-        // EquipGun_ClientRpc(spawned.GetComponent<Gun>());
+        GameObject spawned = GameManager.Spawner.Spawn(GameManager.Instance.defaultGun);
+        spawned.GetComponent<NetworkObject>().ChangeOwnership(OwnerClientId);
+        EquipGun_ClientRpc(spawned.GetComponent<Gun>());
     }
 
     private void LateUpdate()

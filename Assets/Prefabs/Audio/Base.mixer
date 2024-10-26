@@ -37,7 +37,6 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
-  - {fileID: 833444553849361553}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -67,23 +66,3 @@ AudioMixerSnapshotController:
   m_SnapshotID: 924de509eecab3f46b76d927ad20a181
   m_FloatValues: {}
   m_TransitionOverrides: {}
---- !u!244 &833444553849361553
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: f02c6245d8c567c4592e38adcdf2c6b0
-  m_EffectName: Project Acoustics Mixer
-  m_MixLevel: 0dd8a346a7ce8c74fa80b66f9a9b3f92
-  m_Parameters:
-  - m_ParameterName: Wetness Adjust
-    m_GUID: 6062856c572db6945bda14e4f1ef6f7f
-  - m_ParameterName: RT60 Scale
-    m_GUID: 81b4e10ba85532a41b5ae75c8f391e62
-  - m_ParameterName: Spatializer
-    m_GUID: ac5a3b39c354ae8419c282ead6f9b6c8
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0

@@ -5,26 +5,49 @@ using UnityEngine;
 
 namespace InventorySystem {
     public class ItemManager : NetworkBehaviour {
-        private const int InventorySlots = 16;
+        const int InventorySlots = 16;
 
-        private readonly NetworkList<Item> Items = new();
-        private readonly NetworkList<ItemHandle> InventoryItems = new();
-        private readonly NetworkList<InventoryHandle> Inventories = new();
+        readonly NetworkList<Item> Items = new();
+        readonly NetworkList<ItemHandle> InventoryItems = new();
+        readonly NetworkList<InventoryHandle> Inventories = new();
+        readonly NetworkList<InventoryHandle> FreeInventories = new(); // Might only exist on server
 
-        private readonly Dictionary<ItemHandle, InventoryHandle> itemsInInventory = new();
-        private readonly Dictionary<InventoryHandle, IItemContainer> itemContainers = new();
-        private readonly Dictionary<InventoryHandle, EventHandler<InventoryEventArgs>> InventoryCallbacks = new();
+        readonly Dictionary<ItemHandle, InventoryHandle> itemsInInventory = new();
+        readonly Dictionary<InventoryHandle, IItemContainer> itemContainers = new();
+        readonly Dictionary<InventoryHandle, EventHandler<InventoryEventArgs>> InventoryCallbacks = new();
 
         public InventoryHandle CreateInventory() {
+            if (FreeInventories.Count > 0) {
+                InventoryHandle freeInventory = FreeInventories[0];
+                FreeInventories.RemoveAt(0);
+                return freeInventory;
+            }
+
             InventoryHandle inventory = new();
 
             for (int i = 0; i < InventorySlots; i++) {
-                InventoryItems.Add(ItemHandle.Empty);
+                InventoryItems.Add(default);
             }
 
             inventory.id = InventoryItems.Count / InventorySlots;
             Inventories.Add(inventory);
             return inventory;
+        }
+
+        void AddInventory(InventoryHandle inventoryHandle) {
+            if (HasAuthority == false) {
+                AddInventoryRpc(inventoryHandle);
+                return;
+            }
+
+            Inventories.Add(inventoryHandle);
+        }
+
+        [Rpc(SendTo.Server)]
+        void AddInventoryRpc(InventoryHandle inventoryHandle) => AddInventory(inventoryHandle);
+
+        public void ReturnInventory(InventoryHandle handle) {
+            FreeInventories.Add(handle);
         }
 
         public InventoryHandle GetInventoryHandle(int id) {
@@ -40,22 +63,34 @@ namespace InventorySystem {
             return itemsInInventory.GetValueOrDefault(itemHandle);
         }
 
-        public List<Item> GetItems(InventoryHandle inventoryHandle) {
-            List<Item> items = new();
-            for (var i = inventoryHandle.id; i < inventoryHandle.id + InventorySlots; i++) {
-                items.Add(Items[i]);
+        public List<ItemHandle> GetItems(InventoryHandle inventoryHandle) {
+            List<ItemHandle> itemHandles = new();
+            for (int i = (inventoryHandle.id - 1) * InventorySlots; i < (inventoryHandle.id - 1) * InventorySlots + InventorySlots; i++) {
+                itemHandles.Add(InventoryItems[i]);
             }
 
-            return items;
+            return itemHandles;
         }
 
         public IItemContainer GetItemContainer(InventoryHandle inventoryHandle) {
             return itemContainers[inventoryHandle];
         }
 
+        [Rpc(SendTo.Server)]
+        void AddItemRpc(Item item) => AddItem(item);
+
+        void AddItem(Item item) {
+            if (HasAuthority == false) {
+                AddItemRpc(item);
+                return;
+            }
+
+            Items.Add(item);
+        }
+
         public ItemHandle CreateItem(string slug) {
             Item item = Item.Create(slug);
-            Items.Add(item);
+            AddItemRpc(item);
             return item.Handle;
         }
 
@@ -69,14 +104,22 @@ namespace InventorySystem {
             return default;
         }
 
+        [Rpc(SendTo.Server)]
+        void PlaceItemInWorldRpc(ItemHandle itemHandle, Vector3 spawnPosition, Quaternion spawnRotation) => PlaceItemInWorld(itemHandle, spawnPosition, spawnRotation);
+
         public void PlaceItemInWorld(ItemHandle itemHandle, Vector3 spawnPosition, Quaternion spawnRotation) {
+            if (HasAuthority == false) {
+                PlaceItemInWorldRpc(itemHandle, spawnPosition, spawnRotation);
+                return;
+            }
+
             Item? item = GetItem(itemHandle);
             if (item.HasValue == false) {
                 Debug.LogError("Trying to spawn null item");
                 return;
             }
 
-            if (IsInInventory(itemHandle)){
+            if (IsInInventory(itemHandle)) {
                 Withdraw(itemHandle);
             }
 
@@ -103,15 +146,21 @@ namespace InventorySystem {
             }
 
             // Deposit here
-            for (int i = inventoryHandle.id; i < inventoryHandle.id + InventorySlots; i++) {
+            bool successful = false;
+            for (int i = (inventoryHandle.id - 1) * InventorySlots; i < (inventoryHandle.id - 1) * InventorySlots + InventorySlots; i++) {
                 if (this.InventoryItems[i].IsValid()) continue;
                 this.InventoryItems[i] = itemHandle;
                 itemsInInventory.Add(itemHandle, inventoryHandle);
+                successful = true;
                 break;
             }
 
-            if (InventoryCallbacks.TryGetValue(inventoryHandle, out EventHandler<InventoryEventArgs> eventHandler)) {
-                eventHandler.Invoke(itemHandle, new InventoryEventArgs() {
+            if (successful == false) {
+                Debug.LogError("Inventory Full");
+            }
+
+            if (InventoryCallbacks.ContainsKey(inventoryHandle)) {
+                InventoryCallbacks[inventoryHandle].Invoke(itemHandle, new InventoryEventArgs() {
                     itemHandle = itemHandle,
                     inventoryHandle = inventoryHandle,
                     operation = InventoryEventArgs.Operation.Deposited,
@@ -123,19 +172,15 @@ namespace InventorySystem {
             InventoryHandle inventoryHandle = GetInventoryHandle(itemHandle);
             itemsInInventory.Remove(itemHandle);
 
-            for (int i = inventoryHandle.id; i < inventoryHandle.id + InventorySlots; i++) {
+            for (int i = (inventoryHandle.id - 1) * InventorySlots; i < (inventoryHandle.id - 1) * InventorySlots + InventorySlots; i++) {
                 if (this.InventoryItems[i] != itemHandle) continue;
                 itemsInInventory.Remove(itemHandle);
-                InventoryItems[i] = ItemHandle.Empty;
+                InventoryItems[i] = default;
                 break;
             }
 
-            // IItemContainer itemContainer = GetItemContainer(inventory);
-            // itemContainer.WithdrawImplementation(itemAccessId);
-            // itemContainers.Remove(itemAccessId);
-
-            if (InventoryCallbacks.TryGetValue(inventoryHandle, out EventHandler<InventoryEventArgs> eventHandler)) {
-                eventHandler.Invoke(itemHandle, new InventoryEventArgs() {
+            if (InventoryCallbacks.ContainsKey(inventoryHandle)) {
+                InventoryCallbacks[inventoryHandle].Invoke(itemHandle, new InventoryEventArgs() {
                     itemHandle = itemHandle,
                     inventoryHandle = inventoryHandle,
                     operation = InventoryEventArgs.Operation.Withdrawn,
@@ -146,6 +191,15 @@ namespace InventorySystem {
         public void AddCallback(InventoryHandle inventoryHandle, EventHandler<InventoryEventArgs> callback) {
             InventoryCallbacks.TryAdd(inventoryHandle, default);
             InventoryCallbacks[inventoryHandle] += callback;
+        }
+
+        public void RemoveCallback(InventoryHandle inventoryHandle, EventHandler<InventoryEventArgs> callback) {
+            if (InventoryCallbacks.ContainsKey(inventoryHandle)) {
+                InventoryCallbacks[inventoryHandle] -= callback;
+                if (InventoryCallbacks[inventoryHandle] == null) {
+                    InventoryCallbacks.Remove(inventoryHandle);
+                }
+            }
         }
     }
 }

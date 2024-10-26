@@ -146,6 +146,8 @@ public class DamageReceiver : NetworkActorComponent
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(HasAuthority == false) return;
+        
         if (collision.relativeVelocity.magnitude > 2)
         {
             DoDamage((int)(collision.relativeVelocity.magnitude * .5f), Parent);

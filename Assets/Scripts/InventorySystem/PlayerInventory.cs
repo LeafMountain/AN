@@ -1,16 +1,22 @@
+using System.Collections.Generic;
+using System.Linq;
 using Core;
 using UnityEngine;
 
 namespace InventorySystem {
-    public class PlayerInventory : NetworkActorComponent, IItemContainer {
+    public class PlayerInventory : MonoBehaviour, IItemContainer {
         public InventoryHandle InventoryHandle { get; set; }
 
-        protected void Awake() {
-            InventoryHandle = GameManager.ItemManager.CreateInventory();
-            GameManager.ItemManager.AddCallback(InventoryHandle, OnInventoryCallback);
+        public List<Item> debugItems = new();
+
+        void Start() {
+            if (ANNetworkManager.Singleton.IsServer) {
+                InventoryHandle = GameManager.ItemManager.CreateInventory();
+                GameManager.ItemManager.AddCallback(InventoryHandle, OnInventoryCallback);
+            }
         }
 
-        private void OnInventoryCallback(object sender, InventoryEventArgs args) {
+        void OnInventoryCallback(object sender, InventoryEventArgs args) {
             if (args.operation == InventoryEventArgs.Operation.Deposited) {
                 Item? item = GameManager.ItemManager.GetItem(args.itemHandle);
                 if (item.HasValue) {
@@ -27,6 +33,14 @@ namespace InventorySystem {
                     }
                 }
             }
+        }
+
+        void OnDrawGizmosSelected() {
+            if (Application.isPlaying == false) return;
+            debugItems = GameManager.ItemManager.GetItems(InventoryHandle)
+                .Where(x => x.IsValid())
+                .Select(x => GameManager.ItemManager.GetItem(x).Value)
+                .ToList();
         }
     }
 }
