@@ -1,56 +1,32 @@
 using Core;
-using Unity.Netcode;
 using UnityEngine;
 
-namespace InventorySystem
-{
-    public class PlayerInventory : NetworkActorComponent, IItemContainer
-    {
-        public readonly NetworkList<ItemAccessor> Items = new();
+namespace InventorySystem {
+    public class PlayerInventory : NetworkActorComponent, IItemContainer {
+        public InventoryHandle InventoryHandle { get; set; }
 
-        protected void Awake()
-        {
-            Items.OnListChanged += ItemsOnOnListChanged;
+        protected void Awake() {
+            InventoryHandle = GameManager.ItemManager.CreateInventory();
+            GameManager.ItemManager.AddCallback(InventoryHandle, OnInventoryCallback);
         }
 
-        private void ItemsOnOnListChanged(NetworkListEvent<ItemAccessor> changeevent)
-        {
-            switch (changeevent.Type)
-            {
-                case NetworkListEvent<ItemAccessor>.EventType.Add:
-                {
-                    Item? item = GameManager.ItemManager.GetItem(changeevent.Value);
-                    if (item.HasValue)
-                    {
-                        ItemData itemData = GameManager.Database.GetItem(item.Value.databaseId);
-                        Debug.Log($"Picked up {itemData.slug}");
-                    }
-
-                    break;
+        private void OnInventoryCallback(object sender, InventoryEventArgs args) {
+            if (args.operation == InventoryEventArgs.Operation.Deposited) {
+                Item? item = GameManager.ItemManager.GetItem(args.itemHandle);
+                if (item.HasValue) {
+                    ItemData itemData = GameManager.Database.GetItem(item.Value.databaseId);
+                    Debug.Log($"Picked up {itemData.slug}");
                 }
-                case NetworkListEvent<ItemAccessor>.EventType.Remove:
-                case NetworkListEvent<ItemAccessor>.EventType.RemoveAt:
+            }
+            else if (args.operation == InventoryEventArgs.Operation.Withdrawn) {
                 {
-                    Item? item = GameManager.ItemManager.GetItem(changeevent.PreviousValue);
-                    if (item.HasValue)
-                    {
+                    Item? item = GameManager.ItemManager.GetItem(args.itemHandle);
+                    if (item.HasValue) {
                         ItemData itemData = GameManager.Database.GetItem(item.Value.databaseId);
                         Debug.Log($"Dropped up {itemData.slug}");
                     }
-
-                    break;
                 }
             }
-        }
-
-        public void DepositImplementation(ItemAccessor itemAccessId)
-        {
-            Items.Add(itemAccessId);
-        }
-
-        public void WithdrawImplementation(ItemAccessor itemAccessId)
-        {
-            Items.Remove(itemAccessId);
         }
     }
 }

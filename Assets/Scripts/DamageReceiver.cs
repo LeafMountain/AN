@@ -61,8 +61,8 @@ public class DamageReceiver : NetworkActorComponent
                     // spawnedLoot.GetComponent<Rigidbody>().AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
                     // spawnedLoot.GetComponent<NetworkObject>().Spawn();
 
-                    ItemAccessor itemAccessId = GameManager.ItemManager.CreateItem("test_item");
-                    GameManager.ItemManager.PlaceItem(itemAccessId, transform.position + Vector3.up, transform.rotation);
+                    ItemHandle itemAccessId = GameManager.ItemManager.CreateItem("test_item");
+                    GameManager.ItemManager.PlaceItemInWorld(itemAccessId, transform.position + Vector3.up, transform.rotation);
                 }
 
                 if (destructionEffects.Any())
@@ -124,8 +124,8 @@ public class DamageReceiver : NetworkActorComponent
                     //     .AddForce(insideUnitSphere * lootSpawnForce, ForceMode.VelocityChange);
                     // spawnedLoot.GetComponent<NetworkObject>().Spawn();
 
-                    ItemAccessor itemAccessId = GameManager.ItemManager.CreateItem("test_item");
-                    GameManager.ItemManager.PlaceItem(itemAccessId, transform.position + Vector3.up, transform.rotation);
+                    ItemHandle itemAccessId = GameManager.ItemManager.CreateItem("test_item");
+                    GameManager.ItemManager.PlaceItemInWorld(itemAccessId, transform.position + Vector3.up, transform.rotation);
                 }
 
                 if (destructionEffects.Any())

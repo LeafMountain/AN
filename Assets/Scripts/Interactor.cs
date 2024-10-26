@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Core;
 using EventManager;
 using InventorySystem;
@@ -19,7 +20,7 @@ public class Interactor : ActorComponent
 
         if (Target.TryGetComponent(out WorldItem storeable))
         {
-            GameManager.ItemManager.Deposit(Inventory, storeable.GetItemData());
+            GameManager.ItemManager.Deposit(Inventory.InventoryHandle, storeable.GetItemData());
             return;
         }
 
@@ -32,23 +33,20 @@ public class Interactor : ActorComponent
         Events.TriggerEvent(Flag.LookTarget, Target);
     }
 
-    public void Drop()
-    {
-        if (Inventory.Items.Count > 0)
-        {
-            ItemAccessor itemId = Inventory.Items[0];
-            Inventory.Items.RemoveAt(0);
+    public void Drop() {
+        List<Item> items = GameManager.ItemManager.GetItems(Inventory.InventoryHandle);
+        for (int i = items.Count - 1; i >= 0; i--) {
+            if(items[i].IsValid() == false) continue;    
 
             if (Target && Target.TryGetComponent(out WorldInventory worldInventory))
             {
-                GameManager.ItemManager.Deposit(worldInventory, itemId);
+                GameManager.ItemManager.Deposit(worldInventory.InventoryHandle, items[i].Handle);
                 return;
             }
-
+            
             Vector3 spawnPosition = transform.position + transform.forward * 2f;
             Quaternion spawnRotation = transform.rotation;
-
-            GameManager.ItemManager.PlaceItem(itemId, spawnPosition, spawnRotation);
+            GameManager.ItemManager.PlaceItemInWorld(items[i].Handle, spawnPosition, spawnRotation);
         }
     }
 

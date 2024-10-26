@@ -3,28 +3,65 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace InventorySystem
-{
-    public class ItemManager : NetworkBehaviour
-    {
-        public readonly NetworkList<Item> Items = new();
-        public readonly NetworkList<Inventory1> Inventories = new();
-        
-        public Dictionary<ItemAccessor, IItemContainer> itemContainers = new();
+namespace InventorySystem {
+    public class ItemManager : NetworkBehaviour {
+        private const int InventorySlots = 16;
 
-        public ItemAccessor CreateItem(string slug)
-        {
-            Item item = Item.Create(slug);
-            Items.Add(item);
-            return item.accessId;
+        private readonly NetworkList<Item> Items = new();
+        private readonly NetworkList<ItemHandle> InventoryItems = new();
+        private readonly NetworkList<InventoryHandle> Inventories = new();
+
+        private readonly Dictionary<ItemHandle, InventoryHandle> itemsInInventory = new();
+        private readonly Dictionary<InventoryHandle, IItemContainer> itemContainers = new();
+        private readonly Dictionary<InventoryHandle, EventHandler<InventoryEventArgs>> InventoryCallbacks = new();
+
+        public InventoryHandle CreateInventory() {
+            InventoryHandle inventory = new();
+
+            for (int i = 0; i < InventorySlots; i++) {
+                InventoryItems.Add(ItemHandle.Empty);
+            }
+
+            inventory.id = InventoryItems.Count / InventorySlots;
+            Inventories.Add(inventory);
+            return inventory;
         }
 
-        public Item? GetItem(ItemAccessor id)
-        {
-            foreach (Item item in Items)
-            {
-                if (item.accessId == id)
-                {
+        public InventoryHandle GetInventoryHandle(int id) {
+            if (Inventories.Count < id) {
+                Debug.LogError("Inventory outside of range");
+                return InventoryHandle.Empty;
+            }
+
+            return Inventories[id];
+        }
+
+        public InventoryHandle GetInventoryHandle(ItemHandle itemHandle) {
+            return itemsInInventory.GetValueOrDefault(itemHandle);
+        }
+
+        public List<Item> GetItems(InventoryHandle inventoryHandle) {
+            List<Item> items = new();
+            for (var i = inventoryHandle.id; i < inventoryHandle.id + InventorySlots; i++) {
+                items.Add(Items[i]);
+            }
+
+            return items;
+        }
+
+        public IItemContainer GetItemContainer(InventoryHandle inventoryHandle) {
+            return itemContainers[inventoryHandle];
+        }
+
+        public ItemHandle CreateItem(string slug) {
+            Item item = Item.Create(slug);
+            Items.Add(item);
+            return item.Handle;
+        }
+
+        public Item? GetItem(ItemHandle id) {
+            foreach (Item item in Items) {
+                if (item.Handle == id) {
                     return item;
                 }
             }
@@ -32,28 +69,23 @@ namespace InventorySystem
             return default;
         }
 
-        public void PlaceItem(ItemAccessor itemAccessId, Vector3 spawnPosition, Quaternion spawnRotation)
-        {
-            Item? item = GetItem(itemAccessId);
-            if (item.HasValue == false)
-            {
+        public void PlaceItemInWorld(ItemHandle itemHandle, Vector3 spawnPosition, Quaternion spawnRotation) {
+            Item? item = GetItem(itemHandle);
+            if (item.HasValue == false) {
                 Debug.LogError("Trying to spawn null item");
                 return;
             }
 
-            if (itemContainers.TryGetValue(itemAccessId, out IItemContainer itemContainer))
-            {
-                Withdraw(itemContainer, itemAccessId);
+            if (IsInInventory(itemHandle)){
+                Withdraw(itemHandle);
             }
 
             GameManager.Spawner.SpawnItem(item.Value, spawnPosition, spawnRotation);
         }
 
-        public void PickUpItem(ItemAccessor itemAccessId)
-        {
+        public void PickUpItem(ItemHandle itemAccessId) {
             Item? item = GetItem(itemAccessId);
-            if (item.HasValue == false)
-            {
+            if (item.HasValue == false) {
                 Debug.LogError("Trying to despawn null item");
                 return;
             }
@@ -61,78 +93,59 @@ namespace InventorySystem
             // GameManager.Spawner.Despawn(item.Value);
         }
 
-        public void Deposit(IItemContainer itemContainer, ItemAccessor itemAccessId)
-        {
-            if (itemContainers.TryGetValue(itemAccessId, out IItemContainer previousItemContainer))
-            {
-                Withdraw(previousItemContainer, itemAccessId);
+        public bool IsInInventory(ItemHandle itemHandle) {
+            return itemsInInventory.ContainsKey(itemHandle);
+        }
+
+        public void Deposit(InventoryHandle inventoryHandle, ItemHandle itemHandle) {
+            if (IsInInventory(itemHandle)) {
+                Withdraw(itemHandle);
             }
-            
-            itemContainer.DepositImplementation(itemAccessId);
-            itemContainers[itemAccessId] = itemContainer;
+
+            // Deposit here
+            for (int i = inventoryHandle.id; i < inventoryHandle.id + InventorySlots; i++) {
+                if (this.InventoryItems[i].IsValid()) continue;
+                this.InventoryItems[i] = itemHandle;
+                itemsInInventory.Add(itemHandle, inventoryHandle);
+                break;
+            }
+
+            if (InventoryCallbacks.TryGetValue(inventoryHandle, out EventHandler<InventoryEventArgs> eventHandler)) {
+                eventHandler.Invoke(itemHandle, new InventoryEventArgs() {
+                    itemHandle = itemHandle,
+                    inventoryHandle = inventoryHandle,
+                    operation = InventoryEventArgs.Operation.Deposited,
+                });
+            }
         }
 
-        public void Withdraw(IItemContainer itemContainer, ItemAccessor itemAccessId)
-        {
-            itemContainer.WithdrawImplementation(itemAccessId);     
-            itemContainers.Remove(itemAccessId);
-        }
-    }
+        public void Withdraw(ItemHandle itemHandle) {
+            InventoryHandle inventoryHandle = GetInventoryHandle(itemHandle);
+            itemsInInventory.Remove(itemHandle);
 
-    public interface IItemContainer
-    {
-        public void DepositImplementation(ItemAccessor itemAccessId);
-        public void WithdrawImplementation(ItemAccessor itemAccessId);
-    }
+            for (int i = inventoryHandle.id; i < inventoryHandle.id + InventorySlots; i++) {
+                if (this.InventoryItems[i] != itemHandle) continue;
+                itemsInInventory.Remove(itemHandle);
+                InventoryItems[i] = ItemHandle.Empty;
+                break;
+            }
 
-    [Serializable, GenerateSerializationForType(typeof(Item))]
-    public struct Item : IEquatable<Item>, INetworkSerializable
-    {
-        public ItemAccessor accessId;
-        public int databaseId;
+            // IItemContainer itemContainer = GetItemContainer(inventory);
+            // itemContainer.WithdrawImplementation(itemAccessId);
+            // itemContainers.Remove(itemAccessId);
 
-        public bool Equals(Item other) => accessId == other.accessId;
-        public override bool Equals(object obj) => obj is Item other && Equals(other);
-        public override int GetHashCode() => accessId.GetHashCode();
-
-        public static Item Create(string slug)
-        {
-            return new Item
-            {
-                databaseId = GameManager.Database.StringToID(slug),
-                accessId = ItemAccessor.Create(),
-            };
+            if (InventoryCallbacks.TryGetValue(inventoryHandle, out EventHandler<InventoryEventArgs> eventHandler)) {
+                eventHandler.Invoke(itemHandle, new InventoryEventArgs() {
+                    itemHandle = itemHandle,
+                    inventoryHandle = inventoryHandle,
+                    operation = InventoryEventArgs.Operation.Withdrawn,
+                });
+            }
         }
 
-        public override string ToString()
-        {
-            return accessId.ToString();
+        public void AddCallback(InventoryHandle inventoryHandle, EventHandler<InventoryEventArgs> callback) {
+            InventoryCallbacks.TryAdd(inventoryHandle, default);
+            InventoryCallbacks[inventoryHandle] += callback;
         }
-
-        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-        {
-            serializer.SerializeValue(ref accessId);
-            serializer.SerializeValue(ref databaseId);
-        }
-    }
-
-    [Serializable, GenerateSerializationForType(typeof(Inventory1))]
-    public struct Inventory1 : IEquatable<Inventory1>, INetworkSerializable
-    {
-        public int id;
-
-        public override string ToString()
-        {
-            return id.ToString();
-        }
-
-        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-        {
-            serializer.SerializeValue(ref id);
-        }
-
-        public bool Equals(Inventory1 other) => id == other.id;
-        public override bool Equals(object obj) => obj is Inventory1 other && Equals(other);
-        public override int GetHashCode() => id;
     }
 }

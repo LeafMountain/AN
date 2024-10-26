@@ -6,10 +6,10 @@ using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
 
-public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer
-{
-    public class StoreableEventArgs : EventArgs
-    {
+public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer {
+    public InventoryHandle InventoryHandle { get; set; }
+
+    public class StoreableEventArgs : EventArgs {
         public WorldItem worldItem;
         public Actor actor;
         public Actor owner;
@@ -17,51 +17,45 @@ public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer
     }
 
     public Actor actor;
-    public readonly NetworkVariable<ItemAccessor> item = new();
+    public readonly NetworkVariable<ItemHandle> item = new();
     private GameObject spawnedVisual;
-    
-    private void Awake()
-    {
+
+    private void Awake() {
         item.OnValueChanged += OnItemValueChanged;
+        InventoryHandle = GameManager.ItemManager.CreateInventory();
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         SpawnVisuals();
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
         DestroyVisuals();
     }
 
-    private void OnItemValueChanged(ItemAccessor previousvalue, ItemAccessor newvalue)
-    {
+    private void OnItemValueChanged(ItemHandle previousvalue, ItemHandle newvalue) {
         SpawnVisuals();
     }
 
     [Button]
-    public void SetItemData(Item item) => this.item.Value = item.accessId;
-    public ItemAccessor GetItemData() => item.Value;
+    public void SetItemData(Item item) => this.item.Value = item.Handle;
 
-    private void SpawnVisuals()
-    {
+    public ItemHandle GetItemData() => item.Value;
+
+    private void SpawnVisuals() {
         DestroyVisuals();
-        if (item.Value.IsValid())
-        {
+        if (item.Value.IsValid()) {
             Item? item = GameManager.ItemManager.GetItem(this.item.Value);
             ItemData itemData = GameManager.Database.GetItem(item.Value.databaseId);
-            itemData.graphics.InstantiateAsync(transform.position, transform.rotation, transform).Completed += handle => spawnedVisual = handle.Result;
+            itemData.graphics.InstantiateAsync(transform.position, transform.rotation, transform).Completed +=
+                handle => spawnedVisual = handle.Result;
         }
     }
 
-    private void DestroyVisuals()
-    {
-        if (spawnedVisual)
-        {
+    private void DestroyVisuals() {
+        if (spawnedVisual) {
 #if UNITY_EDITOR
-            if (Application.isPlaying == false)
-            {
+            if (Application.isPlaying == false) {
                 DestroyImmediate(spawnedVisual);
             }
             else
@@ -72,12 +66,10 @@ public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer
         }
     }
 
-    public void Interact(Actor interactor)
-    {
+    public void Interact(Actor interactor) {
         if (interactor.TryGetComponent(out PlayerInventory inventory) == false) return;
 
-        Events.TriggerEvent(Flag.Storeable, actor, new StoreableEventArgs
-        {
+        Events.TriggerEvent(Flag.Storeable, actor, new StoreableEventArgs {
             worldItem = this,
             actor = actor,
             owner = actor,
@@ -87,19 +79,16 @@ public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer
         GameManager.Spawner.Despawn(gameObject);
     }
 
-    public string GetPrompt()
-    {
+    public string GetPrompt() {
         return "Pick Up";
     }
 
-    public void DepositImplementation(ItemAccessor itemAccessId)
-    {
+    public void DepositImplementation(ItemHandle itemAccessId) {
         this.item.Value = itemAccessId;
     }
 
-    public void WithdrawImplementation(ItemAccessor itemAccessId)
-    {
-        this.item.Value = ItemAccessor.Empty;
+    public void WithdrawImplementation(ItemHandle itemAccessId) {
+        this.item.Value = ItemHandle.Empty;
         GameManager.Spawner.Despawn(this);
     }
 }
