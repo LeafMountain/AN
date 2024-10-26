@@ -1,19 +1,27 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Core;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace InventorySystem {
-    public class PlayerInventory : MonoBehaviour, IItemContainer {
-        public InventoryHandle InventoryHandle { get; set; }
+    public class PlayerInventory : NetworkBehaviour, IItemContainer {
+        public InventoryHandle InventoryHandle { 
+            get => inventoryHandle.Value;
+            set => inventoryHandle.Value = value;
+        }
+
+        readonly NetworkVariable<InventoryHandle> inventoryHandle = new();
 
         public List<Item> debugItems = new();
 
-        void Start() {
-            if (ANNetworkManager.Singleton.IsServer) {
+        protected override void OnNetworkPostSpawn() {
+            if (IsServer) {
                 InventoryHandle = GameManager.ItemManager.CreateInventory();
-                GameManager.ItemManager.AddCallback(InventoryHandle, OnInventoryCallback);
             }
+            
+            GameManager.ItemManager.AddCallback(InventoryHandle, OnInventoryCallback);
         }
 
         void OnInventoryCallback(object sender, InventoryEventArgs args) {

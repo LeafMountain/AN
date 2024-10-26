@@ -3,7 +3,7 @@ using Unity.Netcode;
 
 namespace InventorySystem {
     public struct ItemHandle : IEquatable<ItemHandle>, INetworkSerializable {
-        int id;
+        public int id;
 
         public static bool operator ==(ItemHandle a, ItemHandle b) => a.Equals(b);
         public static bool operator !=(ItemHandle a, ItemHandle b) => !a.Equals(b);

@@ -42,6 +42,7 @@ public class Interactor : ActorComponent {
             Vector3 spawnPosition = transform.position + transform.forward * 2f;
             Quaternion spawnRotation = transform.rotation;
             GameManager.ItemManager.PlaceItemInWorld(items[i], spawnPosition, spawnRotation);
+            
             break;
         }
     }

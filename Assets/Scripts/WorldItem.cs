@@ -1,41 +1,51 @@
 using System;
 using Core;
-using EventManager;
 using InventorySystem;
 using Unity.Netcode;
 using UnityEngine;
 
 public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer {
-    public InventoryHandle InventoryHandle { get; set; }
-
-    public class StoreableEventArgs : EventArgs {
-        public WorldItem worldItem;
-        public Actor actor;
-        public Actor owner;
-        public PlayerInventory inventory { get; set; }
+    public InventoryHandle InventoryHandle {
+        get => inventoryHandle.Value;
+        set => inventoryHandle.Value = value;
     }
 
-    public Actor actor;
+    readonly NetworkVariable<InventoryHandle> inventoryHandle = new();
     GameObject spawnedVisual;
 
-    public override void OnNetworkSpawn() {
-        if (HasAuthority) {
-            if (InventoryHandle.IsValid() == false) {
-                InventoryHandle = GameManager.ItemManager.CreateInventory();
-            }
+    protected override void OnNetworkPostSpawn() {
+        if (IsServer && InventoryHandle.IsValid() == false) {
+            InventoryHandle = GameManager.ItemManager.CreateInventory();
         }
-
+        
         GameManager.ItemManager.AddCallback(InventoryHandle, OnInventoryCallback);
-        SpawnVisuals();
+        
+        if (GameManager.ItemManager.IsInventoryInitialized(InventoryHandle)) {
+            SpawnVisuals();
+        }
+    }
+
+    public override void OnNetworkDespawn() {
+        GameManager.ItemManager.RemoveCallback(InventoryHandle, OnInventoryCallback);
+        
+        if (IsServer) {
+            GameManager.ItemManager.ReturnInventory(InventoryHandle);
+            InventoryHandle = default;
+        }
     }
 
     void OnInventoryCallback(object sender, InventoryEventArgs args) {
-        if (args.operation == InventoryEventArgs.Operation.Deposited) {
-            SpawnVisuals();
-        }
-        else if (args.operation == InventoryEventArgs.Operation.Withdrawn) {
-            DestroyVisuals();
-            GameManager.Spawner.Despawn(this);
+        switch (args.operation) {
+            case InventoryEventArgs.Operation.Deposited:
+                SpawnVisuals();
+                break;
+            case InventoryEventArgs.Operation.Withdrawn:
+                DestroyVisuals();
+                GameManager.Spawner.Despawn(this);
+                break;
+            case InventoryEventArgs.Operation.InventoryCreated:
+                SpawnVisuals();
+                break;
         }
     }
 
@@ -47,12 +57,6 @@ public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer {
 
     void OnDisable() {
         DestroyVisuals();
-    }
-
-    public override void OnDestroy() {
-        if (Application.isPlaying == false) return;
-        GameManager.ItemManager.RemoveCallback(InventoryHandle, OnInventoryCallback);
-        GameManager.ItemManager.ReturnInventory(InventoryHandle);
     }
 
     public ItemHandle GetItemHandle() => GameManager.ItemManager.GetItems(InventoryHandle)[0];
@@ -84,14 +88,6 @@ public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer {
 
     public void Interact(Actor interactor) {
         if (interactor.TryGetComponent(out PlayerInventory inventory) == false) return;
-
-        Events.TriggerEvent(Flag.Storeable, actor, new StoreableEventArgs {
-            worldItem = this,
-            actor = actor,
-            owner = actor,
-            inventory = inventory
-        });
-
         GameManager.Spawner.Despawn(gameObject);
     }
 

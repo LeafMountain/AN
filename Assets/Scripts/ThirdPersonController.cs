@@ -107,12 +107,16 @@ namespace StarterAssets {
                 Interact();
                 Drop();
                 ChangeWeapon();
+
+                if (Input.GetKeyDown(KeyCode.F)) {
+                    SpawnItem();
+                }
             }
 
             CharacterRotation();
         }
 
-        private void ChangeWeapon() {
+        void ChangeWeapon() {
             if (_input.one) {
                 equipment.SetSlot(0);
                 _input.one = false;
@@ -310,10 +314,6 @@ namespace StarterAssets {
 
                 // if we are not grounded, do not jump
                 _input.jump = false;
-
-
-                ItemHandle item = GameManager.ItemManager.CreateItem("test_item");
-                GameManager.ItemManager.PlaceItemInWorld(item, transform.position + transform.forward * 2, transform.rotation);
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
@@ -409,10 +409,15 @@ namespace StarterAssets {
             GetComponent<Interactor>().Interact();
         }
 
-        private void Drop() {
+        void Drop() {
             if (_input.drop == false) return;
             _input.drop = false;
             interactor.Drop();
+        }
+
+        void SpawnItem() {
+            ItemHandle item = GameManager.ItemManager.CreateItem("test_item");
+            GameManager.ItemManager.PlaceItemInWorld(item, transform.position + transform.forward * 2, transform.rotation);
         }
 
         private void OnDrawGizmosSelected() {

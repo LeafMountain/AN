@@ -6,6 +6,7 @@ namespace InventorySystem {
             None,
             Withdrawn,
             Deposited,
+            InventoryCreated,
         }
         
         public ItemHandle itemHandle;

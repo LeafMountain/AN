@@ -6,32 +6,58 @@ using UnityEngine;
 
 namespace InventorySystem {
     public class WorldInventory : NetworkBehaviour, IItemContainer {
-        public InventoryHandle InventoryHandle { get; set; }
+        public InventoryHandle InventoryHandle {
+            get => inventoryHandle.Value;
+            set => inventoryHandle.Value = value;
+        }
 
-        private readonly NetworkList<ItemHandle> items = new();
-        private readonly List<GameObject> spawnedVisuals = new();
+        public NetworkVariable<InventoryHandle> inventoryHandle = new();
+
+        readonly List<GameObject> spawnedVisuals = new();
 
         public List<Transform> slots = new();
 
-        private void Awake() {
-            items.OnListChanged += OnItemsUpdated;
+        protected override void OnNetworkPostSpawn() {
+            if (IsServer && InventoryHandle.IsValid() == false) {
+                InventoryHandle = GameManager.ItemManager.CreateInventory();
+            }
+            
+            GameManager.ItemManager.AddCallback(InventoryHandle, OnInventoryCallback);
+            if (GameManager.ItemManager.IsInventoryInitialized(InventoryHandle)) {
+                SpawnVisuals();
+            }
         }
 
-        private void OnItemsUpdated(NetworkListEvent<ItemHandle> changeevent) {
-            SpawnVisuals();
-            transform.DOShakeRotation(.1f, 5f);
+        public override void OnNetworkDespawn() {
+            GameManager.ItemManager.RemoveCallback(InventoryHandle, OnInventoryCallback);
+
+            if (IsServer) {
+                GameManager.ItemManager.ReturnInventory(InventoryHandle);
+                InventoryHandle = default;
+            }
         }
 
-        public void DepositImplementation(ItemHandle itemAccessId) {
-            items.Add(itemAccessId);
+        void OnInventoryCallback(object sender, InventoryEventArgs args) {
+            switch (args.operation) {
+                case InventoryEventArgs.Operation.Deposited:
+                    SpawnVisuals();
+                    transform.DOShakeRotation(.1f, 5f);
+                    break;
+                case InventoryEventArgs.Operation.Withdrawn:
+                    SpawnVisuals();
+                    transform.DOShakeRotation(.1f, 5f);
+                    break;
+                case InventoryEventArgs.Operation.InventoryCreated:
+                    SpawnVisuals();
+                    Debug.Log("Inventory created");
+                    break;
+            }
         }
 
-        public void WithdrawImplementation(ItemHandle itemAccessId) {
-            items.Remove(itemAccessId);
-        }
-
-        private void SpawnVisuals() {
+        void SpawnVisuals() {
+            List<ItemHandle> items = GameManager.ItemManager.GetItems(InventoryHandle);
             DestroyVisuals();
+            Debug.Log(items[0].id);
 
             for (int i = 0; i < items.Count; i++) {
                 ItemHandle itemHandle = items[i];
@@ -47,7 +73,7 @@ namespace InventorySystem {
             }
         }
 
-        private void DestroyVisuals() {
+        void DestroyVisuals() {
             if (spawnedVisuals.Count != 0) {
                 for (int i = spawnedVisuals.Count - 1; i >= 0; i--) {
 #if UNITY_EDITOR
