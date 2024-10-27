@@ -47,6 +47,10 @@ public class Interactor : ActorComponent {
         }
     }
 
+    public void ToggleInventory() {
+        GameManager.UI.PlayerInventory.ToggleInventory();
+    }
+
     public void Update() {
         Target = GetLookHit(Camera.main, interactLayerMask);
     }

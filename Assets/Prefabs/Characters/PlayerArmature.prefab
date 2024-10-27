@@ -2169,7 +2169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3044279502
+  GlobalObjectIdHash: 2767078265
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -2213,7 +2213,7 @@ MonoBehaviour:
   interactor: {fileID: 1217204799411287553}
   lookLayerMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 2147485655
   MoveSpeed: 4
   SprintSpeed: 7
   RotationSmoothTime: 0.12
@@ -2249,7 +2249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   canPush: 0
   strength: 1.1
 --- !u!114 &135756642000475821
@@ -2494,7 +2494,7 @@ MonoBehaviour:
   _actor: {fileID: 4416926081852918490}
   interactLayerMask:
     serializedVersion: 2
-    m_Bits: 2147484599
+    m_Bits: 2147484567
   Inventory: {fileID: -8049917369622431502}
 --- !u!114 &-3342030923612875929
 MonoBehaviour:

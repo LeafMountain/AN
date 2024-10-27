@@ -53,6 +53,7 @@ public class Player : Character
         }
 
         StartCoroutine(EnergyTick());
+        GameManager.Players.Add(this);
 
         Events.AddListener(Flag.DamageRecieved, this, OnDamageReveived);
     }

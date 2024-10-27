@@ -111,6 +111,10 @@ namespace StarterAssets {
                 if (Input.GetKeyDown(KeyCode.F)) {
                     SpawnItem();
                 }
+
+                if (Input.GetKeyDown(KeyCode.B)) {
+                    interactor.ToggleInventory();
+                }
             }
 
             CharacterRotation();
