@@ -7,11 +7,11 @@ namespace UI {
 
         public void Init(StatefulComponent view) {
             this.view = view;
-
-            Player localPlayer = GameManager.Players.Get(0);
-            GameManager.ItemManager.AddCallback(localPlayer.GetComponent<PlayerInventory>().InventoryHandle, OnPlayerInventoryUpdated);
-            FullyUpdatePlayerInventory();
-            ToggleInventory(false);
+            //
+            // Player localPlayer = GameManager.Players.Get(0);
+            // GameManager.ItemManager.AddCallback(localPlayer.GetComponent<PlayerInventory>().InventoryHandle, OnPlayerInventoryUpdated);
+            // FullyUpdatePlayerInventory();
+            // ToggleInventory(false);
         }
 
         public void ToggleInventory() {
