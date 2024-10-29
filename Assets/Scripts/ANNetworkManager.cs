@@ -7,7 +7,7 @@ public class ANNetworkManager : Unity.Netcode.NetworkManager {
     public bool autoHost = true;
 
     void Start() {
-        StartHost();
+        // StartHost();
     }
 
     private void he() {
