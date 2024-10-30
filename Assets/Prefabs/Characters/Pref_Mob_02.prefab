@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4eb6eac33a97f4a459294aee2b447bf9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.494323
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4eb6eac33a97f4a459294aee2b447bf9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4eb6eac33a97f4a459294aee2b447bf9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.249408
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4eb6eac33a97f4a459294aee2b447bf9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53,11 +53,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 4eb6eac33a97f4a459294aee2b447bf9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c6adbbe290e07074193dc5c2db05dc53, type: 2}
     - target: {fileID: -7493389819475929718, guid: 4eb6eac33a97f4a459294aee2b447bf9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c6adbbe290e07074193dc5c2db05dc53, type: 2}
     - target: {fileID: 919132149155446097, guid: 4eb6eac33a97f4a459294aee2b447bf9, type: 3}
@@ -103,13 +103,14 @@ Animation:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191065303137091695}
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Animation: {fileID: 7400000, guid: 076e08e17696fe246a237ce673c26fbf, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 076e08e17696fe246a237ce673c26fbf, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
+  m_UpdateMode: 0
   m_CullingType: 0
 --- !u!64 &3650901965213590244
 MeshCollider:
