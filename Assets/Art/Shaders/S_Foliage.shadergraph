@@ -217,9 +217,6 @@
             "m_Id": "34e981196306476183969d318aff18c0"
         },
         {
-            "m_Id": "35cc774f0a744870b804e219bf9352d1"
-        },
-        {
             "m_Id": "e752a839df5245d9a95cb009e9034fb3"
         }
     ],
@@ -1314,7 +1311,7 @@
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.Rendering.HighDefinition.ShaderGraph.SystemData",
     "m_ObjectId": "13383d20f4054fd9a1c34bb6a7518530",
-    "m_MaterialNeedsUpdateHash": 0,
+    "m_MaterialNeedsUpdateHash": 280370,
     "m_SurfaceType": 0,
     "m_RenderingPass": 1,
     "m_BlendMode": 0,
@@ -1323,7 +1320,7 @@
     "m_TransparentCullMode": 2,
     "m_OpaqueCullMode": 2,
     "m_SortPriority": 0,
-    "m_AlphaTest": false,
+    "m_AlphaTest": true,
     "m_TransparentDepthPrepass": false,
     "m_TransparentDepthPostpass": false,
     "m_SupportLodCrossFade": false,
@@ -1339,7 +1336,7 @@
     "m_TessellationBackFaceCullEpsilon": -0.25,
     "m_TessellationMaxDisplacement": 0.009999999776482582,
     "m_Version": 1,
-    "inspectorFoldoutMask": 1
+    "inspectorFoldoutMask": 9
 }
 
 {
@@ -2142,43 +2139,6 @@
     "m_PreviewMode": 0,
     "m_CustomColors": {
         "m_SerializableColors": []
-    }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Texture2DAssetNode",
-    "m_ObjectId": "35cc774f0a744870b804e219bf9352d1",
-    "m_Group": {
-        "m_Id": "fe1bf58e7b9a46f08d9fc42a86ee7808"
-    },
-    "m_Name": "Texture 2D Asset",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -204.9999542236328,
-            "y": 1138.0001220703125,
-            "width": 148.9999542236328,
-            "height": 34.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "de2443739cf24f639c8692d2f3965c57"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Texture": {
-        "m_SerializedTexture": "",
-        "m_Guid": ""
     }
 }
 
@@ -5922,7 +5882,7 @@
     "m_ObjectId": "c9d2f55ca0574eb89f542856f9858017",
     "m_Title": "PLAYER COLLISION",
     "m_Position": {
-        "x": -1330.0001220703125,
+        "x": -1330.0,
         "y": -520.0
     }
 }
@@ -6346,19 +6306,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
-    "m_ObjectId": "de2443739cf24f639c8692d2f3965c57",
-    "m_Id": 0,
-    "m_DisplayName": "Out",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_BareResource": false
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "de2e6872bd0648329d137bbc50cd24a4",
     "m_Id": 0,
@@ -6583,7 +6530,7 @@
     "m_ObjectId": "e6af6dacec794fd9bd613ce7571cd8fe",
     "m_Title": "TEMPORARY VISUALIZATION",
     "m_Position": {
-        "x": -551.0000610351563,
+        "x": -551.0,
         "y": -766.0000610351563
     }
 }
@@ -7199,7 +7146,7 @@
     "m_ObjectId": "fe1bf58e7b9a46f08d9fc42a86ee7808",
     "m_Title": "COLOR",
     "m_Position": {
-        "x": -653.0000610351563,
+        "x": -653.0,
         "y": 314.0000305175781
     }
 }

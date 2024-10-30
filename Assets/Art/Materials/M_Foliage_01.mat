@@ -36,7 +36,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Ambient_Occlusion_Map:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e8678718b46709445bbffc3616cbae9b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
@@ -132,7 +132,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic_Smoothness_Map:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: f669cef40fdae144a88353359a827c44, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
@@ -148,7 +148,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 418edebf00d9b31408e09f3b57ffbc42, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
