@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 2767078265
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  InScenePlacedSourceGlobalObjectIdHash: 3044279502
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 1
@@ -2114,6 +2114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1085980292946605983}
+  - component: {fileID: 4065044179481103445}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -2138,6 +2139,21 @@ Transform:
   - {fileID: 4272396631172739569}
   m_Father: {fileID: 3893294197879345259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4065044179481103445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432758168369886627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eafbfb5456a35f60b3c8903d3689ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6982812146204527121}
+  from: {fileID: 3475586415634194490}
+  to: {fileID: 4272396631172739569}
 --- !u!1 &8440873469600206670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,7 +2304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2936053179144481228, guid: 6f669e441c061ae4aa69d4ff3fba1195, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8436659061694245132, guid: 6f669e441c061ae4aa69d4ff3fba1195, type: 3}
