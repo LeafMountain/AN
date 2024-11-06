@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: cfa0beaea19973e4684592bc1a411df2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ed184f1b4fa61954e87d1cbcc29c73d8, type: 2}
+      objectReference: {fileID: 2100000, guid: 5c4dd1b6e17e7b348886358dc169e223, type: 2}
     - target: {fileID: 919132149155446097, guid: cfa0beaea19973e4684592bc1a411df2, type: 3}
       propertyPath: m_Name
       value: sm_charcoal_01
