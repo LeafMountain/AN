@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2572701293279061033
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.829
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 33.279
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8422753509690417234, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ce6d0d9941f69c4cb25fba69b65850d, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c4dd1b6e17e7b348886358dc169e223, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a73ea19dd5109644a6f1c4a81212d9c, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 658aa3d0bcd4d3e4c9455730207b9477, type: 2}
+    - target: {fileID: 919132149155446097, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: m_Name
+      value: sm_oil_potion_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038102436187321837, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c85dcfb73d441c642b53a6864ee9df09, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3770545005794044564}
+    - targetCorrespondingSourceObject: {fileID: 3112890205860638485, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8756616043397433326}
+  m_SourcePrefab: {fileID: 100100000, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+--- !u!1 &614502842254461756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3112890205860638485, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+  m_PrefabInstance: {fileID: 2572701293279061033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8756616043397433326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614502842254461756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a26df514f5fee44bbdbfaded1cdad3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateMode: 0
+  MaxWobble: 0.03
+  WobbleSpeedMove: 1
+  fillAmount: 0.5
+  Recovery: 1
+  Thickness: 1
+  CompensateShapeAmount: 0
+  mesh: {fileID: 8715924417166085714, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+  rend: {fileID: 692868400890220996}
+--- !u!23 &692868400890220996 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3038102436187321837, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+  m_PrefabInstance: {fileID: 2572701293279061033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3419775710957083000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 920818615d75a8143994a98f29fa7eb9, type: 3}
+  m_PrefabInstance: {fileID: 2572701293279061033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &3770545005794044564
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419775710957083000}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15836555
+  m_Height: 0.28744385
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.13844006, z: 0}
