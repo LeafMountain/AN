@@ -696,7 +696,7 @@
     "m_AlphaMode": 1,
     "m_RenderFace": 0,
     "m_AlphaClip": false,
-    "m_CastShadows": true,
+    "m_CastShadows": false,
     "m_ReceiveShadows": true,
     "m_DisableTint": false,
     "m_AdditionalMotionVectorMode": 0,
@@ -4893,7 +4893,7 @@
     "m_Title": "COLOR",
     "m_Position": {
         "x": -653.0,
-        "y": 314.0
+        "y": 313.99993896484377
     }
 }
 

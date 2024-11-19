@@ -2939,7 +2939,7 @@
     "m_Title": "Foam/Edge Frontface",
     "m_Position": {
         "x": 541.0,
-        "y": 717.9999389648438
+        "y": 718.0
     }
 }
 
@@ -4190,7 +4190,7 @@
     "m_ObjectId": "4a943008ec3544f3b366094ece5d9648",
     "m_Title": "Mesh Center World Position - Transform Position",
     "m_Position": {
-        "x": 724.0000610351563,
+        "x": 724.0,
         "y": -1580.0
     }
 }
@@ -4423,7 +4423,7 @@
     "m_Title": "Alpha",
     "m_Position": {
         "x": 471.0,
-        "y": 1476.9998779296875
+        "y": 1477.0
     }
 }
 
@@ -5042,7 +5042,7 @@
     "m_ObjectId": "65866d11e8274bb6ae08de26d7b3c923",
     "m_Title": "Rotate X and Z Wobble",
     "m_Position": {
-        "x": 1630.0001220703125,
+        "x": 1630.0,
         "y": -2153.0
     }
 }
@@ -5827,8 +5827,8 @@
     "m_ObjectId": "78b78df4ba404e7595086a1f6df59b07",
     "m_Title": "Sine Wave Based on Movement",
     "m_Position": {
-        "x": -1455.0001220703125,
-        "y": 990.0000610351563
+        "x": -1455.0,
+        "y": 990.0
     }
 }
 
@@ -6019,7 +6019,7 @@
     "m_AlphaMode": 0,
     "m_RenderFace": 0,
     "m_AlphaClip": true,
-    "m_CastShadows": true,
+    "m_CastShadows": false,
     "m_ReceiveShadows": true,
     "m_DisableTint": false,
     "m_AdditionalMotionVectorMode": 0,
@@ -7801,8 +7801,8 @@
     "m_ObjectId": "b490cb25e8544c8aba83f93f3e2d255d",
     "m_Title": "Rim",
     "m_Position": {
-        "x": 1636.0001220703125,
-        "y": -833.0001220703125
+        "x": 1636.0,
+        "y": -833.0
     }
 }
 
@@ -8187,7 +8187,7 @@
     "m_Title": "FrontFaceTexture",
     "m_Position": {
         "x": 1010.0,
-        "y": -295.0001220703125
+        "y": -295.0
     }
 }
 
@@ -8449,7 +8449,7 @@
     "m_ObjectId": "cb5da22f80934b68b427782faf047bd7",
     "m_Title": "Foam/Edge Backface",
     "m_Position": {
-        "x": 1786.0001220703125,
+        "x": 1786.0,
         "y": 370.0
     }
 }
@@ -9902,7 +9902,7 @@
     "m_Title": "Movement",
     "m_Position": {
         "x": -1997.0,
-        "y": 1009.0001831054688
+        "y": 1009.0
     }
 }
 
