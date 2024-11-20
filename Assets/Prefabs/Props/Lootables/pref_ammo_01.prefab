@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 991341a3aae889e47952985d8de42ebf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.278503
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 991341a3aae889e47952985d8de42ebf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0059743403
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 991341a3aae889e47952985d8de42ebf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.75254
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 991341a3aae889e47952985d8de42ebf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 991341a3aae889e47952985d8de42ebf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 991341a3aae889e47952985d8de42ebf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 991341a3aae889e47952985d8de42ebf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 10632ddb54f7a9d4b931aa410b511ab2, type: 2}
     - target: {fileID: 919132149155446097, guid: 991341a3aae889e47952985d8de42ebf, type: 3}
       propertyPath: m_Name
-      value: R_lower_arm_gun_02_B1_Mag_01
+      value: pref_ammo_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

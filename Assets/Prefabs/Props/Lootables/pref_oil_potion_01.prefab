@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e8c9f288184074544b8a4c2bf83d7d67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.486
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8c9f288184074544b8a4c2bf83d7d67, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8c9f288184074544b8a4c2bf83d7d67, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33.153
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8c9f288184074544b8a4c2bf83d7d67, type: 3}
       propertyPath: m_LocalRotation.w
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0ce6d0d9941f69c4cb25fba69b65850d, type: 2}
     - target: {fileID: 919132149155446097, guid: e8c9f288184074544b8a4c2bf83d7d67, type: 3}
       propertyPath: m_Name
-      value: sm_oil_potion_01
+      value: pref_oil_potion_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
