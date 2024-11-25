@@ -3866,6 +3866,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
     - target: {fileID: 4421265374560320006, guid: abe1d8200f28af748886063e6650b759, type: 3}
+      propertyPath: customSpawnLocation.x
+      value: 153.685
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421265374560320006, guid: abe1d8200f28af748886063e6650b759, type: 3}
+      propertyPath: customSpawnLocation.y
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421265374560320006, guid: abe1d8200f28af748886063e6650b759, type: 3}
+      propertyPath: customSpawnLocation.z
+      value: 93
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421265374560320006, guid: abe1d8200f28af748886063e6650b759, type: 3}
       propertyPath: characterVirtualCamera
       value: 
       objectReference: {fileID: 0}
