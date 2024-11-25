@@ -44,7 +44,7 @@ MonoBehaviour:
   paintMask:
     serializedVersion: 2
     m_Bits: 1024
-  brushSize: 14.2
+  brushSize: 1.1
   brushFalloffSize: 0.123
   Flow: 4.73
   density: 2.88
