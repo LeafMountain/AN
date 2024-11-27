@@ -64,8 +64,8 @@ Material:
     - _LightingControl: {r: 1, g: 1, b: -1, a: 0}
     - _ShadowColor: {r: 1, g: 1, b: 1, a: 0.27450982}
     - _SunColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Velocity1: {r: 9.963917, g: 0.0000011877913, b: 0, a: 0.06972201}
-    - _Velocity2: {r: 14.91956, g: 0.00000177855, b: 0, a: 2}
+    - _Velocity1: {r: 9.977171, g: 0.0000011893713, b: 0, a: 0.06982176}
+    - _Velocity2: {r: 14.968487, g: 0.0000017843824, b: 0, a: 2}
     - pointLightColor: {r: 1, g: 1, b: 1, a: 1}
     - pointLightPos: {r: -553.03937, g: 653.54767, b: -1569.6478, a: 0}
   m_BuildTextureStacks: []

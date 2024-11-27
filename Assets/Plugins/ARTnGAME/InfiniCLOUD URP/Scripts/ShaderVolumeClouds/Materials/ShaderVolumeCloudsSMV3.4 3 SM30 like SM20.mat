@@ -122,8 +122,8 @@ Material:
     - _ShadowColor: {r: 1, g: 1, b: 1, a: 0.27450982}
     - _SunColor: {r: 1, g: 1, b: 1, a: 0.49843135}
     - _SunDir: {r: 0, g: 1, b: 0, a: 0}
-    - _Velocity1: {r: 9.608359, g: 0.04661478, b: 0, a: 0.0680904}
-    - _Velocity2: {r: 13.634071, g: 0.28829542, b: 0, a: 2}
+    - _Velocity1: {r: 9.976424, g: 0.0000011976458, b: 0, a: 0.06981599}
+    - _Velocity2: {r: 14.967967, g: 0.0000026826492, b: 0, a: 2}
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
     - pointLightColor: {r: 1, g: 1, b: 1, a: 1}
     - pointLightPos: {r: -1229.655, g: 695.48706, b: -1701.0919, a: 0}
