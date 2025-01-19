@@ -4,5 +4,6 @@
 public enum ObjectRole
 {
     Unknown = 0,
+    GameObjectAttach = -597051702,
 
 }
