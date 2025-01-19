@@ -8,5 +8,6 @@
         DamageRecieved,
         Storeable,
         LookTarget,
+        ActiveItemUpdated,
     }
 }

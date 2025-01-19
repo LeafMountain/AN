@@ -1,10 +1,9 @@
 using System;
-using Unity.Netcode;
 
 namespace InventorySystem
 {
-    [Serializable, GenerateSerializationForType(typeof(InventoryHandle))]
-    public struct InventoryHandle : IEquatable<InventoryHandle>, INetworkSerializable
+    [Serializable, Obsolete]
+    public struct InventoryHandle : IEquatable<InventoryHandle>
     {
         public int id;
         public static InventoryHandle Empty { get; set; }
@@ -12,11 +11,6 @@ namespace InventorySystem
         public override string ToString()
         {
             return id.ToString();
-        }
-
-        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-        {
-            serializer.SerializeValue(ref id);
         }
 
         public bool Equals(InventoryHandle other) => id == other.id;

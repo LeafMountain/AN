@@ -1,24 +1,24 @@
 using System.Collections.Generic;
 using Core;
 using DG.Tweening;
-using Unity.Netcode;
+using Mirror;
 using UnityEngine;
 
 namespace InventorySystem {
     public class WorldInventory : NetworkBehaviour, IItemContainer {
         public InventoryHandle InventoryHandle {
-            get => inventoryHandle.Value;
-            set => inventoryHandle.Value = value;
+            get => inventoryHandle;
+            set => inventoryHandle = value;
         }
 
-        public NetworkVariable<InventoryHandle> inventoryHandle = new();
+        [SyncVar] public InventoryHandle inventoryHandle = new();
 
         readonly List<GameObject> spawnedVisuals = new();
 
         public List<Transform> slots = new();
 
-        protected override void OnNetworkPostSpawn() {
-            if (IsServer && InventoryHandle.IsValid() == false) {
+        public override void OnStartClient() {
+            if (NetworkServer.active && InventoryHandle.IsValid() == false) {
                 InventoryHandle = GameManager.ItemManager.CreateInventory();
             }
             
@@ -28,10 +28,10 @@ namespace InventorySystem {
             }
         }
 
-        public override void OnNetworkDespawn() {
+        public override void OnStopClient() {
             GameManager.ItemManager.RemoveCallback(InventoryHandle, OnInventoryCallback);
 
-            if (IsServer) {
+            if (NetworkServer.active) {
                 GameManager.ItemManager.ReturnInventory(InventoryHandle);
                 InventoryHandle = default;
             }
@@ -55,13 +55,13 @@ namespace InventorySystem {
         }
 
         void SpawnVisuals() {
-            List<ItemHandle> items = GameManager.ItemManager.GetItems(InventoryHandle);
+            List<ActorHandle> items = GameManager.ItemManager.GetItems(InventoryHandle);
             DestroyVisuals();
             Debug.Log(items[0].id);
 
             for (int i = 0; i < items.Count; i++) {
-                ItemHandle itemHandle = items[i];
-                Item? item = itemHandle.GetItem();
+                ActorHandle actorHandle = items[i];
+                Item? item = actorHandle.GetItem();
                 Transform slot = slots.Count > i ? slots[i] : transform;
                 if (item.HasValue) {
                     ItemData itemData = GameManager.Database.GetItem(item.Value.databaseId);

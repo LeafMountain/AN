@@ -1,98 +1,136 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unity.Netcode;
+using Mirror;
 using UnityEngine;
 
 namespace InventorySystem {
     public class ItemManager : NetworkBehaviour {
         const int InventorySlots = 16;
 
-        NetworkList<Item> items;
-        NetworkList<ItemHandle> inventoryItems;
-        NetworkList<InventoryHandle> inventories;
+        SyncList<Item> items;
+        SyncList<ActorHandle> inventoryItems;
+        SyncList<InventoryHandle> inventories;
 
-        readonly Dictionary<ItemHandle, InventoryHandle> itemOwners = new();
+        readonly Dictionary<ActorHandle, InventoryHandle> itemOwners = new();
         readonly Dictionary<InventoryHandle, IItemContainer> itemContainers = new();
         readonly Dictionary<InventoryHandle, EventHandler<InventoryEventArgs>> inventoryCallbacks = new();
 
         void Awake() {
-            items = new NetworkList<Item>();
-            inventoryItems = new NetworkList<ItemHandle>();
-            inventories = new NetworkList<InventoryHandle>();
+            items = new SyncList<Item>();
+            inventoryItems = new SyncList<ActorHandle>();
+            inventories = new SyncList<InventoryHandle>();
 
-            items.Initialize(this);
-            inventoryItems.Initialize(this);
-            inventories.Initialize(this);
+            // items.Initialize(this);
+            // inventoryItems.Initialize(this);
+            // inventories.Initialize(this);
         }
 
-        public override void OnNetworkSpawn() {
-            inventories.OnListChanged += InventoriesOnOnListChanged;
-            inventoryItems.OnListChanged += InventoryItemsOnOnListChanged;
+        public override void OnStartClient() {
+            inventories.OnAdd += OnAdd;
+            inventories.OnInsert += OnAdd;
+
+            // inventoryItems.OnListChanged += InventoryItemsOnOnListChanged;
 
             foreach (InventoryHandle inventoryHandle in inventories) {
                 InvokeInventoryCreatedEvent(inventoryHandle);
             }
         }
 
-        void InventoryItemsOnOnListChanged(NetworkListEvent<ItemHandle> changeevent) {
-            if (changeevent.Type is NetworkListEvent<ItemHandle>.EventType.Add or NetworkListEvent<ItemHandle>.EventType.Insert or NetworkListEvent<ItemHandle>.EventType.Value) {
-                int inventoryId = Mathf.FloorToInt(changeevent.Index / InventorySlots);
-                
-                // If the inventory doesnt exist anymore, assume no one is listening?
-                if (inventories.Count <= inventoryId) {
-                    itemOwners.Remove(changeevent.PreviousValue);
-                    return;
-                }
-                
-                InventoryHandle inventoryHandle = inventories[inventoryId];
-
-                // Withdrew
-                if (changeevent.PreviousValue.IsValid()) {
-                    itemOwners.Remove(changeevent.PreviousValue);
-                    if (inventoryCallbacks.ContainsKey(inventoryHandle)) {
-                        inventoryCallbacks[inventoryHandle].Invoke(this, new InventoryEventArgs() {
-                            itemHandle = changeevent.PreviousValue,
-                            inventoryHandle = inventoryHandle,
-                            operation = InventoryEventArgs.Operation.Withdrawn,
-                        });
-                    }
-                }
-
-                // Deposited
-                if (changeevent.Value.IsValid()) {
-                    itemOwners[changeevent.Value] = inventories[inventoryId];
-                    if (inventoryCallbacks.ContainsKey(inventoryHandle)) {
-                        inventoryCallbacks[inventoryHandle].Invoke(changeevent.PreviousValue, new InventoryEventArgs() {
-                            itemHandle = changeevent.Value,
-                            inventoryHandle = inventoryHandle,
-                            operation = InventoryEventArgs.Operation.Deposited,
-                        });
-                    }
-                }
-            }
-            else if (changeevent.Type is NetworkListEvent<ItemHandle>.EventType.Remove or NetworkListEvent<ItemHandle>.EventType.RemoveAt) {
-                int inventoryId = Mathf.FloorToInt(changeevent.Index / InventorySlots);
-                InventoryHandle inventoryHandle = inventories[inventoryId];
-                itemOwners.Remove(changeevent.Value);
-
-                if (inventoryCallbacks.ContainsKey(inventoryHandle)) {
-                    inventoryCallbacks[inventoryHandle].Invoke(changeevent.PreviousValue, new InventoryEventArgs() {
-                        itemHandle = changeevent.PreviousValue,
-                        inventoryHandle = inventoryHandle,
-                        operation = InventoryEventArgs.Operation.Deposited,
-                    });
-                }
-            }
+        void OnAdd(int index) {
+            // int inventoryId = Mathf.FloorToInt(index.Index / InventorySlots);
+            //
+            // // If the inventory doesnt exist anymore, assume no one is listening?
+            // if (inventories.Count <= inventoryId) {
+            //     itemOwners.Remove(changeevent.PreviousValue);
+            //     return;
+            // }
+            //
+            // InventoryHandle inventoryHandle = inventories[inventoryId];
+            //
+            // // Withdrew
+            // if (changeevent.PreviousValue.IsValid()) {
+            //     itemOwners.Remove(changeevent.PreviousValue);
+            //     if (inventoryCallbacks.ContainsKey(inventoryHandle)) {
+            //         inventoryCallbacks[inventoryHandle].Invoke(this, new InventoryEventArgs() {
+            //             ActorHandle = changeevent.PreviousValue,
+            //             inventoryHandle = inventoryHandle,
+            //             operation = InventoryEventArgs.Operation.Withdrawn,
+            //         });
+            //     }
+            // }
+            //
+            // // Deposited
+            // if (changeevent.Value.IsValid()) {
+            //     itemOwners[changeevent.Value] = inventories[inventoryId];
+            //     if (inventoryCallbacks.ContainsKey(inventoryHandle)) {
+            //         inventoryCallbacks[inventoryHandle].Invoke(changeevent.PreviousValue, new InventoryEventArgs() {
+            //             ActorHandle = changeevent.Value,
+            //             inventoryHandle = inventoryHandle,
+            //             operation = InventoryEventArgs.Operation.Deposited,
+            //         });
+            //     }
+            // }
         }
 
-        void InventoriesOnOnListChanged(NetworkListEvent<InventoryHandle> changeevent) {
-            InvokeInventoryCreatedEvent(changeevent.Value);
-        }
+        // void InventoryItemsOnOnListChanged(NetworkListEvent<ActorHandle> changeevent) {
+        //     if (changeevent.Type is NetworkListEvent<ActorHandle>.EventType.Add or NetworkListEvent<ActorHandle>.EventType.Insert or NetworkListEvent<ActorHandle>.EventType.Value) {
+        //         int inventoryId = Mathf.FloorToInt(changeevent.Index / InventorySlots);
+        //
+        //         // If the inventory doesnt exist anymore, assume no one is listening?
+        //         if (inventories.Count <= inventoryId) {
+        //             itemOwners.Remove(changeevent.PreviousValue);
+        //             return;
+        //         }
+        //
+        //         InventoryHandle inventoryHandle = inventories[inventoryId];
+        //
+        //         // Withdrew
+        //         if (changeevent.PreviousValue.IsValid()) {
+        //             itemOwners.Remove(changeevent.PreviousValue);
+        //             if (inventoryCallbacks.ContainsKey(inventoryHandle)) {
+        //                 inventoryCallbacks[inventoryHandle].Invoke(this, new InventoryEventArgs() {
+        //                     ActorHandle = changeevent.PreviousValue,
+        //                     inventoryHandle = inventoryHandle,
+        //                     operation = InventoryEventArgs.Operation.Withdrawn,
+        //                 });
+        //             }
+        //         }
+        //
+        //         // Deposited
+        //         if (changeevent.Value.IsValid()) {
+        //             itemOwners[changeevent.Value] = inventories[inventoryId];
+        //             if (inventoryCallbacks.ContainsKey(inventoryHandle)) {
+        //                 inventoryCallbacks[inventoryHandle].Invoke(changeevent.PreviousValue, new InventoryEventArgs() {
+        //                     ActorHandle = changeevent.Value,
+        //                     inventoryHandle = inventoryHandle,
+        //                     operation = InventoryEventArgs.Operation.Deposited,
+        //                 });
+        //             }
+        //         }
+        //     }
+        //     else if (changeevent.Type is NetworkListEvent<ActorHandle>.EventType.Remove or NetworkListEvent<ActorHandle>.EventType.RemoveAt) {
+        //         int inventoryId = Mathf.FloorToInt(changeevent.Index / InventorySlots);
+        //         InventoryHandle inventoryHandle = inventories[inventoryId];
+        //         itemOwners.Remove(changeevent.Value);
+        //
+        //         if (inventoryCallbacks.ContainsKey(inventoryHandle)) {
+        //             inventoryCallbacks[inventoryHandle].Invoke(changeevent.PreviousValue, new InventoryEventArgs() {
+        //                 ActorHandle = changeevent.PreviousValue,
+        //                 inventoryHandle = inventoryHandle,
+        //                 operation = InventoryEventArgs.Operation.Deposited,
+        //             });
+        //         }
+        //     }
+        // }
+        //
+        // void InventoriesOnOnListChanged(NetworkListEvent<InventoryHandle> changeevent) {
+        //     InvokeInventoryCreatedEvent(changeevent.Value);
+        // }
 
         void InvokeInventoryCreatedEvent(InventoryHandle inventoryHandle) {
             if (inventoryCallbacks.ContainsKey(inventoryHandle)) {
                 inventoryCallbacks[inventoryHandle].Invoke(this, new InventoryEventArgs() {
-                    itemHandle = default,
+                    ActorHandle = default,
                     inventoryHandle = inventoryHandle,
                     operation = InventoryEventArgs.Operation.InventoryCreated,
                 });
@@ -122,7 +160,7 @@ namespace InventorySystem {
         void AddInventory(InventoryHandle inventoryHandle) {
             if (ValidateInventoryHandle(inventoryHandle) == false) return;
 
-            if (HasAuthority == false) {
+            if (authority == false) {
                 AddInventoryRpc(inventoryHandle);
                 return;
             }
@@ -130,7 +168,7 @@ namespace InventorySystem {
             inventories.Add(inventoryHandle);
         }
 
-        [Rpc(SendTo.Server)]
+        [Command(requiresAuthority = false)]
         void AddInventoryRpc(InventoryHandle inventoryHandle) => AddInventory(inventoryHandle);
 
         public void ReturnInventory(InventoryHandle handle) {
@@ -148,14 +186,14 @@ namespace InventorySystem {
             return inventories[id];
         }
 
-        public InventoryHandle GetInventoryHandle(ItemHandle itemHandle) {
-            return itemOwners.GetValueOrDefault(itemHandle);
+        public InventoryHandle GetInventoryHandle(ActorHandle actorHandle) {
+            return itemOwners.GetValueOrDefault(actorHandle);
         }
 
-        public List<ItemHandle> GetItems(InventoryHandle inventoryHandle) {
+        public List<ActorHandle> GetItems(InventoryHandle inventoryHandle) {
             if (ValidateInventoryHandle(inventoryHandle) == false) return null;
 
-            List<ItemHandle> itemHandles = new(InventorySlots);
+            List<ActorHandle> itemHandles = new(InventorySlots);
             for (int i = (inventoryHandle.id - 1) * InventorySlots; i < (inventoryHandle.id - 1) * InventorySlots + InventorySlots; i++) {
                 itemHandles.Add(inventoryItems[i]);
             }
@@ -168,11 +206,11 @@ namespace InventorySystem {
             return itemContainers[inventoryHandle];
         }
 
-        [Rpc(SendTo.Server)]
+        [Command(requiresAuthority = false)]
         void AddItemRpc(Item item) => AddItem(item);
 
         void AddItem(Item item) {
-            if (HasAuthority == false) {
+            if (authority == false) {
                 AddItemRpc(item);
                 return;
             }
@@ -180,13 +218,13 @@ namespace InventorySystem {
             items.Add(item);
         }
 
-        public ItemHandle CreateItem(string slug) {
+        public ActorHandle CreateItem(string slug) {
             Item item = Item.Create(slug);
             AddItemRpc(item);
             return item.Handle;
         }
 
-        public Item? GetItem(ItemHandle id) {
+        public Item? GetItem(ActorHandle id) {
             foreach (Item item in items) {
                 if (item.Handle == id) {
                     return item;
@@ -196,30 +234,30 @@ namespace InventorySystem {
             return default;
         }
 
-        [Rpc(SendTo.Server)]
-        void PlaceItemInWorldRpc(ItemHandle itemHandle, Vector3 spawnPosition, Quaternion spawnRotation) => PlaceItemInWorld(itemHandle, spawnPosition, spawnRotation);
+        [Command(requiresAuthority = false)]
+        void PlaceItemInWorldRpc(ActorHandle actorHandle, Vector3 spawnPosition, Quaternion spawnRotation) => PlaceItemInWorld(actorHandle, spawnPosition, spawnRotation);
 
-        public void PlaceItemInWorld(ItemHandle itemHandle, Vector3 spawnPosition, Quaternion spawnRotation) {
-            if (IsServer == false) {
-                PlaceItemInWorldRpc(itemHandle, spawnPosition, spawnRotation);
+        public void PlaceItemInWorld(ActorHandle actorHandle, Vector3 spawnPosition, Quaternion spawnRotation) {
+            if (authority == false) {
+                PlaceItemInWorldRpc(actorHandle, spawnPosition, spawnRotation);
                 return;
             }
 
-            Item? item = GetItem(itemHandle);
+            Item? item = GetItem(actorHandle);
             if (item.HasValue == false) {
                 Debug.LogError("Trying to spawn null item");
                 return;
             }
 
-            if (IsInInventory(itemHandle)) {
-                Withdraw(itemHandle);
+            if (IsInInventory(actorHandle)) {
+                Withdraw(actorHandle);
             }
 
             GameManager.Spawner.SpawnItem(item.Value, spawnPosition, spawnRotation);
         }
 
-        public void PickUpItem(ItemHandle itemAccessId) {
-            Item? item = GetItem(itemAccessId);
+        public void PickUpItem(ActorHandle actorAccessId) {
+            Item? item = GetItem(actorAccessId);
             if (item.HasValue == false) {
                 Debug.LogError("Trying to despawn null item");
                 return;
@@ -228,8 +266,8 @@ namespace InventorySystem {
             // GameManager.Spawner.Despawn(item.Value);
         }
 
-        public bool IsInInventory(ItemHandle itemHandle) {
-            return itemOwners.ContainsKey(itemHandle);
+        public bool IsInInventory(ActorHandle actorHandle) {
+            return itemOwners.ContainsKey(actorHandle);
         }
 
         bool ValidateInventoryHandle(InventoryHandle inventoryHandle) {
@@ -241,27 +279,27 @@ namespace InventorySystem {
             return true;
         }
 
-        [Rpc(SendTo.Server)]
-        void DepositRpc(InventoryHandle inventoryHandle, ItemHandle itemHandle) => Deposit(inventoryHandle, itemHandle);
+        [Command(requiresAuthority = false)]
+        void DepositRpc(InventoryHandle inventoryHandle, ActorHandle actorHandle) => Deposit(inventoryHandle, actorHandle);
 
-        public void Deposit(InventoryHandle inventoryHandle, ItemHandle itemHandle) {
+        public void Deposit(InventoryHandle inventoryHandle, ActorHandle actorHandle) {
             if (ValidateInventoryHandle(inventoryHandle) == false) {
                 return;
             }
 
-            if (HasAuthority == false) {
-                DepositRpc(inventoryHandle, itemHandle);
+            if (authority == false) {
+                DepositRpc(inventoryHandle, actorHandle);
                 return;
             }
 
-            if (IsInInventory(itemHandle)) {
-                Withdraw(itemHandle);
+            if (IsInInventory(actorHandle)) {
+                Withdraw(actorHandle);
             }
 
             bool successful = false;
             for (int i = (inventoryHandle.id - 1) * InventorySlots; i < (inventoryHandle.id - 1) * InventorySlots + InventorySlots; i++) {
                 if (inventoryItems[i].IsValid()) continue;
-                inventoryItems[i] = itemHandle;
+                inventoryItems[i] = actorHandle;
                 successful = true;
                 break;
             }
@@ -271,19 +309,19 @@ namespace InventorySystem {
             }
         }
 
-        [Rpc(SendTo.Server)]
-        void WithdrawRpc(ItemHandle itemHandle) => Withdraw(itemHandle);
+        [Command(requiresAuthority = false)]
+        void WithdrawRpc(ActorHandle actorHandle) => Withdraw(actorHandle);
 
-        public void Withdraw(ItemHandle itemHandle) {
-            if (HasAuthority == false) {
-                WithdrawRpc(itemHandle);
+        public void Withdraw(ActorHandle actorHandle) {
+            if (authority == false) {
+                WithdrawRpc(actorHandle);
                 return;
             }
 
-            InventoryHandle inventoryHandle = GetInventoryHandle(itemHandle);
+            InventoryHandle inventoryHandle = GetInventoryHandle(actorHandle);
 
             for (int i = (inventoryHandle.id - 1) * InventorySlots; i < (inventoryHandle.id - 1) * InventorySlots + InventorySlots; i++) {
-                if (inventoryItems[i] != itemHandle) continue;
+                if (inventoryItems[i] != actorHandle) continue;
                 inventoryItems[i] = default;
                 break;
             }

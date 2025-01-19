@@ -1,8 +1,8 @@
 using System;
 using AIBehaviors;
 using Core;
+using Mirror;
 using Sirenix.Serialization;
-using Unity.Netcode;
 
 public class AI : ActorComponent
 {
@@ -14,7 +14,7 @@ public class AI : ActorComponent
     {
         base.OnParentInitialized();
         
-        if (NetworkManager.Singleton.IsServer == false)
+        if (NetworkServer.active == false)
         {
             enabled = false; 
         }

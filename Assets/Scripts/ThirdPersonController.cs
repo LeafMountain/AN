@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using InventorySystem;
-using Unity.Netcode;
+using Mirror;
 using UnityEngine;
 using UnityEngine.InputSystem;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -93,7 +93,7 @@ namespace StarterAssets {
         protected override void Update() {
             base.Update();
 
-            if (IsOwner) {
+            if (authority) {
                 _hasAnimator = TryGetComponent(out _animator);
 
                 // InputFix();
@@ -358,13 +358,13 @@ namespace StarterAssets {
             aimMode = false;
         }
 
-        [ServerRpc]
+        [Command]
         private void ServerFire_ServerRpc() => Fire();
 
         private void Fire() {
             if (Mouse.current.leftButton.isPressed == false) return;
 
-            if (IsServer == false) {
+            if (NetworkServer.active == false) {
                 ServerFire_ServerRpc();
                 return;
             }
@@ -420,8 +420,8 @@ namespace StarterAssets {
         }
 
         void SpawnItem() {
-            ItemHandle item = GameManager.ItemManager.CreateItem("test_item");
-            GameManager.ItemManager.PlaceItemInWorld(item, transform.position + transform.forward * 2, transform.rotation);
+            ActorHandle actor = GameManager.ItemManager.CreateItem("test_item");
+            GameManager.ItemManager.PlaceItemInWorld(actor, transform.position + transform.forward * 2, transform.rotation);
         }
 
         private void OnDrawGizmosSelected() {

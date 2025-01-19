@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
+using Attributes;
 using Core;
 using DefaultNamespace;
 using EventManager;
 using InventorySystem;
-using Unity.Netcode;
+using Mirror;
 using UnityEngine;
 
 public class GameManager : NetworkBehaviour {
@@ -40,6 +42,11 @@ public class GameManager : NetworkBehaviour {
 
     public AudioSource audioInstancePrefab;
     public bool autoLockCursor;
+    public EquipmentSystem equipment;
+    public static EquipmentSystem Equipment => Instance.equipment;
+    
+    public AttributeSystem attributes;
+    public static AttributeSystem Attributes => Instance.attributes;
 
 
     void Awake() {
@@ -74,5 +81,39 @@ public class GameManager : NetworkBehaviour {
     public static void LockCursor(bool value) {
         Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;
         Cursor.visible = !value;
+    }
+
+    [ShowInInspector] readonly SyncDictionary<ActorHandle, string> data = new();
+    [ShowInInspector] readonly SyncDictionary<ActorHandle, Actor> spawned = new();
+
+    public ActorHandle CreateActor(string item) {
+        ActorHandle handle = ActorHandle.Create();
+        data[handle] = item;
+        return handle;
+    }
+
+    public void DeleteActor(ActorHandle handle) {
+        data.Remove(handle);
+        Despawn(handle);
+    }
+
+    public static string GetData(ActorHandle actorHandle) {
+        return Instance.data.GetValueOrDefault(actorHandle);
+    }
+
+    public static void Spawn(ActorHandle actorHandle, Action onCompleteCallback = default) {
+        ItemData itemData = Database.GetItem(actorHandle.Data);
+        itemData.graphics.InstantiateAsync().Completed += (x) => {
+            Instance.spawned[actorHandle] = x.Result.GetComponent<Actor>();
+            onCompleteCallback?.Invoke();
+        };
+    }
+
+    public static void Despawn(ActorHandle actorHandle) {
+        Spawner.Despawn(actorHandle.Value); 
+    }
+
+    public static Actor GetSpawned(ActorHandle actorHandle) {
+        return Instance.spawned.GetValueOrDefault(actorHandle);
     }
 }

@@ -61,6 +61,6 @@ public class UIActor : MonoBehaviour
         var currentHealth = damageReceiver.currentHealth;
         gameObject.SetActive(true);
         healthBar.gameObject.SetActive(true);
-        healthBar.value = (float)currentHealth.Value / maxHealth;
+        healthBar.value = (float)currentHealth/ maxHealth;
     }
 }

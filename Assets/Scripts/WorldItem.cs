@@ -1,34 +1,33 @@
-using System;
 using Core;
 using InventorySystem;
-using Unity.Netcode;
+using Mirror;
 using UnityEngine;
 
 public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer {
     public InventoryHandle InventoryHandle {
-        get => inventoryHandle.Value;
-        set => inventoryHandle.Value = value;
+        get => inventoryHandle;
+        set => inventoryHandle = value;
     }
 
-    readonly NetworkVariable<InventoryHandle> inventoryHandle = new();
+    [SyncVar] InventoryHandle inventoryHandle;
     GameObject spawnedVisual;
 
-    protected override void OnNetworkPostSpawn() {
-        if (IsServer && InventoryHandle.IsValid() == false) {
+    public override void OnStartClient() {
+        if (NetworkServer.active && InventoryHandle.IsValid() == false) {
             InventoryHandle = GameManager.ItemManager.CreateInventory();
         }
-        
+
         GameManager.ItemManager.AddCallback(InventoryHandle, OnInventoryCallback);
-        
+
         if (GameManager.ItemManager.IsInventoryInitialized(InventoryHandle)) {
             SpawnVisuals();
         }
     }
 
-    public override void OnNetworkDespawn() {
+    public override void OnStopClient() {
         GameManager.ItemManager.RemoveCallback(InventoryHandle, OnInventoryCallback);
-        
-        if (IsServer) {
+
+        if (NetworkServer.active) {
             GameManager.ItemManager.ReturnInventory(InventoryHandle);
             InventoryHandle = default;
         }
@@ -59,13 +58,13 @@ public class WorldItem : NetworkBehaviour, IInteractable, IItemContainer {
         DestroyVisuals();
     }
 
-    public ItemHandle GetItemHandle() => GameManager.ItemManager.GetItems(InventoryHandle)[0];
+    public ActorHandle GetItemHandle() => GameManager.ItemManager.GetItems(InventoryHandle)[0];
 
     void SpawnVisuals() {
         DestroyVisuals();
-        ItemHandle itemHandle = GetItemHandle();
-        if (itemHandle.IsValid()) {
-            Item? item = GameManager.ItemManager.GetItem(itemHandle);
+        ActorHandle actorHandle = GetItemHandle();
+        if (actorHandle.IsValid()) {
+            Item? item = GameManager.ItemManager.GetItem(actorHandle);
             ItemData itemData = GameManager.Database.GetItem(item.Value.databaseId);
             itemData.graphics.InstantiateAsync(transform.position, transform.rotation, transform).Completed +=
                 handle => spawnedVisual = handle.Result;

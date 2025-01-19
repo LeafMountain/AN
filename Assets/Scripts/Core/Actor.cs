@@ -2,15 +2,17 @@ using System;
 using System.Linq;
 using DG.Tweening;
 using EventManager;
+using InventorySystem;
+using Mirror;
 using Sirenix.OdinInspector;
-using Unity.Netcode;
 using UnityEngine;
 
 namespace Core
 {
-    [DisallowMultipleComponent, RequireComponent(typeof(NetworkObject))]
-    public class Actor : NetworkBehaviour 
-    {
+    [DisallowMultipleComponent, RequireComponent(typeof(NetworkIdentity))]
+    public class Actor : NetworkBehaviour {
+        public ActorHandle handle = ActorHandle.Create();
+        
         [Serializable]
         public struct MapPoint
         {

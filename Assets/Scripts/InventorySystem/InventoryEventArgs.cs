@@ -9,7 +9,7 @@ namespace InventorySystem {
             InventoryCreated,
         }
         
-        public ItemHandle itemHandle;
+        public ActorHandle ActorHandle;
         public Operation operation;
         public InventoryHandle inventoryHandle;
     }

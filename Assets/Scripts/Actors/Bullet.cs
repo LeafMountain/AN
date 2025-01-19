@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
+using Core;
 using EffectSystem;
 using EventManager;
-using Unity.Netcode;
+using Mirror;
 using UnityEngine;
 
 public class Bullet : NetworkBehaviour
@@ -40,11 +41,11 @@ public class Bullet : NetworkBehaviour
 
     protected virtual void FixedUpdate()
     {
-        if (IsServer == false) return;
+        if (NetworkServer.active == false) return;
 
         if (isDestroying) return;
 
-        Vector3 step = Vector3.forward * speed * Time.fixedDeltaTime;
+        Vector3 step = Vector3.forward * (speed * Time.fixedDeltaTime);
         float stepDistance = step.magnitude;
         transform.Translate(step, Space.Self);
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
@@ -71,6 +72,10 @@ public class Bullet : NetworkBehaviour
                 GameManager.Audio.PlayAudioByMaterial(hit.collider.sharedMaterial, hit.point);
 
                 OnCollision(hit.point, hit.normal, damageReciever);
+
+                if (hit.transform.TryGetComponent(out Actor hitActor)) {
+                    // GameManager.Equipment
+                }
             }
         }
     }
@@ -113,6 +118,7 @@ public class Bullet : NetworkBehaviour
         isDestroying = true;
         if (lifetimeTimer != null) StopCoroutine(lifetimeTimer);
         // Destroy(gameObject, 2f);
-        GetComponent<NetworkObject>().Despawn();
+        // GetComponent<NetworkObject>().Despawn();
+        Destroy(gameObject);
     }
 }

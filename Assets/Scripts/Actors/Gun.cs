@@ -4,8 +4,8 @@ using Core;
 using DG.Tweening;
 using EffectSystem;
 using EventManager;
+using Mirror;
 using Sirenix.OdinInspector;
-using Unity.Netcode;
 using UnityEngine;
 
 public class Gun : Actor
@@ -45,7 +45,7 @@ public class Gun : Actor
         Bullet bullet = Instantiate(projectilePrefab, muzzlePoint.transform.position, muzzlePoint.transform.rotation);
         bullet.Init(this, bulletSpeed, aimPosition);
         Events.AddListener(Flag.BulletImpact, bullet, OnBulletHit);
-        bullet.GetComponent<NetworkObject>().Spawn();
+        NetworkServer.Spawn(bullet.gameObject);
         return bullet;
     }
 

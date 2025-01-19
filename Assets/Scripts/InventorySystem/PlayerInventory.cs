@@ -1,23 +1,22 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Core;
-using Unity.Netcode;
+using Mirror;
 using UnityEngine;
 
 namespace InventorySystem {
     public class PlayerInventory : NetworkBehaviour, IItemContainer {
         public InventoryHandle InventoryHandle { 
-            get => inventoryHandle.Value;
-            set => inventoryHandle.Value = value;
+            get => inventoryHandle;
+            set => inventoryHandle = value;
         }
 
-        readonly NetworkVariable<InventoryHandle> inventoryHandle = new();
+        [SyncVar] InventoryHandle inventoryHandle = new();
 
         public List<Item> debugItems = new();
 
-        protected override void OnNetworkPostSpawn() {
-            if (IsServer) {
+        public override void OnStartClient() {
+            if (NetworkServer.active) {
                 InventoryHandle = GameManager.ItemManager.CreateInventory();
             }
             
@@ -26,7 +25,7 @@ namespace InventorySystem {
 
         void OnInventoryCallback(object sender, InventoryEventArgs args) {
             if (args.operation == InventoryEventArgs.Operation.Deposited) {
-                Item? item = GameManager.ItemManager.GetItem(args.itemHandle);
+                Item? item = GameManager.ItemManager.GetItem(args.ActorHandle);
                 if (item.HasValue) {
                     ItemData itemData = GameManager.Database.GetItem(item.Value.databaseId);
                     Debug.Log($"Picked up {itemData.slug}");
@@ -34,7 +33,7 @@ namespace InventorySystem {
             }
             else if (args.operation == InventoryEventArgs.Operation.Withdrawn) {
                 {
-                    Item? item = GameManager.ItemManager.GetItem(args.itemHandle);
+                    Item? item = GameManager.ItemManager.GetItem(args.ActorHandle);
                     if (item.HasValue) {
                         ItemData itemData = GameManager.Database.GetItem(item.Value.databaseId);
                         Debug.Log($"Dropped up {itemData.slug}");

@@ -26,8 +26,8 @@ MonoBehaviour:
     slug: test_item
     name: Test Item
     graphics:
-      m_AssetGUID: 2ab42165b5d322747825f847591e8908
+      m_AssetGUID: 9cbf96b27436d5040afa93a3deacd239
       m_SubObjectName: 
       m_SubObjectGUID: 
       m_SubObjectType: 
-      m_EditorAssetChanged: 0
+      m_EditorAssetChanged: 1

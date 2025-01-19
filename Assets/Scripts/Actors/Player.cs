@@ -5,7 +5,6 @@ using Cinemachine;
 using DG.Tweening;
 using EventManager;
 using StarterAssets;
-using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,20 +30,18 @@ public class Player : Character
         interactor = GetComponent<Interactor>();
     }
 
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
-
-        if (IsOwner)
+    public override void OnStartAuthority() {
+        // if (IsOwner)
         {
             transform.position = GameManager.Instance.customSpawnLocation;
             transform.rotation = GameManager.Instance.customSpawnRotation;
             
             // NetworkObject player = ANNetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
-            NetworkObject player = this.NetworkObject;
-            GameManager.Instance.localPlayer = player.GetComponent<Player>();
-            ThirdPersonController controller = player.GetComponent<ThirdPersonController>();
-            PlayerInput input = player.GetComponent<PlayerInput>();
+            // NetworkObject player = this.NetworkObject;
+             
+            GameManager.Instance.localPlayer = GetComponent<Player>();
+            ThirdPersonController controller = GetComponent<ThirdPersonController>();
+            PlayerInput input = GetComponent<PlayerInput>();
             CinemachineVirtualCamera cameraFollower = FindFirstObjectByType<CinemachineVirtualCamera>();
             cameraFollower.Follow = controller.CinemachineCameraTarget.transform;
 

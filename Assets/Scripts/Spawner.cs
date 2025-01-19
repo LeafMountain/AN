@@ -1,31 +1,31 @@
 using Core;
 using InventorySystem;
-using Unity.Netcode;
+using Mirror;
 using UnityEngine;
 
 public class Spawner : NetworkBehaviour {
-    public NetworkObject itemPrefab;
+    public GameObject itemPrefab;
 
-    [Rpc(SendTo.Server)]
+    [Command(requiresAuthority = false)]
     private void SpawnItemRpc(Item item, Vector3 position, Quaternion rotation) => SpawnItem(item, position, rotation);
     public void SpawnItem(Item item, Vector3 position, Quaternion rotation) {
-        if (IsServer == false) {
+        if (NetworkServer.active == false) {
             SpawnItemRpc(item, position, rotation);
             return;
         }
         
-        NetworkObject spawnedItem = Instantiate(itemPrefab, position, rotation);
+        var spawnedItem = Instantiate(itemPrefab, position, rotation);
         InventoryHandle inventoryHandle = GameManager.ItemManager.CreateInventory();
         spawnedItem.GetComponent<IItemContainer>().InventoryHandle = inventoryHandle;
         GameManager.ItemManager.Deposit(inventoryHandle, item.Handle);
-        spawnedItem.Spawn();
+        NetworkServer.Spawn(spawnedItem);
     }
 
     public GameObject Spawn(GameObject original, Transform parent = null) {
         GameObject spawned = Instantiate(original, parent);
-        if (NetworkManager.Singleton.IsServer && spawned.TryGetComponent<NetworkObject>(out var networkObject) &&
-            networkObject.IsSpawned == false) {
-            networkObject.Spawn();
+        if (NetworkServer.active && spawned.TryGetComponent<NetworkIdentity>(out var networkObject) &&
+            networkObject.didStart == false) {
+            NetworkServer.Spawn(networkObject.gameObject);
         }
 
         return spawned;
@@ -33,8 +33,8 @@ public class Spawner : NetworkBehaviour {
 
     public GameObject Spawn(GameObject original, Vector3 position, Quaternion rotation, Transform parent = null) {
         var spawned = Instantiate(original, position, rotation, parent);
-        if (spawned.TryGetComponent<NetworkObject>(out var networkObject) && networkObject.IsSpawned == false) {
-            networkObject.Spawn();
+        if (spawned.TryGetComponent<NetworkIdentity>(out var networkObject) && networkObject.didStart == false) {
+            NetworkServer.Spawn(networkObject.gameObject);
         }
 
         return spawned;
@@ -42,8 +42,8 @@ public class Spawner : NetworkBehaviour {
 
     public T Spawn<T>(T original) where T : Component {
         var spawned = Instantiate(original);
-        if (spawned.TryGetComponent<NetworkObject>(out var networkObject) && networkObject.IsSpawned == false) {
-            networkObject.Spawn();
+        if (spawned.TryGetComponent<NetworkIdentity>(out var networkObject) && networkObject.didStart == false) {
+            NetworkServer.Spawn(networkObject.gameObject);
         }
 
         return spawned;
@@ -55,15 +55,11 @@ public class Spawner : NetworkBehaviour {
     }
 
     public void Despawn(Actor target) {
-        target.NetworkObject.Despawn();
+        NetworkServer.Destroy(target.gameObject);
     }
 
     public void Despawn(NetworkBehaviour target) {
-        target.NetworkObject.Despawn();
-    }
-
-    public void Despawn(NetworkObject target) {
-        target.Despawn();
+        NetworkServer.Destroy(target.gameObject);
     }
 
     public void Despawn(GameObject gameObject, float delay = 0) {

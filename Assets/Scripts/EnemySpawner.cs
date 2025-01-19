@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core;
-using Unity.Netcode;
+using Mirror;
 using UnityEngine;
 
 public class EnemySpawner : Actor 
@@ -13,9 +13,7 @@ public class EnemySpawner : Actor
 
     public List<Enemy> spawnedEnemies = new List<Enemy>();
 
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
+    public override void OnStartServer() {
         SpawnTick(); 
     }
 
@@ -39,7 +37,7 @@ public class EnemySpawner : Actor
     public void Spawn()
     {
         var enemy = Instantiate(this.enemy, transform.position, transform.rotation);
-        enemy.GetComponent<NetworkObject>().Spawn();
+        NetworkServer.Spawn(enemy.gameObject);
         spawnedEnemies.Add(enemy); 
     }
 }

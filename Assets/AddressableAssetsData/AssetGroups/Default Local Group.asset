@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cbf96b27436d5040afa93a3deacd239
+    m_Address: Assets/Prefabs/Weapons/Weapon_Gun_1A.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 05e24acfbc2571b4397ca08c33accc8e, type: 2}
   m_SchemaSet:

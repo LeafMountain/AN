@@ -1,5 +1,6 @@
+using InventorySystem;
+using Mirror;
 using Sirenix.OdinInspector;
-using Unity.Netcode;
 using UnityEngine;
 
 namespace Core
@@ -32,6 +33,7 @@ namespace Core
         [SerializeField]
         private Actor _actor;
         public Actor Parent { get => _actor; private set => _actor = value; }
+        public ActorHandle handle => Parent.handle;
 
         private void OnValidate()
         {

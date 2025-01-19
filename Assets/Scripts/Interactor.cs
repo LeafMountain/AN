@@ -30,7 +30,7 @@ public class Interactor : ActorComponent {
     }
 
     public void Drop() {
-        List<ItemHandle> items = GameManager.ItemManager.GetItems(Inventory.InventoryHandle);
+        List<ActorHandle> items = GameManager.ItemManager.GetItems(Inventory.InventoryHandle);
         for (int i = items.Count - 1; i >= 0; i--) {
             if (items[i].IsValid() == false) continue;
 

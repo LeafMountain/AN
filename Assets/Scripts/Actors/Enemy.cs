@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Core;
+using Mirror;
 using UnityEngine;
 
 [RequireComponent(typeof(DamageReceiver), typeof(AI))]
@@ -31,9 +32,7 @@ public class Enemy : Character
         ai = GetComponent<AI>();
     }
 
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
+    public override void OnStartClient() {
         SetDestination(transform.position);
     }
 
@@ -41,7 +40,7 @@ public class Enemy : Character
     {
         base.FixedUpdate();
         
-        if(IsServer == false) return;
+        if(NetworkServer.active == false) return;
         
         // Move
         destinationReached = (Vector3.Distance(transform.position, destination) < stoppingRange);

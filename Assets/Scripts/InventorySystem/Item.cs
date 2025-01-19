@@ -1,12 +1,11 @@
 using System;
-using Unity.Netcode;
 
 namespace InventorySystem
 {
-    [Serializable, GenerateSerializationForType(typeof(Item))]
-    public struct Item : IEquatable<Item>, INetworkSerializable
+    [Serializable]
+    public struct Item : IEquatable<Item>
     {
-        public ItemHandle Handle;
+        public ActorHandle Handle;
         public int databaseId;
         public static Item Empty { get; set; }
 
@@ -19,7 +18,7 @@ namespace InventorySystem
             return new Item
             {
                 databaseId = GameManager.Database.StringToID(slug),
-                Handle = ItemHandle.Create(),
+                Handle = ActorHandle.Create(),
             };
         }
 
@@ -28,12 +27,6 @@ namespace InventorySystem
             return Handle.ToString();
         }
 
-        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-        {
-            serializer.SerializeValue(ref Handle);
-            serializer.SerializeValue(ref databaseId);
-        }
-        
         public bool IsValid() => Handle.IsValid();
     }
 }
