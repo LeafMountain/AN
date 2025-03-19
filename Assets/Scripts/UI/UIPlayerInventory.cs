@@ -53,7 +53,7 @@ namespace UI
             {
                 InventoryHandle playerInventoryHandle =
                     GameManager.Players.Get(0).GetComponent<PlayerInventory>().InventoryHandle;
-                List<ItemHandle> items = GameManager.ItemManager.GetItems(playerInventoryHandle);
+                List<ActorHandle> items = GameManager.ItemManager.GetItems(playerInventoryHandle);
                 playerInventoryContainer.Container.FillWithItems(items, (childView, handle) =>
                 {
                     childView.transform.localPosition = default;
