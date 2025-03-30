@@ -73,7 +73,12 @@ public class Bullet : NetworkBehaviour
 
                 OnCollision(hit.point, hit.normal, damageReciever);
 
-                if (hit.transform.TryGetComponent(out Actor hitActor)) {
+                if (hit.rigidbody.TryGetComponent(out Actor hitActor))
+                {
+                    GameManager.Attributes.DoDamage(this.owner.handle, hitActor.handle, hit.point - hit.normal * .5f);
+                }
+                else if (hit.transform.TryGetComponent(out hitActor))
+                {
                     // GameManager.Equipment
                 }
             }

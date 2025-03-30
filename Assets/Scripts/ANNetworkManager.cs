@@ -1,10 +1,17 @@
+using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
 public class ANNetworkManager : NetworkManager {
     public bool autoHost = true;
 
-    void Start() {
+    void Start()
+    {
+        startPositions = new List<Transform>()
+        {
+            default
+        };
+        
         StartHost();
     }
 

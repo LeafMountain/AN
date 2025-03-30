@@ -9,5 +9,6 @@
         Storeable,
         LookTarget,
         ActiveItemUpdated,
+        AttributeUpdated
     }
 }

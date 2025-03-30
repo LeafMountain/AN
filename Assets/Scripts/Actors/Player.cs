@@ -30,15 +30,16 @@ public class Player : Character
         interactor = GetComponent<Interactor>();
     }
 
-    public override void OnStartAuthority() {
-        // if (IsOwner)
+    public override void OnStartClient()
+    {
+        // if (isOwned)
         {
             transform.position = GameManager.Instance.customSpawnLocation;
             transform.rotation = GameManager.Instance.customSpawnRotation;
-            
+
             // NetworkObject player = ANNetworkManager.Singleton.SpawnManager.GetLocalPlayerObject();
             // NetworkObject player = this.NetworkObject;
-             
+
             GameManager.Instance.localPlayer = GetComponent<Player>();
             ThirdPersonController controller = GetComponent<ThirdPersonController>();
             PlayerInput input = GetComponent<PlayerInput>();
@@ -47,12 +48,12 @@ public class Player : Character
 
             controller.enabled = true;
             input.enabled = true;
+
+            StartCoroutine(EnergyTick());
+            GameManager.Players.Add(this);
+
+            Events.AddListener(Flag.DamageRecieved, this, OnDamageReveived);
         }
-
-        StartCoroutine(EnergyTick());
-        GameManager.Players.Add(this);
-
-        Events.AddListener(Flag.DamageRecieved, this, OnDamageReveived);
     }
 
     private async void OnDamageReveived(object origin, EventArgs eventargs)
@@ -106,7 +107,7 @@ public class Player : Character
     {
         // Camera cam = Camera.main;
         // Actor lookActor = GetLookHit(cam, lookLayerMask);
-        
+
         // Ray lookRay = new Ray(camTransform.position, camTransform.forward);
         // if (Physics.Raycast(lookRay, out var hit) == false || Physics.SphereCast(lookRay, 1f, out hit))
         // {

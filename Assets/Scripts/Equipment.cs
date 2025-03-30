@@ -42,6 +42,7 @@ public class Equipment : NetworkActorComponent {
     }
 
     public void UseWeapon() {
+        if(weapon == null) return;
         weapon.Fire();
         AddWeaponPushback();
     }
