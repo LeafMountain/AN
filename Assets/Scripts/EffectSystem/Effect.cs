@@ -1,128 +1,92 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using BlockBuilder;
-using Core;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.VFX;
-using Object = UnityEngine.Object;
 
-namespace EffectSystem
-{
+namespace EffectSystem {
     [Serializable]
-    public abstract class Effect
-    {
-        public enum Mode
-        {
+    public abstract class Effect {
+        public enum Mode {
             Target,
             Instigator,
-            Impact,
+            Impact
         }
 
         [SerializeField] protected Mode spawnMode;
         [SerializeField] protected string pointType;
 
-        public virtual void DoEffect<T>(T extraArgs) where T : EffectArgs
-        {
-        }
+        public virtual void DoEffect<T>(T extraArgs) where T : EffectArgs { }
 
-        public virtual (Vector3 point, Quaternion rotation) GetLocation(EffectArgs extraArgs)
-        {
-            switch (spawnMode)
-            {
-                case Mode.Target:
-                {
-                    var actor = extraArgs.target.GetComponent<Actor>();
-                    return actor.GetPointAndRotation(pointType);
-                }
-                case Mode.Instigator:
-                {
-                    var actor = extraArgs.instigator.GetComponent<Actor>();
-                    return actor.GetPointAndRotation(pointType);
-                }
-                case Mode.Impact:
-                    return (extraArgs.target.GetComponent<DamageReceiver>().lastHitPoint,
-                        Quaternion.LookRotation(extraArgs.target.GetComponent<DamageReceiver>().lastHitNormal) *
-                        Quaternion.Euler(Vector3.right * 90f));
-            }
+        public virtual (Vector3 point, Quaternion rotation) GetLocation(EffectArgs extraArgs) {
+            // switch (spawnMode)
+            // {
+            //     case Mode.Target:
+            //     {
+            //         var actor = extraArgs.target.GetComponent<Actor>();
+            //         return actor.GetPointAndRotation(pointType);
+            //     }
+            //     case Mode.Instigator:
+            //     {
+            //         var actor = extraArgs.instigator.GetComponent<Actor>();
+            //         return actor.GetPointAndRotation(pointType);
+            //     }
+            //     case Mode.Impact:
+            //         return (extraArgs.target.GetComponent<DamageReceiver>().lastHitPoint,
+            //             Quaternion.LookRotation(extraArgs.target.GetComponent<DamageReceiver>().lastHitNormal) *
+            //             Quaternion.Euler(Vector3.right * 90f));
+            // }
 
             return (default, default);
         }
     }
 
-    public class EffectArgs
-    {
-        public GameObject target;
+    public class EffectArgs {
         public GameObject instigator;
+        public GameObject target;
 
-        protected EffectArgs()
-        {
-        }
+        protected EffectArgs() { }
 
-        public static T Create<T>() where T : EffectArgs, new()
-        {
+        public static T Create<T>() where T : EffectArgs, new() {
             return new T();
         }
 
-        protected virtual void Reset()
-        {
+        protected virtual void Reset() {
             target = null;
             instigator = null;
         }
     }
 
     [Serializable]
-    public class SpawnEffect : Effect
-    {
-        public class SpawnEffectArgs : EffectArgs
-        {
-            public Vector3 impactPosition;
-            public Quaternion impactRotation;
-
-            protected override void Reset()
-            {
-                base.Reset();
-                impactPosition = default;
-                impactRotation = default;
-            }
-        }
-
+    public class SpawnEffect : Effect {
         [SerializeField] private GameObject gameObject;
         [SerializeField] private VisualEffectAsset visualEffect;
         [SerializeField] private bool autoDestroy;
 
-        [SerializeField, ShowIf(nameof(autoDestroy))]
+        [SerializeField] [ShowIf(nameof(autoDestroy))]
         private float destroyDelayDuration;
 
-        public override void DoEffect<T>(T extraArgs)
-        {
+        public override void DoEffect<T>(T extraArgs) {
             var spawnArgs = extraArgs as SpawnEffectArgs;
             GameObject spawned = null;
-            if (visualEffect != null)
-            {
+            if (visualEffect != null) {
                 spawned = new GameObject(this.visualEffect.name);
                 var visualEffect = spawned.AddComponent<VisualEffect>();
                 visualEffect.visualEffectAsset = this.visualEffect;
             }
-            else
-            {
-                spawned = GameManager.Spawner.Spawn(gameObject);
-            }
 
-            switch (spawnMode)
-            {
-                case Mode.Target:
-                {
+            // spawned = GameManager.Spawner.Spawn(gameObject);
+            switch (spawnMode) {
+                case Mode.Target: {
                     var (point, rotation) = GetLocation(extraArgs);
                     spawned.transform.position = point;
                     spawned.transform.rotation = rotation;
                     break;
                 }
 
-                case Mode.Instigator:
-                {
+                case Mode.Instigator: {
                     var (point, rotation) = GetLocation(extraArgs);
                     spawned.transform.position = point;
                     spawned.transform.rotation = rotation;
@@ -138,50 +102,52 @@ namespace EffectSystem
             }
 
 
-            if (autoDestroy)
-            {
-                float destroyDuration = destroyDelayDuration;
+            if (autoDestroy) {
+                var destroyDuration = destroyDelayDuration;
                 if (destroyDelayDuration <= 0)
-                {
                     if (gameObject.TryGetComponent<ParticleSystem>(out var particleSystem))
                         destroyDuration = particleSystem.main.duration;
-                }
 
-                GameManager.Spawner.Despawn(spawned, destroyDuration);
+                // GameManager.Spawner.Despawn(spawned, destroyDuration);
+            }
+        }
+
+        public class SpawnEffectArgs : EffectArgs {
+            public Vector3 impactPosition;
+            public Quaternion impactRotation;
+
+            protected override void Reset() {
+                base.Reset();
+                impactPosition = default;
+                impactRotation = default;
             }
         }
     }
 
     [Serializable]
-    public class CameraEffect : Effect
-    {
+    public class CameraEffect : Effect {
         [SerializeField] private float shakeTime;
         [SerializeField] private float shakeAmplitude;
 
-        public override void DoEffect<T>(T extraArgs)
-        {
-            GameManager.CameraController.Shake(shakeTime, shakeAmplitude);
+        public override void DoEffect<T>(T extraArgs) {
+            // GameManager.CameraController.Shake(shakeTime, shakeAmplitude);
         }
     }
 
     [Serializable]
-    public class TweenEffect : Effect
-    {
-        [SerializeField] private float duration = 1;
-
-        [SerializeField] private float strength = 1;
+    public class TweenEffect : Effect {
         // [SerializeField]
         // private Vector3 vector3;
 
         public static Dictionary<GameObject, Tweener> activeTweeners = new();
+        [SerializeField] private float duration = 1;
 
-        public override void DoEffect<T>(T extraArgs)
-        {
-            switch (spawnMode)
-            {
+        [SerializeField] private float strength = 1;
+
+        public override void DoEffect<T>(T extraArgs) {
+            switch (spawnMode) {
                 case Mode.Target:
-                    if (activeTweeners.TryGetValue(extraArgs.target, out var tweener))
-                    {
+                    if (activeTweeners.TryGetValue(extraArgs.target, out var tweener)) {
                         tweener.Rewind(false);
                         tweener.Kill();
                         activeTweeners.Remove(extraArgs.target);
@@ -192,8 +158,7 @@ namespace EffectSystem
                     break;
 
                 case Mode.Instigator:
-                    if (activeTweeners.TryGetValue(extraArgs.instigator, out tweener))
-                    {
+                    if (activeTweeners.TryGetValue(extraArgs.instigator, out tweener)) {
                         tweener.Rewind(false);
                         tweener.Kill();
                         activeTweeners.Remove(extraArgs.instigator);
@@ -211,68 +176,59 @@ namespace EffectSystem
     }
 
     [Serializable]
-    public class AudioEffect : Effect
-    {
+    public class AudioEffect : Effect {
         [SerializeField] private AudioClip audioClip;
-        [SerializeField, MinMaxSlider(0f, 2f)] private Vector2 pitch = Vector2.one;
-        [SerializeField, MinMaxSlider(0f, 2f)] private Vector2 volume = Vector2.one;
 
-        public override void DoEffect<T>(T extraArgs)
-        {
-            GameManager.Audio.PlayAudioInWorld(audioClip, GetLocation(extraArgs).point, pitch, volume);
+        [SerializeField] [MinMaxSlider(0f, 2f)]
+        private Vector2 pitch = Vector2.one;
+
+        [SerializeField] [MinMaxSlider(0f, 2f)]
+        private Vector2 volume = Vector2.one;
+
+        public override void DoEffect<T>(T extraArgs) {
+            // GameManager.Audio.PlayAudioInWorld(audioClip, GetLocation(extraArgs).point, pitch, volume);
         }
     }
 
     [Serializable]
-    public class BuildBlockEffect : Effect
-    {
-        [SerializeField] bool remove;
+    public class BuildBlockEffect : Effect {
+        [SerializeField] private bool remove;
 
-        public override void DoEffect<T>(T extraArgs)
-        {
-            var spawnArgs = extraArgs as SpawnEffect.SpawnEffectArgs;
-
-            var gridHolder = Object.FindObjectOfType<BlockGridHolder>();
-            var impactNormal = (spawnArgs.impactRotation * Vector3.forward).normalized;
-
-            if (remove)
-            {
-                gridHolder.RemoveBlock(spawnArgs.impactPosition + impactNormal);
-            }
-            else
-            {
-                gridHolder.PlaceBlock(spawnArgs.impactPosition + impactNormal, 0);
-            }
-
-            gridHolder.Run();
+        public override void DoEffect<T>(T extraArgs) {
+            // var spawnArgs = extraArgs as SpawnEffect.SpawnEffectArgs;
+            //
+            // var gridHolder = Object.FindObjectOfType<BlockGridHolder>();
+            // var impactNormal = (spawnArgs.impactRotation * Vector3.forward).normalized;
+            //
+            // if (remove)
+            //     gridHolder.RemoveBlock(spawnArgs.impactPosition + impactNormal);
+            // else
+            //     gridHolder.PlaceBlock(spawnArgs.impactPosition + impactNormal, 0);
+            //
+            // gridHolder.Run();
         }
     }
-    
+
     [Serializable]
-    public class PhysicsEffect : Effect
-    {
+    public class PhysicsEffect : Effect {
         [SerializeField] private float force;
         [SerializeField] private float radius;
         [SerializeField] private ForceMode mode;
 
-        public override void DoEffect<T>(T extraArgs)
-        {
+        public override void DoEffect<T>(T extraArgs) {
             var spawnArgs = extraArgs as SpawnEffect.SpawnEffectArgs;
             var impactNormal = (spawnArgs.impactRotation * Vector3.forward).normalized;
             var impactPosition = spawnArgs.impactPosition;
 
             var colliders = Physics.OverlapSphere(impactPosition, radius);
             if (colliders.Any())
-            {
-                foreach (var collider in colliders)
-                {
-                    if(collider.attachedRigidbody == null) continue;
+                foreach (var collider in colliders) {
+                    if (collider.attachedRigidbody == null) continue;
                     var forceVector = collider.transform.position - impactPosition;
                     forceVector = forceVector.normalized;
                     forceVector *= force;
                     collider.attachedRigidbody.AddForceAtPosition(forceVector, impactPosition, mode);
                 }
-            }
         }
     }
 }

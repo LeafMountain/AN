@@ -4,8 +4,9 @@ using UnityEditor.Toolbars;
 using UnityEngine;
 
 [EditorToolbarElement(id, typeof(SceneView))]
-class PlayFromHere : EditorToolbarToggle {
+internal class PlayFromHere : EditorToolbarToggle {
     public const string prefs = "editorPlayFromSceneCamera";
+
     public const string id = "ANTools/PlayFromHere";
     // public static bool enabled => PlayerPrefs.HasKey(prefs);
 
@@ -17,20 +18,18 @@ class PlayFromHere : EditorToolbarToggle {
     }
 
     private void OnSceneGui(SceneView view) {
-        if (value) {
+        if (value)
             PlayerPrefs.SetInt(prefs, 0);
-        }
-        else {
+        else
             PlayerPrefs.DeleteKey(prefs);
-        }
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     public static void TeleportPlayer() {
-        if (PlayerPrefs.HasKey(prefs)) {
-            GameManager.Instance.customSpawnLocation = SceneView.lastActiveSceneView.camera.transform.position;
-            GameManager.Instance.customSpawnRotation = SceneView.lastActiveSceneView.camera.transform.rotation;
-        }
+        // if (PlayerPrefs.HasKey(prefs)) {
+        //     GameManager.Instance.customSpawnLocation = SceneView.lastActiveSceneView.camera.transform.position;
+        //     GameManager.Instance.customSpawnRotation = SceneView.lastActiveSceneView.camera.transform.rotation;
+        // }
     }
 }
 
@@ -40,6 +39,5 @@ public class ANToolBar : ToolbarOverlay {
     // This is the only code required to implement a toolbar Overlay. Unlike panel Overlays, the contents are defined
     // as standalone pieces that will be collected to form a strip of elements.
 
-    ANToolBar() : base(PlayFromHere.id) {
-    }
+    private ANToolBar() : base(PlayFromHere.id) { }
 }

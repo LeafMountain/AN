@@ -7,11 +7,14 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Base.unity
+    guid: 303daf7d7b86ffc428956277848a7e89
+  - enabled: 0
+    path: Assets/Scenes/Base.unity
     guid: e9017d5f96b9f09489b4b37e1d6eb914
   - enabled: 1
     path: Assets/Scenes/PatriksPlayground.unity
     guid: 9a9faa534f691f644b5182a136ec4e44
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level_01.unity
     guid: 1619e8956541fda44acc71cc170bdbbe
   m_configObjects:

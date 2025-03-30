@@ -4,17 +4,8 @@ using Random = UnityEngine.Random;
 
 namespace DefaultNamespace {
     public class AudioManager : MonoBehaviour {
-        [SerializeField] HitAudioProfile[] hitAudioProfiles;
-        [SerializeField] AudioSource audioInstancePrefab;
-
-        // Generic audio hit
-        [Serializable]
-        public struct HitAudioProfile {
-            public PhysicsMaterial physicsMaterial;
-            public AudioClip[] audioClips;
-            public Vector2 pitchRange;
-            public Vector2 volumeRange;
-        }
+        [SerializeField] private HitAudioProfile[] hitAudioProfiles;
+        [SerializeField] private AudioSource audioInstancePrefab;
 
         public void PlayAudioByMaterial(PhysicsMaterial colliderMaterial, Vector3 position) {
             foreach (var instanceHitAudioProfile in hitAudioProfiles) {
@@ -26,12 +17,21 @@ namespace DefaultNamespace {
         }
 
         public void PlayAudioInWorld(AudioClip audioClip, Vector3 position, Vector2 pitchRange, Vector2 volumeRange) {
-            AudioSource audioSource = GameManager.Spawner.Spawn(audioInstancePrefab);
-            audioSource.transform.position = position;
-            audioSource.PlayOneShot(audioClip);
-            audioSource.pitch = Random.Range(pitchRange.x, pitchRange.y);
-            audioSource.volume = Random.Range(volumeRange.x, volumeRange.y);
-            GameManager.Spawner.Despawn(audioSource.gameObject, audioClip.length);
+            // AudioSource audioSource = GameManager.Spawner.Spawn(audioInstancePrefab);
+            // audioSource.transform.position = position;
+            // audioSource.PlayOneShot(audioClip);
+            // audioSource.pitch = Random.Range(pitchRange.x, pitchRange.y);
+            // audioSource.volume = Random.Range(volumeRange.x, volumeRange.y);
+            // GameManager.Spawner.Despawn(audioSource.gameObject, audioClip.length);
+        }
+
+        // Generic audio hit
+        [Serializable]
+        public struct HitAudioProfile {
+            public PhysicsMaterial physicsMaterial;
+            public AudioClip[] audioClips;
+            public Vector2 pitchRange;
+            public Vector2 volumeRange;
         }
     }
 }
