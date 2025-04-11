@@ -43,7 +43,7 @@ Animator:
   m_GameObject: {fileID: 5148778412478783599}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be792581c4a721743b0584545050977a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -63,6 +63,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2897644162271450777}
     m_Modifications:
+    - target: {fileID: -8891338570445208919, guid: e86912f8c6c4f794582befd539621981, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d707f687ee86004f90d88cd14afcefd, type: 2}
     - target: {fileID: -8679921383154817045, guid: e86912f8c6c4f794582befd539621981, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -103,6 +107,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7880487325033247934, guid: e86912f8c6c4f794582befd539621981, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d707f687ee86004f90d88cd14afcefd, type: 2}
     - target: {fileID: -7511558181221131132, guid: e86912f8c6c4f794582befd539621981, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
