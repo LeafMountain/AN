@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - PathfindingNode
+  - Conductor
+  - NPC
   layers:
   - Default
   - TransparentFX
