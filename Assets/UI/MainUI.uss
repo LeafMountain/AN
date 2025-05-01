@@ -1,0 +1,57 @@
+VisualElement {}
+
+.root {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.health-bar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: 20px;
+    background-color: gray;
+}
+
+.health-fill {
+    height: 100%;
+    background-color: red;
+    width: 100%; /* Dynamically updated */
+}
+
+.crosshair {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.abilities {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.ability-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.inventory {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-gap: 5px;
+}
