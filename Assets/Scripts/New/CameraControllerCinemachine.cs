@@ -28,8 +28,8 @@ public class CameraControllerCinemachine : MonoBehaviour {
     }
 
     void Update() {
-        float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
-        float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
+        float mouseX = Input.GetAxisRaw("Mouse X") * rotationSpeed;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * rotationSpeed;
 
         yaw += mouseX;
         pitch -= mouseY;

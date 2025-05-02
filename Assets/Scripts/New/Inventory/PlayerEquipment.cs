@@ -13,5 +13,6 @@ public class PlayerEquipment : MonoBehaviour
         CurrentGun = Instantiate(gunPrefab, WeaponSlot);
         CurrentGun.transform.localPosition = default;
         CurrentGun.transform.localRotation = default;
+        CurrentGun.GetComponent<Gun>().Initialize(gameObject);
     }
 }

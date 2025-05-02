@@ -5,12 +5,12 @@ public class PickupAbility : MonoBehaviour, IAbility
     [SerializeField] private float pickupRange = 2f;
     [SerializeField] private LayerMask pickupMask;
 
-    private InventoryComponent inventory;
+    private PlayerInventory inventory;
     public bool IsActive { get; private set; }
 
     private void Awake()
     {
-        inventory = GetComponent<InventoryComponent>();
+        inventory = GetComponent<PlayerInventory>();
     }
 
     public void Activate()

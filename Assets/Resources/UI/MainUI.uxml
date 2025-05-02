@@ -1,18 +1,17 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
-    <ui:VisualElement class="root">
-        <ui:VisualElement class="health-bar">
-            <ui:Label text="Health" class="health-label" />
-            <ui:VisualElement class="health-fill" />
-        </ui:VisualElement>
-        <ui:VisualElement class="crosshair" />
-        <ui:VisualElement class="abilities">
-            <ui:Label text="Abilities" class="abilities-label" />
-            <ui:VisualElement class="ability-list" />
-        </ui:VisualElement>
-        <ui:VisualElement class="inventory">
-            <ui:Label text="Inventory" class="inventory-label" />
-            <ui:VisualElement class="inventory-grid" />
-        </ui:VisualElement>
+    <ui:VisualElement class="root" />
+    <ui:VisualElement name="crosshairContainer" style="flex-grow: 1; position: absolute; top: 50%; right: auto; bottom: auto; left: 50%; background-color: rgb(255, 255, 255); height: 4px; width: 4px; translate: -50% -50%;" />
+    <ui:VisualElement name="healthContainer" class="health-bar" style="position: relative; bottom: 0%; left: auto; top: 100%; transform-origin: left bottom; translate: 0 -100%;">
+        <ui:Label text="Health" class="health-label" />
+        <ui:VisualElement class="health-fill" />
+        <ui:ProgressBar value="22" style="width: 200px; height: 20px;" />
     </ui:VisualElement>
-    <ui:VisualElement name="Crosshair" style="flex-grow: 1; position: absolute; top: 50%; right: auto; bottom: auto; left: 50%; background-color: rgb(255, 255, 255); height: 4px; width: 4px; translate: -50% -50%;" />
+    <ui:VisualElement name="AbilitiesElement" class="abilities" style="align-self: flex-end; top: 100%; transform-origin: right bottom; translate: 0 -100%; bottom: 0%; right: 0; align-content: flex-start; justify-content: flex-end;">
+        <ui:Label text="Abilities" class="abilities-label" />
+        <ui:VisualElement class="ability-list" />
+    </ui:VisualElement>
+    <ui:VisualElement name="lootContainer" class="loot-container" style="position: absolute; height: 114px; width: 146px; top: 50%; left: auto; align-self: flex-end; align-items: flex-end; right: 0%; bottom: auto;" />
+    <ui:VisualElement name="inventoryContainer" style="flex-grow: 1; position: absolute; top: 50%; justify-content: center; width: 400px; background-color: rgba(255, 255, 255, 0.15);">
+        <ui:ScrollView name="inventoryPanel" />
+    </ui:VisualElement>
 </ui:UXML>

@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(AbilityController))]
 public class PlayerInputHandler : MonoBehaviour
 {
     private AbilityController abilityController;

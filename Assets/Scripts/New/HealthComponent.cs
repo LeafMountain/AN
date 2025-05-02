@@ -12,20 +12,23 @@ public class HealthComponent : MonoBehaviour, IDamageable
     public UnityEvent OnDeath = new();
     public FloatEvent OnDamaged = new();
     public FloatEvent OnHealed = new();
+    public GameObject lastAttacker;
 
     private void Awake() => CurrentHealth = maxHealth;
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, GameObject source)
     {
         if (CurrentHealth <= 0) return;
 
         CurrentHealth = Mathf.Max(CurrentHealth - amount, 0);
+        lastAttacker = source;
         OnDamaged.Invoke(amount);
-        
+
         Vector3 screenPos = CameraLocator.Instance.MainCamera.WorldToScreenPoint(transform.position);
         CombatEvents.Hit(screenPos);
 
-        if (CurrentHealth <= 0) {
+        if (CurrentHealth <= 0)
+        {
             OnDeath.Invoke();
             CombatEvents.Kill(screenPos);
         }

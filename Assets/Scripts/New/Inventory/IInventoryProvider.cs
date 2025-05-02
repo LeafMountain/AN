@@ -1,4 +1,4 @@
 public interface IInventoryProvider
 {
-    // Inventory GetInventory();
+    IInventory GetInventory();
 }

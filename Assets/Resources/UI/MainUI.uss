@@ -55,3 +55,32 @@ VisualElement {}
     /*grid-template-columns: repeat(4, 50px);*/
     grid-gap: 5px;
 }
+.loot-container {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    width: 200px;
+    gap: 6px;
+}
+
+.loot-entry {
+    background-color: #222c;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    /*unity-font-style: bold;*/
+    /*animation-name: fade-out;*/
+    /*animation-duration: 1.5s;*/
+    /*animation-iteration-count: 1;*/
+    /*animation-fill-mode: forwards;*/
+}
+
+/*@keyframes fade-out {*/
+/*    0% { opacity: 1; }*/
+/*    70% { opacity: 1; }*/
+/*    100% { opacity: 0; }*/
+/*}*/
+

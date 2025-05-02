@@ -53,11 +53,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f740e422125c6a149952d55c665e5023, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: b3b1bb06cd25ee04e8e7d78ae6b19282, type: 2}
     - target: {fileID: -7511558181221131132, guid: f740e422125c6a149952d55c665e5023, type: 3}
-      propertyPath: m_Materials.Array.data[1]
+      propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: c3e6690f847d837478a8db341e8cefb6, type: 2}
     - target: {fileID: 919132149155446097, guid: f740e422125c6a149952d55c665e5023, type: 3}
@@ -82,13 +82,16 @@ PrefabInstance:
       addedObject: {fileID: 7775364699236871729}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f740e422125c6a149952d55c665e5023, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7595098609288568035}
+      addedObject: {fileID: 6045466940131327318}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f740e422125c6a149952d55c665e5023, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4567423774997157433}
+      addedObject: {fileID: 8939476793534975862}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f740e422125c6a149952d55c665e5023, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7415808190586377815}
+      addedObject: {fileID: 4114481503648618200}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f740e422125c6a149952d55c665e5023, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5413467469086026372}
   m_SourcePrefab: {fileID: 100100000, guid: f740e422125c6a149952d55c665e5023, type: 3}
 --- !u!1 &473209048980115889 stripped
 GameObject:
@@ -201,6 +204,9 @@ VFXRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_StaticBatchInfo:
@@ -223,7 +229,7 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7595098609288568035
+--- !u!114 &6045466940131327318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,14 +238,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 473209048980115889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c3b4ca75e29467ea4daaef1cf57a442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
---- !u!114 &4567423774997157433
+  maxHealth: 100
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 473209048980115889}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5413467469086026372}
+        m_TargetAssemblyTypeName: Destroyable, Assembly-CSharp
+        m_MethodName: Trigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  lastAttacker: {fileID: 0}
+--- !u!114 &8939476793534975862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,11 +285,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 473209048980115889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
+  m_Script: {fileID: 11500000, guid: 63f9d4763faf5f505b543be93dc0bed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actorMapping: []
---- !u!114 &7415808190586377815
+  itemData: {fileID: 11400000, guid: 9728151d393db8a2ea2d64ad0da2bf78, type: 2}
+  amountPerDamage: 0.25
+  onDestroyBonus: 5
+--- !u!114 &4114481503648618200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,22 +300,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 473209048980115889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
+  m_Script: {fileID: 11500000, guid: d0ed48c87d375b683b2cfa1a883155a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actor: {fileID: 4567423774997157433}
-  maxHealth: 10
-  currentHealth:
-    m_InternalValue: 0
-  autoDestroy: 1
-  lootCount: 1
-  loot: []
-  destructionEffects:
-  - {fileID: 11400000, guid: fc7f6f57422345b4a9e0c6b21312cf63, type: 2}
-  hitEffects:
-  - {fileID: 11400000, guid: 7fab49fa238a21d48b11c588b1b427d0, type: 2}
-  lastHitPoint: {x: 0, y: 0, z: 0}
-  lastHitNormal: {x: 0, y: 0, z: 0}
+  duration: 0.1
+  power: {x: 1, y: 1, z: 1}
+--- !u!114 &5413467469086026372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473209048980115889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d28fc07e6f5d4293a7b165dae572f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!23 &2130714374507753572 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: f740e422125c6a149952d55c665e5023, type: 3}

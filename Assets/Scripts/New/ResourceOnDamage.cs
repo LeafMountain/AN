@@ -1,47 +1,51 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class ResourceOnDamage : MonoBehaviour
-{
-    [SerializeField] private string itemId = "rock";
-    [SerializeField] private float amountPerDamage = 0.2f;
+public class ResourceOnDamage : MonoBehaviour {
+    [SerializeField] private ItemData itemData;
+    [SerializeField] private float amountPerDamage = 0.25f;
     [SerializeField] private int onDestroyBonus = 5;
 
     private HealthComponent health;
 
-    // private void Awake()
-    // {
-    //     health = GetComponent<HealthComponent>();
-    //     health.OnDamaged += HandleDamage;
-    //     health.OnDied += HandleDestroyed;
-    // }
-    //
-    // private void OnDestroy()
-    // {
-    //     if (health != null)
-    //     {
-    //         health.OnDamaged -= HandleDamage;
-    //         health.OnDied -= HandleDestroyed;
-    //     }
-    // }
-    //
-    // private void HandleDamage(float damage, GameObject source)
-    // {
-    //     int amount = Mathf.FloorToInt(damage * amountPerDamage);
-    //     if (amount > 0)
-    //         TryGiveToInventory(source, amount);
-    // }
-    //
-    // private void HandleDestroyed(GameObject source)
-    // {
-    //     TryGiveToInventory(source, onDestroyBonus);
-    // }
-    //
-    // private void TryGiveToInventory(GameObject source, int amount)
-    // {
-    //     if (source.TryGetComponent<IInventoryProvider>(out var provider))
-    //     {
-    //         var inventory = provider.GetInventory();
-    //         inventory?.AddItem(itemId, amount);
-    //     }
-    // }
+    private void Awake()
+    {
+        health = GetComponent<HealthComponent>();
+        if (health == null) return;
+
+        health.OnDamaged.AddListener(HandleDamage);
+        health.OnDeath.AddListener(HandleDestroyed);
+    }
+
+    private void OnDestroy()
+    {
+        if (health == null) return;
+
+        health.OnDamaged.RemoveListener(HandleDamage);
+        health.OnDeath.RemoveListener(HandleDestroyed);
+    }
+
+    private void HandleDamage(float damage)
+    {
+        int amount = Mathf.FloorToInt(damage * amountPerDamage);
+        if (amount > 0)
+        {
+            TryGiveToLastAttacker(amount); // See note below
+        }
+    }
+
+    private void HandleDestroyed()
+    {
+        TryGiveToLastAttacker(onDestroyBonus);
+    }
+
+    // Replace this with however you track the attacker
+    private void TryGiveToLastAttacker(int amount)
+    {
+        var player = health.lastAttacker;
+        if (player != null && player.TryGetComponent<IInventory>(out var provider))
+        {
+            provider.AddItem(itemData.itemID, amount);
+        }
+    }
 }

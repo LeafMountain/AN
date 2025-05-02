@@ -6,4 +6,5 @@ public interface IInventory
     void AddItem(string itemId, int amount);
     void RemoveItem(string itemId, int amount);
     bool HasItems(Dictionary<string, int> items);
+    List<InventoryItem> GetInventory();
 }

@@ -50,7 +50,7 @@ public class AttackAbility : MonoBehaviour, IAbility
         {
             var targetHealth = hit.collider.GetComponent<IDamageable>();
             if (targetHealth != null)
-                targetHealth.TakeDamage(damage);
+                targetHealth.TakeDamage(damage, gameObject);
         }
 
         Debug.DrawRay(origin, direction * attackRange, Color.red, 0.5f);

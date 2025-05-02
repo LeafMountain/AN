@@ -9,7 +9,7 @@ public class DamageDealer : MonoBehaviour
         var health = other.GetComponent<IDamageable>();
         if (health != null)
         {
-            health.TakeDamage(damageAmount);
+            health.TakeDamage(damageAmount, gameObject);
         }
     }
 }

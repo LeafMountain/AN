@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireAllAtOnce: 1
   projectilePrefab: {fileID: 2813819842624208123, guid: 6cbf92799c2ce2f42afb719297f3d663, type: 3}
-  projectileSpeed: 40
+  projectileSpeed: 60
 --- !u!114 &4312931866036183172
 MonoBehaviour:
   m_ObjectHideFlags: 0
