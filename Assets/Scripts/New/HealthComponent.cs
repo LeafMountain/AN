@@ -21,9 +21,14 @@ public class HealthComponent : MonoBehaviour, IDamageable
 
         CurrentHealth = Mathf.Max(CurrentHealth - amount, 0);
         OnDamaged.Invoke(amount);
+        
+        Vector3 screenPos = CameraLocator.Instance.MainCamera.WorldToScreenPoint(transform.position);
+        CombatEvents.Hit(screenPos);
 
-        if (CurrentHealth <= 0)
+        if (CurrentHealth <= 0) {
             OnDeath.Invoke();
+            CombatEvents.Kill(screenPos);
+        }
     }
 
     public void Heal(float amount)

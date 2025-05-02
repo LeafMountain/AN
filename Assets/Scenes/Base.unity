@@ -211,14 +211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edead2b42b914a84faf341ae0d10c805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_ForceVisible: 0
-  m_FirstPersonVisibleOnDeath: 0
-  m_PerspectiveMonitor: {fileID: 0}
 --- !u!1 &53523157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,8 +1367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88538626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,8 +1399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88538630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,8 +1468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88538688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,8 +1703,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88539020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,8 +1767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88539034
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,8 +1815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88539040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,8 +1879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88539046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,8 +2007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88539060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,8 +2039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88539062
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,7 +2084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 53
 --- !u!1 &88539066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,8 +2116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88539068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,8 +2148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!1 &88539070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,7 +2177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 54
 --- !u!1 &88539072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,6 +2658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e121a2b8c20ce31ac5e2e101c1a94c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dampTime: 0.1
 --- !u!95 &93218312 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: acbffc399505ead45a0e72c31a11c879, type: 3}
@@ -3687,22 +3656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edead2b42b914a84faf341ae0d10c805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Drive
-    m_Preset: {fileID: 11400000, guid: de01ff1ab6d25a044852c9fc829929a2, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: UseShieldBubble
-    m_Preset: {fileID: 11400000, guid: de01ff1ab6d25a044852c9fc829929a2, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_ForceVisible: 0
-  m_FirstPersonVisibleOnDeath: 0
-  m_PerspectiveMonitor: {fileID: 0}
 --- !u!1 &239520667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3796,10 +3749,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d27993558cd095408b9a3aacba1226d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FlipFootprint: 0
-  m_Transform: {fileID: 0}
-  m_FootEffects: {fileID: 0}
-  m_CharacterLayerManager: {fileID: 0}
 --- !u!135 &255859805
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4200,48 +4149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df1debe593a5a447bac893a323e2e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Character: {fileID: 0}
-  m_Visible: 1
-  m_ShowUI: 1
-  m_CameraGameObject: {fileID: 0}
-  m_DamageFlash:
-    m_CanActivate: 1
-    m_VisiblityDuration: 1.5
-    m_FadeDuration: 1
-    m_Color:
-      r: 1
-      g: 0
-      b: 0
-      a: 0.7
-    m_Sprite: {fileID: 21300000, guid: c26da264a9dab85409268be202cf40ca, type: 3}
-  m_HealFlash:
-    m_CanActivate: 1
-    m_VisiblityDuration: 0.05
-    m_FadeDuration: 0.2
-    m_Color:
-      r: 1
-      g: 1
-      b: 1
-      a: 0.153
-    m_Sprite: {fileID: 21300150, guid: 5fb67c614ba76ca45a811c8e1f7be476, type: 3}
-  m_GameObject: {fileID: 0}
-  m_FlashImage: {fileID: 0}
-  m_FlashDisplayTime: 0
-  m_ActiveFlash:
-    m_CanActivate: 0
-    m_VisiblityDuration: 0
-    m_FadeDuration: 0
-    m_Color:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    m_Sprite: {fileID: 0}
 --- !u!114 &329471856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5002,8 +4909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a248a6f0e7acfe14fb3bc7907fc03c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 0
-  m_AlwaysActive: 0
 --- !u!114 &412103791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5016,27 +4921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527b6ce4c43b6dd458111a6670a3de65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GameObject: {fileID: 0}
-  m_Animator: {fileID: 0}
-  m_Character: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_CharacterAnimatorMonitor: {fileID: 0}
-  m_FirstPersonAnimatorMonitor: 0
-  m_HorizontalMovement: 0
-  m_ForwardMovement: 0
-  m_Pitch: 0
-  m_Yaw: 0
-  m_Speed: 0
-  m_Height: 0
-  m_Moving: 0
-  m_Aiming: 0
-  m_MovementSetID: 0
-  m_AbilityIndex: 0
-  m_AbilityIntData: 0
-  m_AbilityFloatData: 0
-  m_ItemSlotID: 
-  m_ItemSlotStateIndex: 
-  m_ItemSlotSubstateIndex: 
 --- !u!114 &412103792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5049,21 +4933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b2f510676cc504cacc3fdbce05b906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: DualPistols
-    m_Preset: {fileID: 11400000, guid: b61c86e8058eea94eb46c12c52ad5deb, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Pistol
-    m_Preset: {fileID: 11400000, guid: b61c86e8058eea94eb46c12c52ad5deb, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Active: 1
-  m_GameObject: {fileID: 0}
 --- !u!114 &412103793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5076,21 +4945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b2f510676cc504cacc3fdbce05b906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: DualPistols
-    m_Preset: {fileID: 11400000, guid: b61c86e8058eea94eb46c12c52ad5deb, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Pistol
-    m_Preset: {fileID: 11400000, guid: b61c86e8058eea94eb46c12c52ad5deb, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Active: 1
-  m_GameObject: {fileID: 0}
 --- !u!114 &412103794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5103,25 +4957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b2f510676cc504cacc3fdbce05b906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: SwordShield
-    m_Preset: {fileID: 11400000, guid: b61c86e8058eea94eb46c12c52ad5deb, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: DualPistols
-    m_Preset: {fileID: 11400000, guid: b61c86e8058eea94eb46c12c52ad5deb, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Shield
-    m_Preset: {fileID: 11400000, guid: b61c86e8058eea94eb46c12c52ad5deb, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Active: 1
-  m_GameObject: {fileID: 0}
 --- !u!114 &412103795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5134,25 +4969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b2f510676cc504cacc3fdbce05b906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: SwordShield
-    m_Preset: {fileID: 11400000, guid: b61c86e8058eea94eb46c12c52ad5deb, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: DualPistols
-    m_Preset: {fileID: 11400000, guid: b61c86e8058eea94eb46c12c52ad5deb, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Shield
-    m_Preset: {fileID: 11400000, guid: b61c86e8058eea94eb46c12c52ad5deb, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Active: 1
-  m_GameObject: {fileID: 0}
 --- !u!4 &412103796
 Transform:
   m_ObjectHideFlags: 0
@@ -5585,40 +5401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cbebeb99f037f43a661f3d59fd5b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Character: {fileID: 0}
-  m_Visible: 1
-  m_ShowUI: 1
-  m_CameraGameObject: {fileID: 0}
-  m_AttributeManager: {fileID: 0}
-  m_AttributeName: Shield
-  m_Slider: {fileID: 420442520}
-  m_Attribute:
-    m_States:
-    - m_Name: Default
-      m_Preset: {fileID: 0}
-      m_BlockList: []
-      m_Default: 1
-    m_StateBoundGameObject: {fileID: 0}
-    m_Name: 
-    m_MinValue: 0
-    m_MaxValue: 100
-    m_Value: 100
-    m_AutoUpdateValueType: 0
-    m_AutoUpdateStartDelay: 1
-    m_AutoUpdateInterval: 0.1
-    m_AutoUpdateAmount: 0.2
-    m_GameObject: {fileID: 0}
-    m_StartValue: 0
-    m_ValuesStored: 0
-    m_StoredAutoUpdateValueType: 0
-    m_StoredAutoUpdateStartDelay: 0
-    m_StoredAutoUpdateInterval: 0
-    m_StoredAutoUpdateAmount: 0
 --- !u!222 &420442522
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5638,6 +5420,7 @@ GameObject:
   - component: {fileID: 424472336}
   - component: {fileID: 424472335}
   - component: {fileID: 424472337}
+  - component: {fileID: 424472338}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -5692,6 +5475,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItemTemplate: {fileID: 9197481963319205126, guid: 63bf9566863bdfff4a3ef785d445bddd, type: 3}
+--- !u!114 &424472338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424472334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe9db4914324a97b82e8c5ea81c15ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiDocument: {fileID: 424472335}
+  hitMarkerTemplate: {fileID: 9197481963319205126, guid: 2a4e6b13daf87714ea1281207683d97c, type: 3}
+  killMarkerTemplate: {fileID: 9197481963319205126, guid: 2a4e6b13daf87714ea1281207683d97c, type: 3}
 --- !u!1 &431924507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5871,26 +5669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cba7b223704d6c42a0a479a591fa84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Character: {fileID: 0}
-  m_Visible: 1
-  m_ShowUI: 1
-  m_CameraGameObject: {fileID: 0}
-  m_PrimaryCount: {fileID: 2146814757}
-  m_CharacterInventory: {fileID: 0}
-  m_CountParent: {fileID: 1113774175}
-  m_LoadedCount: {fileID: 1786500109}
-  m_UnloadedCount: {fileID: 1407302891}
-  m_ID: 1
-  m_ItemIcon: {fileID: 1100977846}
-  m_ItemActionID: 0
-  m_GameObject: {fileID: 0}
-  m_ItemRectTransform: {fileID: 0}
-  m_EquippedItem: {fileID: 0}
 --- !u!114 &481964561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6308,40 +6086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cbebeb99f037f43a661f3d59fd5b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Character: {fileID: 0}
-  m_Visible: 1
-  m_ShowUI: 1
-  m_CameraGameObject: {fileID: 0}
-  m_AttributeManager: {fileID: 0}
-  m_AttributeName: Health
-  m_Slider: {fileID: 590872003}
-  m_Attribute:
-    m_States:
-    - m_Name: Default
-      m_Preset: {fileID: 0}
-      m_BlockList: []
-      m_Default: 1
-    m_StateBoundGameObject: {fileID: 0}
-    m_Name: 
-    m_MinValue: 0
-    m_MaxValue: 100
-    m_Value: 100
-    m_AutoUpdateValueType: 0
-    m_AutoUpdateStartDelay: 1
-    m_AutoUpdateInterval: 0.1
-    m_AutoUpdateAmount: 0.2
-    m_GameObject: {fileID: 0}
-    m_StartValue: 0
-    m_ValuesStored: 0
-    m_StoredAutoUpdateValueType: 0
-    m_StoredAutoUpdateStartDelay: 0
-    m_StoredAutoUpdateInterval: 0
-    m_StoredAutoUpdateAmount: 0
 --- !u!114 &590872003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6442,20 +6186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502f28110d763fc4da5fadfbb4ea3825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Character: {fileID: 0}
-  m_Visible: 1
-  m_ShowUI: 1
-  m_CameraGameObject: {fileID: 0}
-  m_ID: 8
-  m_AllowIndependentLookActive: 0
-  m_CharacterController: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_FullScreenUIShown: 0
 --- !u!1 &611928612
 GameObject:
   m_ObjectHideFlags: 0
@@ -6537,7 +6267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a172b92538d3594daa1dca445dfeb43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendStateChangeEvent: 0
 --- !u!114 &615358704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6550,7 +6279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a757f3b80c1feef4a85331d2482be4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSpawnPreferred: 0
 --- !u!114 &615358705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6563,8 +6291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f7e9e36b9c7a248900ca825db6b0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AudioManagerModule: {fileID: 11400000, guid: 7c2f6e9d4d7571042964493904b06c50, type: 2}
-  m_GameObject: {fileID: 0}
 --- !u!114 &615358706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6577,9 +6303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9d9fd8fe138c74896d24120f9e5a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxEventCount: 200
-  m_ActiveUpdateEventCount: 0
-  m_ActiveFixedUpdateEventCount: 0
 --- !u!114 &615358707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6592,7 +6315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b3bdccc78ae4e4db1f00a2c82783b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PreloadedPrefabs: []
 --- !u!114 &615358708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6605,15 +6327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec179f9473f7f9849bab9aac78619ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StartCharacterCount: 1
-  m_StartCameraCount: 1
-  m_StartKinematicObjectCount: 0
-  m_AutoSyncTransforms: 0
-  m_CharacterCount: 0
-  m_CameraCount: 0
-  m_KinematicObjectCount: 0
-  m_FixedTime: 0
-  m_FixedUpdate: 0
 --- !u!114 &615358709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6626,12 +6339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b17e11b4e85729449b773c74f06daef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DecalLimit: 100
-  m_WeatheredDecalLimit: 20
-  m_RemoveFadeoutSpeed: 10
-  m_Decals: []
-  m_WeatheredDecals: []
-  m_DecalsToFade: []
 --- !u!114 &615358710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6644,20 +6351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3230f1117d4c11549b64332c8db164af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ObjectSurfaces: []
-  m_MainTexturePropertyName: _MainTex
-  m_DetectTerrainTreeTextures: 0
-  m_FallbackSurfaceImpact: {fileID: 0}
-  m_FallbackSurfaceType: {fileID: 11400000, guid: e616b14f5d2d0cf42bb5b4360f2b2089, type: 2}
-  m_FallbackAllowDecals: 1
-  m_HasTerrain: 0
-  m_MainTexturePropertyID: 0
-  m_DefaultUV:
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  m_MaterialHitTriangle: 000000000000000000000000
 --- !u!4 &615358711
 Transform:
   m_ObjectHideFlags: 0
@@ -6716,22 +6409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edead2b42b914a84faf341ae0d10c805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Drive
-    m_Preset: {fileID: 11400000, guid: de01ff1ab6d25a044852c9fc829929a2, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: UseShieldBubble
-    m_Preset: {fileID: 11400000, guid: de01ff1ab6d25a044852c9fc829929a2, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_ForceVisible: 0
-  m_FirstPersonVisibleOnDeath: 0
-  m_PerspectiveMonitor: {fileID: 0}
 --- !u!1001 &645990627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7883,22 +7560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c91328812a38fa4e8d06b81b3e96154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Character: {fileID: 0}
-  m_Visible: 1
-  m_ShowUI: 1
-  m_CameraGameObject: {fileID: 0}
-  m_PrimaryCount: {fileID: 1702021459}
-  m_CharacterInventory: {fileID: 0}
-  m_ItemDefinition: {fileID: 114129033234374500, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-  m_AlwaysVisible: 0
-  m_VisibleOnDeath: 1
-  m_GameObject: {fileID: 0}
-  m_Alive: 1
 --- !u!114 &844429809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8374,8 +8035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a248a6f0e7acfe14fb3bc7907fc03c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 2
-  m_AlwaysActive: 0
 --- !u!114 &933768812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8388,27 +8047,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527b6ce4c43b6dd458111a6670a3de65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GameObject: {fileID: 0}
-  m_Animator: {fileID: 0}
-  m_Character: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_CharacterAnimatorMonitor: {fileID: 0}
-  m_FirstPersonAnimatorMonitor: 0
-  m_HorizontalMovement: 0
-  m_ForwardMovement: 0
-  m_Pitch: 0
-  m_Yaw: 0
-  m_Speed: 0
-  m_Height: 0
-  m_Moving: 0
-  m_Aiming: 0
-  m_MovementSetID: 0
-  m_AbilityIndex: 0
-  m_AbilityIntData: 0
-  m_AbilityFloatData: 0
-  m_ItemSlotID: 
-  m_ItemSlotStateIndex: 
-  m_ItemSlotSubstateIndex: 
 --- !u!95 &933768813
 Animator:
   serializedVersion: 7
@@ -9565,27 +9203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9bebab3f9cb721428dfc4e9edb0d3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Character: {fileID: 0}
-  m_Visible: 1
-  m_ShowUI: 1
-  m_CameraGameObject: {fileID: 0}
-  m_AlwaysShowIndicator: 0
-  m_FollowAttacker: 1
-  m_IndicatorAngleThreshold: 40
-  m_IndicatorOffset: 50
-  m_IndicatorVisiblityTime: 2
-  m_IndicatorFadeTime: 1
-  m_GameObject: {fileID: 0}
-  m_Camera: {fileID: 0}
-  m_CharacterTransform: {fileID: 0}
-  m_ActiveDamageIndicatorCount: 0
-  m_StoredIndicators: []
-  m_DamageIndicatorIndex: 0
 --- !u!1 &1246585314
 GameObject:
   m_ObjectHideFlags: 0
@@ -9630,7 +9247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 57
 --- !u!1 &1251692854
 GameObject:
   m_ObjectHideFlags: 0
@@ -9722,20 +9338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec7620e80ab4db42ae512f733459a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_InvisibleMaterial: {fileID: 2100000, guid: 0a580a5ea04fdab47941095489aa23b7, type: 2}
-  m_DeathVisibility: 1
-  m_GameObject: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_Inventory: {fileID: 0}
-  m_FirstPersonPerspective: 0
-  m_Renderers: []
-  m_RendererThirdPersonObjects: []
-  m_ThirdPersonRenderers: 
 --- !u!114 &1278971599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9748,23 +9350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab006db972ba3a14db5be7a062d0ca4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: RPG
-    m_Preset: {fileID: 11400000, guid: 7993d94475f655b42bbafb67d2026bd8, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_HorizontalInputName: Horizontal
-  m_ForwardInputName: Vertical
-  m_GameObject: {fileID: 0}
-  m_PlayerInput: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_InputEnabled: 0
-  m_HorizontalMovement: 0
-  m_ForwardMovement: 0
 --- !u!114 &1278971600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9777,8 +9362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0d30fd43d845447bd82d0e9f70bbb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Inventory: {fileID: 0}
-  m_PlayerInput: {fileID: 0}
 --- !u!114 &1278971601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9791,33 +9374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bc2472b1f6f6041952d8c86fa34a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_SurfaceImpact: {fileID: 11400000, guid: 8d265f95d76979647ae3d90f06c88211, type: 2}
-  m_FootstepMode: 1
-  m_Feet:
-  - {m_Object: {fileID: 88171428}, m_Group: 0, m_FlippedFootprint: 0}
-  - {m_Object: {fileID: 88171450}, m_Group: 0, m_FlippedFootprint: 1}
-  m_MoveDirectionFrameCount: 5
-  m_FootOffset: 0.07
-  m_MinTriggerInterval: 0.1
-  m_RequireMovement: 1
-  m_FixedInterval: 0.3
-  m_MinBobInterval: 0.2
-  m_GameObject: {fileID: 0}
-  m_Transform: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_CharacterLayerManager: {fileID: 0}
-  m_VerticalOffset: []
-  m_LastVerticalOffset: []
-  m_UpCount: 
-  m_DownCount: 
-  m_LastFootDown: {fileID: 0}
-  m_LastFootstepTime: -3.4028235e+38
-  m_FootstepGroupIndex: 0
 --- !u!114 &1278971602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9830,65 +9386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2473f4d1200d65d4e9388687553497ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: DeathAnimation
-    m_Preset: {fileID: 11400000, guid: a0db6b83174ff2b419ac6a38c696139b, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_PositioningMode: 2
-  m_Grouping: -1
-  m_MinRespawnTime: 3
-  m_MaxRespawnTime: 5
-  m_ScheduleRespawnOnDeath: 1
-  m_ScheduleRespawnOnDisable: 0
-  m_RespawnAudioClipSet: {m_AudioConfig: {fileID: 0}, m_AudioClips: []
-, m_LastPlayResult: {m_AudioSource: {fileID: 0}, m_AudioClipInfo:
-        m_ClipIndex: 0
-        m_AudioClip: {fileID: 0}
-        m_AudioConfig: {fileID: 0}
-        m_AudioModifier: {m_OutputOverride: {fileID: 0}, m_LoopOverride:
-            m_ValueOverride: 0
-            m_Value: 0
-, m_VolumeOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_PitchOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_StereoPanOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_SpatialBlendOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_ReverbZoneOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_DelayOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-}
-}}
-  m_OnRespawnEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_GameObject: {fileID: 0}
-  m_Transform: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_StartPosition: {x: 0, y: 0, z: 0}
-  m_StartRotation: {x: 0, y: 0, z: 0, w: 0}
-  m_Active: 0
 --- !u!114 &1278971603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9901,232 +9398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6607657a78e5445a5e47d0ad348e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: DoubleJump
-    m_Preset: {fileID: 11400000, guid: 1c3e972270524b6469650824b8500ea8, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: AlignToGround
-    m_Preset: {fileID: 11400000, guid: 1c3e972270524b6469650824b8500ea8, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: AlignToGravityZone
-    m_Preset: {fileID: 11400000, guid: 1c3e972270524b6469650824b8500ea8, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Invincible: 0
-  m_TimeInvincibleAfterSpawn: 0
-  m_HealthAttributeName: Health
-  m_ShieldAttributeName: Shield
-  m_Hitboxes:
-  - {m_Collider: {fileID: 278296132}, m_DamageMultiplier: 1}
-  m_MaxHitboxCollisionCount: 10
-  m_SpawnedObjectsOnDeath: []
-  m_DestroyedObjectsOnDeath: []
-  m_DeactivateOnDeath: 0
-  m_DeactivateOnDeathDelay: 0
-  m_DeathLayer:
-    m_Bits: 0
-  m_TakeDamageAudioClipSet: {m_AudioConfig: {fileID: 0}, m_AudioClips: []
-, m_LastPlayResult: {m_AudioSource: {fileID: 0}, m_AudioClipInfo:
-        m_ClipIndex: 0
-        m_AudioClip: {fileID: 0}
-        m_AudioConfig: {fileID: 0}
-        m_AudioModifier: {m_OutputOverride: {fileID: 0}, m_LoopOverride:
-            m_ValueOverride: 0
-            m_Value: 0
-, m_VolumeOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_PitchOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_StereoPanOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_SpatialBlendOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_ReverbZoneOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_DelayOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-}
-}}
-  m_HealAudioClipSet: {m_AudioConfig: {fileID: 0}, m_AudioClips: []
-, m_LastPlayResult: {m_AudioSource: {fileID: 0}, m_AudioClipInfo:
-        m_ClipIndex: 0
-        m_AudioClip: {fileID: 0}
-        m_AudioConfig: {fileID: 0}
-        m_AudioModifier: {m_OutputOverride: {fileID: 0}, m_LoopOverride:
-            m_ValueOverride: 0
-            m_Value: 0
-, m_VolumeOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_PitchOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_StereoPanOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_SpatialBlendOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_ReverbZoneOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_DelayOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-}
-}}
-  m_DeathAudioClipSet: {m_AudioConfig: {fileID: 0}, m_AudioClips: []
-, m_LastPlayResult: {m_AudioSource: {fileID: 0}, m_AudioClipInfo:
-        m_ClipIndex: 0
-        m_AudioClip: {fileID: 0}
-        m_AudioConfig: {fileID: 0}
-        m_AudioModifier: {m_OutputOverride: {fileID: 0}, m_LoopOverride:
-            m_ValueOverride: 0
-            m_Value: 0
-, m_VolumeOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_PitchOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_StereoPanOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_SpatialBlendOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_ReverbZoneOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-, m_DelayOverride:
-            m_ValueOverride: 0
-            m_Constant1: 0
-            m_Constant2: 0
-}
-}}
-  m_DamagePopupManagerID: -1
-  m_OnDamageEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnHealEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnDeathEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_DamagePopupManager: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Transform: {fileID: 0}
-  m_Rigidbody: {fileID: 0}
-  m_AttributeManager: {fileID: 0}
-  m_HealthAttribute:
-    m_States:
-    - m_Name: Default
-      m_Preset: {fileID: 0}
-      m_BlockList: []
-      m_Default: 1
-    m_StateBoundGameObject: {fileID: 0}
-    m_Name: 
-    m_MinValue: 0
-    m_MaxValue: 100
-    m_Value: 100
-    m_AutoUpdateValueType: 0
-    m_AutoUpdateStartDelay: 1
-    m_AutoUpdateInterval: 0.1
-    m_AutoUpdateAmount: 0.2
-    m_GameObject: {fileID: 0}
-    m_StartValue: 0
-    m_ValuesStored: 0
-    m_StoredAutoUpdateValueType: 0
-    m_StoredAutoUpdateStartDelay: 0
-    m_StoredAutoUpdateInterval: 0
-    m_StoredAutoUpdateAmount: 0
-  m_ShieldAttribute:
-    m_States:
-    - m_Name: Default
-      m_Preset: {fileID: 0}
-      m_BlockList: []
-      m_Default: 1
-    m_StateBoundGameObject: {fileID: 0}
-    m_Name: 
-    m_MinValue: 0
-    m_MaxValue: 100
-    m_Value: 100
-    m_AutoUpdateValueType: 0
-    m_AutoUpdateStartDelay: 1
-    m_AutoUpdateInterval: 0.1
-    m_AutoUpdateAmount: 0.2
-    m_GameObject: {fileID: 0}
-    m_StartValue: 0
-    m_ValuesStored: 0
-    m_StoredAutoUpdateValueType: 0
-    m_StoredAutoUpdateStartDelay: 0
-    m_StoredAutoUpdateInterval: 0
-    m_StoredAutoUpdateAmount: 0
-  m_SpawnTime: 0
-  m_AliveLayer: 0
-  m_ApplyFallDamage: 1
-  m_MinFallDamageHeight: 5
-  m_MinFallDamage: 1
-  m_MaxFallDamage: 80
-  m_DeathHeight: 14
-  m_DamageCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_DamagedEffectName: 
-  m_DamagedEffectIndex: -1
-  m_CharacterLocomotion: {fileID: 0}
-  m_CharacterLayer: 0
 --- !u!114 &1278971604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10139,28 +9410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30da4fa96ed67145a2c5310eca67bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Attributes:
-  - m_States:
-    - m_Name: Default
-      m_Preset: {fileID: 0}
-      m_BlockList: []
-      m_Default: 1
-    m_StateBoundGameObject: {fileID: 0}
-    m_Name: Health
-    m_MinValue: 0
-    m_MaxValue: 100
-    m_Value: 100
-    m_AutoUpdateValueType: 0
-    m_AutoUpdateStartDelay: 1
-    m_AutoUpdateInterval: 0.1
-    m_AutoUpdateAmount: 0.2
-    m_GameObject: {fileID: 0}
-    m_StartValue: 0
-    m_ValuesStored: 0
-    m_StoredAutoUpdateValueType: 0
-    m_StoredAutoUpdateStartDelay: 0
-    m_StoredAutoUpdateInterval: 0
-    m_StoredAutoUpdateAmount: 0
 --- !u!114 &1278971605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10173,19 +9422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232d5fad763e23a43a9ad6c3cc277046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_EnemyLayers:
-    m_Bits: 100663296
-  m_InvisibleLayers:
-    m_Bits: 1879048198
-  m_SolidObjectLayers:
-    m_Bits: 2382364675
-  m_CharacterLayer:
-    m_Bits: 2147483648
 --- !u!114 &1278971606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10198,294 +9434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f0dc0d141852c4fa74c5aeee60f7c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: LookAt
-    m_Preset: {fileID: 11400000, guid: 2b0c0bb6ce5a8764497e1e94362c74be, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Drive
-    m_Preset: {fileID: 11400000, guid: a955214f45770ff428a6b2be2e0d4e2b, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Interact
-    m_Preset: {fileID: 11400000, guid: b7d9643b54acb5748aa4fa05d48e4dcd, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Ride
-    m_Preset: {fileID: 11400000, guid: 93e30dcf8a111604e9c1055e1899352b, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Bow
-    m_Preset: {fileID: 11400000, guid: 2fea74b20da5e4446b7123824b4caff9, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: FirstPerson
-    m_Preset: {fileID: 11400000, guid: 858baa3a59dd9b448a8106c56a87c6b8, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: ParticleStream
-    m_Preset: {fileID: 11400000, guid: ad2531d04a727654b8d56bd7db40a719, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Heal
-    m_Preset: {fileID: 11400000, guid: ad2531d04a727654b8d56bd7db40a719, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: ShieldBubble
-    m_Preset: {fileID: 11400000, guid: ad2531d04a727654b8d56bd7db40a719, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Teleport
-    m_Preset: {fileID: 11400000, guid: ad2531d04a727654b8d56bd7db40a719, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Knife
-    m_Preset: {fileID: 11400000, guid: 437d7dfc915835144a0610bf988455d8, type: 2}
-    m_BlockList:
-    - FirstPerson
-    m_Default: 0
-  - m_Name: Katana
-    m_Preset: {fileID: 11400000, guid: 437d7dfc915835144a0610bf988455d8, type: 2}
-    m_BlockList:
-    - FirstPerson
-    m_Default: 0
-  - m_Name: Sword
-    m_Preset: {fileID: 11400000, guid: 437d7dfc915835144a0610bf988455d8, type: 2}
-    m_BlockList:
-    - FirstPerson
-    m_Default: 0
-  - m_Name: Body
-    m_Preset: {fileID: 11400000, guid: 437d7dfc915835144a0610bf988455d8, type: 2}
-    m_BlockList:
-    - FirstPerson
-    m_Default: 0
-  - m_Name: SwordShield
-    m_Preset: {fileID: 11400000, guid: 437d7dfc915835144a0610bf988455d8, type: 2}
-    m_BlockList:
-    - FirstPerson
-    m_Default: 0
-  - m_Name: Shield
-    m_Preset: {fileID: 11400000, guid: 437d7dfc915835144a0610bf988455d8, type: 2}
-    m_BlockList:
-    - FirstPerson
-    m_Default: 0
-  - m_Name: PrimaryFragGrenade
-    m_Preset: {fileID: 11400000, guid: 8ad0ca6b52d83ae448783a81650d03d7, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: AimShield
-    m_Preset: {fileID: 11400000, guid: 913438017b172c146b46c57c46ef3957, type: 2}
-    m_BlockList:
-    - FirstPerson
-    m_Default: 0
-  - m_Name: AimSwordShield
-    m_Preset: {fileID: 11400000, guid: 913438017b172c146b46c57c46ef3957, type: 2}
-    m_BlockList:
-    - FirstPerson
-    m_Default: 0
-  - m_Name: Aim
-    m_Preset: {fileID: 11400000, guid: b5f252ee0cf60d443a9e538482827357, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Flashlight
-    m_Preset: {fileID: 11400000, guid: 8611eda2bf648a14d831c547694bd7ae, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Use
-    m_Preset: {fileID: 11400000, guid: b5f252ee0cf60d443a9e538482827357, type: 2}
-    m_BlockList:
-    - Flashlight
-    m_Default: 0
-  - m_Name: 2.5D
-    m_Preset: {fileID: 11400000, guid: aeeb655ffa198d84390c6891f9020b05, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_DebugDrawLookRay: 0
-  m_BaseLayerIndex: 0
-  m_UpperBodyLayerIndex: 4
-  m_LayerMask:
-    m_Bits: 268435401
-  m_LookAtOffset: {x: 0, y: 0, z: 0}
-  m_LookAtBodyWeight: 0.05
-  m_LookAtHeadWeight: 0.425
-  m_LookAtEyesWeight: 1
-  m_LookAtClampWeight: 0.35
-  m_LookAtAdjustmentSpeed: 0.5
-  m_ActiveLookAtStateName: LookAt
-  m_LookAtWeightAdjustmentSpeed: 0.2
-  m_HipsPositionAdjustmentSpeed: 4
-  m_HipsPositionOffset: 0
-  m_FootOffsetAdjustment: 0.005
-  m_FootWeightActiveAdjustmentSpeed: 10
-  m_FootWeightInactiveAdjustmentSpeed: 2
-  m_OverrideFootIKWeight: -1
-  m_UpperArmWeight: 1
-  m_UpperArmAdjustmentSpeed: 10
-  m_HandWeight: 1
-  m_HandAdjustmentSpeed: 10
-  m_HandPositionOffset: {x: 0, y: 0, z: 0}
-  m_LeftHandPositionSpring:
-    m_Stiffness: 0.2
-    m_Damping: 0.25
-    m_VelocityFadeInLength: 1
-    m_MaxSoftForceFrames: 120
-    m_MinVelocity: 0.00001
-    m_MaxVelocity: 10000
-    m_MinValue: {x: -10000, y: -10000, z: -10000}
-    m_MaxValue: {x: 10000, y: 10000, z: 10000}
-    m_Value: {x: 0, y: 0, z: 0}
-    m_Velocity: {x: 0, y: 0, z: 0}
-    m_RestValue: {x: 0, y: 0, z: 0}
-    m_RotationalSpring: 0
-    m_VelocityFadeInCap: 0
-    m_VelocityFadeInEndTime: 0
-    m_SoftForceFrames: []
-    m_TimeScale: 1
-    m_Resting: 0
-  m_LeftHandRotationSpring:
-    m_Stiffness: 0.2
-    m_Damping: 0.05
-    m_VelocityFadeInLength: 1
-    m_MaxSoftForceFrames: 120
-    m_MinVelocity: 0.00001
-    m_MaxVelocity: 10000
-    m_MinValue: {x: -10000, y: -10000, z: -10000}
-    m_MaxValue: {x: 10000, y: 10000, z: 10000}
-    m_Value: {x: 0, y: 0, z: 0}
-    m_Velocity: {x: 0, y: 0, z: 0}
-    m_RestValue: {x: 0, y: 0, z: 0}
-    m_RotationalSpring: 0
-    m_VelocityFadeInCap: 0
-    m_VelocityFadeInEndTime: 0
-    m_SoftForceFrames: []
-    m_TimeScale: 1
-    m_Resting: 0
-  m_RightHandPositionSpring:
-    m_Stiffness: 0.2
-    m_Damping: 0.25
-    m_VelocityFadeInLength: 1
-    m_MaxSoftForceFrames: 120
-    m_MinVelocity: 0.00001
-    m_MaxVelocity: 10000
-    m_MinValue: {x: -10000, y: -10000, z: -10000}
-    m_MaxValue: {x: 10000, y: 10000, z: 10000}
-    m_Value: {x: 0, y: 0, z: 0}
-    m_Velocity: {x: 0, y: 0, z: 0}
-    m_RestValue: {x: 0, y: 0, z: 0}
-    m_RotationalSpring: 0
-    m_VelocityFadeInCap: 0
-    m_VelocityFadeInEndTime: 0
-    m_SoftForceFrames: []
-    m_TimeScale: 1
-    m_Resting: 0
-  m_RightHandRotationSpring:
-    m_Stiffness: 0.2
-    m_Damping: 0.05
-    m_VelocityFadeInLength: 1
-    m_MaxSoftForceFrames: 120
-    m_MinVelocity: 0.00001
-    m_MaxVelocity: 10000
-    m_MinValue: {x: -10000, y: -10000, z: -10000}
-    m_MaxValue: {x: 10000, y: 10000, z: 10000}
-    m_Value: {x: 0, y: 0, z: 0}
-    m_Velocity: {x: 0, y: 0, z: 0}
-    m_RestValue: {x: 0, y: 0, z: 0}
-    m_RotationalSpring: 0
-    m_VelocityFadeInCap: 0
-    m_VelocityFadeInEndTime: 0
-    m_SoftForceFrames: []
-    m_TimeScale: 1
-    m_Resting: 0
-  m_GameObject: {fileID: 0}
-  m_Transform: {fileID: 0}
-  m_Animator: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_Inventory: {fileID: 0}
-  m_Head: {fileID: 0}
-  m_Hips: {fileID: 0}
-  m_LeftFoot: {fileID: 0}
-  m_RightFoot: {fileID: 0}
-  m_LeftToes: {fileID: 0}
-  m_RightToes: {fileID: 0}
-  m_LeftLowerLeg: {fileID: 0}
-  m_RightLowerLeg: {fileID: 0}
-  m_LeftHand: {fileID: 0}
-  m_RightHand: {fileID: 0}
-  m_LeftUpperArm: {fileID: 0}
-  m_RightUpperArm: {fileID: 0}
-  m_ImmediatePosition: 0
-  m_Aiming: 0
-  m_ItemInUse: 0
-  m_LookAtPosition: {x: 0, y: 0, z: 0}
-  m_LookAtBodyIKWeight: 0
-  m_LookAtHeadIKWeight: 0
-  m_LookAtEyesIKWeight: 0
-  m_HipsPosition: {x: 0, y: 0, z: 0}
-  m_HipsOffset: 0
-  m_FootOffset:
-  - 0
-  - 0
-  m_FootIKWeight:
-  - 0
-  - 0
-  m_MaxLegLength:
-  - 0
-  - 0
-  m_RaycastDistance:
-  - 0
-  - 0
-  m_GroundDistance:
-  - 0
-  - 0
-  m_GroundPoint:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  m_GroundNormal:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  m_HandRotationIKWeight:
-  - 0
-  - 0
-  m_HandPositionIKWeight:
-  - 0
-  - 0
-  m_HandSlotID: 0000000000000000
-  m_DominantHand: {fileID: 0}
-  m_NonDominantHand: {fileID: 0}
-  m_DominantUpperArmWeight: 0
-  m_DominantUpperArm: {fileID: 0}
-  m_DominantHandPosition: {x: 0, y: 0, z: 0}
-  m_NonDominantHandOffset: {x: 0, y: 0, z: 0}
-  m_NonDominantHandPosition: {x: 0, y: 0, z: 0}
-  m_DominantSlotID: 0
-  m_HandOffset: {x: 0, y: 0, z: 0}
-  m_Unequipping: 0
-  m_LeftHandItemIKTarget: {fileID: 0}
-  m_RightHandItemIKTarget: {fileID: 0}
-  m_LeftHandItemIKHintTarget: {fileID: 0}
-  m_RightHandItemIKHintTarget: {fileID: 0}
-  m_ActiveLookAtTarget: 0
-  m_LookAtTargetPosition: {x: 0, y: 0, z: 0}
-  m_IKTarget: []
-  m_AbilityIKTarget: []
-  m_InterpolationTarget: []
-  m_StartInterpolation: []
-  m_InterpolationDuration: []
-  m_InterpolateIKTargets: 0
-  m_RequireSecondHandPositioning: 0
-  m_PrevLeftHandPositionSpringValue: {x: 0, y: 0, z: 0}
-  m_PrevLeftHandPositionSpringVelocity: {x: 0, y: 0, z: 0}
-  m_PrevLeftHandRotationSpringValue: {x: 0, y: 0, z: 0}
-  m_PrevLeftHandRotationSpringVelocity: {x: 0, y: 0, z: 0}
-  m_PrevRightHandPositionSpringValue: {x: 0, y: 0, z: 0}
-  m_PrevRightHandPositionSpringVelocity: {x: 0, y: 0, z: 0}
-  m_PrevRightHandRotationSpringValue: {x: 0, y: 0, z: 0}
-  m_PrevRightHandRotationSpringVelocity: {x: 0, y: 0, z: 0}
-  m_Enable: 0
 --- !u!114 &1278971607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10498,107 +9446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9c18933a275014f9b208ad09865ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Aim
-    m_Preset: {fileID: 11400000, guid: 2ec46ebcd5b5a7049bf684f3c3531d4b, type: 2}
-    m_BlockList:
-    - AimSniperRifle
-    m_Default: 0
-  - m_Name: LowSensitivityAcceleration
-    m_Preset: {fileID: 11400000, guid: afd2dc566d4ea1c44aedeb5f8ab07857, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: LowSensitivity
-    m_Preset: {fileID: 11400000, guid: 0e04664e51fba1d4c972f4c1ef1512cf, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Raw
-    m_Preset: {fileID: 11400000, guid: 6a19cd15ae18f4d47854bb8d082d2223, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: OldSchool
-    m_Preset: {fileID: 11400000, guid: 5718e44670dd66e4abb38db90f41bdce, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: AimSniperRifle
-    m_Preset: {fileID: 11400000, guid: c8e23d27d4f07484dbee06bb8ded627f, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: AimPistol
-    m_Preset: {fileID: 11400000, guid: b6af0be8234acb842b2dbd8154921128, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: AimShotgun
-    m_Preset: {fileID: 11400000, guid: b6af0be8234acb842b2dbd8154921128, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: AimBow
-    m_Preset: {fileID: 11400000, guid: b6af0be8234acb842b2dbd8154921128, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: AimRocketLauncher
-    m_Preset: {fileID: 11400000, guid: b6af0be8234acb842b2dbd8154921128, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: AimAssaultRifle
-    m_Preset: {fileID: 11400000, guid: b6af0be8234acb842b2dbd8154921128, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: 2.5D
-    m_Preset: {fileID: 11400000, guid: 6a6597714e5f69d4d94bc4d54eaaed33, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: FixedUpdate
-    m_Preset: {fileID: 11400000, guid: 7332ef87babff3b409e6ed89516800d7, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: TopDown
-    m_Preset: {fileID: 11400000, guid: 6a6597714e5f69d4d94bc4d54eaaed33, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: PointClick
-    m_Preset: {fileID: 11400000, guid: 6a6597714e5f69d4d94bc4d54eaaed33, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_HorizontalLookInputName: Mouse X
-  m_VerticalLookInputName: Mouse Y
-  m_LookVectorMode: 0
-  m_LookSensitivity: {x: 2, y: 2}
-  m_LookSensitivityMultiplier: 1
-  m_SmoothLookSteps: 20
-  m_SmoothLookWeight: 0.5
-  m_SmoothExponent: 1.05
-  m_LookAccelerationThreshold: 0
-  m_FrameWaitCount: 4
-  m_ControllerConnectedCheckRate: 1
-  m_ConnectedControllerState: ConnectedController
-  m_EnableGamplayInputEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_GameObject: {fileID: 0}
-  m_SmoothLookBuffer: []
-  m_SmoothLookBufferIndex: 0
-  m_SmoothLookBufferCount: 0
-  m_RawLookVector: {x: 0, y: 0}
-  m_CurrentLookVector: {x: 0, y: 0}
-  m_TimeScale: 1
-  m_ControllerConnected: 0
-  m_AllowInput: 1
-  m_Focus: 1
-  m_Death: 0
-  m_RawLookVectorAccumulation: {x: 0, y: 0, z: 0}
-  m_UnitySmoothLookVectorAccumulation: {x: 0, y: 0, z: 0}
-  m_ForceInput: 0
-  m_DisableCursor: 1
-  m_EnableCursorWithEscape: 1
-  m_PreventLookVectorChanges: 1
-  m_JoystickUpThreshold: 1
-  m_UseVirtualInput: 0
 --- !u!114 &1278971608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10611,538 +9458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f59e0e14fa9a35469fc458f939083de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CategoryItemSets:
-  - m_CategoryID: 3636424895
-    m_CategoryName: Items
-    m_DefaultItemSetIndex: 20
-    m_ItemSetList:
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114334400771614146, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: AssaultRifle
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114735020259635174, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: 
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114982450061250758, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: Pistol
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114982450061250758, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 114982450061250758, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      m_State: DualPistols
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114628928406164210, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: 
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114980215125769966, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: 
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 0}
-      - {fileID: 114971095791176372, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      m_State: Bow
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114099228593570972, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: Knife
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114165112627310990, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: Sword
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114165112627310990, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 114046018007686742, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      m_State: SwordShield
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 0}
-      - {fileID: 114046018007686742, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      m_State: Shield
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114544757700045432, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: Katana
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114074367643677680, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: PrimaryFragGrenade
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114346260507904370, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: Flashlight
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114038489858704770, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: 
-      m_Enabled: 1
-      m_CanSwitchTo: 0
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114957327483737902, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: ParticleStream
-      m_Enabled: 1
-      m_CanSwitchTo: 0
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114679104364087316, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: 
-      m_Enabled: 1
-      m_CanSwitchTo: 0
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114597926302919460, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: Heal
-      m_Enabled: 1
-      m_CanSwitchTo: 0
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114719901230668630, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: ShieldBubble
-      m_Enabled: 1
-      m_CanSwitchTo: 0
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114327507680120068, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: Teleport
-      m_Enabled: 1
-      m_CanSwitchTo: 0
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114459215557555358, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: Body
-      m_Enabled: 1
-      m_CanSwitchTo: 0
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-  - m_CategoryID: 946837701
-    m_CategoryName: Left Hand Secondary Grenades
-    m_DefaultItemSetIndex: 1
-    m_ItemSetList:
-    - m_States:
-      - m_Name: SwordShield
-        m_Preset: {fileID: 11400000, guid: 3a1a23b2822b1194ba5ccd83c174d56e, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Shield
-        m_Preset: {fileID: 11400000, guid: 3a1a23b2822b1194ba5ccd83c174d56e, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: DualPistols
-        m_Preset: {fileID: 11400000, guid: 3a1a23b2822b1194ba5ccd83c174d56e, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: PrimaryFragGrenade
-        m_Preset: {fileID: 11400000, guid: 3a1a23b2822b1194ba5ccd83c174d56e, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Body
-        m_Preset: {fileID: 11400000, guid: 3a1a23b2822b1194ba5ccd83c174d56e, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Bow
-        m_Preset: {fileID: 11400000, guid: 3a1a23b2822b1194ba5ccd83c174d56e, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 0}
-      - {fileID: 114074367643677680, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      m_State: 
-      m_Enabled: 1
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: SwordShield
-        m_Preset: {fileID: 11400000, guid: 87b714c3074b2c24c822834e38779477, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Shield
-        m_Preset: {fileID: 11400000, guid: 87b714c3074b2c24c822834e38779477, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: DualPistols
-        m_Preset: {fileID: 11400000, guid: 87b714c3074b2c24c822834e38779477, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Body
-        m_Preset: {fileID: 11400000, guid: 87b714c3074b2c24c822834e38779477, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: PrimaryFragGrenade
-        m_Preset: {fileID: 11400000, guid: 87b714c3074b2c24c822834e38779477, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Bow
-        m_Preset: {fileID: 11400000, guid: 87b714c3074b2c24c822834e38779477, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 0}
-      - {fileID: 0}
-      m_State: 
-      m_Enabled: 0
-      m_CanSwitchTo: 0
-      m_DisabledIndex: 0
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-  - m_CategoryID: 79718183
-    m_CategoryName: Right Hand Secondary Grenades
-    m_DefaultItemSetIndex: 1
-    m_ItemSetList:
-    - m_States:
-      - m_Name: Shield
-        m_Preset: {fileID: 11400000, guid: 87b714c3074b2c24c822834e38779477, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Bow
-        m_Preset: {fileID: 11400000, guid: 87b714c3074b2c24c822834e38779477, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 114074367643677680, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-      - {fileID: 0}
-      m_State: 
-      m_Enabled: 0
-      m_CanSwitchTo: 1
-      m_DisabledIndex: -1
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-    - m_States:
-      - m_Name: Shield
-        m_Preset: {fileID: 11400000, guid: 3a1a23b2822b1194ba5ccd83c174d56e, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Bow
-        m_Preset: {fileID: 11400000, guid: 3a1a23b2822b1194ba5ccd83c174d56e, type: 2}
-        m_BlockList: []
-        m_Default: 0
-      - m_Name: Default
-        m_Preset: {fileID: 0}
-        m_BlockList: []
-        m_Default: 1
-      m_StateBoundGameObject: {fileID: 0}
-      m_Slots:
-      - {fileID: 0}
-      - {fileID: 0}
-      m_State: 
-      m_Enabled: 1
-      m_CanSwitchTo: 0
-      m_DisabledIndex: 0
-      m_Active: 0
-      m_CategoryIndex: 0
-      m_EmptyItemSet: 0
-      m_Index: 0
-      m_ItemSetManager: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Inventory: {fileID: 0}
-  m_ActiveItemSetIndex: 
-  m_NextItemSetIndex: 
-  m_ItemCollection: {fileID: 11400000, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
 --- !u!114 &1278971609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11155,65 +9470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2fc3c5ec9fe8c241bc7a9c89fb57734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RemoveAllOnDeath: 1
-  m_LoadDefaultLoadoutOnRespawn: 1
-  m_UnequippedStateName: Unequipped
-  m_OnAddItemEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnPickupItemIdentifierEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnPickupItemEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnEquipItemEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnAdjustItemIdentifierAmountEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnUnequipItemEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnRemoveItemEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_GameObject: {fileID: 0}
-  m_SlotCount: 1
-  m_AllItems: []
-  m_DefaultLoadout:
-  - {ItemDefinition: {fileID: 114459215557555358, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}, Amount: 1}
-  - {ItemDefinition: {fileID: 114334400771614146, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}, Amount: 1}
-  - {ItemDefinition: {fileID: 114399628520483710, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}, Amount: 100}
-  m_RuntimePickups:
-  - {fileID: 1367720390654120, guid: 19536c9b50a9be14fa22174767b59282, type: 3}
-  - {fileID: 1768906284550180, guid: 90fb142d7f7b54040a429a28db772212, type: 3}
-  - {fileID: 231266389, guid: c4337ab50ad3be345a00adf470fa03b0, type: 3}
-  - {fileID: 1255917835, guid: f29d7ee0a5cbbc248a3b67c59e7e1a45, type: 3}
-  - {fileID: 355650963, guid: b2b3f7e7f04a7b14eb73cef75cf7072d, type: 3}
-  - {fileID: 1003491584915618, guid: 1c3025b16c407bd458255437369629b9, type: 3}
-  - {fileID: 1317904565480928, guid: 9df997da430176f479dd87cef769f661, type: 3}
-  - {fileID: 1832669381760786, guid: 5cbba48cce25fb44dbd8bc47121e9f30, type: 3}
-  - {fileID: 1246994654, guid: 6cad5a51abe73344a9afa0db0065e36c, type: 3}
-  - {fileID: 108117435, guid: aba09f1820f146f4ead3dc3a8714f668, type: 3}
-  - {fileID: 1798176879195562, guid: cfc693cce96a090429991703e7c7ae53, type: 3}
-  - {fileID: 1548656231143480, guid: e5598a2ebd1291a44a0c9c426ffb2c05, type: 3}
-  - {fileID: 1428629054871778, guid: 63dd4c58a395543429ba6671b39de820, type: 3}
-  - {fileID: 1746977596710176, guid: 36df015a8b225a74fab463194b213ee0, type: 3}
-  - {fileID: 2119644065, guid: 2e7f332ef5d1b3c4a9761f46fe3ffd3b, type: 3}
-  - {fileID: 1039541709002246, guid: 38ba6fb269e96404fa6e1552ace32495, type: 3}
-  - {fileID: 1614909833409388, guid: d0d050efd2052034f8b97c2e54954f84, type: 3}
-  - {fileID: 1972087343817176, guid: e9f72c71c93a93a4298f15bfd087556f, type: 3}
-  - {fileID: 1650891155, guid: a79d1f491447e6047bfcce2279002875, type: 3}
-  m_ActiveItem: []
 --- !u!114 &1278971610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11226,803 +9482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98028e089f7f9154d8b637cf107f8d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: PathfindingMovement
-    m_Preset: {fileID: 11400000, guid: 73efc61e517e15a4f84eec5381a30838, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: MoveTowards
-    m_Preset: {fileID: 11400000, guid: 69afbe578b168cd4f99b2873bfca1a8f, type: 2}
-    m_BlockList:
-    - PathfindingMovement
-    m_Default: 0
-  - m_Name: Drive
-    m_Preset: {fileID: 11400000, guid: 62c15debd1a80514484d0ce53df90688, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Airborne
-    m_Preset: {fileID: 11400000, guid: 1dcce54b3fae33042b9ad59bb939774d, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Moving
-    m_Preset: {fileID: 11400000, guid: 527d884c54f1a4b4a82fed73411305a8, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: TopDown
-    m_Preset: {fileID: 11400000, guid: 0d159c3f21e1ca64aabbda164de34ca2, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: PointClick
-    m_Preset: {fileID: 11400000, guid: e8b00f9f8fa07ff4180139858d494e2b, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: 2.5D
-    m_Preset: {fileID: 11400000, guid: 4f46f5b5b3355744dae69daf08020d6c, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: FreeLook
-    m_Preset: {fileID: 11400000, guid: b2210a71c154a9a4d9fea00646690ece, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: ThirdPersonCombat
-    m_Preset: {fileID: 11400000, guid: 83466adf11193b64b950ac0dd685f8ad, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: RPG
-    m_Preset: {fileID: 11400000, guid: 8d9233c6c2b4e324d9b6ef53d3e63060, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: CrazyCowboy
-    m_Preset: {fileID: 11400000, guid: 3c20c83e67f2cc34a8af4b887fd56daf, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: OldSchool
-    m_Preset: {fileID: 11400000, guid: ec2a7c2ac87c9324a830e019c1b9b6a3, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Adventure
-    m_Preset: {fileID: 11400000, guid: 4c4ace08a16cd994c8dd29f58fda66a8, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Interact
-    m_Preset: {fileID: 11400000, guid: b2210a71c154a9a4d9fea00646690ece, type: 2}
-    m_BlockList:
-    - Adventure
-    - ThirdPersonCombat
-    - RPG
-    m_Default: 0
-  - m_Name: UseShieldBubble
-    m_Preset: {fileID: 11400000, guid: b2210a71c154a9a4d9fea00646690ece, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: FirstPerson
-    m_Preset: {fileID: 11400000, guid: a8d50ac4b54bb7e468e32d6f366f7a7c, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Aim
-    m_Preset: {fileID: 11400000, guid: 8ade8482f60d2494c801ba0b118f009a, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_UseRootMotionPosition: 1
-  m_RootMotionSpeedMultiplier: 1
-  m_RootMotionAirForceMultiplier: 1
-  m_UseRootMotionRotation: 0
-  m_RootMotionRotationMultiplier: 1
-  m_MotorRotationSpeed: 10
-  m_FramerateIndependentForce: 0
-  m_Mass: 100
-  m_SkinWidth: 0.08
-  m_SlopeLimit: 40
-  m_MaxStepHeight: 0.35
-  m_MotorAcceleration: {x: 0.18, y: 0, z: 0.18}
-  m_MotorDamping: 0.27
-  m_MotorAirborneAcceleration: {x: 0.12, y: 0, z: 0.12}
-  m_MotorAirborneDamping: 0.48
-  m_MotorBackwardsMultiplier: 0.7
-  m_PreviousAccelerationInfluence: 1
-  m_AdjustMotorForceOnSlope: 1
-  m_MotorSlopeForceUp: 1
-  m_MotorSlopeForceDown: 1.25
-  m_ExternalForceDamping: 0.1
-  m_ExternalForceAirDamping: 0.05
-  m_StickToGround: 1
-  m_Stickiness: 0.2
-  m_TimeScale: 1
-  m_UseGravity: 1
-  m_GravityDirection: {x: 0, y: -1, z: 0}
-  m_GravityMagnitude: 5.22
-  m_DetectHorizontalCollisions: 1
-  m_DetectVerticalCollisions: 1
-  m_ColliderLayerMask:
-    m_Bits: 2415919051
-  m_MaxCollisionCount: 100
-  m_MaxSoftForceFrames: 100
-  m_RotationCollisionCheckCount: 10
-  m_MaxOverlapIterations: 6
-  m_WallGlideCurve:
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - time: 0.1
-      value: 1.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - time: 1
-      value: 1.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  m_WallBounceModifier: 1
-  m_StickToMovingPlatform: 1
-  m_MovingPlatformSeperationVelocity: 5
-  m_MinHorizontalMovingPlatformStickSpeed: 2
-  m_MovingPlatformForceDamping: 0
-  m_SmoothedBones:
-  - {fileID: 88171068}
-  - {fileID: 88171104}
-  - {fileID: 88171046}
-  - {fileID: 88171042}
-  - {fileID: 88171472}
-  - {fileID: 88171448}
-  - {fileID: 88171460}
-  - {fileID: 88171480}
-  - {fileID: 88171478}
-  - {fileID: 88171454}
-  - {fileID: 88171482}
-  - {fileID: 88171486}
-  m_Transform: {fileID: 0}
-  m_Rigidbody: {fileID: 0}
-  m_AnimatorMonitor: {fileID: 0}
-  m_Colliders: []
-  m_IgnoredColliders: []
-  m_ColliderCount: 0
-  m_IgnoredColliderCount: 0
-  m_ColliderGameObjects: []
-  m_IgnoredColliderGameObjects: []
-  m_CharacterLayerManager: {fileID: 0}
-  m_GroundRaycastOrigin: {x: 0, y: 0, z: 0}
-  m_GroundHitTransform: {fileID: 0}
-  m_OverlapColliderHit: []
-  m_Up: {x: 0, y: 0, z: 0}
-  m_Height: 0
-  m_Radius: 3.4028235e+38
-  m_MotorThrottle: {x: 0, y: 0, z: 0}
-  m_MotorRotation: {x: 0, y: 0, z: 0, w: 0}
-  m_PrevMotorRotation: {x: 0, y: 0, z: 0, w: 0}
-  m_MoveDirection: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0, w: 1}
-  m_PrevPosition: {x: 0, y: 0, z: 0}
-  m_Velocity: {x: 0, y: 0, z: 0}
-  m_CheckRotationCollision: 0
-  m_AllowUseGravity: 1
-  m_ForceUseGravity: 0
-  m_AllowRootMotionPosition: 1
-  m_AllowRootMotionRotation: 1
-  m_ForceRootMotionPosition: 0
-  m_ForceRootMotionRotation: 0
-  m_AllowHorizontalCollisionDetection: 1
-  m_ForceHorizontalCollisionDetection: 0
-  m_AllowVerticalCollisionDetection: 1
-  m_ForceVerticalCollisionDetection: 0
-  m_AnimatorDeltaPosition: {x: 0, y: 0, z: 0}
-  m_AnimatorDeltaRotation: {x: 0, y: 0, z: 0, w: 0}
-  m_LocalRootMotionForce: {x: 0, y: 0, z: 0}
-  m_LocalRootMotionRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_SlopeFactor: 1
-  m_ExternalForce: {x: 0, y: 0, z: 0}
-  m_GravityAmount: 0
-  m_SoftForceFrames: []
-  m_ColliderLayers: 
-  m_IgnoredColliderLayers: 
-  m_InputVector: {x: 0, y: 0}
-  m_DeltaRotation: {x: 0, y: 0, z: 0}
-  m_Grounded: 1
-  m_CollisionLayerEnabled: 1
-  m_AlignToGravity: 0
-  m_SmoothGravityYawDelta: 1
-  m_ManualMove: 0
-  m_Platform: {fileID: 0}
-  m_PlatformRelativePosition: {x: 0, y: 0, z: 0}
-  m_PlatformRotationOffset: {x: 0, y: 0, z: 0, w: 0}
-  m_PlatformTorque: {x: 0, y: 0, z: 0, w: 1}
-  m_PlatformMovement: {x: 0, y: 0, z: 0}
-  m_PlatformVelocity: {x: 0, y: 0, z: 0}
-  m_GroundedMovingPlatform: 0
-  m_PlatformOverride: 0
-  m_PlatformDisconnectVelocity: {x: 0, y: 0, z: 0}
-  m_PlatformDisconnectTorque: {x: 0, y: 0, z: 0, w: 1}
-  m_ApplyPlatformDisconnectMovement: 0
-  m_PlatformDisconnectVelocityMaxMagnitude: 0.01
-  m_PlatformDisconnectTorqueMaxMagnitude: 0.01
-  m_UpdateLocation: 1
-  m_FirstPersonStateName: FirstPerson
-  m_ThirdPersonStateName: ThirdPerson
-  m_MovingStateName: Moving
-  m_AirborneStateName: Airborne
-  m_MovementTypeFullName: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes.Adventure
-  m_FirstPersonMovementTypeFullName: Opsive.UltimateCharacterController.FirstPersonController.Character.MovementTypes.Combat
-  m_ThirdPersonMovementTypeFullName: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes.Adventure
-  m_YawMultiplier: 7
-  m_MovingSpeedParameterValue: 1
-  m_MovementTypeData:
-  - m_ObjectType: Opsive.UltimateCharacterController.FirstPersonController.Character.MovementTypes.Combat
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f871295
-    m_ValuePositions: 0000000004000000040000000b0000000f00000013000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.FirstPersonController.Character.MovementTypes.FreeLook
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f871295
-    m_ValuePositions: 0000000004000000040000000b0000000f00000013000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes.Combat
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f871295
-    m_ValuePositions: 0000000004000000040000000b0000000f00000013000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes.Adventure
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f871295
-    m_ValuePositions: 0000000004000000040000000b0000000f00000013000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes.RPG
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712952a1955c7082673e797b44b90450c7825
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000190000002300000027000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes.Pseudo3D
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f871295d23eaf1e81ed0d7ef375779b80ea5373
-    m_ValuePositions: 0000000004000000040000000b0000000f000000130000001400000015000000160000001a000000
-    m_Values: "\x01"
-    m_UnityObjects:
-    - {fileID: 0}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes.TopDown
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f87129569af80fe81ed0d7ec71d2f9e
-    m_ValuePositions: 0000000004000000040000000b0000000f00000013000000140000001500000016000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes.PointClick
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f87129555339fbfa6d9a91a8aa5d7037a6c5735a4c070dfaaa1beed
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000190000001d0000001d0000002100000025000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  m_AbilityData:
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Ragdoll
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33dc4aa5fb3a9110b2dd3513fce804ce39b6ea2541
-    m_ValuePositions: 0000000004000000040000001100000015000000190000001a0000001a0000002c0000003000000034000000350000003500000043000000470000004b0000004c0000004c00000053000000570000005b0000005c0000005d0000005d000000610000006100000065000000690000006d0000006e0000006e0000006e00000072000000760000007a0000007e0000007e0000007e0000007e0000008200000083000000870000008b0000008f000000940000009500000099000000990000009d000000a1000000a1000000a5000000a9000000aa000000ab000000ab000000af000000af000000b3000000b3000000b7000000b7000000bb000000bb000000bf000000c3000000c3000000c7000000cb000000cf000000d0000000d1000000d1000000d5000000d5000000d6000000da000000de000000e2000000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 973b82ed7ac0cd649af173ea5bbf754a, type: 2}
-    - {fileID: 11400000, guid: 973b82ed7ac0cd649af173ea5bbf754a, type: 2}
-    - {fileID: 11400000, guid: 973b82ed7ac0cd649af173ea5bbf754a, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Revive
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33dc4aa5fbdc322fc7
-    m_ValuePositions: 00000000040000000400000012000000160000001a0000001b0000001b00000022000000260000002a0000002b0000002c0000002c000000300000003000000034000000380000003c0000003d0000003d0000003d0000004100000045000000490000004d0000004d0000004d0000004d0000005100000052000000560000005a0000005e000000630000006400000068000000680000006c00000070000000700000007400000078000000790000007a0000007a0000007e0000007e000000820000008200000086000000860000008a0000008a0000008e0000009200000092000000960000009a0000009e0000009f000000a0000000a0000000a4000000a4000000a5000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 1378a5d313b99fc4485441cda501a931, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Die
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33b6ea2541
-    m_ValuePositions: 0000000004000000040000001100000015000000190000001a0000001a0000002c0000003000000034000000350000003500000043000000470000004b0000004c0000004c00000053000000570000005b0000005c0000005d0000005d000000610000006100000065000000690000006d0000006e0000006e0000006e00000072000000760000007a0000007e0000007e0000007e0000007e0000008200000083000000870000008b0000008f000000940000009500000099000000990000009d000000a1000000a1000000a5000000a9000000aa000000ab000000ab000000af000000af000000b3000000b3000000b7000000b7000000bb000000bb000000bf000000c3000000c3000000c7000000cb000000cf000000d0000000d1000000d1000000d5000000d5000000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 15ac0c09ebe2ca343822a6391ba32f50, type: 2}
-    - {fileID: 11400000, guid: 15ac0c09ebe2ca343822a6391ba32f50, type: 2}
-    - {fileID: 11400000, guid: 15ac0c09ebe2ca343822a6391ba32f50, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.AI.NavMeshAgentMovement
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33b64ce163b7a8a064d25c5a6789eaa921ab9e9d5e3ae1c58c
-    m_ValuePositions: 0000000004000000040000001000000014000000180000001900000019000000200000002400000028000000290000002a0000002a0000002e0000002e00000032000000360000003a0000003b0000003b0000003b0000003f00000043000000470000004b0000004b0000004b0000004b0000004f0000005000000054000000580000005c0000006f000000700000007400000074000000780000007c0000007c00000080000000840000008500000086000000860000008a0000008a0000008e0000008e000000920000009200000096000000960000009a0000009e0000009e000000a2000000a6000000aa000000ab000000ac000000ac000000b0000000b0000000b1000000b1000000b5000000b9000000bd000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 5d9cfcccebafb9a44b34281062271594, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.MoveTowards
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa3332d00a207d9d0f74b48a3289525f0a7e059056aceea19ebc
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000001e00000022000000260000002700000028000000280000002c0000002c0000003000000034000000380000003900000039000000390000003d0000004100000045000000490000004900000049000000490000004d0000004e00000052000000560000005a00000065000000660000006a0000006a0000006e0000007200000072000000760000007a0000007b0000007c0000007c0000008000000080000000840000008400000088000000880000008c0000008c000000900000009400000094000000980000009c000000a0000000a1000000a2000000a2000000a6000000a6000000aa000000ae000000b2000000b3000000b4000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: d55331bfc25d3ba4e9d22b5cc22c7528, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Ride
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33decca26fc5ced5111dad48e226e02593a2367211515be98249bf817f0dcd35d5108bc5623d5684b597de379d827c4dbf77986114f90b85bedf3d0cc21fbf1c6f92af5939de6900d43d8f4c19301c343bfb673fc0be8c9954f24ac0b924594473
-    m_ValuePositions: 000000000400000004000000080000000c00000010000000110000001100000024000000280000002c0000002d0000002d00000034000000380000003c0000003d0000003e0000003e0000004200000042000000460000004a0000005000000054000000550000005500000055000000590000005d0000006100000065000000650000006500000065000000690000006a0000006e00000072000000760000007a0000007b0000007f0000007f0000008300000087000000870000008b0000008f000000900000009100000091000000950000009500000099000000990000009d0000009d000000a1000000a1000000a5000000a9000000a9000000ad000000b1000000b5000000b6000000b7000000c6000000ca000000ca000000ca000000ce000000d2000000d3000000d4000000d8000000dc000000e0000000e4000000f0000000f0000000f4000000f8000000fc000000fd000000fd000000fe00000002010000060100000a0100000a0100000b0100000f010000
-    m_Values: "\x03"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 33e0d17230a427d40a696465a2aa11ed, type: 2}
-    - {fileID: 11400000, guid: 9e6d2a0731baac544897428dff2f5327, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Drive
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33decca26fc5ced5111dad48e226e02593a2367211515be98249bf817f0dcd35d5108bc5623d5684b597de379d827c4dbf77986114f90b85bedf3d0cc2825bf54adeebf62f3d8f4c19301c343b640ba212
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000270000002b0000002c0000002c0000002c0000003000000034000000380000003c0000003c0000003c0000003c000000400000004100000045000000490000004d000000520000005300000057000000570000005b0000005f0000005f00000063000000670000006800000069000000690000006d0000006d0000007100000071000000750000007500000079000000790000007d000000810000008100000085000000890000008d0000008e0000008f0000009f000000a3000000a3000000a3000000a7000000ab000000ac000000ad000000b1000000b5000000b9000000bd000000c9000000c9000000cd000000d1000000d5000000d6000000d7000000d8000000dc000000e0000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Jump
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa3319df064bdaf23d7fedc79b91b22eac2658d465e2350f1f2d959969b950cca4e378adb71399cf15e5d5094c0832f6189e918656352f256b639aae4ab592b11945b572ac68b17ca5d74a01ca2e2d5edf379dbd03fb3aff105f
-    m_ValuePositions: 0000000004000000040000000c000000100000001400000015000000150000001f0000002300000027000000280000002800000033000000370000003b0000003c0000003c00000043000000470000004b0000004c0000004d0000004d000000510000005100000055000000590000005d00000061000000620000006200000062000000660000006a0000006e0000007200000072000000720000007200000076000000770000007b0000007f00000083000000830000008400000088000000880000008c00000090000000900000009400000098000000990000009a0000009a0000009e0000009e000000a2000000a2000000a6000000a6000000aa000000aa000000ae000000b2000000b2000000b6000000ba000000be000000bf000000c0000000c0000000c4000000c4000000c8000000cc000000cd000000d1000000d5000000d9000000dd000000e1000000e1000000e2000000e6000000ea000000ee000000f2000000f6000000fa000000fe000000fe00000002010000060100000a010000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 3cbf64411d9ad504695e3535a2bdafb8, type: 2}
-    - {fileID: 11400000, guid: 489a1f0589d5c0442a3377574df90337, type: 2}
-    - {fileID: 11400000, guid: 078bff04ac2aeaa41b5e64d9016a240d, type: 2}
-    - {fileID: 11400000, guid: ae3293091deec7540ad441d1d2ec21dd, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Fall
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa333bed5e7b95537d63577a09aedb1d153f1e8072a552462b48
-    m_ValuePositions: 0000000004000000040000000f000000130000001700000018000000180000001f00000023000000270000002800000029000000290000002d0000002d0000003100000035000000390000003a0000003a0000003a0000003e00000042000000460000004a0000004a0000004a0000004a0000004e0000004f00000053000000570000005b0000005b0000005c00000060000000600000006400000068000000680000006c0000007000000071000000720000007200000076000000760000007a0000007a0000007e0000007e0000008200000082000000860000008a0000008a0000008e00000092000000960000009700000098000000980000009c0000009c000000a0000000a4000000a8000000a8000000a9000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 567ccc5a6ecd11941888322286aac0cc, type: 2}
-    - {fileID: 11400000, guid: caee910e74385d741bbea4e183f07e87, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Pickup
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33decca26fc5ced5111dad48e226e02593a2367211515be98249bf817f0dcd35d5108bc5623d5684b597de379d827c4dbf77986114f90b85bedf3d0cc220082a173e7348b488804acf0bbbaa48753a3c182a2e70d6a35b3afdef9d6310717dbd99bc44161cf0824ff1
-    m_ValuePositions: 0000000004000000040000000f000000130000001700000018000000180000001f00000023000000270000002800000029000000290000002d0000002d00000031000000350000003b0000003f00000040000000400000004000000044000000480000004c000000500000005000000050000000500000005400000055000000590000005d00000061000000610000006200000066000000660000006a0000006e0000006e00000072000000760000007700000078000000780000007c0000007c0000008000000080000000840000008400000088000000880000008c000000900000009000000094000000980000009c0000009d0000009e0000009e000000a2000000a2000000a2000000a6000000aa000000ab000000ac000000b0000000b4000000b8000000bc000000c8000000c8000000cc000000d0000000d4000000d5000000d5000000d9000000dd000000e1000000e5000000e5000000e6000000ea000000ea000000eb000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 02082fe319bc4314e9671f91fa06e210, type: 2}
-    - {fileID: 114334400771614146, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.ItemEquipVerifier
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000250000002600000026000000260000002a0000002e00000032000000360000003600000036000000360000003a0000003b0000003f000000430000004700000047000000480000004c0000004c000000500000005400000054000000580000005c0000005d0000005e0000005e000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000076000000760000007a0000007e0000008200000083000000840000008400000088000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Interact
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33decca26fc5ced5111dad48e226e02593a2367211515be98249bf817f0dcd35d5108bc5623d5684b597de379d827c4dbf77986114f90b85bedf3d0cc29a0143951d2ed839ff43725af02c31dbb17c8f9dfdbad67037568e71ca7f766f86b92f82
-    m_ValuePositions: 000000000400000004000000170000001b0000001f0000002000000020000000270000002b0000002f0000003000000031000000310000003500000035000000390000003d00000043000000470000004800000048000000480000004c0000005000000054000000580000005800000058000000580000005c0000005d000000610000006500000069000000710000007200000076000000760000007a0000007e0000007e00000082000000860000008700000088000000880000008c0000008c0000009000000090000000940000009400000098000000980000009c000000a0000000a0000000a4000000a8000000ac000000ad000000ae000000c5000000c9000000d5000000d5000000d9000000dd000000de000000df000000e3000000e7000000eb000000ef000000fb000000fb000000ff0000000301000007010000080100000c0100000d010000110100001101000012010000160100001601000017010000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: f03d4fe87e050664ab54b14242c0b1c5, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Interact
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33decca26fc5ced5111dad48e226e02593a2367211515be98249bf817f0dcd35d5108bc5623d5684b597de379d827c4dbf77986114f90b85bedf3d0cc29a0143951d2ed839ff43725af02c31dbb17c8f9dfdbad67037568e71ca7f766f86b92f82
-    m_ValuePositions: 000000000400000004000000170000001b0000001f0000002000000020000000270000002b0000002f0000003000000031000000310000003500000035000000390000003d00000043000000470000004800000048000000480000004c0000005000000054000000580000005800000058000000580000005c0000005d000000610000006500000069000000710000007200000076000000760000007a0000007e0000007e00000082000000860000008700000088000000880000008c0000008c0000009000000090000000940000009400000098000000980000009c000000a0000000a0000000a4000000a8000000ac000000ad000000ae000000c3000000c7000000d1000000d1000000d5000000d9000000da000000db000000df000000e3000000e7000000eb000000f7000000f7000000fb000000ff000000030100000401000008010000090100000d0100000d0100000e010000120100001201000013010000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: c096c15308d0d96419f93f79da5bcd08, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Interact
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33decca26fc5ced5111dad48e226e02593a2367211515be98249bf817f0dcd35d5108bc5623d5684b597de379d827c4dbf77986114f90b85bedf3d0cc29a0143951d2ed839ff43725af02c31dbb17c8f9dfdbad67037568e71ca7f766f86b92f82
-    m_ValuePositions: 000000000400000004000000170000001b0000001f00000020000000200000002b0000002f0000003300000034000000340000003b0000003f0000004300000044000000450000004500000049000000490000004d00000051000000570000005b0000005c0000005c0000005c0000006000000064000000680000006c0000006c0000006c0000006c000000700000007100000075000000790000007d00000085000000860000008a0000008a0000008e0000009200000092000000960000009a0000009b0000009c0000009c000000a0000000a0000000a4000000a4000000a8000000a8000000ac000000ac000000b0000000b4000000b4000000b8000000bc000000c0000000c1000000c2000000de000000e2000000f3000000f3000000f7000000fb000000fc000000fd0000000101000005010000090100000d01000019010000190100001d0100002101000025010000260100002a0100002b0100002f0100002f01000030010000340100003401000035010000
-    m_Values: "\x03"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: a8a3ddb5837b5d54797bf3db6969210f, type: 2}
-    - {fileID: 11400000, guid: 7e81d5c689f796346b5a374fbd39ed8e, type: 2}
-    - {fileID: 11400000, guid: c6a30bfa52ce61e4b8750a2239a9e2d4, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Interact
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33decca26fc5ced5111dad48e226e02593a2367211515be98249bf817f0dcd35d5108bc5623d5684b597de379d827c4dbf77986114f90b85bedf3d0cc29a0143951d2ed839ff43725af02c31dbb17c8f9dfdbad67037568e71ca7f766f86b92f82
-    m_ValuePositions: 000000000400000004000000170000001b0000001f00000020000000200000002b0000002f0000003300000034000000340000003b0000003f0000004300000044000000450000004500000049000000490000004d00000051000000570000005b0000005c0000005c0000005c0000006000000064000000680000006c0000006c0000006c0000006c000000700000007100000075000000790000007d00000085000000860000008a0000008a0000008e0000009200000092000000960000009a0000009b0000009c0000009c000000a0000000a0000000a4000000a4000000a8000000a8000000ac000000ac000000b0000000b4000000b4000000b8000000bc000000c0000000c1000000c2000000de000000e2000000f3000000f3000000f7000000fb000000fc000000fd0000000101000005010000090100000d01000019010000190100001d0100002101000025010000260100002a0100002b0100002f0100002f01000030010000340100003401000035010000
-    m_Values: "\x03"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: a8a3ddb5837b5d54797bf3db6969210f, type: 2}
-    - {fileID: 11400000, guid: 7e81d5c689f796346b5a374fbd39ed8e, type: 2}
-    - {fileID: 11400000, guid: c6a30bfa52ce61e4b8750a2239a9e2d4, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Interact
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33decca26fc5ced5111dad48e226e02593a2367211515be98249bf817f0dcd35d5108bc5623d5684b597de379d827c4dbf77986114f90b85bedf3d0cc29a0143951d2ed839ff43725af02c31dbb17c8f9dfdbad67037568e71ca7f766f86b92f82
-    m_ValuePositions: 000000000400000004000000170000001b0000001f0000002000000020000000270000002b0000002f0000003000000031000000310000003500000035000000390000003d00000043000000470000004800000048000000480000004c0000005000000054000000580000005800000058000000580000005c0000005d000000610000006500000069000000690000006a0000006e0000006e0000007200000076000000760000007a0000007e0000007f0000008000000080000000840000008400000088000000880000008c0000008c00000090000000900000009400000098000000980000009c000000a0000000a4000000a5000000a6000000b9000000bd000000c6000000c6000000ca000000ce000000cf000000d0000000d4000000d8000000dc000000e0000000ec000000ec000000f0000000f4000000f8000000f9000000fd000000fe000000020100000201000003010000070100000701000008010000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 2ef2bbf233e336c4c910fc1d1faac322, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.HeightChange
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33ca2585bd16a61fbc5c0e956317b1efde
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000270000002b0000002c0000002c0000002c0000003000000034000000380000003c0000003c0000003c0000003c000000400000004100000045000000490000004d000000530000005400000058000000580000005c00000060000000600000006400000068000000690000006a0000006a0000006e0000006e000000720000007200000076000000760000007a0000007a0000007e0000008200000082000000860000008a0000008e0000008f0000009000000090000000940000009400000095000000990000009d000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.SpeedChange
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33bffd3ba1d376a9dce511bdde9bc536fc4b552f48
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000002a0000002e0000003200000033000000330000003a0000003e0000004200000043000000440000004400000048000000480000004c000000500000005d00000061000000620000006200000062000000660000006a0000006e0000007200000072000000720000007200000076000000770000007b0000007f0000008300000086000000870000008b0000008b0000008f0000009300000093000000970000009b0000009c0000009d0000009d000000a1000000a1000000a5000000a5000000a9000000a9000000ad000000ad000000b1000000b5000000b5000000b9000000bd000000c1000000c2000000c3000000c3000000c7000000c7000000cb000000cf000000d3000000d7000000
-    m_Values: "\x03"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: f1084fd47da77224ebe7562091ab8e66, type: 2}
-    - {fileID: 11400000, guid: eb514e3f7955c1f4481c6867e319ad24, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.FirstPersonController.Character.Abilities.Lean
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa332e49812376fc50254a54fafdbfef97bd016295743e1e6ae9
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d0000002100000025000000290000002a0000002a0000002a0000002e00000032000000360000003a0000003a0000003a0000003a0000003e0000003f00000043000000470000004b0000004b0000004c00000050000000500000005400000058000000580000005c0000006000000061000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000072000000760000007a0000007a0000007e00000082000000860000008700000088000000880000008c0000008c0000009000000094000000980000009c000000a0000000
-    m_Values: "\x01"
-    m_UnityObjects:
-    - {fileID: 136610500271509458}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.QuickStart
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa3326b2b99f0dcfca2d
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000140000001e000000220000002600000027000000270000002b0000002f0000003300000034000000340000003b0000003f0000004300000044000000450000004500000049000000490000004d00000051000000550000005600000056000000560000005a0000005e00000062000000660000006600000066000000660000006a0000006b0000006f000000730000007700000077000000780000007c0000007c000000800000008400000084000000880000008c0000008d0000008e0000008e000000920000009200000096000000960000009a0000009a0000009e0000009e000000a2000000a6000000a6000000aa000000ae000000b2000000b3000000b4000000b4000000b8000000b8000000bc000000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 88ecfe5fff6f84846bf26c0e9992a7ae, type: 2}
-    - {fileID: 11400000, guid: 88ecfe5fff6f84846bf26c0e9992a7ae, type: 2}
-    - {fileID: 11400000, guid: 88ecfe5fff6f84846bf26c0e9992a7ae, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.QuickStop
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa3326b2b99f0dcfca2d50fbac582c42ecf6
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000001e000000220000002600000027000000270000002b0000002f0000003300000034000000340000003b0000003f0000004300000044000000450000004500000049000000490000004d00000051000000550000005600000056000000560000005a0000005e00000062000000660000006600000066000000660000006a0000006b0000006f000000730000007700000077000000780000007c0000007c000000800000008400000084000000880000008c0000008d0000008e0000008e000000920000009200000096000000960000009a0000009a0000009e0000009e000000a2000000a6000000a6000000aa000000ae000000b2000000b3000000b4000000b4000000b8000000b8000000bc000000c0000000c4000000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 83c0c1015c6429a4c9e0876a7d2ac9a3, type: 2}
-    - {fileID: 11400000, guid: 83c0c1015c6429a4c9e0876a7d2ac9a3, type: 2}
-    - {fileID: 11400000, guid: 83c0c1015c6429a4c9e0876a7d2ac9a3, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.QuickTurn
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347bab621001266310018ad419950f81732d4e24f4594e282481be03087b1be525955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa3326b2b99f0d8ffa4a0dcfca2d
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000001e000000220000002600000027000000270000002b0000002f0000003300000034000000340000003d00000041000000450000004c000000500000005100000051000000580000005c0000006000000061000000620000006200000066000000660000006a0000006e00000072000000730000007300000073000000770000007b0000007f0000008300000083000000830000008300000087000000880000008c0000009000000094000000940000009500000099000000990000009d000000a1000000a1000000a5000000a9000000aa000000ab000000ab000000af000000af000000b3000000b3000000b7000000b7000000bb000000bb000000bf000000c3000000c3000000c7000000cb000000cf000000d0000000d1000000d1000000d5000000d5000000d9000000dd000000
-    m_Values: "\x05"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 77c0a60afd62f444fa29ddf038dd0bf3, type: 2}
-    - {fileID: 11400000, guid: 77c0a60afd62f444fa29ddf038dd0bf3, type: 2}
-    - {fileID: 11400000, guid: 77c0a60afd62f444fa29ddf038dd0bf3, type: 2}
-    - {fileID: 11400000, guid: 884ade7d1538a314cb62487a8153b0ef, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.RestrictRotation
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa3353ea3f5f0c5051602d7baf6406c1659f
-    m_ValuePositions: 000000000400000004000000080000000c000000100000001100000011000000180000001c0000002000000021000000220000002200000026000000260000002a0000002e00000032000000330000003300000033000000370000003b0000003f0000004300000043000000430000004300000047000000480000004c0000005000000054000000540000005500000059000000590000005d000000610000006100000065000000690000006a0000006b0000006b0000006f0000006f000000730000007300000077000000770000007b0000007b0000007f0000008300000083000000870000008b0000008f0000009000000091000000910000009500000095000000990000009d0000009e000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: ecab5d41c7423354181d052c54edad0e, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.RestrictPosition
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33f94121fcec5c9e38488cc1e776617acb4a6a4a10783f03f4
-    m_ValuePositions: 000000000400000004000000080000000c000000100000001100000011000000180000001c0000002000000021000000220000002200000026000000260000002a0000002e00000032000000330000003300000033000000370000003b0000003f0000004300000043000000430000004300000047000000480000004c0000005000000054000000540000005500000059000000590000005d000000610000006100000065000000690000006a0000006b0000006b0000006f0000006f000000730000007300000077000000770000007b0000007b0000007f0000008300000083000000870000008b0000008f000000900000009100000091000000950000009500000095000000990000009d000000a1000000a5000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 86a246fbdde30df46a92beb7efc22cb8, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Slide
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa3343655193d535b326ba9cbf5c61ea1827d171139f
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000250000002600000026000000260000002a0000002e00000032000000360000003600000036000000360000003a0000003b0000003f000000430000004700000047000000480000004c0000004c000000500000005400000054000000580000005c0000005d0000005e0000005e000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000076000000760000007a0000007e0000008200000083000000840000008400000088000000880000008c000000900000009400000098000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.DamageVisualization
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33201bab494a11eb44430344960fc51d7b
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000250000002600000026000000260000002a0000002e00000032000000360000003600000036000000360000003a0000003b0000003f0000004300000047000000520000005300000057000000570000005b0000005f0000005f00000063000000670000006800000069000000690000006d0000006d0000007100000071000000750000007500000079000000790000007d000000810000008100000085000000890000008d0000008e0000008f0000008f0000009300000093000000970000009700000098000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Character.Abilities.FollowPseudo3DPath
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000250000002600000026000000260000002a0000002e00000032000000360000003600000036000000360000003a0000003b0000003f000000430000004700000047000000480000004c0000004c000000500000005400000054000000580000005c0000005d0000005e0000005e000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000076000000760000007a0000007e0000008200000083000000840000008400000088000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.TargetOrbit
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33c1a589ba38037ce1
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000250000002600000026000000260000002a0000002e00000032000000360000003600000036000000360000003a0000003b0000003f000000430000004700000047000000480000004c0000004c000000500000005400000054000000580000005c0000005d0000005e0000005e000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000076000000760000007a0000007e00000082000000830000008400000084000000880000008800000089000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.AlignToGravityZone
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33301c343b3e03464f
-    m_ValuePositions: 000000000400000004000000160000001a0000001e0000001f0000001f000000260000002a0000002e0000002f00000030000000300000003400000034000000380000003c0000004000000041000000410000004100000045000000490000004d0000005100000051000000510000005100000055000000560000005a0000005e00000062000000620000006300000067000000670000006b0000006f0000006f00000073000000770000007800000079000000790000007d0000007d0000008100000081000000850000008500000089000000890000008d000000910000009100000095000000990000009d0000009e0000009f0000009f000000a3000000a3000000a7000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 6bcffb51725f366458c9666eb57d5fe0, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.AlignToGround
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33301c343b3e03464f2e498123bd93b840fbfd3321
-    m_ValuePositions: 0000000004000000040000001100000015000000190000001a0000001a0000002100000025000000290000002a0000002b0000002b0000002f0000002f00000033000000370000003b0000003c0000003c0000003c0000004000000044000000480000004c0000004c0000004c0000004c000000500000005100000055000000590000005d0000005d0000005e0000006200000062000000660000006a0000006a0000006e0000007200000073000000740000007400000078000000780000007c0000007c00000080000000800000008400000084000000880000008c0000008c000000900000009400000098000000990000009a0000009a0000009e0000009e000000a2000000ae000000b2000000b6000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 4643067bf62e7cb40ac716e43097d4d6, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.MoveWithObject
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa3338037ce1
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000250000002600000026000000260000002a0000002e00000032000000360000003600000036000000360000003a0000003b0000003f000000430000004700000047000000480000004c0000004c000000500000005400000054000000580000005c0000005d0000005e0000005e000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000076000000760000007a0000007e000000820000008300000084000000840000008800000088000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.StopMovementAnimation
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33843047b71e95041d
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000250000002600000026000000260000002a0000002e00000032000000360000003600000036000000360000003a0000003b0000003f000000430000004700000047000000480000004c0000004c000000500000005400000054000000580000005c0000005d0000005e0000005e000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000076000000760000007a0000007e0000008200000083000000840000008400000088000000880000008c000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.LookAt
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33decca26fc5ced5111dad48e226e02593a2367211515be98249bf817f0dcd35d5108bc5623d5684b597de379d827c4dbf77986114f90b85bedf3d0cc23d390dcacd40dfd9
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000250000002600000026000000260000002a0000002e00000032000000360000003600000036000000360000003a0000003b0000003f000000430000004700000047000000480000004c0000004c000000500000005400000054000000580000005c0000005d0000005e0000005e000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000076000000760000007a0000007e000000820000008300000084000000840000008800000088000000880000008c000000900000009100000092000000960000009a0000009e000000a2000000ae000000ae000000b2000000b6000000ba000000bb000000bf000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Demo.Character.Abilities.IntDataSetter
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33e72a470c0c3a291d
-    m_ValuePositions: 0000000004000000040000000d000000110000001500000016000000160000001d00000021000000250000002600000027000000270000002b0000002b0000002f00000033000000370000003800000038000000380000003c0000004000000044000000480000004800000048000000480000004c0000004d000000510000005500000059000000590000005a0000005e0000005e0000006200000066000000660000006a0000006e0000006f0000007000000070000000740000007400000078000000780000007c0000007c00000080000000800000008400000088000000880000008c00000090000000940000009500000096000000960000009a0000009a0000009e000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 3635a7f427a25794e9f18eb2100fe49a, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Idle
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa333a9110b2ea3cc4bb056675768dbc51969f89b2be
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000250000002600000026000000260000002a0000002e00000032000000360000003600000036000000360000003a0000003b0000003f000000430000004700000047000000480000004c0000004c000000500000005400000054000000580000005c0000005d0000005e0000005e000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000076000000760000007a0000007e0000008200000083000000840000008400000088000000880000008c000000900000009100000095000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  m_ItemAbilityData:
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.Reload
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30188804acf80b86517
-    m_ValuePositions: 00000000040000000400000013000000170000001b0000001c0000001c00000023000000270000002b0000002c0000002d0000002d000000310000003100000035000000390000003f00000043000000440000004400000044000000480000004c000000500000005400000054000000540000005400000058000000590000005d00000061000000650000006b0000006c00000070000000700000007400000078000000780000007c0000008000000081000000820000008200000086000000860000008a0000008a0000008e0000008e0000009200000092000000960000009a0000009a0000009e000000a2000000a6000000a7000000a8000000a8000000ac000000ac000000b0000000b4000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: d5609dd34ee17fe41ab81753f5315d21, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.MeleeCounterAttack
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30188804acf80b86517c33dc85fecdcafced6a8ec21154582e8
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000260000002a0000002b0000002b0000002b0000002f00000033000000370000003b0000003b0000003b0000003b0000003f0000004000000044000000480000004c0000004f000000500000005400000054000000580000005c0000005c00000060000000640000006500000066000000660000006a0000006a0000006e0000006e000000720000007200000076000000760000007a0000007e0000007e00000082000000860000008a0000008b0000008c0000008c000000900000009000000094000000980000009c0000009d0000009e000000a2000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.Use
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffd2d4c256fbe4b256f4b49256fc448256f5156256fe255256f7f53256f0851256f8550256fa45f023309b70f6386b10f6313b00f6360b20f63fdbc0f634abf0f63c7b90f6354b80f63a1ba0f63d38e191a9fc174050a3f7405853e7405303c7405a33b7405de39740549377405c436740577347405e23374051d317405883074053b2e7405b62d7405212b74055c297405cf2874057a267405f525740560237405932274050e207405b91f7405341d7405a71c74057956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30188804acf80b86517c33dc85fecdcafce
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000260000002a0000002b0000002b000000770000007b0000007f00000083000000870000008b0000008f00000093000000970000009b0000009f000000a3000000a7000000ab000000af000000b3000000b7000000bb000000bf000000c3000000c7000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e8000000eb000000eb000000eb000000ef000000f0000000f4000000f8000000fc000000ff000000000100000401000004010000080100000c0100000c01000010010000140100001501000016010000160100001a0100001a0100001e0100001e010000220100002201000026010000260100002a0100002e0100002e01000032010000360100003a0100003b0100003c0100003c010000400100004e01000052010000560100005a0100005b010000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.Use
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419950f81732d4e24f4594e282481be03087b1be52595b09e732dfd16a659fd1a76810d315a7ba8d77795259c732d6c25a2596c2972819c025e7b39e47395d69d732dd3c4a059d3c8708123e35c7b860571955b9b732d12ecac5912e07c81e2cb507b472d7d95cc98732d51f4a85951f87881a1d3547b043579955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30188804acf80b86517c33dc85fecdcafce
-    m_ValuePositions: 0000000004000000040000000c000000100000001400000015000000150000002100000025000000290000002a0000002a0000002e0000003200000036000000370000003700000045000000490000004d0000004e0000004e000000580000005c000000600000006100000061000000670000006b0000006f00000070000000700000007b0000007f00000083000000840000008400000093000000970000009b0000009c0000009c0000009f000000a3000000a7000000a8000000a8000000af000000b3000000b7000000b8000000b9000000b9000000bd000000bd000000c1000000c5000000ca000000ce000000cf000000cf000000cf000000d3000000d7000000db000000df000000df000000df000000df000000e3000000e4000000e8000000ec000000f0000000f3000000f4000000f8000000f8000000fc00000000010000000100000401000008010000090100000a0100000a0100000e0100000e010000120100001201000016010000160100001a0100001a0100001e0100002201000022010000260100002a0100002e0100002f01000030010000300100003401000034010000380100003c0100004001000041010000
-    m_Values: '
-
-'
-    m_UnityObjects:
-    - {fileID: 11400000, guid: ef5e2f7abee8a8a45b9f0f235fc28380, type: 2}
-    - {fileID: 11400000, guid: ef5e2f7abee8a8a45b9f0f235fc28380, type: 2}
-    - {fileID: 11400000, guid: ef5e2f7abee8a8a45b9f0f235fc28380, type: 2}
-    - {fileID: 11400000, guid: 3f46c3db31629504f98f3ecc1e9edfbb, type: 2}
-    - {fileID: 11400000, guid: 12ea8ed4cd668b7479344da54badcf33, type: 2}
-    - {fileID: 11400000, guid: d0c38bcf2b0809748b46194d75ba5e35, type: 2}
-    - {fileID: 11400000, guid: 884251e350c14774ab6836eddde40899, type: 2}
-    - {fileID: 11400000, guid: 5f295512bbcba3940abd16c5337fce00, type: 2}
-    - {fileID: 11400000, guid: e48f2d8b45a2ca4489643127d58ee485, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.Use
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419950f81732d4e24f4594e282481be03087bbf03087bc003087bc103087bc203087bc303087bc403087bc503087bc603087bc703087bc803087bc903087bca03087bcb03087bcc03087bcd03087bce03087bcf03087bd003087bd103087bd203087bd303087bd403087bd503087bd603087bd703087bd803087bd903087bda03087bdb03087bdc03087bdd03087bde03087bdf03087be003087be103087be203087be303087be403087be503087be603087be703087be803087be903087bea03087beb03087bec03087bed03087bee03087bef03087bf003087bf103087bf203087bf303087bf403087bf503087bf603087bf703087bf803087bf903087bfa03087bfb03087bfc03087bfd03087bfe03087bff03087b0004087b0104087b0204087b0304087b0404087b0504087b0604087b0704087b0804087b0904087b0a04087b0b04087b0c04087b0d04087b0e04087b0f04087b1004087b1104087b1204087b1304087b1404087b1504087b1604087b1704087b1804087b1904087b1a04087b1b04087b1c04087b1d04087b1e04087b1f04087b2004087b2104087b2204087b2304087b2404087b2504087b2604087b2704087b2804087b2904087b2a04087b2b04087b2c04087b2d04087b2e04087b2f04087b3004087b3104087b3204087b3304087b3404087b3504087b3604087b3704087b3804087b3904087b3a04087b3b04087b3c04087b3d04087b3e04087b3f04087b4004087b4104087b4204087b4304087b4404087b4504087b4604087b4704087b4804087b4904087b4a04087b4b04087b4c04087b4d04087b4e04087b4f04087b5004087b5104087b5204087b5304087b5404087b5504087b5604087b5704087b5804087b5904087b5a04087b5b04087b5c04087b5d04087b5e04087b5f04087b6004087b6104087b6204087b6304087b6404087b6504087b6604087b6704087b6804087b6904087b6a04087b6b04087b6c04087b6d04087b6e04087b6f04087b7004087b7104087b7204087b7304087b7404087b7504087b7604087b7704087b7804087b7904087b7a04087b7b04087b7c04087b7d04087b7e04087b7f04087b8004087b8104087b8204087b8304087b8404087b8504087b8604087b8704087b8804087b8904087b8a04087b8b04087b8c04087b8d04087b8e04087b8f04087b9004087b9104087b9204087b9304087b9404087b9504087b9604087b9704087b9804087b9904087b9a04087b9b04087b9c04087b9d04087b9e04087b9f04087ba004087ba104087ba204087ba304087ba404087ba504087ba604087ba704087ba804087ba904087baa04087bab04087bac04087bad04087bae04087baf04087bb004087bb104087bb204087bb304087bb404087bb504087bb604087bb704087bb804087bb904087bba04087bbb04087bbc04087bbd04087bbe04087b1be525955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30188804acf80b86517c33dc85fecdcafce
-    m_ValuePositions: 0000000004000000040000000f00000013000000170000001800000018000000270000002b0000002f000000300000003000000033000000370000003b0000003c0000003c0000004e000000520000005600000057000000570000005e00000062000000660000006a0000006e00000072000000760000007a0000007e00000082000000860000008a0000008e00000092000000960000009a0000009e000000a2000000a6000000aa000000ae000000b2000000b6000000ba000000be000000c2000000c6000000ca000000ce000000d2000000d6000000da000000de000000e2000000e6000000ea000000ee000000f2000000f6000000fa000000fe00000002010000060100000a0100000e01000012010000160100001a0100001e01000022010000260100002a0100002e01000032010000360100003a0100003e01000042010000460100004a0100004e01000052010000560100005a0100005e01000062010000660100006a0100006e01000072010000760100007a0100007e01000082010000860100008a0100008e01000092010000960100009a0100009e010000a2010000a6010000aa010000ae010000b2010000b6010000ba010000be010000c2010000c6010000ca010000ce010000d2010000d6010000da010000de010000e2010000e6010000ea010000ee010000f2010000f6010000fa010000fe01000002020000060200000a0200000e02000012020000160200001a0200001e02000022020000260200002a0200002e02000032020000360200003a0200003e02000042020000460200004a0200004e02000052020000560200005a0200005e02000062020000660200006a0200006e02000072020000760200007a0200007e02000082020000860200008a0200008e02000092020000960200009a0200009e020000a2020000a6020000aa020000ae020000b2020000b6020000ba020000be020000c2020000c6020000ca020000ce020000d2020000d6020000da020000de020000e2020000e6020000ea020000ee020000f2020000f6020000fa020000fe02000002030000060300000a0300000e03000012030000160300001a0300001e03000022030000260300002a0300002e03000032030000360300003a0300003e03000042030000460300004a0300004e03000052030000560300005a0300005e03000062030000660300006a0300006e03000072030000760300007a0300007e03000082030000860300008a0300008e03000092030000960300009a0300009e030000a2030000a6030000aa030000ae030000b2030000b6030000ba030000be030000c2030000c6030000ca030000ce030000d2030000d6030000da030000de030000e2030000e6030000ea030000ee030000f2030000f6030000fa030000fe03000002040000060400000a0400000e04000012040000160400001a0400001e04000022040000260400002a0400002e04000032040000360400003a0400003e04000042040000460400004a0400004e04000052040000560400005a0400005e04000062040000660400006704000068040000680400006c0400006c04000070040000740400007b0400007f04000080040000800400008004000084040000880400008c040000900400009004000090040000900400009404000095040000990400009d040000a1040000a1040000a2040000a6040000a6040000aa040000ae040000ae040000b2040000b6040000b7040000b8040000b8040000bc040000bc040000c0040000c0040000c4040000c4040000c8040000c8040000cc040000d0040000d0040000d4040000d8040000dc040000dd040000de040000de040000e2040000e2040000e6040000ea040000ee040000ef040000
-    m_Values: "\x05"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 120046570bafe35468fbd4fb0c8b05c8, type: 2}
-    - {fileID: 11400000, guid: 5f295512bbcba3940abd16c5337fce00, type: 2}
-    - {fileID: 11400000, guid: d1a1ade77ebb1114f8d3af01b508d0f2, type: 2}
-    - {fileID: 11400000, guid: a04197f7268e5384d99133f8fb955d0b, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.Use
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30188804acf80b86517c33dc85fecdcafce
-    m_ValuePositions: 00000000040000000400000013000000170000001b0000001c0000001c00000023000000270000002b0000002c0000002d0000002d0000003100000031000000350000003900000045000000490000004a0000004a0000004a0000004e00000052000000560000005a0000005a0000005a0000005a0000005e0000005f00000063000000670000006b0000006b0000006c00000070000000700000007400000078000000780000007c0000008000000081000000820000008200000086000000860000008a0000008a0000008e0000008e0000009200000092000000960000009a0000009a0000009e000000a2000000a6000000a7000000a8000000a8000000ac000000ac000000b0000000b4000000b8000000b9000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 5f295512bbcba3940abd16c5337fce00, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.InAirMeleeUse
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30188804acf80b86517c33dc85fecdcafcead520ffd177aed9bc65ae22f704bd680c7a9979319a3209d8c78b946b18a941177e6a6cd459a87bb54fb90ce86291b20c496e244f6eac332e78bd447
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000260000002a0000002b0000002b0000002b0000002f00000033000000370000003b0000003b0000003b0000003b0000003f0000004000000044000000480000004c0000004f000000500000005400000054000000580000005c0000005c00000060000000640000006500000066000000660000006a0000006a0000006e0000006e000000720000007200000076000000760000007a0000007e0000007e00000082000000860000008a0000008b0000008c0000008c000000900000009000000094000000980000009c0000009d0000009e000000aa000000ae000000ba000000be000000bf000000c3000000c7000000c7000000d3000000df000000eb000000eb000000f700000003010000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.EquipUnequip
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540cd4d9540c21db540caedc540c3bde540c88df540c15d1540c62d3540cefd4540c7cd6540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30160f4f268f34772b813ca717909a6dcf6815b21ad88b270d734284757
-    m_ValuePositions: 00000000040000000400000013000000170000001b0000001c0000001c00000023000000270000002b0000002c0000002d0000002d00000031000000310000003500000039000000490000005a0000006a0000007b0000008b0000009b000000ad000000be000000ce000000de000000e2000000e3000000e3000000e3000000e7000000eb000000ef000000f3000000f3000000f3000000f3000000f7000000f8000000fc0000000001000004010000040100000501000009010000090100000d010000110100001101000015010000190100001a0100001b0100001b0100001f0100001f010000230100002301000027010000270100002b0100002b0100002f0100003301000033010000370100003b0100003f0100004001000041010000410100004501000045010000490100004d0100004e0100004e01000052010000560100005a010000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 36bfcc7bbbf533d49930b368186f944e, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.EquipUnequip
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30160f4f268f34772b813ca717909a6dcf6815b21ad88b270d734284757
-    m_ValuePositions: 00000000040000000400000013000000170000001b0000001c0000001c00000023000000270000002b0000002c0000002d0000002d00000031000000310000003500000039000000390000003d0000003e0000003e0000003e00000042000000460000004a0000004e0000004e0000004e0000004e0000005200000053000000570000005b0000005f0000005f000000600000006400000064000000680000006c0000006c00000070000000740000007500000076000000760000007a0000007a0000007e0000007e000000820000008200000086000000860000008a0000008e0000008e00000092000000960000009a0000009b0000009c0000009c000000a0000000a0000000a4000000a8000000a9000000a9000000ad000000b1000000b5000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 36bfcc7bbbf533d49930b368186f944e, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.EquipUnequip
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540cd4d9540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30160f4f268f34772b813ca717909a6dcf6815b21ad88b270d734284757
-    m_ValuePositions: 00000000040000000400000013000000170000001b0000001c0000001c00000023000000270000002b0000002c0000002d0000002d00000031000000310000003500000039000000490000005a0000005e0000005f0000005f0000005f00000063000000670000006b0000006f0000006f0000006f0000006f0000007300000074000000780000007c0000008000000080000000810000008500000085000000890000008d0000008d00000091000000950000009600000097000000970000009b0000009b0000009f0000009f000000a3000000a3000000a7000000a7000000ab000000af000000af000000b3000000b7000000bb000000bc000000bd000000bd000000c1000000c1000000c5000000c9000000ca000000ca000000ce000000d2000000d6000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 36bfcc7bbbf533d49930b368186f944e, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.ToggleEquip
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30160f4f268f34772b8b86500c7
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000002000000024000000280000002900000029000000380000003c000000400000004100000041000000480000004c0000005000000051000000520000005200000056000000560000005a0000005e0000006f00000073000000740000007400000074000000780000007c000000800000008400000084000000840000008400000088000000890000008d000000910000009500000095000000960000009a0000009a0000009e000000a2000000a2000000a6000000aa000000ab000000ac000000ac000000b0000000b0000000b4000000b4000000b8000000b8000000bc000000bc000000c0000000c4000000c4000000c8000000cc000000d0000000d1000000d2000000d2000000d6000000d6000000da000000de000000df000000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 15d2e6d5cad11654699f92f891b48b03, type: 2}
-    - {fileID: 11400000, guid: 15d2e6d5cad11654699f92f891b48b03, type: 2}
-    - {fileID: 11400000, guid: 15d2e6d5cad11654699f92f891b48b03, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.ToggleEquip
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30160f4f268f34772b8b86500c7
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000002000000024000000280000002900000029000000380000003c000000400000004100000041000000480000004c0000005000000051000000520000005200000056000000560000005a0000005e0000006f00000073000000740000007400000074000000780000007c000000800000008400000084000000840000008400000088000000890000008d000000910000009500000095000000960000009a0000009a0000009e000000a2000000a2000000a6000000aa000000ab000000ac000000ac000000b0000000b0000000b4000000b4000000b8000000b8000000bc000000bc000000c0000000c4000000c4000000c8000000cc000000d0000000d1000000d2000000d2000000d6000000d6000000da000000de000000df000000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 15d2e6d5cad11654699f92f891b48b03, type: 2}
-    - {fileID: 11400000, guid: 15d2e6d5cad11654699f92f891b48b03, type: 2}
-    - {fileID: 11400000, guid: 15d2e6d5cad11654699f92f891b48b03, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.ToggleEquip
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30160f4f268f34772b8b86500c7
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000002000000024000000280000002900000029000000380000003c000000400000004100000041000000480000004c0000005000000051000000520000005200000056000000560000005a0000005e0000006f00000073000000740000007400000074000000780000007c000000800000008400000084000000840000008400000088000000890000008d000000910000009500000095000000960000009a0000009a0000009e000000a2000000a2000000a6000000aa000000ab000000ac000000ac000000b0000000b0000000b4000000b4000000b8000000b8000000bc000000bc000000c0000000c4000000c4000000c8000000cc000000d0000000d1000000d2000000d2000000d6000000d6000000da000000de000000df000000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 15d2e6d5cad11654699f92f891b48b03, type: 2}
-    - {fileID: 11400000, guid: 15d2e6d5cad11654699f92f891b48b03, type: 2}
-    - {fileID: 11400000, guid: 15d2e6d5cad11654699f92f891b48b03, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.EquipNext
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30160f4f268f34772b8
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000002000000024000000280000002900000029000000380000003c000000400000004100000041000000480000004c0000005000000051000000520000005200000056000000560000005a0000005e0000006d00000071000000720000007200000072000000760000007a0000007e0000008200000082000000820000008200000086000000870000008b0000008f00000093000000930000009400000098000000980000009c000000a0000000a0000000a4000000a8000000a9000000aa000000aa000000ae000000ae000000b2000000b2000000b6000000b6000000ba000000ba000000be000000c2000000c2000000c6000000ca000000ce000000cf000000d0000000d0000000d4000000d4000000d8000000dc000000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: d93ebe69b835e244ab4567636af5bb61, type: 2}
-    - {fileID: 11400000, guid: d93ebe69b835e244ab4567636af5bb61, type: 2}
-    - {fileID: 11400000, guid: d93ebe69b835e244ab4567636af5bb61, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.EquipPrevious
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30160f4f268f34772b8
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000002000000024000000280000002900000029000000380000003c000000400000004100000041000000480000004c0000005000000051000000520000005200000056000000560000005a0000005e00000071000000750000007600000076000000760000007a0000007e00000082000000860000008600000086000000860000008a0000008b0000008f000000930000009700000097000000980000009c0000009c000000a0000000a4000000a4000000a8000000ac000000ad000000ae000000ae000000b2000000b2000000b6000000b6000000ba000000ba000000be000000be000000c2000000c6000000c6000000ca000000ce000000d2000000d3000000d4000000d4000000d8000000d8000000dc000000e0000000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: e0851519f403b914c99001a9dcf2e813, type: 2}
-    - {fileID: 11400000, guid: e0851519f403b914c99001a9dcf2e813, type: 2}
-    - {fileID: 11400000, guid: e0851519f403b914c99001a9dcf2e813, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.EquipScroll
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30160f4f268f34772b8d98619b1
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000002000000024000000280000002900000029000000380000003c000000400000004100000041000000480000004c0000005000000051000000520000005200000056000000560000005a0000005e0000006f00000073000000740000007400000074000000780000007c000000800000008400000084000000840000008400000088000000890000008d000000910000009500000095000000960000009a0000009a0000009e000000a2000000a2000000a6000000aa000000ab000000ac000000ac000000b0000000b0000000b4000000b4000000b8000000b8000000bc000000bc000000c0000000c4000000c4000000c8000000cc000000d0000000d1000000d2000000d2000000d6000000d6000000da000000de000000df000000
-    m_Values: "\x04"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: 2ddc53e72096fbe4693e0e2cc8fa0dee, type: 2}
-    - {fileID: 11400000, guid: 2ddc53e72096fbe4693e0e2cc8fa0dee, type: 2}
-    - {fileID: 11400000, guid: 2ddc53e72096fbe4693e0e2cc8fa0dee, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.Block
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30188804acf1e51997ef95b2f5f
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000260000002a0000002b0000002b0000002b0000002f00000033000000370000003b0000003b0000003b0000003b0000003f0000004000000044000000480000004c0000004c0000004d00000051000000510000005500000059000000590000005d0000006100000062000000630000006300000067000000670000006b0000006b0000006f0000006f0000007300000073000000770000007b000000b5000000b9000000bd000000c1000000c2000000c3000000c3000000c7000000c7000000cb000000cf000000d3000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.Aim
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712956484732d194fcf5919431f81e968337b4c8e1e95e985732d58aacd5958a61d81a88d317b0d6b1c959a83732ddf15c859df1918812f32347b8ad419950f81732d4e24f4594e282481be03087b1be52595b09e732dfd16a659fd1a76810d315a7b6da43f44a8d77795259c732d6c25a2596c2972819c025e7ba2bb2b5e39e47395d69d732dd3c4a059d3c8708123e35c7b860571955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef3018c7da646641c0f34c33dc85f
-    m_ValuePositions: 0000000004000000040000000e000000120000001600000017000000170000001e0000002200000026000000270000002700000032000000360000003a0000003b0000003b000000460000004a0000004e0000004f0000004f0000005a0000005e0000006200000063000000630000006e00000072000000760000008100000082000000820000008e0000009200000096000000a1000000a2000000a2000000a9000000ad000000b1000000b2000000b3000000b3000000b7000000b7000000bb000000bf000000c4000000c8000000c9000000c9000000c9000000cd000000d1000000d5000000d9000000d9000000d9000000d9000000dd000000de000000e2000000e6000000ea000000ed000000ee000000f2000000f2000000f6000000fa000000fa000000fe0000000201000003010000040100000401000008010000080100000c0100000c01000010010000100100001401000014010000180100001c0100001c010000200100002401000028010000290100002a0100002a0100002e0100002e010000320100003301000034010000
-    m_Values: "\b"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: c8b98664af4482e42ad3bf9d419bff53, type: 2}
-    - {fileID: 11400000, guid: f105685a2ad4cfd47bc36da8c08591f3, type: 2}
-    - {fileID: 11400000, guid: a7b2028cdb746cd448fd2fe0e3d675f0, type: 2}
-    - {fileID: 11400000, guid: d1ecb5bcfd980d944b733e93750c5b13, type: 2}
-    - {fileID: 11400000, guid: d1ecb5bcfd980d944b733e93750c5b13, type: 2}
-    - {fileID: 11400000, guid: 670e0839be3fb54408947e38d3bb4911, type: 2}
-    - {fileID: 11400000, guid: fb9097eaa0e8b744fa7cf2ea2cab814c, type: 2}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Character.Abilities.Items.ItemPullback
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef301bfef97bdbaa837703e1e6ae9
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d00000021000000250000002600000026000000260000002a0000002e00000032000000360000003600000036000000360000003a0000003b0000003f000000430000004700000047000000480000004c0000004c000000500000005400000054000000580000005c0000005d0000005e0000005e000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000076000000760000007a0000007e0000008200000083000000840000008400000088000000880000008c0000009000000094000000
-    m_Values: "\x01"
-    m_UnityObjects:
-    - {fileID: 136190291975935020}
-    m_Version: 3.1
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Abilities.Items.Drop
-    m_ValueHashes: b892271ef386732dda46c359da4a13812a613f7b8f8712955876362d3ce85fa375d5919874b19fd1ef11f5f48249d95b47d8540c222fcbce2ba74b25a67b5d19b529730482a04ffda45f0233d38e191a7956d830c652adeb5f036c3684d96cb38201552d32099687210199256540ada356d9f1482144022809a7a805fe652832a179c7009ac13f70fd9e2a6933f8c6d920b8e6fc47e7f3e55677262c6127d390990c81fa731e1b5308c37496cd3e3d965d397b67c33622ecdae185916553df6cac51537cf57b3866b0f1b9d18e3485f8ae514f0f4859b60790b06be58f8d069f2128f2420c74df7a727037b30794aa33233ef30188804acfb7faa331cda4ba6a0c1be297570346cc6ae15ebe26270753
-    m_ValuePositions: 0000000004000000040000000b0000000f0000001300000014000000150000001500000019000000190000001d0000002100000025000000290000002a0000002a0000002a0000002e00000032000000360000003a0000003a0000003a0000003a0000003e0000003f00000043000000470000004b0000004b0000004c00000050000000500000005400000058000000580000005c0000006000000061000000620000006200000066000000660000006a0000006a0000006e0000006e0000007200000072000000760000007a0000007a0000007e00000082000000860000008700000088000000880000008c0000008c0000009000000094000000980000009c0000009d0000009d0000009e000000
-    m_Values: "\x01"
-    m_UnityObjects:
-    - {fileID: 114459215557555358, guid: 5481010ef14c32f4cb7b6661b0c59fb4, type: 2}
-    m_Version: 3.1
-  m_EffectData:
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Effects.BossStomp
-    m_ValueHashes: 65e77897b61df252c31ddd78760b38d8b345095a0edf2c3c25f75d6432f7488a221f756b7db8984d5876362d2eea47c3214402280794aa332d74b8b3bbbb4842339785026133646c82a079cdd00b23de48e75f9e76833e08317cc4812fbb001a
-    m_ValuePositions: 00000000040000000400000013000000170000001b0000001c0000001c000000230000002700000028000000290000002a0000002a0000002a00000036000000360000003a0000003e0000004a0000004a0000004e0000005200000056000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: f4d2bd5d718915d4092ad634f8ac1f82, type: 2}
-    m_Version: 3.0
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Effects.PlayAudioClip
-    m_ValueHashes: 65e77897b61df252c31ddd78760b38d8b345095a0edf2c3c25f75d6432f7488a221f756b7db8984d5876362d2eea47c3214402280794aa3344ddece48e3a780b94dd6941b8512dd2
-    m_ValuePositions: 000000000400000004000000170000001b0000001f0000002000000020000000270000002b0000002c0000002d0000002e0000002e0000002e0000002e0000003200000036000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: a85f3262ebebebc47be42bd7fba6d2a0, type: 2}
-    - {fileID: 8300000, guid: 4801ebbd74d287b4a8aad5b243b1d55d, type: 3}
-    m_Version: 3.0
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Effects.Shake
-    m_ValueHashes: 65e77897b61df252c31ddd78760b38d8b345095a0edf2c3c25f75d6432f7488a221f756b7db8984d5876362d2eea47c3214402280794aa339023601010aac5e043456df5705c520119cf2dd0ed31610bbce9c3d8113bad09cd0a949b
-    m_ValuePositions: 0000000004000000040000000f000000130000001700000018000000180000001f000000230000002400000025000000260000002600000026000000260000002a0000003200000033000000370000003b0000003f00000043000000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: c0c0d8d66a17f894e9cab323f1996e5d, type: 2}
-    m_Version: 3.0
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Effects.Shake
-    m_ValueHashes: 65e77897b61df252c31ddd78b345095a0edf2c3c5876362d2eea47c3214402280794aa339023601010aac5e043456df5705c520119cf2dd0ed31610bbce9c3d8113bad09cd0a949b
-    m_ValuePositions: 0000000004000000040000000b0000000f000000100000001100000012000000120000002000000020000000240000002c0000002d0000003100000035000000390000003d000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.0
-  - m_ObjectType: Opsive.UltimateCharacterController.Character.Effects.BossStomp
-    m_ValueHashes: 65e77897b61df252c31ddd780edf2c3c5876362d2eea47c30794aa332d74b8b3bbbb4842339785026133646c82a079cdd00b23de48e75f9e76833e08317cc4812fbb001a
-    m_ValuePositions: 0000000004000000040000000b0000000c0000000d0000000e0000001b00000027000000270000002b0000002f0000003b0000003b0000003f0000004300000047000000
-    m_Values: "\x01"
-    m_UnityObjects: []
-    m_Version: 3.0
-  m_OnMovementTypeActiveEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnAbilityActiveEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnItemAbilityActiveEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnGroundedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnChangeTimeScaleEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnChangeMovingPlatformsEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_GameObject: {fileID: 0}
-  m_Animator: {fileID: 0}
-  m_KinematicObjectIndex: -1
-  m_MaxHeight: 0
-  m_MaxHeightPosition: {x: 0, y: 0, z: 0}
-  m_YawAngle: 0
-  m_RawInputVector: {x: 0, y: 0}
-  m_Moving: 0
-  m_MovingParameter: 0
-  m_SpeedParameterOverride: 0
-  m_ActiveAbilityCount: 0
-  m_DirtyAbilityParameter: 0
-  m_ActiveItemAbilityCount: 0
-  m_DirtyItemAbilityParameter: 0
-  m_ActiveEffectCount: 0
-  m_FirstPersonPerspective: 0
-  m_Alive: 0
-  m_Aiming: 0
-  m_AbilityMotor: {x: 0, y: 0, z: 0}
-  m_ItemSlotStateIndex: 
-  m_ItemSlotSubstateIndex: 
 --- !u!114 &1278971611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12035,40 +9494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7d1f5b9e5460c4996ae3369dcfa65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_LogAbilityParameterChanges: 0
-  m_LogItemParameterChanges: 0
-  m_LogEvents: 0
-  m_HorizontalMovementDampingTime: 0.1
-  m_ForwardMovementDampingTime: 0.1
-  m_PitchDampingTime: 0.1
-  m_YawDampingTime: 0.1
-  m_AnimatorSpeed: 1
-  m_GameObject: {fileID: 0}
-  m_Transform: {fileID: 0}
-  m_Animator: {fileID: 0}
-  m_HorizontalMovement: 0
-  m_ForwardMovement: 0
-  m_Pitch: 0
-  m_Yaw: 0
-  m_Speed: 0
-  m_Height: 0
-  m_Moving: 0
-  m_Aiming: 0
-  m_MovementSetID: 0
-  m_AbilityIndex: 0
-  m_AbilityIntData: 0
-  m_AbilityFloatData: 0
-  m_HasItemParameters: 0
-  m_ItemSlotID: 
-  m_ItemSlotStateIndex: 
-  m_ItemSlotSubstateIndex: 
-  m_EquippedItems: []
-  m_EquippedItemsDirty: 0
 --- !u!54 &1278971612
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12428,47 +9853,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721e59e8d6c5af944bc5ca4b238ac893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_ColorPropertyName: _Color
-  m_CharacterFade: 1
-  m_CacheCharacterMaterials: 1
-  m_StartFadeDistance: 1.8
-  m_EndFadeDistance: 1
-  m_CharacterFadeStateChangeCooldown: 0.3
-  m_ObstructingObjectsFade: 0
-  m_CollisionRadius: 0.05
-  m_FadeSpeed: 0.02
-  m_FadeColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 0
-  m_AutoSetMode: 0
-  m_DisableCollider: 1
-  m_MaxObstructingColliderCount: 20
-  m_MaxObstructingMaterialCount: 30
-  m_TransformOffset: {x: 0, y: 0.9, z: 0}
-  m_Transform: {fileID: 0}
-  m_CameraController: {fileID: 0}
-  m_Character: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_CharacterLayerManager: {fileID: 0}
-  m_CharacterTransform: {fileID: 0}
-  m_CharacterFadeMaterials: []
-  m_IndependentCharacterFadeCount: 0
-  m_CharacterFadeMaterialsCount: 0
-  m_FadeOffset: {x: 0, y: 0, z: 0}
-  m_CharacterFaded: 0
-  m_ObstructingMaterials: []
-  m_ObstructingMaterialsCount: 0
-  m_ObstructingColliders: []
-  m_ObstructingCollidersCount: 0
-  m_CharacterFadeCooldownElapsedTime: 0
-  m_ColorID: 0
 --- !u!114 &1329577514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12481,17 +9865,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17fc15acee3ae0748a3d9254b8292944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ZoomInputName: Fire2
-  m_ContinuousZoom: 1
-  m_AdjustForFramerate: 1
-  m_TogglePerspectiveInputName: Toggle Perspective
-  m_GameObject: {fileID: 0}
-  m_CameraController: {fileID: 0}
-  m_Character: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_PlayerInput: {fileID: 0}
-  m_AllowGameplayInput: 0
-  m_LastRotateTime: 0
 --- !u!114 &1329577515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12504,52 +9877,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccf7f4698bb5b3439fc85f4f741f142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_InitCharacterOnAwake: 1
-  m_Character: {fileID: 0}
-  m_Anchor: {fileID: 0}
-  m_AutoAnchor: 0
-  m_AutoAnchorBone: 7
-  m_AnchorOffset: {x: 0, y: 1.8, z: 0}
-  m_ViewTypeFullName: Opsive.UltimateCharacterController.ThirdPersonController.Camera.ViewTypes.Combat
-  m_FirstPersonViewTypeFullName: 
-  m_ThirdPersonViewTypeFullName: Opsive.UltimateCharacterController.ThirdPersonController.Camera.ViewTypes.Combat
-  m_ViewTypeData:
-  - m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Camera.ViewTypes.Combat
-    m_ValueHashes: 65e77897b61df252c31ddd78760b38d8b345095a0edf2c3c25f75d6432f7488ae5e4a3e9221f756b7db8984d7c49fce19d993aec09db5f3f1ff18eed3d390dca65df27146bc57ea35384848092d929c04463666914018d40a6d1eed3595adc3bdf11382962b1493a960263d8ab1c14912f0620c841d380f0634cdaca91e8b834eefc236074b47f4df753915e2ba5aafc40bf5bb5c4a867ecd675c814f8ee21ef268b00597b7620a4012e7c9184cd8da2b81ea740cd3858f95122643063efc45885681e33b304fd9c101968c896d0c3b51970d5c64dc1ee6462db9f1de6c4ab54f8910c7d1a0b665748a744c186548c3ae75f6e0db8c73562ca94968a
-    m_ValuePositions: 000000000400000004000000080000000c000000100000001100000011000000180000001c00000020000000210000002500000031000000350000004100000045000000490000004d000000590000005d000000610000006500000069000000690000006d0000007100000075000000790000007d000000810000008d00000099000000990000009d000000a1000000a5000000a9000000ad000000b1000000bd000000c9000000c9000000cd000000d1000000d5000000d9000000dd000000e1000000ed000000f9000000f9000000fd0000000101000005010000090100000d010000110100001d010000290100003a0100003e01000042010000
-    m_Values: "\x02"
-    m_UnityObjects:
-    - {fileID: 11400000, guid: edafe89541fb59d4dba60703f5b1574a, type: 2}
-    m_Version: 2.1.7
-  m_CanChangePerspectives: 1
-  m_CanZoom: 1
-  m_ZoomState: Zoom
-  m_StateAppendItemIdentifierName: 0
-  m_OnChangeViewTypesEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnChangePerspectivesEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_OnZoomEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  m_KinematicObjectIndex: -1
-  m_ZoomInput: 0
-  m_Zoom: 0
-  m_GameObject: {fileID: 0}
-  m_Transform: {fileID: 0}
-  m_CharacterTransform: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_CharacterInventory: {fileID: 0}
 --- !u!114 &1329577516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12759,72 +10086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f656d2669e5794eac60f129fc8fcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: 2.5D
-    m_Preset: {fileID: 11400000, guid: 4df61c7ca20c76e40b1f586b56caa7e0, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: TopDown
-    m_Preset: {fileID: 11400000, guid: 4df61c7ca20c76e40b1f586b56caa7e0, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Character: {fileID: 0}
-  m_Visible: 1
-  m_ShowUI: 1
-  m_CameraGameObject: {fileID: 0}
-  m_DebugDrawLookRay: 0
-  m_AutoAssignAimAssistTarget: 1
-  m_CollisionRadius: 0.05
-  m_MaxCollisionCount: 40
-  m_TriggerInteraction: 1
-  m_MoveWithCursor: 0
-  m_MovementSpread: 0
-  m_MaxSpreadVelocitySqrMagnitude: 50
-  m_MovementSpreadSpeed: 6
-  m_DefaultSprite: {fileID: 21300000, guid: 7d8463886f326854ebe6a90049ef568d, type: 3}
-  m_DefaultColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  m_TargetColor:
-    r: 1
-    g: 0
-    b: 0
-    a: 1
-  m_CenterCrosshairsImage: {fileID: 1368816064}
-  m_LeftCrosshairsImage: {fileID: 1390138474}
-  m_TopCrosshairsImage: {fileID: 1319037320}
-  m_RightCrosshairsImage: {fileID: 981588518}
-  m_BottomCrosshairsImage: {fileID: 155275753}
-  m_DisableOnDeath: 1
-  m_GameObject: {fileID: 0}
-  m_Camera: {fileID: 0}
-  m_CameraController: {fileID: 0}
-  m_AimAssist: {fileID: 0}
-  m_CharacterTransform: {fileID: 0}
-  m_CharacterLayerManager: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_PlayerInput: {fileID: 0}
-  m_RectTransform: {fileID: 0}
-  m_CenterRectTransform: {fileID: 0}
-  m_LeftRectTransform: {fileID: 0}
-  m_TopRectTransform: {fileID: 0}
-  m_RightRectTransform: {fileID: 0}
-  m_BottomRectTransform: {fileID: 0}
-  m_EquippedItem: {fileID: 0}
-  m_CurrentCrosshairsSpread: 0
-  m_TargetCrosshairsSpread: 0
-  m_CrosshairsSpreadVelocity: 0
-  m_Aiming: 0
-  m_EnableImage: 0
-  m_EquippedItemCount: 0
-  m_SmoothedMovementVelocity: 0
-  m_OriginalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1368816064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13313,23 +10574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c878983a99df54ebaf805160ac9330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Character: {fileID: 0}
-  m_Visible: 1
-  m_ShowUI: 1
-  m_CameraGameObject: {fileID: 0}
-  m_Icon: {fileID: 1115820895}
-  m_Text: {fileID: 1911782851}
-  m_ObjectVisiblityDuration: 1.5
-  m_ObjectFadeSpeed: 0.05
-  m_GameObject: {fileID: 0}
-  m_ObjectPickup: {fileID: 0}
-  m_ShouldFade: 0
-  m_ObjectAlphaColor: 0
 --- !u!222 &1450480299
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13367,7 +10611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 55
 --- !u!54 &1466363185
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13516,26 +10759,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cba7b223704d6c42a0a479a591fa84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_Character: {fileID: 0}
-  m_Visible: 1
-  m_ShowUI: 1
-  m_CameraGameObject: {fileID: 0}
-  m_PrimaryCount: {fileID: 1614544459}
-  m_CharacterInventory: {fileID: 0}
-  m_CountParent: {fileID: 1675461062}
-  m_LoadedCount: {fileID: 769426368}
-  m_UnloadedCount: {fileID: 2041056502}
-  m_ID: 0
-  m_ItemIcon: {fileID: 685073952}
-  m_ItemActionID: 0
-  m_GameObject: {fileID: 0}
-  m_ItemRectTransform: {fileID: 0}
-  m_EquippedItem: {fileID: 0}
 --- !u!114 &1512828648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14371,8 +11594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a248a6f0e7acfe14fb3bc7907fc03c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 1
-  m_AlwaysActive: 0
 --- !u!114 &1613716383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14385,27 +11606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527b6ce4c43b6dd458111a6670a3de65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GameObject: {fileID: 0}
-  m_Animator: {fileID: 0}
-  m_Character: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_CharacterAnimatorMonitor: {fileID: 0}
-  m_FirstPersonAnimatorMonitor: 0
-  m_HorizontalMovement: 0
-  m_ForwardMovement: 0
-  m_Pitch: 0
-  m_Yaw: 0
-  m_Speed: 0
-  m_Height: 0
-  m_Moving: 0
-  m_Aiming: 0
-  m_MovementSetID: 0
-  m_AbilityIndex: 0
-  m_AbilityIntData: 0
-  m_AbilityFloatData: 0
-  m_ItemSlotID: 
-  m_ItemSlotStateIndex: 
-  m_ItemSlotSubstateIndex: 
 --- !u!95 &1613716384
 Animator:
   serializedVersion: 7
@@ -14783,7 +11983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 56
 --- !u!1 &1690997270
 GameObject:
   m_ObjectHideFlags: 0
@@ -16835,10 +14034,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d27993558cd095408b9a3aacba1226d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FlipFootprint: 1
-  m_Transform: {fileID: 0}
-  m_FootEffects: {fileID: 0}
-  m_CharacterLayerManager: {fileID: 0}
 --- !u!135 &2016303186
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17835,7 +15030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 211
 --- !u!1 &1063530285913722
 GameObject:
   m_ObjectHideFlags: 0
@@ -17936,7 +15130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 216
 --- !u!1 &1468870639354692
 GameObject:
   m_ObjectHideFlags: 0
@@ -17985,7 +15178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 212
 --- !u!1 &1549257768111376
 GameObject:
   m_ObjectHideFlags: 0
@@ -18137,7 +15329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 215
 --- !u!1 &1835343323211772
 GameObject:
   m_ObjectHideFlags: 0
@@ -18169,7 +15360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 214
 --- !u!1 &1844290668164424
 GameObject:
   m_ObjectHideFlags: 0
@@ -18199,7 +15389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 5203132
 --- !u!1 &1905861366320550
 GameObject:
   m_ObjectHideFlags: 0
@@ -18229,7 +15418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 52
 --- !u!1 &1978945537569512
 GameObject:
   m_ObjectHideFlags: 0
@@ -18261,7 +15449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 213
 --- !u!4 &4022146100605102
 Transform:
   m_ObjectHideFlags: 0
@@ -19238,7 +16425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259de180f6aec024e8af5ebcd379cc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 0
 --- !u!114 &114034093005515690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19251,33 +16437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39053520c101c914d90d3f9f07b3292a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_RotateCollider: 0
-  m_EndCapRotation: 1
-  m_RotationBone: {fileID: 0}
-  m_RotationBoneOffset: {x: 0, y: 0, z: 0}
-  m_AdjustHeight: 1
-  m_FirstEndCapTarget: {fileID: 88171106}
-  m_SecondEndCapTarget: {fileID: 88171042}
-  m_SecondEndCapPadding: 0.1
-  m_PositionBone: {fileID: 0}
-  m_HeightOverride: -1
-  m_CenterOffset: {x: 0, y: 0, z: 0}
-  m_Transform: {fileID: 0}
-  m_CapsuleCollider: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_CharacterGameObject: {fileID: 0}
-  m_CharacterTransform: {fileID: 0}
-  m_CharacterLayerManager: {fileID: 0}
-  m_OverlapColliders: []
-  m_FirstEndCapOffset: {x: 0, y: 0, z: 0}
-  m_SecondEndCapOffset: {x: 0, y: 0, z: 0}
-  m_FirstEndCapLocalPosition: {x: 0, y: 0, z: 0}
-  m_PrevLocalRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &114079176465145780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19290,7 +16449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 4
 --- !u!114 &114112227821035946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19303,37 +16461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301e1b1251d4e0e4e9af4c3fb5f8dc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Interact
-    m_Preset: {fileID: 11400000, guid: a1e042d6378fd934f8a5bfecf1e3eb8d, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_MinPitchLimit: -90
-  m_MaxPitchLimit: 90
-  m_LockPitch: 0
-  m_MinYawLimit: -180
-  m_MaxYawLimit: 180
-  m_LockYaw: 0
-  m_RotateWithCrosshairs: 1
-  m_RotationSpeed: 50
-  m_IgnorePositionalLookOffset: 0
-  m_PositionOffset: {x: 0, y: 0, z: 0}
-  m_MoveSpeed: 10
-  m_Transform: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Character: {fileID: 0}
-  m_CharacterTransform: {fileID: 0}
-  m_CharacterLocomotion: {fileID: 0}
-  m_CameraController: {fileID: 0}
-  m_CameraTransform: {fileID: 0}
-  m_FirstPersonBaseObjects: []
-  m_EquippedItems: []
-  m_Pitch: 0
-  m_Yaw: 0
 --- !u!114 &114137435331424640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19346,7 +16473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ebcf42a9d8f9145a73c60c46c60bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 4
 --- !u!114 &114326526365424354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19359,8 +16485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e458a25b435dd4086faf6dce3b39e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SurfaceType: {fileID: 11400000, guid: b85fb8b5e3020c446bd27ea928c285e0, type: 2}
-  m_AllowDecals: 0
 --- !u!114 &114335493620284200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19385,7 +16509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259de180f6aec024e8af5ebcd379cc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 1
 --- !u!114 &114731576399144934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19398,7 +16521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259de180f6aec024e8af5ebcd379cc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 0
 --- !u!114 &114812698362600872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19411,7 +16533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259de180f6aec024e8af5ebcd379cc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 1
 --- !u!114 &114885810067562074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19424,7 +16545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259de180f6aec024e8af5ebcd379cc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 1
 --- !u!114 &114942598374215414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19437,7 +16557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259de180f6aec024e8af5ebcd379cc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 0
 --- !u!114 &114998672301897460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19450,37 +16569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156bcc35929b82b49bb622963c6def6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Knife
-    m_Preset: {fileID: 11400000, guid: 6f65af9c8900b3b40819f7bb5d2d1050, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Katana
-    m_Preset: {fileID: 11400000, guid: 6f65af9c8900b3b40819f7bb5d2d1050, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Sword
-    m_Preset: {fileID: 11400000, guid: 6f65af9c8900b3b40819f7bb5d2d1050, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: SwordShield
-    m_Preset: {fileID: 11400000, guid: 6f65af9c8900b3b40819f7bb5d2d1050, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Shield
-    m_Preset: {fileID: 11400000, guid: 6f65af9c8900b3b40819f7bb5d2d1050, type: 2}
-    m_BlockList: []
-    m_Default: 0
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_LocalPositionOffset: {x: 0, y: 0, z: 0}
-  m_RadiusOffset: 0
-  m_Transform: {fileID: 0}
-  m_Collider: {fileID: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_Radius: 0
 --- !u!135 &135316127175211490
 SphereCollider:
   m_ObjectHideFlags: 0

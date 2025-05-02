@@ -1,13 +1,16 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class VelocityAnimationBridge : MonoBehaviour
 {
+    [SerializeField] private float dampTime = 0.1f; // Damping time for animation transitions
     private Animator animator;
     private Vector3 lastPosition;
-    private float speed;
+    private Vector3 velocityWorld;
+    private Vector3 velocityLocal;
 
-    // Optional: If using some custom movement system, you can pass this in
-    public Vector3 CurrentVelocity => transform.position - lastPosition;
+    public Vector3 WorldVelocity => velocityWorld;
+    public Vector3 LocalVelocity => velocityLocal;
 
     private void Awake()
     {
@@ -17,23 +20,13 @@ public class VelocityAnimationBridge : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Calculate speed based on position change (could be custom movement or input-based)
-        speed = (transform.position - lastPosition).magnitude / Time.deltaTime;
+        velocityWorld = (transform.position - lastPosition) / Time.deltaTime;
+        velocityLocal = transform.InverseTransformDirection(velocityWorld);
 
-        // Update the animator parameter to control locomotion animations
-        animator.SetFloat("Speed", speed, .1f, Time.deltaTime);
+        animator.SetFloat("VelocityX", velocityLocal.x, dampTime, Time.deltaTime); // Strafe
+        animator.SetFloat("VelocityZ", velocityLocal.z, dampTime, Time.deltaTime); // Forward/Backward
+        animator.SetFloat("VerticalSpeed", velocityWorld.y, dampTime, Time.deltaTime); // Jump/Fall
 
-        // Update last position for the next frame
         lastPosition = transform.position;
-
-        // Optionally, you can track and apply rotation towards movement direction
-        if (speed > 0.1f)
-        {
-            Vector3 direction = new Vector3(CurrentVelocity.x, 0, CurrentVelocity.z).normalized;
-            if (direction != Vector3.zero)
-            {
-                transform.forward = Vector3.Slerp(transform.forward, direction, Time.deltaTime * 10f); // Rotate smoothly
-            }
-        }
     }
 }

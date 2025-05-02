@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
 
         // Inventory
         inventoryGrid = root.Q<VisualElement>("inventory-grid");
-        PopulateInventory();
+        // PopulateInventory();
     }
 
     public void UpdateHealth(float healthPercentage)
