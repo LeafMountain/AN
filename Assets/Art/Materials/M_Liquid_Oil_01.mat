@@ -62,8 +62,8 @@ Material:
     - _QueueControl: 1
     - _QueueOffset: 0
     - _Rim_Power: -0.45
-    - _WobbleX: 2.3737435e-36
-    - _WobbleZ: 2.3737435e-36
+    - _WobbleX: 0
+    - _WobbleZ: 0
     m_Colors:
     - _BottomColor: {r: 0.0002731198, g: 0, b: 0.028301895, a: 1}
     - _FillAmount: {r: 0, g: -0.45, b: 0, a: 0}

@@ -11,11 +11,9 @@ GameObject:
   - component: {fileID: 6578515575928919280}
   - component: {fileID: 5805852875763823946}
   - component: {fileID: 4180457588355708469}
-  - component: {fileID: 8603059600156986554}
-  - component: {fileID: 4741072733558199199}
-  - component: {fileID: 5671970072109988043}
   - component: {fileID: 6587173854043144097}
-  m_Layer: 0
+  - component: {fileID: 4814071539060619281}
+  m_Layer: 6
   m_Name: Scrap_Pile_Large_Piece_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,73 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8603059600156986554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585570049646809184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  actorMapping: []
---- !u!114 &4741072733558199199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585570049646809184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  _actor: {fileID: 8603059600156986554}
-  maxHealth: 10
-  currentHealth:
-    m_InternalValue: 0
-  autoDestroy: 1
-  lootCount: 1
-  loot:
-  - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  lootIds: d10f621a
-  destructionEffects:
-  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffects:
-  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
-  lastHitPoint: {x: 0, y: 0, z: 0}
-  lastHitNormal: {x: 0, y: 0, z: 0}
---- !u!114 &5671970072109988043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585570049646809184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!64 &6587173854043144097
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -180,6 +111,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4442855196115318987, guid: f842f34d8724d5e4d834ede9497d46ce, type: 3}
+--- !u!208 &4814071539060619281
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585570049646809184}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.1000001, y: 1.784, z: 4.189}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.871, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &4084926826598809041
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,11 +138,9 @@ GameObject:
   - component: {fileID: 8932014178104119811}
   - component: {fileID: 4955281976627350731}
   - component: {fileID: 8126479584805355203}
-  - component: {fileID: 8943355880620381999}
-  - component: {fileID: 68706021080737385}
-  - component: {fileID: 4931945247084792514}
   - component: {fileID: 5220944178036256923}
-  m_Layer: 0
+  - component: {fileID: 8011835272432545811}
+  m_Layer: 6
   m_Name: Scrap_Pile_Large_Piece_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,73 +216,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8943355880620381999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4084926826598809041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  actorMapping: []
---- !u!114 &68706021080737385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4084926826598809041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  _actor: {fileID: 8943355880620381999}
-  maxHealth: 10
-  currentHealth:
-    m_InternalValue: 0
-  autoDestroy: 1
-  lootCount: 1
-  loot:
-  - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  lootIds: d10f621a
-  destructionEffects:
-  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffects:
-  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
-  lastHitPoint: {x: 0, y: 0, z: 0}
-  lastHitNormal: {x: 0, y: 0, z: 0}
---- !u!114 &4931945247084792514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4084926826598809041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!64 &5220944178036256923
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -360,6 +238,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4320404244866820726, guid: f842f34d8724d5e4d834ede9497d46ce, type: 3}
+--- !u!208 &8011835272432545811
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084926826598809041}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.73, y: 1.6680001, z: 4.1670003}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.5670002, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5012892471793625150
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,11 +265,9 @@ GameObject:
   - component: {fileID: 4294832284634067000}
   - component: {fileID: 8758468007293544058}
   - component: {fileID: 8293272482383931880}
-  - component: {fileID: 8709106047216168907}
-  - component: {fileID: 140017936255656095}
-  - component: {fileID: 2343305691272338659}
   - component: {fileID: 1815770211330228806}
-  m_Layer: 0
+  - component: {fileID: 5296963827100921441}
+  m_Layer: 6
   m_Name: Scrap_Pile_Large_Piece_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,73 +343,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8709106047216168907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5012892471793625150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  actorMapping: []
---- !u!114 &140017936255656095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5012892471793625150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  _actor: {fileID: 8709106047216168907}
-  maxHealth: 10
-  currentHealth:
-    m_InternalValue: 0
-  autoDestroy: 1
-  lootCount: 1
-  loot:
-  - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  lootIds: d10f621a
-  destructionEffects:
-  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffects:
-  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
-  lastHitPoint: {x: 0, y: 0, z: 0}
-  lastHitNormal: {x: 0, y: 0, z: 0}
---- !u!114 &2343305691272338659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5012892471793625150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!64 &1815770211330228806
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -540,6 +365,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2727645663591544201, guid: f842f34d8724d5e4d834ede9497d46ce, type: 3}
+--- !u!208 &5296963827100921441
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5012892471793625150}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.8880001, y: 1.2140001, z: 3.492}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.097, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5879119567983608326
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,11 +428,9 @@ GameObject:
   - component: {fileID: 2414671671830139393}
   - component: {fileID: 2397833614915187010}
   - component: {fileID: 6933132792415153429}
-  - component: {fileID: 2553597045798158435}
-  - component: {fileID: 6636290156380702822}
-  - component: {fileID: 5767365157829964297}
   - component: {fileID: 2778943957600948749}
-  m_Layer: 0
+  - component: {fileID: 3509531432576007530}
+  m_Layer: 6
   m_Name: Scrap_Pile_Large_Piece_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -667,73 +506,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2553597045798158435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100367018032052112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
---- !u!114 &6636290156380702822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100367018032052112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  actorMapping: []
---- !u!114 &5767365157829964297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100367018032052112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  _actor: {fileID: 6636290156380702822}
-  maxHealth: 10
-  currentHealth:
-    m_InternalValue: 0
-  autoDestroy: 1
-  lootCount: 1
-  loot:
-  - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  lootIds: d10f621a
-  destructionEffects:
-  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffects:
-  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
-  lastHitPoint: {x: 0, y: 0, z: 0}
-  lastHitNormal: {x: 0, y: 0, z: 0}
 --- !u!64 &2778943957600948749
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -756,6 +528,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1466559565745137302, guid: f842f34d8724d5e4d834ede9497d46ce, type: 3}
+--- !u!208 &3509531432576007530
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100367018032052112}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.1590002, y: 1.9460001, z: 3.8710003}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.101, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6852939227973699995
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,11 +555,9 @@ GameObject:
   - component: {fileID: 2486529047519578297}
   - component: {fileID: 5393905463522374718}
   - component: {fileID: 7296671123357396318}
-  - component: {fileID: 2872822408837618437}
-  - component: {fileID: 575289528192412159}
-  - component: {fileID: 4806851517530982289}
   - component: {fileID: 2951404976382793113}
-  m_Layer: 0
+  - component: {fileID: 6068142264051601724}
+  m_Layer: 6
   m_Name: Scrap_Pile_Large_Piece_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,73 +633,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2872822408837618437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6852939227973699995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97aae477876964e43a6360bcfcb5ade6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  actorMapping: []
---- !u!114 &575289528192412159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6852939227973699995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18fbe62f52caa87438bed839f6390426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  _actor: {fileID: 2872822408837618437}
-  maxHealth: 10
-  currentHealth:
-    m_InternalValue: 0
-  autoDestroy: 1
-  lootCount: 1
-  loot:
-  - {fileID: 1009607835378464087, guid: e08bd85449482804a8a57fd757a821ef, type: 3}
-  lootIds: d10f621a
-  destructionEffects:
-  - {fileID: 11400000, guid: dac5a235cb4a48448b1ed779a61a25a5, type: 2}
-  hitEffects:
-  - {fileID: 11400000, guid: e043b7094a3761b408df197998d966ab, type: 2}
-  lastHitPoint: {x: 0, y: 0, z: 0}
-  lastHitNormal: {x: 0, y: 0, z: 0}
---- !u!114 &4806851517530982289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6852939227973699995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!64 &2951404976382793113
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -936,3 +655,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1554168252620733735, guid: f842f34d8724d5e4d834ede9497d46ce, type: 3}
+--- !u!208 &6068142264051601724
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852939227973699995}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.552, y: 1.7870001, z: 3.7300003}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.6350001, z: 0}
+  m_TimeToStationary: 0.5

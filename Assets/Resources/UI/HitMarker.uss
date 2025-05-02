@@ -1,0 +1,16 @@
+:root {
+}
+
+.hit-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    opacity: 0.8;
+    background-image: resource('UI/Icons/HitMarker');
+    right: auto;
+    bottom: auto;
+    translate: -50% -50%;
+}
