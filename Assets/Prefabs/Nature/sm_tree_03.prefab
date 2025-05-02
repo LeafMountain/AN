@@ -245,10 +245,10 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 473209048980115889}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5413467469086026372}
+        m_TargetAssemblyTypeName: Destroyable, Assembly-CSharp
+        m_MethodName: Trigger
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -260,8 +260,8 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5413467469086026372}
-        m_TargetAssemblyTypeName: Destroyable, Assembly-CSharp
+      - m_Target: {fileID: 4114481503648618200}
+        m_TargetAssemblyTypeName: Shake, Assembly-CSharp
         m_MethodName: Trigger
         m_Mode: 1
         m_Arguments:
@@ -291,6 +291,7 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: 9728151d393db8a2ea2d64ad0da2bf78, type: 2}
   amountPerDamage: 0.25
   onDestroyBonus: 5
+  dontRequirePickup: 0
 --- !u!114 &4114481503648618200
 MonoBehaviour:
   m_ObjectHideFlags: 0

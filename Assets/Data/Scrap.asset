@@ -15,5 +15,5 @@ MonoBehaviour:
   itemID: material_scrap
   displayName: Scrap
   icon: {fileID: 21300000, guid: 1c25cc920909a4e4380a9f65d1eaf218, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 7903274066710058489, guid: cbaa00a791450dc4b8dfba443590bb8f, type: 3}
   description: 

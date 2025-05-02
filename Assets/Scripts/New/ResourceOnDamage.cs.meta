@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 63f9d4763faf5f505b543be93dc0bed7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - itemData: {instanceID: 0}
+  - lootablePrefab: {fileID: 2641142738419902618, guid: 9b779ee845124d450810a8c16db14374, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

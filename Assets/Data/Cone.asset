@@ -15,5 +15,5 @@ MonoBehaviour:
   itemID: material_cone
   displayName: Cone
   icon: {fileID: 21300000, guid: 1c25cc920909a4e4380a9f65d1eaf218, type: 3}
-  prefab: {fileID: 4756827043459361323, guid: 13d3914303994e047a91d5a389e7315c, type: 3}
+  prefab: {fileID: 1764714273148464117, guid: d29a12067d838cb4e90ce78f7b5f89fb, type: 3}
   description: It's a Cone

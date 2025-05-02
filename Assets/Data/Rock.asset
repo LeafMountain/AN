@@ -15,5 +15,5 @@ MonoBehaviour:
   itemID: material_rock
   displayName: Rock
   icon: {fileID: 21300000, guid: 1c25cc920909a4e4380a9f65d1eaf218, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 3912236829160671906, guid: 0d9ec908116e23e43afd2a521ebf466e, type: 3}
   description: 
