@@ -5,7 +5,7 @@ public class PlayerInputHandlerUI : MonoBehaviour
     public InventoryUI inventoryUI;
     
     private void Awake() {
-        inventoryUI = FindFirstObjectByType<InventoryUI>();
+        inventoryUI = FindFirstObjectByType<InventoryUI>(FindObjectsInactive.Include);
     }
 
     private void Update()
