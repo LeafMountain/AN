@@ -13,6 +13,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         // Movement is continuous; ensure it's always active
         abilityController.ActivateAbility<MoveAbility>();
+        abilityController.ActivateAbility<LootMagnetizerAbility>();
         
         if (Input.GetKeyDown(KeyCode.LeftShift))
             abilityController.ActivateAbility<SprintAbility>();
@@ -26,6 +27,10 @@ public class PlayerInputHandler : MonoBehaviour
         // Melee attack
         if (Input.GetMouseButtonDown(1))
             abilityController.ActivateAbility<AttackAbility>();
+        
+        // Reload
+        if (Input.GetKeyDown(KeyCode.R))
+            abilityController.ActivateAbility<ReloadAbility>();
 
         // Ranged attack
         if (Input.GetMouseButtonDown(0))

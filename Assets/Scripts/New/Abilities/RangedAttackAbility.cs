@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RangedAttackAbility : MonoBehaviour, IAbility {
@@ -32,6 +34,10 @@ public class RangedAttackAbility : MonoBehaviour, IAbility {
         FaceCameraForward();
         playerEquipment.CurrentGun?.GetComponent<GunAimHandler>()?.UpdateAim();
         playerEquipment.CurrentGun?.TryFire();
+    }
+
+    public IEnumerable<Type> GetConflictingAbilities() {
+        return new List<Type>();
     }
 
     private void FaceCameraForward() {

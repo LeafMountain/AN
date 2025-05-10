@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AbilityController : MonoBehaviour
@@ -25,8 +27,19 @@ public class AbilityController : MonoBehaviour
     {
         foreach (var ability in abilities)
         {
-            if (ability is T)
-                ability.Activate();
+            if (ability is T targetAbility)
+            {
+                // Deactivate conflicting abilities
+                foreach (var conflictingAbility in abilities)
+                {
+                    if (targetAbility.GetConflictingAbilities().Contains(conflictingAbility.GetType()))
+                    {
+                        conflictingAbility.Deactivate();
+                    }
+                }
+
+                targetAbility.Activate();
+            }
         }
     }
 
