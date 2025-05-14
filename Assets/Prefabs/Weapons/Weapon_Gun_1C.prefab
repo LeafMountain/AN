@@ -41,8 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7296273790010811585}
   - component: {fileID: 7296273790010811596}
-  - component: {fileID: 6103161407755912901}
-  - component: {fileID: 7957205983530398340}
   m_Layer: 0
   m_Name: Weapon_Gun_1C
   m_TagString: Untagged
@@ -91,69 +89,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6103161407755912901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7296273790010811597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf57dd20e6f0512459be7945f640db67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  actorMapping:
-  - pointType: MuzzleSpawn
-    manual: 0
-    transform: {fileID: 968106332079249584}
-    point: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-  - pointType: MuzzleSpawn
-    manual: 0
-    transform: {fileID: 6225453397962828401}
-    point: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-  - pointType: MuzzleSpawn
-    manual: 0
-    transform: {fileID: 5976659223073238}
-    point: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-  - pointType: MuzzleSpawn
-    manual: 0
-    transform: {fileID: 2006187900559841182}
-    point: {x: 0, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-  muzzlePoints:
-  - {fileID: 968106332079249584}
-  - {fileID: 6225453397962828401}
-  - {fileID: 5976659223073238}
-  - {fileID: 2006187900559841182}
-  fireEffect: {fileID: 11400000, guid: 450f7dbb9191576439dde8f2b327ed4a, type: 2}
-  projectilePrefab: {fileID: 1321357796030983280, guid: 19472f2c79da8d348b7fc371e793e1c5, type: 3}
-  bulletSpeed: 80
-  bulletsPerSecond: 16
-  aiming: 0
---- !u!114 &7957205983530398340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7296273790010811597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  _assetId: 2881355532
-  serverOnly: 0
-  visibility: 0
-  hasSpawned: 0
 --- !u!1 &7626724574963352394
 GameObject:
   m_ObjectHideFlags: 0
